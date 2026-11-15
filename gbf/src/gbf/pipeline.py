@@ -33,9 +33,8 @@ report     report.html with the score timeline (gbf.report)        report.html, 
 
 Re-running
     A stage is skipped when its receipt's key -- the sha256 of the stage name, the sha256 of
-    every input file, the stage's parameters and a fingerprint of the code: every .py file
-    of the gbf package this code runs from (gbf.gate and gbf.web left out, they never run
-    in a stage), so any code change re-runs every stage -- equals the current key, and
+    every input file, the stage's parameters and its code dependencies (including shared
+    orchestration, IO and transitive local imports) -- equals the current key, and
     every output the receipt lists still has its recorded sha256. Measure also hashes
     registries/metrics.toml, where its tiers come from. ``--force`` runs the selected
     stages anyway. Stages left out of ``--stages`` are never run: their outputs must exist.
@@ -57,6 +56,7 @@ Conventions and rules
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import inspect
 import json
@@ -410,10 +410,7 @@ def _utc_now() -> str:
 
 
 def _source_fingerprint(package: Path) -> str:
-    """sha256 over every .py file of the gbf package at ``package``, by its path inside the
-    package and the sha256 of its bytes, :data:`SOURCE_LEFT_OUT` left out. Every stage key
-    holds it, so an edit anywhere in the code the pipeline runs (a helper, a constant, a
-    module no stage names) re-runs every stage instead of keeping outputs of older code."""
+    """Full source provenance, independent of the narrower per-stage cache key."""
     files = {}
     for path in sorted(package.rglob("*.py")):
         relative = path.relative_to(package)
@@ -422,10 +419,96 @@ def _source_fingerprint(package: Path) -> str:
     return canonical_sha256(files)
 
 
+def _stage_sources(
+    package: Path, stage: _Stage, *, cache: dict[str, Any] | None = None
+) -> dict[str, str]:
+    """Hash stage modules and their static local import closure without importing code.
+
+    Whole pipeline/IO/contracts are shared conservatively. Parent package initializers
+    execute on import too. Dynamic imports fall back to all package source files.
+    """
+    # A run snapshots source once. Do not use a global cache: the next run must see edits.
+    cache = {} if cache is None else cache
+    if "available" not in cache:
+        cache["available"] = {
+            "gbf."
+            + p.relative_to(package)
+            .with_suffix("")
+            .as_posix()
+            .replace("/", ".")
+            .removesuffix(".__init__"): p
+            for p in package.rglob("*.py")
+            if p.relative_to(package).parts[0] not in SOURCE_LEFT_OUT
+        }
+    available = cache["available"]
+    available["gbf"] = package / "__init__.py"
+    available.pop("gbf.__init__", None)
+    pending = {"gbf", "gbf.pipeline"}
+    # Shared helpers used throughout _Run and the stage wrappers.
+    pending.update(
+        name
+        for name in available
+        if name.startswith(("gbf.util.", "gbf.ingest.", "gbf.contracts", "gbf.plugins"))
+    )
+    pending.update(
+        part.__name__ if isinstance(part, ModuleType) else part.__module__ for part in stage.modules
+    )
+    visited: set[str] = set()
+    while pending:
+        name = pending.pop()
+        if name in visited or name not in available:
+            continue
+        visited.add(name)
+        pieces = name.split(".")
+        pending.update(".".join(pieces[:i]) for i in range(1, len(pieces)))
+        # The pipeline's imports aggregate all stages; its own bytes are shared, but
+        # stage.modules selects the algorithm roots instead of traversing this hub.
+        if name == "gbf.pipeline":
+            continue
+        file = available[name]
+        dependencies = cache.setdefault("dependencies", {})
+        if name in dependencies:
+            pending.update(dependencies[name])
+            continue
+        local: set[str] = set()
+        tree = ast.parse(file.read_bytes(), filename=str(file))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Call):
+                called = node.func
+                if (
+                    isinstance(called, ast.Name) and called.id in {"__import__", "import_module"}
+                ) or (isinstance(called, ast.Attribute) and called.attr == "import_module"):
+                    local.update(available)
+            elif isinstance(node, ast.Import):
+                local.update(alias.name for alias in node.names)
+                if any(alias.name.split(".")[0] == "importlib" for alias in node.names):
+                    local.update(available)
+            elif isinstance(node, ast.ImportFrom):
+                base = node.module or ""
+                if base.split(".")[0] == "importlib":
+                    local.update(available)
+                if node.level:
+                    parent = pieces if file.name == "__init__.py" else pieces[:-1]
+                    base = ".".join(
+                        parent[: len(parent) - node.level + 1] + ([base] if base else [])
+                    )
+                local.add(base)
+                local.update(base + "." + alias.name for alias in node.names)
+        dependencies[name] = local
+        pending.update(local)
+    files = {available[name] for name in visited}
+    files.update((package / "contracts").rglob("*.json"))
+    hashes = cache.setdefault("hashes", {})
+    for file in files:
+        if file not in hashes:
+            hashes[file] = sha256_file(file)
+    return {p.relative_to(package).as_posix(): hashes[p] for p in sorted(files)}
+
+
 def _fingerprint(function: Callable[..., Any], parts: Sequence[Any]) -> str:
     """sha256 over a stage function's source and the code it names: whole source files for
-    modules, the source of single functions or classes otherwise. The run's source
-    fingerprint (:func:`_source_fingerprint`) covers every other module and helper."""
+    modules, the source of single functions or classes otherwise. Transitive dependencies
+    are additionally covered by :func:`_stage_sources`."""
     digest = hashlib.sha256()
     digest.update(inspect.getsource(function).encode("utf-8"))
     for part in parts:
@@ -530,6 +613,9 @@ class _Run:
         self._hashes: dict[str, tuple[int, int, str]] = {}
         self.code = code_version()
         self.source = _source_fingerprint(_SOURCE_DIR)
+        self.stage_sources: dict[str, dict[str, str]] = {}
+        self.source_cache: dict[str, Any] = {}
+        self.profile: dict[str, dict[str, Any]] = {}
         self.results: list[StageResult] = []
         self.notes: list[str] = []
         self.video = Path(config.video)
@@ -1006,12 +1092,15 @@ def _stage_ball(run: _Run) -> list[str]:
     facts = _ball_file_facts(run.ball_raw)
     candidates = ball_mod.load_candidates(run.ball_raw, allow_incomplete_tail=True)
     tracks, calib, shots = run.tracks(), run.calib(), run.table("shots.parquet")
-    track = ball_mod.track_ball(candidates, tracks, calib, shots, run.rate, run.n_frames)
+    track, candidate_table = ball_mod.track_ball_with_candidates(
+        candidates, tracks, calib, shots, run.rate, run.n_frames
+    )
     strikes = ball_mod.ball_events(track, tracks, run.rate, shots=shots)
     contacts = ball_mod.ball_events(
         track, tracks, run.rate, shots=shots, params=ball_mod.CONTACT_PARAMS
     )
     run.write(track, "ball_track.parquet")
+    run.write(candidate_table, "ball_candidates.parquet")
     run.write(strikes, "ball_events.parquet")
     run.write(contacts, "ball_contacts.parquet")
     frames = sorted(candidates)
@@ -1031,7 +1120,12 @@ def _stage_ball(run: _Run) -> list[str]:
             + ("，最后一行未写完已丢弃" if facts["incomplete_tail_dropped"] else "")
             + "；这些帧按“没有候选”处理。"
         )
-    return ["ball_track.parquet", "ball_events.parquet", "ball_contacts.parquet"]
+    return [
+        "ball_track.parquet",
+        "ball_candidates.parquet",
+        "ball_events.parquet",
+        "ball_contacts.parquet",
+    ]
 
 
 def _stage_audio(run: _Run) -> list[str]:
@@ -2284,14 +2378,17 @@ def _stage_table() -> dict[str, _Stage]:
 def _stage_key(run: _Run, stage: _Stage, inputs: list[dict[str, Any]], params: Any) -> str:
     # The run's tags are part of the key: a re-run with other tags (another pose model,
     # --restrictions) writes every artifact again with them, never keeps old ones. So is the
-    # whole package source: a stage's outputs never outlive an edit of the code it runs.
+    # transitive stage source: unrelated algorithm edits can reuse verified outputs.
+    sources = _stage_sources(_SOURCE_DIR, stage, cache=run.source_cache)
+    run.stage_sources[stage.name] = sources
     return canonical_sha256(
         {
             "stage": stage.name,
             "inputs": [[ref["name"], ref["sha256"]] for ref in inputs],
             "parameters": params,
             "code": _fingerprint(stage.function, stage.modules),
-            "source": run.source,
+            "cache_version": 2,
+            "source": canonical_sha256(sources),
             "restrictions": sorted(set(run.restrictions)),
         }
     )
@@ -2347,6 +2444,8 @@ def _write_receipt(
             "stage": stage.name,
             "key": key,
             "source_sha256": run.source,
+            "cache_version": 2,
+            "stage_sources": run.stage_sources[stage.name],
             "parameters": params,
             "wall_s": round(wall_s, 3),
             "facts": _jsonable(run.result_extras.get(stage.name, {})),
@@ -2367,10 +2466,24 @@ def _restore(run: _Run, stage: _Stage, receipt: Mapping[str, Any]) -> None:
 
 
 def _run_stage(run: _Run, stage: _Stage) -> StageResult:
+    started = time.perf_counter()
+    run.profile[stage.name] = {"status": "failed", "lookup_started": started}
+    try:
+        result = _run_stage_impl(run, stage)
+        run.profile[stage.name]["status"] = result.status
+        return result
+    finally:
+        run.profile[stage.name].pop("lookup_started", None)
+        run.profile[stage.name]["elapsed_s"] = round(time.perf_counter() - started, 6)
+
+
+def _run_stage_impl(run: _Run, stage: _Stage) -> StageResult:
     selected = stage.name in run.config.stages
     receipt_path = run.path(f"receipts/{stage.name}.json")
     relative_receipt = f"receipts/{stage.name}.json"
     old = _read_receipt(receipt_path)
+    profile = run.profile[stage.name]
+    profile["reason"] = "checking" if selected else "not_selected"
     if not selected:
         if old is None or not _outputs_intact(run, old):
             raise PipelineError(
@@ -2393,12 +2506,23 @@ def _run_stage(run: _Run, stage: _Stage) -> StageResult:
     ]
     params = _jsonable(stage.parameters(run))
     key = _stage_key(run, stage, inputs, params)
-    if (
-        not run.config.force
-        and old is not None
-        and old.get("result", {}).get("key") == key
-        and _outputs_intact(run, old)
-    ):
+    same_key = old is not None and old.get("result", {}).get("key") == key
+    intact = same_key and _outputs_intact(run, old)
+    if run.config.force:
+        reason = "forced"
+    elif old is None:
+        reason = "no_receipt"
+    elif not same_key:
+        reason = "key_changed"
+    elif not intact:
+        reason = "outputs_changed"
+    else:
+        reason = "cache_hit"
+    profile["reason"] = reason
+    profile["lookup_s"] = round(time.perf_counter() - profile.pop("lookup_started"), 6)
+    if old is not None:
+        profile["previous_compute_s"] = old.get("result", {}).get("wall_s")
+    if not run.config.force and intact:
         outputs = tuple(str(entry["relpath"]) for entry in old.get("outputs", []))
         _restore(run, stage, old)
         run.log(f"[{stage.name}] skipped (inputs, parameters and code unchanged)")
@@ -2684,6 +2808,7 @@ def _write_run_json(run: _Run, status: str, error: list[str] | None, wall_s: flo
                     for result in run.results
                 ],
                 "wall_s": round(wall_s, 3),
+                "profile": run.profile,
                 "notes_zh": list(dict.fromkeys(run.notes)),
                 "error": error,
                 "facts": run.result_extras,

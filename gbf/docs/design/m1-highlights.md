@@ -73,7 +73,7 @@ frame / fps. Speeds in m/s in storage, km/h only on screen.
 | `label_eval.json` | `gbf.label_eval` | with `--labels`: the label file's moments matched to the highlights (peak error in frames, type agreement, window IoU), the comparison's sentences, and where the labels come from in the file's own words (`labels_source`, `source_zh`) |
 | `cuts.json` | `gbf.pipeline` | cuts, cut-detection settings, frame_count, fps, restrictions |
 | `clips/full.mp4`, `clips/full.render.json` | `gbf.render` via `gbf.pipeline` | the whole clip with the overlay and the original audio |
-| `receipts/<stage>.json`, `run.json` | `gbf.pipeline` | `urn:gbf:schema:receipt` kind run: inputs and outputs by sha256, parameters, code, `source_sha256` (the fingerprint of the gbf source that every stage key holds), wall_s, facts, notes_zh; `run.json` lists each stage as ran, skipped or kept |
+| `receipts/<stage>.json`, `run.json` | `gbf.pipeline` | `urn:gbf:schema:receipt` kind run: inputs and outputs by sha256, parameters, code, full provenance `source_sha256`, per-stage `stage_sources` and `cache_version`, wall_s, facts, notes_zh; `run.json` lists each stage as ran, skipped or kept and profiles cache lookup and elapsed time |
 
 `highlights.json`: `{"schema_version": 1, "fps": "25/1", "frame_count": N, "highlights":
 [{"id", "type", "start_frame", "peak_frame", "end_frame", "score", "cues": {...},
@@ -83,6 +83,20 @@ with their Chinese names (`gbf.highlights.TYPE_NAMES_ZH`): `duel_tackle` 贴身�
 `ball_strike` 触球（球速突变） (an abrupt change of the ball's image velocity near a player: a
 shot, a pass, a touch or a deflection alike), `sprint` 高速冲刺, `closeup_reaction` 球员反应
 (what is left when no play cue is strong enough; its shot need not be a close-up).
+
+The `duel` cue's 4 m / 2 box-height ball radius is a candidate search area, not proof of a
+contest. Since the 2026-11-13 development review, each candidate pair must also have a
+frame where **both** players are within `DUEL_BALL_REACH_M` (1.5 m), or
+`DUEL_BALL_REACH_H` (0.75 own box heights in the image), of the ball within
+`DUEL_BALL_CONTEXT_S` (0.5 s, rounded to frames). The context allows a dribble between
+touches and stays in the same shot, pair and coordinate unit. Unsupported pairs are
+discarded before choosing the nearest pair; cue value and evidence are absent when no
+pair qualifies. This prevents nearby runners who cannot both reach the ball from gaining
+a sustained duel cue. Shared reach is corroboration, not a measured tackle or body
+contact; these starting thresholds have only a development regression check, not an
+independent accuracy validation. Missing ball positions and calibration/tracking errors
+can still hide real contests or create false support.
+
 `cues` maps each of the 7 cues to `{value, weight, contribution, frame, ...evidence}`;
 `cues.cut_emphasis` also holds `extended_into_shot_id` and `joined_shot_event`, and the two
 attack cues hold `ball_box_m` (how close the ball came to the box, `ev_ball_box_m` of their
@@ -436,9 +450,24 @@ watermark badge under the same restriction rule.
 [--audio-offset-s S]`. `--out` must lie outside every git work tree. Stages: import, shots,
 refine, kinematics, ball, audio, highlights, pose, lift3d, moments, measure, render, report;
 a stage is skipped when its inputs (by sha256), parameters and code are unchanged. Code here
-is every .py file of the gbf package the run executes (gbf.gate and gbf.web left out),
-hashed into every stage's key, so any code change re-runs every stage, the expensive pose
-stage included; measure also hashes `registries/metrics.toml`, where its tiers come from.
+is each stage's declared modules plus their transitive local imports and parent package
+initializers, including imports inside functions. The pipeline itself, ingest, IO, plugin
+contracts and JSON schemas are shared conservatively; changing them invalidates every
+stage. Dynamic imports fall back to the whole package. Unrelated evaluation tools no
+longer invalidate detection imports or pose. A highlight edit reuses unchanged upstream
+artifacts, while changes to highlight windows still invalidate pose through its input
+hash. Each listed output must still match its receipt's sha256. Full package provenance
+is retained separately as `source_sha256`; reused receipts keep their original provenance.
+Cache version 2 intentionally does not trust legacy keys: its first selected run rebuilds
+them. `--stages` keeps its explicit reuse semantics and does not certify that unselected
+stages match current code or inputs; use all stages for a coherent final run.
+Measure also hashes `registries/metrics.toml`, where its tiers come from.
+`run.json.result.profile` records status, reason, cache lookup seconds, total stage elapsed
+seconds (including validation) and the previous receipt's compute time. The previous time
+is historical context, not a measured time saving. Automatic video-only runs additionally
+write `execution-profile.json` under their work directory, including prepare, external
+prediction and core analysis timings, also on stage failure. This separates external
+recognition from the core's own stage times; it does not cache external prediction jobs.
 `--force` re-runs the selected stages anyway. Exit code 0 on success, 2 when the input is
 refused (every problem listed, nothing written: among them a plugin export without
 `plugin-receipt.json`, or with `keypoints.jsonl` but without its receipt when the refit
@@ -681,6 +710,7 @@ judgement, not facts.
 | `BALL_GOAL_NEAR_M` | 11.0 | hand-set | the distance at which the ball_goal cue reaches its full value, put at the penalty mark (11 m) |
 | `DUEL_BALL_RADIUS_M`, `DUEL_NEAR_M`, `DUEL_FAR_M` | 4.0; 1.0; 4.0 | hand-set | from typical duel distances (module docstring) |
 | `DUEL_BALL_RADIUS_H`, `DUEL_NEAR_H`, `DUEL_FAR_H` | 2.0; 0.5; 2.0 | hand-set | the image-plane counterparts, one box height standing for about 1.8 m (docstring) |
+| `DUEL_BALL_REACH_M`, `DUEL_BALL_REACH_H`, `DUEL_BALL_CONTEXT_S` | 1.5; 0.75; 0.5 | hand-set | shared ball reach within roughly one stride, with half-second context; added after the 2026-11-13 development review of parallel-running false positives, not independently validated |
 | `DUEL_IMAGE_MAX_BOX_H_PX`, `SHOT_UPPER_BODY_MIN_BOX_H_PX` | 540.0 | hand-set | half the frame: a taller median box is an upper body whose box bottom is the frame edge (docstring); also gbf.measure's `image_feet_max_median_box_px` |
 | `STRIKE_HALF_WIDTH_S` | 0.6 | hand-set | not recorded |
 | `STRIKE_FULL_MAGNITUDE_BH_S` | 10.0 | hand-set | docstring: about 18 m/s for a 1.8 m box, a firm pass or a shot |

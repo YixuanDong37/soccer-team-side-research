@@ -600,12 +600,18 @@ def test_report_and_receipts(synthetic_run: dict[str, Any]) -> None:
         "pose.parquet",
         "lift3d.parquet",
         "ball_track.parquet",
+        "ball_candidates.parquet",
         "import/tracks.parquet",
         "import/calib.parquet",
         "refine/tracks.parquet",
         "refine/calib.parquet",
     ):
         assert sorted(read_restrictions(out / name)) == ["hl3", "no_share"], name
+    candidates = pd.read_parquet(out / "ball_candidates.parquet")
+    ball = pd.read_parquet(out / "ball_track.parquet")
+    counts = candidates.groupby("frame").size().reindex(ball.frame, fill_value=0)
+    assert counts.tolist() == ball.candidate_count.tolist()
+    assert not candidates.duplicated(["frame", "cand_index"]).any()
     # The import tables keep their producer while gaining the run's restrictions.
     tracks_meta = pq.read_schema(out / "import" / "tracks.parquet").metadata
     assert tracks_meta[b"gbf.producer"] == b"gbf.sngs_import"
@@ -1704,6 +1710,52 @@ def test_the_source_fingerprint_covers_every_module_but_the_gate_and_the_web_pag
     assert fingerprint(copy) != edited
 
 
+def test_stage_sources_isolate_highlight_edits_and_include_transitive_helpers(
+    unicode_tmp_path: Path,
+) -> None:
+    package = Path(pipeline_module.__file__).resolve().parent
+    copy = unicode_tmp_path / "source" / "gbf"
+    shutil.copytree(package, copy, ignore=shutil.ignore_patterns("__pycache__"))
+    table = pipeline_module._stage_table()
+
+    def sources():
+        return {name: pipeline_module._stage_sources(copy, stage) for name, stage in table.items()}
+
+    before = sources()
+    file = copy / "highlights.py"
+    file.write_bytes(file.read_bytes() + b"\n# changed highlight rule\n")
+    after = sources()
+    for name in ("import", "shots", "refine", "kinematics", "ball", "audio"):
+        assert before[name] == after[name], name
+    for name in ("highlights", "moments", "render", "report"):
+        assert before[name] != after[name], name
+    file = copy / "evaluate" / "product.py"
+    file.write_bytes(file.read_bytes() + b"\n# evaluation-only edit\n")
+    assert pipeline_module._stage_sources(copy, table["ball"]) == after["ball"]
+    helper = "geometry/ground.py"
+    assert helper in after["ball"]
+    file = copy / helper
+    file.write_bytes(file.read_bytes() + b"\n# changed transitive helper\n")
+    assert sources()["ball"] != after["ball"]
+    # Shared orchestration changes conservatively invalidate every stage.
+    old = sources()
+    file = copy / "pipeline.py"
+    file.write_bytes(file.read_bytes() + b"\n# changed orchestration\n")
+    assert all(old[name] != value for name, value in sources().items())
+
+
+def test_dynamic_import_alias_falls_back_to_full_sources(unicode_tmp_path: Path) -> None:
+    package = Path(pipeline_module.__file__).resolve().parent
+    copy = unicode_tmp_path / "source" / "gbf"
+    shutil.copytree(package, copy, ignore=shutil.ignore_patterns("__pycache__"))
+    file = copy / "ball.py"
+    file.write_bytes(file.read_bytes() + b"\nfrom importlib import import_module as load\n")
+    sources = pipeline_module._stage_sources(copy, pipeline_module._stage_table()["ball"])
+    assert "evaluate/product.py" in sources
+    assert "geometry/ground.py" in sources
+    assert "contracts/schemas/receipt.schema.json" in sources
+
+
 _FROM_COPY = """
 import json
 import sys
@@ -1780,6 +1832,71 @@ def test_editing_a_helper_of_a_stage_reruns_it(
     )
     assert report_stage() == "ran"
     assert "朝向（3D 参考，改）" in (run / "report.html").read_text(encoding="utf-8")
+
+
+def test_highlight_source_edit_reuses_upstream_outputs_in_a_fresh_process(
+    synthetic_run: dict[str, Any],
+    unicode_tmp_path: Path,
+) -> None:
+    run = unicode_tmp_path / "cache run"
+    shutil.copytree(synthetic_run["out"], run)
+    source = unicode_tmp_path / "source"
+    package = Path(pipeline_module.__file__).resolve().parent
+    shutil.copytree(package, source / "gbf", ignore=shutil.ignore_patterns("__pycache__"))
+    inputs = synthetic_run["inputs"]
+    args = {
+        "video": str(inputs["video"]),
+        "audio": str(inputs["audio"]),
+        "sngs": str(inputs["sngs"]),
+        "ball": str(inputs["ball"]),
+        "out": str(run),
+        "team_names": TEAM_NAMES,
+        "base": str(unicode_tmp_path),
+    }
+    env = {
+        **os.environ,
+        "PYTHONPATH": str(source),
+        "PYTHONUTF8": "1",
+        "PYTHONDONTWRITEBYTECODE": "1",
+    }
+    upstream = ("import", "shots", "refine", "kinematics", "ball", "audio")
+    script = _FROM_COPY.replace('stages=("report",),', f"stages={(*upstream, 'highlights')!r},")
+
+    def execute():
+        done = subprocess.run(
+            [sys.executable, "-c", script, json.dumps(args)],
+            capture_output=True,
+            env=env,
+            timeout=600,
+            check=False,
+        )
+        assert done.returncode == 0, done.stderr.decode("utf-8", "replace")
+        return json.loads(done.stdout.decode("utf-8").strip().splitlines()[-1])
+
+    # Match the subprocess's pose_model and restrictions before checking reuse.
+    execute()
+    before = {
+        name: sha256_file(run / name)
+        for name in ("refine/tracks.parquet", "ball_track.parquet", "highlights.json")
+    }
+    warm = execute()
+    assert all(warm[name] == "skipped" for name in (*upstream, "highlights"))
+    file = source / "gbf" / "highlights.py"
+    file.write_bytes(file.read_bytes() + b"\n# algorithm edit\n")
+    statuses = execute()
+    assert all(statuses[name] == "skipped" for name in upstream)
+    assert statuses["highlights"] == "ran"
+    assert before == {name: sha256_file(run / name) for name in before}
+    profile = read_json(run / "run.json")["result"]["profile"]
+    assert profile["highlights"]["reason"] == "key_changed"
+    assert profile["ball"]["reason"] == "cache_hit"
+    assert profile["ball"]["elapsed_s"] > 0
+    assert profile["ball"]["lookup_s"] > 0
+    # A damaged cached output must be rebuilt, even when its key still matches.
+    file = run / "ball_track.parquet"
+    file.write_bytes(file.read_bytes() + b"damaged")
+    assert execute()["ball"] == "ran"
+    assert read_json(run / "run.json")["result"]["profile"]["ball"]["reason"] == "outputs_changed"
 
 
 def test_measure_reruns_when_the_metric_registry_changes(
