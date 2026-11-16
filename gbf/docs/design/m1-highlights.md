@@ -15,7 +15,9 @@ frames. Honesty rules from ADR 0004 apply: every number has an evidence record, 
   missing, notes that analysis uses the images only, and renders without an audio stream.
   Missing or malformed input files remain errors.
 - `sngs_dir`: plugin-sngs export (`detections.jsonl`, `calib.jsonl`, `plugin-receipt.json`),
-  written by the GPL side; the core only reads these files.
+  written by the GPL side; the core only reads these files. An export may also carry
+  `embeddings.npz`, the tracker's appearance embeddings (below); it is read only with
+  `--relink`.
 - `ball_raw`: `ball_raw.jsonl` from Ultralytics YOLO11m with COCO-pretrained weights, run by
   a script outside this repository (no gbf plugin hosts it yet; `registries/models.toml`,
   `ultralytics-yolo11`: AGPL-3.0-only, tag `agpl_network_source`; the `ball-receipt.json`
@@ -37,6 +39,20 @@ camera), `C` (3, metres), `radial_distortion` (all zero for NBJW), `width`, `hei
 p >= 0.5 and the projected model points, or null with fewer than 4 keypoints) and
 `rep_err_n_keypoints`. `rep_err_px` is self-consistency, not ground truth.
 
+`embeddings.npz` (optional; read only when `--relink` is on and the receipt lists the file
+with its sha256): one row per line of `detections.jsonl`, in the same order: `frame`
+(integers), `track` (integers, -1 unknown), `box` (n x 4 float64, the line's box) and `emb`
+(n x D float32: the embedding the plugin's re-identification model gave the detection, as
+stored, not normalised; a NaN row where a detection has none). The import checks every row
+against its line (frame, track id, and the box to a thousandth of a pixel) and refuses the
+export when one differs. The receipt of such an export has an object `embeddings` with the
+name of the model (`model`) and the file's `rows` and `dim`; the import refuses a receipt
+that states another row count or dimension, and records the model and the dimension. The
+embeddings are products of that model (PRTReid, tag `hl3`): the exporter writes them only
+into an export tagged `hl3`, and the receipt's tags reach every artifact of the run. gbf
+does not depend on the exporter for this: a run whose relink step reads the embeddings adds
+`hl3` itself (see "Relink", tags).
+
 Usable calibration ("pitch-usable") = `calib_status == "fresh"` AND `rep_err_px <= 8.0` (an
 empirical starting value: on the development clip fresh frames have median 3.3 px, P90 4.6 px,
 and a few outliers above 100 px). Only pitch-usable frames may feed pitch positions, speeds,
@@ -56,6 +72,8 @@ frame / fps. Speeds in m/s in storage, km/h only on screen.
 | `tracks.parquet` | `gbf.sngs_import` | frame int64, track_id int64, x1 y1 x2 y2 float64, conf float32, role string, team string?, jersey string?, jersey_conf float64?, foot_u foot_v float64, calib_status string, pitch_usable bool, pitch_x pitch_y float64 (NaN unless pitch-usable), in_pitch bool |
 | `calib.parquet` | `gbf.sngs_import` | one row per canonical frame (frames missing from the export get calib_status `none`): frame_index int64, width height int32, K R fixed_size_list<float64>[9] and C [3] (null when none), calib_status, calib_age int32, rep_err float64?, rep_err_n_keypoints int32, pitch_usable bool |
 | `refine/tracks.parquet`, `refine/calib.parquet`, `refine/refine.json` | `gbf.enhance`, `gbf.team_check` | the tables above after clean-up and refit: track ids split at cuts and, within a shot, where a player left the picture and came back (`gbf.track_tools.split_tracks`: a gap of at least `REENTRY_MIN_GAP_S` without the id, with its box touching a frame edge on the frame before or after the gap; the tracker's id after such a gap rests on appearance alone and can be another player's), so a piece's team and jersey are judged on its own rows and never inherited across the gap, and one player seen before and after leaving the picture has two ids (`source_track_id` keeps the plugin's id; `refine.json` lists the re-entry pieces under `tracks.reentry_pieces`, and a report note counts them), jersey kept only when read confidently and consistently; with plugin keypoints (`keypoints.jsonl` + receipt) the calibration of wide-shot camera groups refitted with a fixed camera centre and smooth rotation and zoom (calib_status `refined`, extra columns refined, refit_group, refit_n_points, refit_rep_err) and the ground positions recomputed, except a group whose refit is far worse on held-out keypoints than per-frame fits or did not converge, which keeps the plugin calibration (`fallback` in `refine.json`); team labels checked against the shirt colours on the original frames: a player track whose shirt colour is nearer the other team's than its own by more than the margin loses its label, which is cleared, never flipped; once both teams have a colour, a piece split off at a cut or a re-entry whose shirt could not be checked loses its label too (it was inherited from the id's earlier player). Then the role labels are checked against the one referee the laws allow on the pitch (`gbf.role_check`): when more than half of the frames with a pitch-usable row hold two or more people labelled referee at least 2 m inside the touchlines and goal lines, every team label is cleared and a report note says why; roles are kept (the count says that some are wrong, not which). Then the stitch audit (`gbf.stitch`, see "Stitch audit" below) records under `stitch_audit` which pieces could be proven to be one person, changing nothing. `refine.json` has the held-out reprojection error against a per-frame free-centre fit, each fitted camera group's solver status, evaluations and whether it converged, the ground jitter before and after, and the team check's report: each track's verdict (consistent, inconsistent, unchecked; a cleared split-off piece also `cleared` "split_piece"), `cleared_inherited_tracks`, and among the counts `rows_cleared` (every player row whose label the refine stage cleared) and `rows_cleared_split_pieces`; tracks with too few shirt samples keep the plugin's label, and the report note counts them; and the role check's report under `roles`: verdict (plausible, implausible, not_judged), frames, crowded frames and their share, the most referees inside at once and the rows whose team label it cleared; last, the plugin's left/right team names are checked against where the teams stand (`gbf.side_check`, report under `sides`: verdict consistent, uncertain, contradicted, not_judged or no_teams, `attack_direction_known`, the right team's mean pitch x minus the left team's over the outfield players' pitch-usable rows (`difference_m`) with its 95 % interval from resampling whole tracks (`interval_m`), and the tracks and rows per team): the plugin names its two clusters by that comparison alone, so when the interval does not lie wholly above 0 (or a team has fewer than two tracks) the direction each team attacks counts as unknown for the later stages and a report note says why (see "Attack direction" under the highlight cues); the labels are never swapped |
+| `import/embeddings.parquet` | `gbf.sngs_import` | only with `--relink` on and an export that lists `embeddings.npz`: frame int64, track_id int64 (the plugin's id), emb fixed_size_list<float32>[D] (all NaN where the detection has no embedding), one row per row of the import's `tracks.parquet` in the same order; the schema metadata key `gbf.embeddings` (and `embeddings` in `import.json`) holds the model the receipt names, null when it names none, and D |
+| `refine/tracks.parquet` (column `piece_id`), `refine/refine.json` (key `relink`) | `gbf.relink` | only with `--relink` on (see "Relink" below): `track_id` holds the id of the row's identity, and a new last column piece_id int64 the track id from before the step, which every other report of `refine.json` (teams, roles, stitch audit) uses; `relink` has mode, applied, reason, the method's setting and parameters, fps and the fitted fps, the frame size (the calibration table's) and the pixel scale, `embeddings` (the model the plugin receipt names and the dimension), counts (among them `rows_without_embedding`), the cuts `[piece, frame]`, the links `[earlier, later]` (sub-piece ids), the identities of more than one sub-piece and the linker's decision log (`merges`); a mode that is on but did not run has mode, applied false and the reason (and `rows_without_embedding` when the export has embeddings but no row holds one) |
 | `shots.parquet` | `gbf.shots_grammar` | shot_id int64, start_frame int64, end_frame int64 (inclusive), shot_type string (wide, medium, close), fresh_share float64, median_box_h float64 |
 | `ball_track.parquet` | `gbf.ball` | frame int64, u v float64, radius_px float64, conf float32 (NaN unless detected), status string (detected, interpolated, missing), candidate_count int32, pitch_x pitch_y float64 (ball-centre plane z = -0.11, NaN unless pitch-usable), ground_assumption bool |
 | `ball_events.parquet`, `ball_contacts.parquet` | `gbf.ball` | `BALL_EVENT_COLUMNS`: frame, kind (direction_change, speed_up, slow_down), magnitude (bh/s), u, v, nearest_track_id, nearest_team, nearest_dist_box_h, then shot_id, angle_deg, speed_before, speed_after, at_foot. Strike profile and contact profile (`CONTACT_PARAMS`); `ball_events` needs the keyword `shots` |
@@ -254,6 +272,132 @@ certified once on the holdout before any stitch may change a track. The geometri
 rarely holds for a real exit (the disc starts half outside the picture and grows by about
 24 m in diameter per second): it covers quick returns and fragments; most re-entries stay
 apart.
+
+## Relink (cutting tracks where the tracker changed person, joining the pieces of one person)
+
+Off by default. With `--relink off` nothing of this runs, the import reads no embedding,
+and every import and refine artifact has the bytes it had before the step existed. With
+`--relink strict` the refine stage ends with `gbf.relink`, after the
+team, role and side checks and the stitch audit, on the track table and the calibration it
+is about to write. Unlike the stitch audit it CHANGES the track table (ids below).
+
+The step is a port of the frozen method `fuse_r1` of the project's re-identification lab
+(outside this repository): given the same track table, calibration and embeddings it gives
+that lab's cuts and links. This was checked on this machine on the 13 development clips,
+each tracked with two tracker settings: the strict mode's cuts and links are the lab's on
+all 26 runs.
+Decisions are thresholds on floating-point numbers that go through BLAS, so on another
+machine a decision that sits within rounding of its threshold may differ. Per shot:
+
+1. Cuts (`gbf.relink.cuts`): inside a piece of the track table the plugin's track sometimes
+   moves onto another person. Candidates are gaps of at least `gap_min` frames and minima of
+   the appearance similarity before and after a row; a logistic model on four features
+   (that similarity, its margin over better origins or continuations among the other pieces,
+   the gap, the metres on the pitch across it) gives P(two people), and the piece is cut
+   greedily where P >= `p_cut`. These cuts have nothing to do with camera cuts.
+2. Appearance (`gbf.relink.appear`): one prototype per sub-piece, the mean unit embedding of
+   its clean rows (box away from the frame border, at least 40 px tall at 720 lines,
+   overlapping no other box; with fewer than `min_clean` of them, all its rows), minus its
+   team's mean and whitened by the within-piece covariance. Referees and sub-pieces without
+   an embedding are no candidates.
+3. Tiers: a sub-piece with at least `n_solid` boxes is solid, the others are short.
+4. Position evidence (`gbf.relink.space`), on the solid sub-pieces only: where a piece ended
+   and a later one started on the pitch, carried through the gap by the movement of the
+   visible players; whether a hidden path within `max_speed` connects them; for how long
+   the carried points lay inside the picture (a person in the picture would have been
+   tracked); frame-border flags, team and role labels. A conditional-logit model lets the
+   candidates of a piece compete with each other and with "nobody", and the doubly
+   normalised assignment score is what the linker reads.
+5. Pair bonus (`gbf.relink.link`): the position score and "the plugin tracked both under one
+   id", weighted by the lab's pair model and expressed in units of the appearance cosine.
+6. Core links: two groups of solid sub-pieces of the same appearance team that share no
+   frame merge, most similar pair first, when the appearance cosine is at least `floor`, the
+   similarity (cosine plus the best bonus at a junction in time) at least `t_abs`, each is
+   the other's best partner, and the similarity exceeds by the margin both `t0` ("nobody")
+   and the best rival seen together with the partner.
+
+One mode besides `off`: `strict` = margin `LinkParams.margin` (0.6), which asks for position
+evidence on top of appearance (the largest bonus is below 1, and the similarity must exceed
+`t0` + margin = 1.1).
+
+Identifiers. Inside the step a piece is a track id of the table (it must be below 10^7), and
+the rows of a piece from its j-th cut on (j from 0) form the sub-piece `piece + 10^7 * (j +
+1)`: `refine.json` lists cuts as `[piece, first frame of the new sub-piece]` and links as
+`[earlier sub-piece, later sub-piece]`. In `refine/tracks.parquet` every row gets the id of
+its identity (the sub-pieces joined by links), which is the sub-piece id of the identity's
+earliest member: an identity that starts with an uncut piece keeps that piece's id, and a
+cut-off tail joined to nothing keeps its sub-piece id (10000023, say). The old id moves to a
+new last column `piece_id`; `source_track_id` stays the plugin's id; rows, row order and
+every other column stay as they are, and team, role and jersey stay per row (one identity
+may hold rows with and without a team label). Two pieces seen in one frame are never
+joined: the linker never proposes it, and a link whose two identities share a frame would be
+refused and counted (`links_refused_same_frame`). The team, role and stitch reports of
+`refine.json` were written before the step and use `piece_id`; where the measure and render
+stages ask for a track's team-check verdict, an identity is "consistent" only when every
+piece of it with rows of that team is.
+
+Shots. The method assumes one continuous camera, and track ids never span a camera cut
+(they are split there), so it runs once per shot, on the shot's rows with frames counted
+from the shot's first frame; no link joins two shots. A shot with fewer than two frames or
+two pieces is left alone, and so is a track that lies wholly outside every shot (it keeps
+its id). A track with rows in two shots, or in a shot and beside the shots, fails the stage.
+
+Frame size. The two pixel constants of the clean-row rule and the two of the position
+evidence are given at 720 lines and scale with the frame height. That height, and the frame
+size of the border and in-picture tests, are the calibration table's (`width`, `height`):
+the grid the plugin's boxes and cameras are in, which `refine.json` records as
+`frame_size`. The size of the video file is not used.
+
+Rows without an embedding (a NaN row, or a vector of length zero) take no part in the
+appearance of their piece; `refine.json` counts them (`rows_without_embedding`) and the
+report note says how many. A piece none of whose rows has one is never joined: it is no
+candidate of the linker. It is not cut either: without embeddings the appearance features
+of a gap read "the same person", and the gap and the distance on the pitch alone reach the
+cut level only for a gap of more than 50 000 frames inside one shot (over half an hour at
+25 fps).
+
+Tags. A run whose relink step reads the embeddings carries `hl3`
+(`gbf.pipeline.RELINK_RESTRICTIONS`, listed under `relink` in `restriction_sources` of
+`run.json`), whatever the export's receipt says: the embeddings are taken to be PRTReid
+products, and the parameters were fitted with such embeddings (rule 3 of ADR 0002). The
+tag is set when the run starts, from what the run will read (a mode is on, no input carries
+`no_identity`, the receipt lists `embeddings.npz`), so it also stays when the step is then
+skipped for another reason. Tying the tag to the run, and not refusing an export whose
+receipt lacks it, keeps the rule in gbf, where the parameters are, and never loses a tag
+because a tool outside this repository forgot it.
+
+When a mode is on but the step does not run, the table only gains `piece_id` (equal to
+`track_id`), `refine.json` has `relink` with `applied` false and the reason, and the report
+gets a note: `no_embeddings` (the export lists no `embeddings.npz`, or no row of it holds
+an embedding; the section then also has `rows_without_embedding`), `no_identity` (the
+run's restrictions hold `no_identity`: ADR 0002 switches identity linking off for such
+inputs, and the import does not read the embeddings either), `track_ids_out_of_range` (an
+id of 10^7 or more) or `no_frame_size` (the calibration table names no single frame size).
+Embeddings that do not describe the table's rows (another row count, frame or plugin id)
+fail the stage; they are never used misaligned.
+
+Validation status. Every number of the step was fitted or set on 13 train clips of
+SN-GSR-2025 (see the paragraph above the tables of gbf.relink.inputs under "Tuned
+parameters"); the shipped fits are in-sample on those clips. The lab's own figures count
+the 137 returns of a player that the annotations hold as found, joined wrong or left
+unjoined. They are of three kinds, and only the first is held out in full:
+
+- Fully held out (leave-one-clip-out, the lab's headline): for each clip the weights were
+  fitted and the setting (the margin) was chosen by the lab's rule on the other 12 clips.
+  Strict: 67 found, 3 wrong, 67 unjoined.
+- Frozen setting, held-out weights: the weights were fitted without the judged clip, but
+  the setting is the shipped one, which was chosen on all 13 clips. So this figure is not
+  held out for the choice of the setting. Strict: 70 found, 2 wrong, 65 unjoined.
+- In-sample: the shipped weights and setting on the clips they come from, which is what
+  this port reproduces. Strict: 69 found, 2 wrong, 66 unjoined.
+
+Most wrong joins sit in one clip, and the re-identification model may have been trained on
+the same dataset split. The second tracker setting is another configuration on the same
+clips, not new footage. Nothing is validated on other footage, resolutions or frame rates:
+the mode stays off by default and the report note says so whenever it ran.
+
+The stitch audit above is independent of this step: it runs before it, on the ids from
+before, and still changes nothing.
 
 ## Highlight cues (per frame)
 
@@ -509,13 +653,29 @@ watermark badge under the same restriction rule.
   in the air is placed beyond the margin, attackers in the box add nothing to the score,
   so such an attack can rank lower or be missed.
 
+- Relink (`--relink`) is unvalidated outside its 13 development clips (720 lines, 25 fps,
+  one shot of 30 s each, one tracker and one re-identification model). Pixel constants
+  scale with the frame height, but the cut model, the position weights and the embeddings
+  were fitted on 720-line footage. Constants counted in frames (windows of rows, the 10 s
+  look-back of the cut model, the reach programme's step) and the cut model's gap feature
+  are not rescaled at another frame rate; the report note says when the rate differs from
+  25 fps. Multi-shot clips, close-ups without calibration (no position evidence, so strict
+  joins nothing there) and replays are untested, and so is a long wide shot: memory grows
+  with pieces x frames of a shot. Rows without an embedding weaken the step without
+  stopping it (the note counts them); only when no row has one is it skipped.
+- Relink ignores jersey numbers and joins pieces of one appearance team even when one has
+  no team label, so an identity can carry two different confident numbers or rows with and
+  without a team; nothing checks or reports that yet. With a mode on, ids of 10^7 and more
+  appear in tables and report texts.
+
 ## Running it
 
 `python -m gbf highlights --video V --audio-source A --sngs DIR --ball JSONL --out DIR
 [--team-names left=NAME,right=NAME] [--labels LABELS.json] [--no-calib-refine]
 [--max-highlights N] [--min-separation-s S] [--pose-model x|m|none] [--models-dir D]
 [--stages a,b,...|all] [--force] [--restrictions no_share,...] [--no-full-clip]
-[--audio-offset-s S]`. `--out` must lie outside every git work tree. Stages: import, shots,
+[--audio-offset-s S] [--relink off|strict]`. `--out` must lie outside every git work
+tree. Stages: import, shots,
 refine, kinematics, ball, audio, highlights, pose, lift3d, moments, measure, render, report;
 a stage is skipped when its inputs (by sha256), parameters and code are unchanged. Code here
 is each stage's declared modules plus their transitive local imports and parent package
@@ -543,6 +703,14 @@ would use it, or with a receipt that is not readable JSON or gives no valid rest
 list), 1 when a stage fails (`run.json` written with status failed). `python -m gbf web`
 starts these runs from a local page and shows them ([web.md](web.md)).
 
+`--relink` (default `off`) chooses the relink step of the refine stage (see "Relink"):
+`strict` cuts tracks where the tracker changed person and
+joins the pieces of one person, from the export's `embeddings.npz`. The mode is a
+parameter of the import and the refine stage, so changing it runs both again; with `off` the
+import reads no embedding and both stages write what they wrote before the step existed.
+A run that reads the embeddings carries the tag `hl3`, also when the export's receipt does
+not (source `relink` in `run.json`).
+
 With `--labels`, the report compares the highlights with the label file and says where the
 labels come from only in the file's own words: it quotes the file's `labelled_by`, `method`,
 `labelled_on`, `blinding` and `status` as written (`gbf.label_eval.source_zh`), says when
@@ -567,7 +735,9 @@ the repository says how the value was chosen. Numbers measured on the clip appea
 aggregates (medians, ratios, ranges, counts, thresholds); no frames, labels, identities or
 descriptions of the clip. None of these values is validated: the fitted and hand-set ones
 are re-fitted or confirmed on SoccerNet-GSR (`soccernet-gsr-2025`) before P5, and none may
-be used in a commercial build while this clip is its only source.
+be used in a commercial build while this clip is its only source. The one exception is
+the relink step: the values of the gbf.relink modules were not chosen on that clip but on
+clips of SN-GSR-2025, as the paragraph above their tables says.
 
 Format, checked against the code by `tests/test_docs_params.py`: one table per module, under
 a heading that starts with the module's name, with the columns Parameter, Value, Kind and
@@ -587,6 +757,9 @@ Not listed, each named with its reason in `NOT_TUNED`: conventions and formats (
 track, the id stride of tracks split at cuts, the codes of the kinematics rejection tests),
 copies of listed values, numerical guards (`conf_floor`, focal-length bounds, the floor of
 digital silence), gbf.label_eval's evaluation tolerance, the audio offset set per run,
+the id stride of the sub-pieces after a relink cut, the 720-line reference height of the
+relink pixel constants, the frame rate the relink parameters were fitted at and the block
+of rows in which the relink inputs look for embeddings,
 limits of input checks, error reports and memory blocks, and output settings (encoder and
 audio format, the ground ellipse under a player, the facing arrow's length, the data card's
 layout, the pose stage's decode ranges). Not listed one by one either: the rule sets of
@@ -600,7 +773,9 @@ inside gbf.lift3d's body fit and facing vote (`_fit_body`, `estimate_facing`). g
 gbf.pose and gbf.report have no tuned parameters of their own (the pose model is chosen with
 `--pose-model`, and gbf.measure's `contact_candidates` and `contact_candidate_max_bh` choose
 the boxes that get a pose), gbf.label_eval has only its evaluation tolerance, and
-gbf.pipeline's own settings are listed with the module they are passed to.
+gbf.pipeline's own settings are listed with the module they are passed to. gbf.relink
+and gbf.relink.api hold no number of their own: the parameters are those of the modules
+below.
 
 ### gbf.sngs_import (import of the plugin export)
 
@@ -716,6 +891,75 @@ Added 2026-11-13 with the stitch audit (see "Stitch audit" above). No value was 
 | `StitchParams.jersey_min_reads`, `StitchParams.jersey_min_agreement`, `StitchParams.jersey_min_mean_conf`, `StitchParams.jersey_min_span_s` | 10; 0.95; 0.85; 1.0 | hand-set | stricter than `confident_jerseys`; the OCR precision is unmeasured |
 | `StitchParams.jersey_rival_min_reads`, `StitchParams.jersey_rival_min_conf` | 2; 0.5 | hand-set | not recorded |
 | `StitchParams.jersey_voted_share` | 0.9 | hand-set | not recorded |
+
+### gbf.relink.inputs (relink: clean rows of the appearance prototypes)
+
+The values of the gbf.relink modules come from the project's re-identification lab (outside
+this repository), not from the private clip. Source: SN-GSR-2025 (`soccernet-gsr-2025` in
+[`registries/data.toml`](../../registries/data.toml)), 13 train clips of 3 matches,
+downscaled to 1280x720 at 25 fps, tracked by the plugin, with the appearance embeddings of
+the plugin's re-identification model PRTReid (tag `hl3`). **Fitted** values were fitted
+with the clips' annotations on all 13 clips (the lab's frozen fits, which this port ships);
+the lab reports results of the same procedure with the judged clip left out, quoted in the
+rows: fully held out (weights and setting without the clip) and, for a frozen setting,
+with held-out weights only (the setting chosen on all 13 clips).
+**Hand-set** values were set by judgement in the lab on the same clips, most with a
+one-at-a-time sensitivity check. None is validated on other footage: 37 clips of the
+dataset were reserved and never touched, and no holdout result exists yet. Following rule 3
+of [ADR 0002](../adr/0002-data-and-media-policy.md), the fitted values inherit their
+sources' restrictions (`hl3` through the embeddings; the dataset's entry says commercial
+builds do not use parameters fitted on it). Pixel constants are given at 720 lines and scale
+with the frame height; constants counted in frames or rows are the lab's at 25 fps and are
+not rescaled.
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `CLEAN_EDGE_PX_720`, `MIN_BOX_H_PX_720` | 1.0; 40.0 | hand-set | the clean-row rule of the lab's appearance check: a box at the frame border or shorter than this describes a person badly (1.5 and 60 px at 1080 lines); not searched |
+
+### gbf.relink.cuts (`CutParams`: relink, cuts where the tracked person changes)
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `CutParams.k_win`, `CutParams.m_min` | 20; 3 | hand-set | rows per side of the before/after descriptor and the clean rows it needs; set by judgement on the clips, never searched; one-at-a-time sensitivity in the lab |
+| `CutParams.gap_min`, `CutParams.min_side_rows`, `CutParams.cos_cand` | 2; 5; 0.9 | hand-set | the candidate rule; set by judgement, never searched; one-at-a-time sensitivity in the lab |
+| `CutParams.alt_frames`, `CutParams.alt_guard` | 250; 5 | hand-set | 10 s and 0.2 s at 25 fps; set by judgement, never searched; one-at-a-time sensitivity in the lab |
+| `CutParams.nms_rows`, `CutParams.margin_clip` | 10; 0.3 | hand-set | set by judgement, never searched; one-at-a-time sensitivity in the lab |
+| `CutParams.pitch_rows`, `CutParams.pitch_within` | 3; 12 | hand-set | not recorded |
+| `CutParams.p_cut` | 0.7 | hand-set | the lab's headline level (leave-one-clip-out: 221 cuts, 59 of the 62 with firm truth on a real switch); kept by the linking method's protocol |
+| `CutParams.mu`, `CutParams.sd`, `CutParams.w`, `CutParams.b` | (0.9444822950244501, 0.11702873894030795, 1.7169157719019472, 0.7297202806447308); (0.065096638607436, 0.12347787727581538, 0.7641615906398944, 0.5140510070715412); (-1.3605814098310482, -0.6699718339482522, 0.32168728401658697, 0.3046642825081575); -3.3411804792796573 | fitted | logistic regression on (cos, mm, lgap, ld) with the annotations of all 13 clips: means, standard deviations, weights and intercept |
+
+### gbf.relink.appear (`AppearParams`: relink, appearance prototypes)
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `AppearParams.min_clean`, `AppearParams.wccn_lambda` | 5; 0.3 | hand-set | never tuned; lab sensitivity: results stable for 1 to 20 rows and for a shrinkage of 0.03 to 3 |
+| `AppearParams.team_mean_min_rows`, `AppearParams.wccn_min_rows` | 50; 10 | hand-set | not recorded |
+
+### gbf.relink.space (`SpaceParams`: relink, position evidence)
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `SpaceParams.edge_px_720`, `SpaceParams.view_margin_px_720` | 10.0; 20.0 | hand-set | pixels at 720 lines; one-at-a-time sensitivity in the lab |
+| `SpaceParams.end_window`, `SpaceParams.max_speed_fit` | 25; 10.0 | hand-set | one second at 25 fps; cap of a fitted end or start velocity |
+| `SpaceParams.fit_min_points`, `SpaceParams.fit_min_span`, `SpaceParams.fit_nearest`, `SpaceParams.fit_outlier_floor_m`, `SpaceParams.fit_outlier_scale` | 6; 6; 5; 1.0; 2.5 | hand-set | the robust line fit of a piece's end and start; not recorded |
+| `SpaceParams.body_height_m` | 1.8 | football fact | a typical player |
+| `SpaceParams.flow_half`, `SpaceParams.flow_min_players`, `SpaceParams.flow_max_speed` | 6; 3; 12.0 | hand-set | the collective flow of the visible players; 12 m/s is above the fastest sprints |
+| `SpaceParams.adv_kernel_m`, `SpaceParams.adv_shrink`, `SpaceParams.cv_horizon_s` | 15.0; 0.5; 1.0 | hand-set | local advection of an end point; lab sensitivity |
+| `SpaceParams.grid_m`, `SpaceParams.grid_x`, `SpaceParams.grid_y`, `SpaceParams.step` | 1.0; (-62.0, 62.0); (-44.0, 44.0); 10 | hand-set | the pitch and about 10 m around it in 1 m cells, 0.4 s steps |
+| `SpaceParams.max_speed`, `SpaceParams.start_radius` | 8.0; 3.0 | hand-set | reach of a hidden path; lab sensitivity |
+| `SpaceParams.inview_cap_s`, `SpaceParams.time_cap_s` | 3.0; 30.0 | hand-set | 30 s is the length of the clips |
+| `SpaceParams.sinkhorn_iters`, `SpaceParams.sinkhorn_tol` | 200; 1e-06 | hand-set | numerical |
+| `SpaceParams.sigma`, `SpaceParams.w`, `SpaceParams.g_in`, `SpaceParams.g_out` | (0.3277373957752331, 1.5025066206921236, 0.800034644312043); (-1.4404843400874152, -0.5572009493363808, -1.2556011387607238, 0.21317124065580034, -0.3546536674430176, -0.5033163671123451, -0.36252916475801683); (-3.2633513520891686, -0.4235423949588176, -0.10996270863227203); (-0.9511335274908453, 0.7228607672659471, -1.1918239495110512) | fitted | with the annotations of all 13 clips: sigma(dt) by least absolute deviation on true partners, the weights of the pair evidence and of the two "nobody" contexts by conditional logit |
+
+### gbf.relink.link (`LinkParams`: relink, pair bonus and links)
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `LinkParams.n_solid` | 5 | hand-set | fixed before the fitting round (the lab's size of a piece that can be judged); with 3 the strict limit on wrong joins breaks, 4 to 10 give the same number of wrong joins |
+| `LinkParams.floor`, `LinkParams.t0`, `LinkParams.t_abs` | 0.3; 0.5; 0.5 | hand-set | fixed before the fitting round; changing each by 10 % either way changes no wrong join |
+| `LinkParams.margin` | 0.6 | fitted | the strict setting, chosen by a pre-registered rule on all 13 clips over 16 margins with and without leaves; 9 of 13 leave-one-clip-out folds choose the same. Of 137 returns, fully held out (setting chosen and weights fitted without the judged clip): 67 right, 3 wrong, 67 lost; this frozen setting with held-out weights (the setting itself was chosen on all 13 clips, so not held out for that choice): 70 right, 2 wrong, 65 lost |
+| `LinkParams.w_cos`, `LinkParams.w_sink_lo`, `LinkParams.w_plug` | 7.1758068639395765; 0.64737768782866; -0.10943515159871339 | fitted | logistic pair model on pairs of solid pieces with the annotations of all 13 clips; its intercept is not used |
+| `LinkParams.sink_floor`, `LinkParams.sink_clip` | 0.001; 0.98 | hand-set | clip of the position score before its log odds; not recorded |
 
 ### gbf.kinematics (box-size, trend and jump tests, speed chord)
 

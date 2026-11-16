@@ -51,6 +51,16 @@ Conventions and rules
     ADR 0002); renders get the watermark 私有素材 · 禁止分享 when no_share or nda is among
     them. The output directory must lie outside every git work tree, the gbf checkout
     included. Receipts and run.json hold file names and run-relative paths only.
+
+Relink (``--relink``, off by default)
+    With a mode on, the import stage also reads the export's ``embeddings.npz`` (when its
+    receipt lists it) into ``import/embeddings.parquet``, and the refine stage ends with
+    gbf.relink: tracks are cut where the tracker changed person and the pieces of one person
+    are joined. ``refine/tracks.parquet`` then holds the new ids in ``track_id`` and the ids
+    from before in a last column ``piece_id``; ``refine/refine.json`` gets a ``relink``
+    section and the report a note. A run that reads the embeddings carries the tags of
+    RELINK_RESTRICTIONS (source ``relink`` in run.json). With ``off`` none of this runs and
+    every import and refine artifact has the bytes it had before the step existed.
 """
 
 from __future__ import annotations
@@ -94,6 +104,7 @@ from gbf import lift3d as lift_mod
 from gbf import measure as measure_mod
 from gbf import moments as moments_mod
 from gbf import pose as pose_mod
+from gbf import relink as relink_mod
 from gbf import render as render_mod
 from gbf import report as report_mod
 from gbf import role_check as role_check_mod
@@ -134,6 +145,15 @@ TRACKS = "refine/tracks.parquet"
 """Track table every stage after ``refine`` reads (ids split at cuts, refitted positions)."""
 CALIB = "refine/calib.parquet"
 """Calibration every stage after ``refine`` reads."""
+EMBEDDINGS = "import/embeddings.parquet"
+"""Appearance embeddings aligned to the import's track rows; written only when ``--relink``
+is on and the plugin export carries them."""
+RELINK_RESTRICTIONS: tuple[str, ...] = ("hl3",)
+"""Tags of every run whose relink step reads the export's embeddings (source ``relink`` of
+run.json's ``restriction_sources``). The step is built for the embeddings of the plugin's
+re-identification model PRTReid, and its parameters were fitted with such embeddings: both
+are ``hl3`` (ADR 0002, the tag's row and rule 3). The exporter is to tag such an export
+``hl3`` itself, but it lives outside this repository, so the run does not depend on it."""
 FINAL = "highlights_final.json"
 """Highlights after key moments and ranking; measure, render and report read this one."""
 
@@ -254,6 +274,10 @@ class PipelineConfig:
         rep_err_max_px: pitch-usable calibration limit for the import, pixels.
         refine_calibration: refit the calibration from the plugin's pitch keypoints when
             the export has them (gbf.calib_refine); False keeps the plugin's per-frame fits.
+        relink: "off" (the default), or a mode of gbf.relink: the refine stage then cuts
+            tracks where the tracker changed person and joins the pieces of one person, from
+            the export's appearance embeddings (skipped with a note when there are none). A
+            run that reads the embeddings carries RELINK_RESTRICTIONS.
         labels: optional labels of the clip (gbf.label_eval); the report then compares
             the highlights with them.
         pose_estimator: a ready gbf.pose.PoseEstimator (tests pass one with a fake runner);
@@ -282,6 +306,7 @@ class PipelineConfig:
     audio_offset_s: float = 0.0
     rep_err_max_px: float = import_mod.DEFAULT_REP_ERR_MAX_PX
     refine_calibration: bool = True
+    relink: str = "off"
     labels: Path | None = None
     pose_estimator: Any = None
     repo_root: Path | None = None
@@ -602,6 +627,8 @@ class _Stage:
     parameters: Callable[[_Run], dict[str, Any]]
     scope: str
     limitations: tuple[str, ...]
+    run_limitations: Callable[[_Run], tuple[str, ...]] | None = None
+    """Limitations that hold only for some settings of a run; listed after the fixed ones."""
 
 
 class _Run:
@@ -727,10 +754,20 @@ class _Run:
 # --------------------------------------------------------------------------- stage bodies
 
 
+def _wants_embeddings(run: _Run) -> bool:
+    """Whether the import reads the export's embeddings: only for a relink mode that is on,
+    and never for a run that must not link identities (ADR 0002, no_identity)."""
+    return run.config.relink != "off" and "no_identity" not in run.restrictions
+
+
 def _stage_import(run: _Run) -> list[str]:
     target = run.path("import")
     summary = import_mod.import_sngs(
-        run.sngs, target, rep_err_max_px=run.config.rep_err_max_px, overwrite=True
+        run.sngs,
+        target,
+        rep_err_max_px=run.config.rep_err_max_px,
+        overwrite=True,
+        embeddings=_wants_embeddings(run),
     )
     if summary.n_frames != run.n_frames:
         raise PipelineError(
@@ -742,8 +779,13 @@ def _stage_import(run: _Run) -> list[str]:
         )
     # The tables are per-item derivatives of the video too: they carry the run's tags
     # (the plugin's plus --restrictions), not only the plugin's.
+    outputs = ["import/tracks.parquet", "import/calib.parquet", "import/import.json"]
+    tables = ["import/tracks.parquet", "import/calib.parquet"]
+    if summary.embeddings_path is not None:
+        outputs.append(EMBEDDINGS)
+        tables.append(EMBEDDINGS)
     if set(summary.restrictions) != set(run.restrictions):
-        for name in ("import/tracks.parquet", "import/calib.parquet"):
+        for name in tables:
             _write_table(pq.read_table(run.path(name)), run.path(name), run.restrictions)
         report = read_json(run.path("import/import.json"))
         report["plugin_restrictions"] = report.get("restrictions")
@@ -755,7 +797,9 @@ def _stage_import(run: _Run) -> list[str]:
         "pitch_usable_frames": summary.n_pitch_usable_frames,
         "plugin_restrictions": list(summary.restrictions),
     }
-    return ["import/tracks.parquet", "import/calib.parquet", "import/import.json"]
+    if run.config.relink != "off":
+        run.result_extras["import"]["embedding_rows"] = summary.counts.get("embedding_rows")
+    return outputs
 
 
 def _stage_shots(run: _Run) -> list[str]:
@@ -808,6 +852,10 @@ def _stage_refine(run: _Run) -> list[str]:
     tracks, roles = _check_role_labels(run, tracks)
     stitches = _audit_stitches(run, tracks, calib, shots, teams, roles, reads)
     sides = _check_sides(run, tracks)
+    relink: dict[str, Any] | None = None
+    if run.config.relink != "off":
+        # last: every report above describes the ids from before (piece_id in the table)
+        tracks, relink = _relink(run, tracks, calib, shots)
     run.write(tracks, TRACKS)
     run.write(calib, CALIB)
     summary = {
@@ -827,6 +875,8 @@ def _stage_refine(run: _Run) -> list[str]:
         },
         "restrictions": list(run.restrictions),
     }
+    if relink is not None:
+        summary["relink"] = relink
     _json_write(run.path("refine/refine.json"), summary)
     run.result_extras["refine"] = {
         "tracks": {key: value for key, value in counts.items() if key != "reentry_pieces"},
@@ -841,9 +891,150 @@ def _stage_refine(run: _Run) -> list[str]:
         "holdout": (report or {}).get("holdout"),
         "ground_jitter": (report or {}).get("ground_jitter"),
     }
+    if relink is not None:
+        run.result_extras["refine"]["relink"] = {
+            key: relink.get(key) for key in ("mode", "applied", "reason", "counts")
+        }
     if report is not None:
         run.notes.append(_refine_note(report, shots))
     return [TRACKS, CALIB, "refine/refine.json"]
+
+
+def _relink(
+    run: _Run, tracks: pd.DataFrame, calib: pd.DataFrame, shots: pd.DataFrame
+) -> tuple[pd.DataFrame, dict[str, Any]]:
+    """The relink step (gbf.relink) on the refine stage's final tables: cut tracks where the
+    tracker changed person and join the pieces of one person.
+
+    Returns the track table with the new ids (``track_id``; the ids from before in a new
+    last column ``piece_id``) and the ``relink`` section of refine.json, and adds the report
+    note. The step is skipped, with its reason in the section and the note, when the run
+    must not link identities (no_identity), the import wrote no embeddings or no row of them
+    holds one, the calibration table names no single frame size or a track id is too large
+    to be cut; the table then only gains ``piece_id``. Embeddings that do not describe the
+    table's rows are an error, never a silent misalignment.
+
+    The frame size that scales the method's pixel constants is the calibration table's
+    (``width``, ``height``): the boxes and the cameras are in that grid, whatever the size of
+    the video file. The section also names the embeddings (``embeddings``: the model the
+    plugin receipt gives and the dimension), as the import recorded them.
+    """
+    mode = run.config.relink
+    path = run.path(EMBEDDINGS)
+    size = _calib_frame_size(calib)
+    reason: str | None = None
+    if "no_identity" in run.restrictions:
+        reason = "no_identity"
+    elif not path.is_file():
+        reason = "no_embeddings"
+    elif size is None:
+        reason = "no_frame_size"
+    elif len(tracks) and int(tracks["track_id"].max()) >= relink_mod.cuts.SUB_STRIDE:
+        reason = "track_ids_out_of_range"
+    if reason is not None or size is None:
+        section = relink_mod.skipped(mode, reason or "no_frame_size")
+        run.notes.append(_relink_note(section))
+        return relink_mod.apply_ids(tracks, None), section
+    frame, source, embeddings = import_mod.load_embeddings(path)
+    problems: list[str] = []
+    if len(frame) != len(tracks):
+        problems.append(f"{EMBEDDINGS} has {len(frame)} rows but the track table has {len(tracks)}")
+    else:
+        if not np.array_equal(frame, tracks["frame"].to_numpy(dtype=np.int64)):
+            problems.append(f"{EMBEDDINGS}: frame differs from the track table's rows")
+        if "source_track_id" not in tracks.columns:
+            problems.append("the track table has no source_track_id column")
+        elif not np.array_equal(source, tracks["source_track_id"].to_numpy(dtype=np.int64)):
+            problems.append(f"{EMBEDDINGS}: track_id differs from the table's source_track_id")
+    if problems:
+        raise PipelineError("refine", problems)
+    if len(tracks) and not relink_mod.inputs.has_embedding(embeddings).any():
+        # nothing to judge appearance by: say so instead of reporting a step that ran
+        section = relink_mod.skipped(mode, "no_embeddings")
+        section["rows_without_embedding"] = len(tracks)
+        run.notes.append(_relink_note(section))
+        return relink_mod.apply_ids(tracks, None), section
+    try:
+        result = relink_mod.relink_tracks(
+            tracks,
+            calib,
+            embeddings,
+            shots,
+            fps=float(run.rate),
+            frame_size=size,
+            mode=mode,
+        )
+        tracks = relink_mod.apply_ids(tracks, result)
+    except relink_mod.RelinkError as exc:
+        raise PipelineError("refine", [str(exc)]) from exc
+    section = {**result.report, "embeddings": import_mod.embeddings_source(path)}
+    run.notes.append(_relink_note(section))
+    return tracks, section
+
+
+def _calib_frame_size(calib: pd.DataFrame) -> tuple[int, int] | None:
+    """(width, height) of the frames the calibration table refers to, which is the pixel
+    grid of the boxes; None when the table has no row, lacks the columns or names more than
+    one size."""
+    if len(calib) == 0 or "width" not in calib.columns or "height" not in calib.columns:
+        return None
+    sizes = calib[["width", "height"]].drop_duplicates()
+    if len(sizes) != 1 or bool(sizes.isna().to_numpy().any()):
+        return None
+    width, height = (int(value) for value in sizes.iloc[0])
+    return (width, height) if width > 0 and height > 0 else None
+
+
+_RELINK_SKIP_ZH: Mapping[str, str] = MappingProxyType(
+    {
+        "no_embeddings": "插件导出里没有外观特征（embeddings.npz）",
+        "no_identity": "本次运行带有 no_identity 限制，不做身份关联",
+        "track_ids_out_of_range": "有轨迹编号太大，无法给切开后的片段编号",
+        "no_frame_size": "标定表里没有唯一的画面尺寸",
+    }
+)
+"""Why the relink step did not run, in the words of the report note."""
+
+
+def _relink_note(section: Mapping[str, Any]) -> str:
+    """The report note on the relink step: what it cut and joined and that the ids changed,
+    or why it did not run; that its parameters are not validated on other footage; and, when
+    rows have no embedding, how many and what that means for their pieces."""
+    mode = section["mode"]
+    if not section["applied"]:
+        why = _RELINK_SKIP_ZH.get(str(section["reason"]), str(section["reason"]))
+        if section.get("rows_without_embedding"):
+            why = (
+                f"插件导出的 embeddings.npz 里，{section['rows_without_embedding']} 行检测"
+                "没有一行带外观特征"
+            )
+        return (
+            f"轨迹重连（--relink {mode}）没有运行：{why}。轨迹编号没有改变"
+            "（piece_id 列与 track_id 相同）。"
+        )
+    counts = section["counts"]
+    cut_tracks = len({int(piece) for piece, _frame in section["cuts"]})
+    links = counts["core_links"] + counts["leaf_links"]
+    joined = f"{links} 对轨迹片段被判为同一名球员并接上"
+    if counts["leaf_links"]:
+        joined += f"（其中 {counts['leaf_links']} 对接的是只有几个框的短片段）"
+    text = (
+        f"轨迹重连（--relink {mode}）：{cut_tracks} 条轨迹在跟踪器换了人的位置被切开"
+        f"（共 {counts['cuts']} 处）；{joined}。轨迹编号因此改变，原编号保存在 piece_id 列，"
+        "球队、角色和拼接审计的报告仍按原编号。参数是在 13 段 SN-GSR 片段（1280x720、25 帧/秒）"
+        "上拟合或设定的，没有在其他素材上验证。"
+    )
+    fps, fitted = float(section["fps"]), float(section["fitted_fps"])
+    if abs(fps - fitted) > 0.01 * fitted:
+        text += f"本片段为 {fps:g} 帧/秒，与拟合时的 {fitted:g} 帧/秒不同，按帧数计的常数没有换算。"
+    if counts["links_refused_same_frame"]:
+        text += f"{counts['links_refused_same_frame']} 对片段在同一帧里同时出现，没有接上。"
+    if counts.get("rows_without_embedding"):
+        text += (
+            f"{counts['rows_without_embedding']} 行检测没有外观特征；整段都没有外观特征的"
+            "片段不会被接上，实际上也不会被切开。"
+        )
+    return text
 
 
 def _reentry_note(counts: Mapping[str, Any]) -> str:
@@ -1461,12 +1652,30 @@ def _measure_context(run: _Run) -> measure_mod.MeasureContext:
 
 
 def _team_verdicts(run: _Run) -> dict[tuple[int, str], str]:
-    """Team-check verdicts keyed by the refined track and its claimed team."""
+    """Team-check verdicts keyed by the refined track and its claimed team.
+
+    The team check judges the ids from before the relink step. When a relink mode is on
+    (refine.json has a ``relink`` section and the track table a ``piece_id`` column), the
+    verdict of an identity and a team is "consistent" only when every piece of it with rows
+    of that team is; else the first other verdict in piece order (a piece the check did not
+    list counts as "unchecked")."""
     report = read_json(run.path("refine/refine.json"))
-    return {
+    verdicts = {
         (int(row["track_id"]), str(row["team"])): str(row["verdict"])
         for row in report.get("teams", {}).get("tracks", [])
     }
+    if "relink" not in report:
+        return verdicts
+    table = pd.read_parquet(run.path(TRACKS), columns=["track_id", "piece_id", "team"])
+    table = table[table["team"].notna() & (table["track_id"] >= 0)]
+    table = table.drop_duplicates().sort_values(["track_id", "team", "piece_id"], kind="stable")
+    mapped: dict[tuple[int, str], str] = {}
+    for track, team, piece in table[["track_id", "team", "piece_id"]].itertuples(index=False):
+        verdict = verdicts.get((int(piece), str(team)), "unchecked")
+        key = (int(track), str(team))
+        if mapped.get(key, "consistent") == "consistent":
+            mapped[key] = verdict
+    return mapped
 
 
 def _stage_measure(run: _Run) -> list[str]:
@@ -1996,7 +2205,7 @@ def _stage_report(run: _Run) -> list[str]:
 
 
 def _inputs_import(run: _Run) -> list[tuple[str, Path]]:
-    return [
+    found = [
         (f"sngs/{name}", run.sngs / name)
         for name in (
             import_mod.DETECTIONS_NAME,
@@ -2004,6 +2213,10 @@ def _inputs_import(run: _Run) -> list[tuple[str, Path]]:
             import_mod.RECEIPT_NAME,
         )
     ]
+    name = import_mod.EMBEDDINGS_NPZ_NAME
+    if _wants_embeddings(run) and (run.sngs / name).is_file():
+        found.append((f"sngs/{name}", run.sngs / name))
+    return found
 
 
 def _internal(*names: str) -> Callable[[_Run], list[tuple[str, Path]]]:
@@ -2024,6 +2237,7 @@ def _params_import(run: _Run) -> dict[str, Any]:
     return {
         "rep_err_max_px": run.config.rep_err_max_px,
         "in_pitch_margin_m": import_mod.IN_PITCH_MARGIN_M,
+        "embeddings": _wants_embeddings(run),
     }
 
 
@@ -2189,7 +2403,32 @@ def _refine_inputs(run: _Run) -> list[tuple[str, Path]]:
     for name in (enhance_mod.KEYPOINTS_NAME, enhance_mod.KEYPOINTS_RECEIPT_NAME):
         if run.config.refine_calibration and (run.sngs / name).is_file():
             found.append((f"sngs/{name}", run.sngs / name))
+    if run.config.relink != "off" and run.path(EMBEDDINGS).is_file():
+        found.append((EMBEDDINGS, run.path(EMBEDDINGS)))
     return found
+
+
+def _params_relink(run: _Run) -> dict[str, Any]:
+    """The relink part of the refine stage's parameters: the mode and, when it is on, its
+    setting and every number of the method."""
+    mode = run.config.relink
+    if mode == "off":
+        return {"mode": mode}
+    return {
+        "mode": mode,
+        "setting": relink_mod.setting(mode),
+        "params": relink_mod.DEFAULT_PARAMS.as_dict(),
+    }
+
+
+def _relink_limitations(run: _Run) -> tuple[str, ...]:
+    """The refine stage's limitation of the relink step: only when a mode is on."""
+    if run.config.relink == "off":
+        return ()
+    return (
+        "The relink parameters were fitted on 13 SN-GSR clips and are not validated on other "
+        "footage.",
+    )
 
 
 def _params_refine(run: _Run) -> dict[str, Any]:
@@ -2205,6 +2444,7 @@ def _params_refine(run: _Run) -> dict[str, Any]:
         "team_check": team_check_mod.DEFAULT_PARAMS.as_dict(),
         "role_check": role_check_mod.DEFAULT_PARAMS.as_dict(),
         "side_check": side_check_mod.DEFAULT_PARAMS.as_dict(),
+        "relink": _params_relink(run),
     }
 
 
@@ -2302,13 +2542,19 @@ def _stage_table() -> dict[str, _Stage]:
                 side_check_mod,
                 _check_sides,
                 _sides_note,
+                relink_mod,
+                _relink,
+                _calib_frame_size,
+                _relink_note,
             ),
             _refine_inputs,
             _params_refine,
             "Track ids split at cuts, unconfident jersey numbers dropped, and (with the "
             "plugin's pitch keypoints) the calibration refitted with a fixed camera centre "
-            "per camera and smooth rotation and zoom.",
+            "per camera and smooth rotation and zoom. With --relink on, tracks cut where the "
+            "tracker changed person and the pieces of one person joined (gbf.relink).",
             ("The refit is checked on held-out keypoints only: self-consistency.", *common),
+            _relink_limitations,
         ),
         _Stage(
             "kinematics",
@@ -2521,7 +2767,10 @@ def _write_receipt(
             run.file_ref(name, run.path(name), internal=True) for name in dict.fromkeys(outputs)
         ],
         "scope": stage.scope,
-        "limitations": list(stage.limitations),
+        "limitations": [
+            *stage.limitations,
+            *(stage.run_limitations(run) if stage.run_limitations is not None else ()),
+        ],
         "restrictions": list(run.restrictions),
         "environment": {"python": platform.python_version(), "gbf": gbf.__version__},
         "result": {
@@ -2641,6 +2890,10 @@ def _check_config(config: PipelineConfig) -> list[str]:
         problems.append(f"--stages: unknown stage(s) {', '.join(unknown)}; choose from {STAGES}")
     if config.pose_model not in POSE_MODELS:
         problems.append(f"--pose-model must be one of {sorted(POSE_MODELS)}")
+    if config.relink not in relink_mod.MODES:
+        problems.append(
+            f"--relink must be one of {', '.join(relink_mod.MODES)}, got {config.relink!r}"
+        )
     if (
         isinstance(config.max_highlights, bool)
         or not isinstance(config.max_highlights, int)
@@ -2770,7 +3023,10 @@ def _run_restrictions(run: _Run) -> tuple[tuple[str, ...], dict[str, list[str]]]
     """The run's tags: the union of every input's tags and ``config.restrictions`` (ADR
     0002 rule 1), and where each input's tags came from. An input without declared tags
     (a ball file without a receipt, labels without a "restrictions" list) adds no_share;
-    pose from the pinned weights adds POSE_MODEL_RESTRICTIONS."""
+    pose from the pinned weights adds POSE_MODEL_RESTRICTIONS, and a relink step that reads
+    the export's embeddings adds RELINK_RESTRICTIONS (a mode is on, no input forbids linking
+    identities and the receipt lists embeddings.npz: the import then reads them, also when
+    the step is skipped later for another reason)."""
     sources: dict[str, list[str]] = {"plugin": _plugin_restrictions(run.sngs)}
     for what, receipt in _input_receipts(run.config)[1:]:
         sources[what] = _declared_tags(read_json(receipt), receipt.name)
@@ -2787,6 +3043,12 @@ def _run_restrictions(run: _Run) -> tuple[tuple[str, ...], dict[str, list[str]]]
     if run.config.pose_estimator is None and POSE_MODELS.get(run.config.pose_model):
         sources["pose_model"] = list(POSE_MODEL_RESTRICTIONS)
     sources["config"] = list(run.config.restrictions)
+    if (
+        run.config.relink != "off"
+        and not any("no_identity" in found for found in sources.values())
+        and import_mod.lists_embeddings(run.sngs)
+    ):
+        sources["relink"] = list(RELINK_RESTRICTIONS)
     tags = sorted({tag for found in sources.values() for tag in found})
     return tuple(tags), sources
 
@@ -2833,6 +3095,16 @@ def _write_run_json(run: _Run, status: str, error: list[str] | None, wall_s: flo
                 ("ball_raw.jsonl", run.ball_raw),
                 ("ball-receipt.json", run.ball_raw.parent / BALL_RECEIPT_NAME),
                 *((f"sngs/{n}", run.sngs / n) for n in _SNGS_FILES),
+                *(
+                    (
+                        (
+                            "sngs/" + import_mod.EMBEDDINGS_NPZ_NAME,
+                            run.sngs / import_mod.EMBEDDINGS_NPZ_NAME,
+                        ),
+                    )
+                    if _wants_embeddings(run)
+                    else ()
+                ),
                 ("sngs/" + enhance_mod.KEYPOINTS_NAME, run.sngs / enhance_mod.KEYPOINTS_NAME),
                 (
                     "sngs/" + enhance_mod.KEYPOINTS_RECEIPT_NAME,
@@ -2881,6 +3153,7 @@ def _write_run_json(run: _Run, status: str, error: list[str] | None, wall_s: flo
                     "full_clip": run.config.full_clip,
                     "audio_offset_s": run.config.audio_offset_s,
                     "rep_err_max_px": run.config.rep_err_max_px,
+                    "relink": run.config.relink,
                 },
                 "stages": [
                     {
@@ -3021,6 +3294,15 @@ def _parser() -> argparse.ArgumentParser:
         help="keep the plugin's per-frame calibration (skip the fixed-centre refit)",
     )
     parser.add_argument(
+        "--relink",
+        choices=relink_mod.MODES,
+        default="off",
+        help="cut tracks where the tracker changed person and join the pieces of one person "
+        "(gbf.relink; needs the plugin export's embeddings.npz, and a run that reads it "
+        "carries the tag hl3); parameters fitted on 13 SN-GSR clips, not validated on other "
+        "footage",
+    )
+    parser.add_argument(
         "--labels", type=Path, default=None, help="labels to compare the highlights with"
     )
     return parser
@@ -3059,6 +3341,7 @@ def main(argv: list[str]) -> int:
         full_clip=not args.no_full_clip,
         audio_offset_s=args.audio_offset_s,
         refine_calibration=not args.no_calib_refine,
+        relink=args.relink,
         labels=args.labels,
     )
     problems = _check_config(config)
