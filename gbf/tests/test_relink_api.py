@@ -749,3 +749,56 @@ def test_modes_settings_and_skip_sections() -> None:
         ).as_dict()
         == params
     )
+
+
+# --------------------------------------------------------------------------- recall
+
+SHORT_STINTS: tuple[Stint, ...] = (*STINTS, (20, 20, "a", 70, 72))
+"""Player "a" is also seen for three frames while lost: a piece too short to be solid."""
+
+
+def test_recall_attaches_the_short_piece_as_a_leaf_and_strict_leaves_it_alone() -> None:
+    scene = make_scene(SHORT_STINTS)
+    strict = scene.relink("strict")
+    assert strict.links == ((5, 9),)
+    assert (strict.report["counts"]["solid"], strict.report["counts"]["short"]) == (10, 1)
+
+    recall = scene.relink("recall")
+    assert relink.MODES == ("off", "strict", "recall")
+    assert recall.core_links == ((5, 9),)
+    assert len(recall.leaf_links) == 1
+    assert recall.leaf_links[0] in {(5, 20), (20, 9)}  # joined to a solid neighbour in time
+    assert recall.links == recall.core_links + recall.leaf_links
+    assert recall.refused == ()
+    report = recall.report
+    assert report["setting"] == {"margin": 0.2, "leaves": True}
+    assert report["setting"] == relink.setting("recall")
+    assert report["leaf_links"] == [list(recall.leaf_links[0])]
+    assert report["identities"] == [{"track_id": 5, "pieces": [5, 20, 9]}]
+    assert (report["counts"]["core_links"], report["counts"]["leaf_links"]) == (1, 1)
+    piece = scene.tracks["track_id"].to_numpy()
+    expected = np.where(np.isin(piece, [9, 20]), 5, piece)
+    assert recall.track_id.tolist() == expected.tolist()
+    stages = [merge["stage"] for merge in report["merges"]]
+    assert stages == [1, 2]
+
+
+def test_a_short_piece_without_embeddings_is_not_attached_as_a_leaf() -> None:
+    scene = make_scene(SHORT_STINTS)
+    emb = scene.emb.copy()
+    short = (scene.tracks["track_id"] == 20).to_numpy()
+    emb[short] = 0.0  # vectors of length zero: no embeddings
+    result = Scene(scene.tracks, scene.calib, emb, scene.shots, scene.size).relink("recall")
+    assert result.core_links == ((5, 9),)
+    assert result.leaf_links == ()
+    assert result.track_id[short].tolist() == [20] * 3
+    assert result.report["counts"]["rows_without_embedding"] == 3
+    assert result.report["counts"]["short"] == 1
+
+
+def test_recall_finds_the_strict_links_of_the_plain_scenes(base: Scene, switched: Scene) -> None:
+    assert base.relink("recall").links == ((5, 9),)
+    result = switched.relink("recall")
+    assert result.cuts == ((2, 75),)
+    assert set(result.links) == {(5, 9), (14, 2 + SUB_STRIDE)}
+    assert result.leaf_links == ()

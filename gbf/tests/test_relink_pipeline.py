@@ -904,3 +904,37 @@ def test_the_team_verdict_of_an_identity_is_the_weakest_of_its_pieces(
         (40, "right"): "inconsistent",  # the first other verdict in piece order
         (60, "left"): "unchecked",
     }
+
+
+# --------------------------------------------------------------------------- recall
+
+
+def test_recall_runs_with_its_own_setting_and_joins_the_return(
+    clip: dict[str, Any], off_run: Path
+) -> None:
+    base = clip["base"]
+    out = base / "run recall"
+    statuses = run_three(_with(clip, "return"), out, base, relink="recall")
+    assert statuses == dict.fromkeys(THREE, "ran")
+    section = read_json(out / "refine" / "refine.json")["relink"]
+    assert (section["mode"], section["applied"], section["reason"]) == ("recall", True, None)
+    assert section["setting"] == {"margin": 0.2, "leaves": True}
+    assert section["links"] == [[RETURNING, RETURNED]]
+    assert section["leaf_links"] == []  # every piece of this clip is long enough to be solid
+    assert section["embeddings"] == {"model": None, "dim": DIM}
+    # like strict, the run reads the embeddings: its own tag and the stage's limitation
+    assert read_json(out / "run.json")["result"]["restriction_sources"]["relink"] == ["hl3"]
+    limitations = read_json(out / "receipts" / "refine.json")["limitations"]
+    assert sum("relink parameters" in line for line in limitations) == 1
+    receipt = read_json(out / "receipts" / "refine.json")["result"]
+    assert receipt["parameters"]["relink"]["mode"] == "recall"
+    assert receipt["parameters"]["relink"]["setting"] == {"margin": 0.2, "leaves": True}
+    assert sum("--relink recall" in note for note in receipt["notes_zh"]) == 1
+    tracks = pd.read_parquet(out / "refine" / "tracks.parquet")
+    plain = pd.read_parquet(off_run / "refine" / "tracks.parquet")
+    assert tracks["piece_id"].tolist() == plain["track_id"].tolist()
+    assert RETURNED not in set(tracks["track_id"])
+    # the mode is a parameter of the refine stage: strict's result is not reused for recall
+    statuses = run_three(_with(clip, "return"), out, base, relink="strict")
+    assert statuses == {"import": "skipped", "shots": "skipped", "refine": "ran"}
+    assert read_json(out / "refine" / "refine.json")["relink"]["mode"] == "strict"

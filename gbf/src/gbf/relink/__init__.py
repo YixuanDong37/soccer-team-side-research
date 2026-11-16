@@ -9,6 +9,7 @@ repository). The modules, in the order the method uses them:
 - :mod:`gbf.relink.appear`: appearance prototypes of the sub-pieces;
 - :mod:`gbf.relink.space`: position evidence for pairs of sub-pieces;
 - :mod:`gbf.relink.link`: the pair bonus and the links between solid sub-pieces;
+- :mod:`gbf.relink.leaves`: short sub-pieces attached to the linked groups (recall mode);
 - :mod:`gbf.relink.api`: the method for one shot and for a track table, and the ids.
 
 The imports below are static on purpose: the pipeline's stage cache follows them
@@ -17,7 +18,7 @@ The imports below are static on purpose: the pipeline's stage cache follows them
 
 from __future__ import annotations
 
-from gbf.relink import api, appear, cuts, inputs, link, space
+from gbf.relink import api, appear, cuts, inputs, leaves, link, space
 from gbf.relink.api import (
     DEFAULT_PARAMS,
     MODES,
@@ -46,6 +47,7 @@ __all__ = [
     "apply_ids",
     "cuts",
     "inputs",
+    "leaves",
     "link",
     "relink_clip",
     "relink_tracks",

@@ -10,10 +10,12 @@ gives that lab's cuts and links. For one shot (:func:`relink_clip`):
 2. appearance (gbf.relink.appear): one prototype per sub-piece, team-centred and whitened;
 3. tiers: a sub-piece with at least ``n_solid`` boxes is solid, the others are short;
 4. position evidence (gbf.relink.space) on the solid sub-pieces only;
-5. the pair bonus and the core links between solid sub-pieces (gbf.relink.link).
+5. the pair bonus and the core links between solid sub-pieces (gbf.relink.link);
+6. in the recall mode, short sub-pieces attached as leaves (gbf.relink.leaves), with position
+   evidence computed on all sub-pieces.
 
-Modes: ``strict`` (few links, almost all right on the development clips); ``off`` is the
-pipeline's default and runs nothing of this package.
+Modes: ``strict`` (few links, almost all right on the development clips) and ``recall`` (a
+lower margin, and leaves); ``off`` is the pipeline's default and runs nothing of this package.
 
 Identifiers. Inside the package a piece is a track id of the table handed in (below
 ``gbf.relink.cuts.SUB_STRIDE``), and the rows of a piece from its j-th cut on (j from 0) form
@@ -42,9 +44,9 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from gbf.relink import appear, cuts, inputs, link, space
+from gbf.relink import appear, cuts, inputs, leaves, link, space
 
-MODES: tuple[str, ...] = ("off", "strict")
+MODES: tuple[str, ...] = ("off", "strict", "recall")
 """Values of ``--relink``; "off" never reaches this package."""
 
 FITTED_FPS = 25.0
@@ -136,6 +138,8 @@ def setting(mode: str, params: RelinkParams = DEFAULT_PARAMS) -> dict[str, Any]:
     sub-pieces are attached as leaves."""
     if mode == "strict":
         return {"margin": params.link.margin, "leaves": False}
+    if mode == "recall":
+        return {"margin": leaves.RECALL_MARGIN, "leaves": True}
     on = ", ".join(m for m in MODES if m != "off")
     raise RelinkError(f"relink: mode must be one of {on}, got {mode!r}")
 
@@ -179,9 +183,9 @@ def relink_clip(
 ) -> ClipLinks:
     """The cuts and links of one single-shot clip.
 
-    ``inp`` holds the clip's rows (gbf.relink.inputs.build_clip); ``mode`` is "strict".
-    ``log``, when given, receives one entry per merge of the linker (its similarity,
-    appearance cosine, bonus, the two groups and the two rival margins).
+    ``inp`` holds the clip's rows (gbf.relink.inputs.build_clip); ``mode`` is "strict" or
+    "recall". ``log``, when given, receives one entry per merge of the linker (its
+    similarity, appearance cosine, bonus, the two groups and the two rival margins).
     """
     chosen = setting(mode, params)
     margin = chosen["margin"]
@@ -196,7 +200,17 @@ def relink_clip(
     core = link.link_core(
         app, _bonus(app, pos, params.link, core=True), params.link, margin=margin, log=log
     )
-    return ClipLinks(cut_list, core.links, ())
+    leaf: tuple[tuple[int, int], ...] = ()
+    if chosen["leaves"]:
+        pos_all = space.position_scores(inp, sub, params.space)
+        leaf = leaves.attach_leaves(
+            core.state,
+            _bonus(app, pos_all, params.link, core=False),
+            params.link,
+            margin=margin,
+            log=log,
+        )
+    return ClipLinks(cut_list, core.links, leaf)
 
 
 # --------------------------------------------------------------------------- a track table
@@ -383,7 +397,7 @@ def relink_tracks(
         frame_size: (width, height), in pixels, of the frames the boxes and the calibration
             refer to (the calibration table's ``width`` and ``height``). The pixel constants
             scale with this height.
-        mode: "strict".
+        mode: "strict" or "recall".
         params: see :class:`RelinkParams`.
 
     A shot with fewer than two frames or fewer than two pieces is left as it is, and so is a

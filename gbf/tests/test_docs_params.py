@@ -58,6 +58,7 @@ M1_MODULES = (
     "gbf.relink.appear",
     "gbf.relink.space",
     "gbf.relink.link",
+    "gbf.relink.leaves",
     "gbf.kinematics",
     "gbf.ball",
     "gbf.audio",

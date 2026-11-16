@@ -277,15 +277,15 @@ apart.
 
 Off by default. With `--relink off` nothing of this runs, the import reads no embedding,
 and every import and refine artifact has the bytes it had before the step existed. With
-`--relink strict` the refine stage ends with `gbf.relink`, after the
+`--relink strict` or `--relink recall` the refine stage ends with `gbf.relink`, after the
 team, role and side checks and the stitch audit, on the track table and the calibration it
 is about to write. Unlike the stitch audit it CHANGES the track table (ids below).
 
 The step is a port of the frozen method `fuse_r1` of the project's re-identification lab
 (outside this repository): given the same track table, calibration and embeddings it gives
 that lab's cuts and links. This was checked on this machine on the 13 development clips,
-each tracked with two tracker settings: the strict mode's cuts and links are the lab's on
-all 26 runs.
+each tracked with two tracker settings: the cuts and links of both modes are the lab's on
+all 52 runs.
 Decisions are thresholds on floating-point numbers that go through BLAS, so on another
 machine a decision that sits within rounding of its threshold may differ. Per shot:
 
@@ -315,10 +315,17 @@ machine a decision that sits within rounding of its threshold may differ. Per sh
    similarity (cosine plus the best bonus at a junction in time) at least `t_abs`, each is
    the other's best partner, and the similarity exceeds by the margin both `t0` ("nobody")
    and the best rival seen together with the partner.
+7. Leaves (recall only, `gbf.relink.leaves`): a short sub-piece may be attached to at most
+   one group, by the same rule on its own appearance and a position-only bonus from the
+   position evidence computed on all sub-pieces. A leaf never joins another short piece,
+   never connects two groups and does not change the group's prototype. (When short pieces
+   took part in step 6, a piece of a few boxes could pass a strong position bonus on and
+   join two long pieces of different people through it.)
 
-One mode besides `off`: `strict` = margin `LinkParams.margin` (0.6), which asks for position
+Modes: `strict` = margin `LinkParams.margin` (0.6) without leaves; it asks for position
 evidence on top of appearance (the largest bonus is below 1, and the similarity must exceed
-`t0` + margin = 1.1).
+`t0` + margin = 1.1). `recall` = margin `RECALL_MARGIN` (0.2) with leaves: more returns found,
+more of them wrong.
 
 Identifiers. Inside the step a piece is a track id of the table (it must be below 10^7), and
 the rows of a piece from its j-th cut on (j from 0) form the sub-piece `piece + 10^7 * (j +
@@ -351,10 +358,10 @@ the grid the plugin's boxes and cameras are in, which `refine.json` records as
 Rows without an embedding (a NaN row, or a vector of length zero) take no part in the
 appearance of their piece; `refine.json` counts them (`rows_without_embedding`) and the
 report note says how many. A piece none of whose rows has one is never joined: it is no
-candidate of the linker. It is not cut either: without embeddings the appearance features
-of a gap read "the same person", and the gap and the distance on the pitch alone reach the
-cut level only for a gap of more than 50 000 frames inside one shot (over half an hour at
-25 fps).
+candidate of the linker, as a solid piece or as a leaf. It is not cut either: without
+embeddings the appearance features of a gap read "the same person", and the gap and the
+distance on the pitch alone reach the cut level only for a gap of more than 50 000 frames
+inside one shot (over half an hour at 25 fps).
 
 Tags. A run whose relink step reads the embeddings carries `hl3`
 (`gbf.pipeline.RELINK_RESTRICTIONS`, listed under `relink` in `restriction_sources` of
@@ -383,14 +390,18 @@ the 137 returns of a player that the annotations hold as found, joined wrong or 
 unjoined. They are of three kinds, and only the first is held out in full:
 
 - Fully held out (leave-one-clip-out, the lab's headline): for each clip the weights were
-  fitted and the setting (the margin) was chosen by the lab's rule on the other 12 clips.
-  Strict: 67 found, 3 wrong, 67 unjoined.
+  fitted and the setting (the margin, and whether short pieces are attached as leaves) was
+  chosen by the lab's rule on the other 12 clips. Strict: 67 found, 3 wrong, 67 unjoined.
+  Recall: 106 found, 7 wrong, 24 unjoined.
 - Frozen setting, held-out weights: the weights were fitted without the judged clip, but
   the setting is the shipped one, which was chosen on all 13 clips. So this figure is not
-  held out for the choice of the setting. Strict: 70 found, 2 wrong, 65 unjoined.
+  held out for the choice of the setting. Strict: 70 found, 2 wrong, 65 unjoined. Recall:
+  112 found, 7 wrong, 18 unjoined.
 - In-sample: the shipped weights and setting on the clips they come from, which is what
-  this port reproduces. Strict: 69 found, 2 wrong, 66 unjoined.
+  this port reproduces. Strict: 69 found, 2 wrong, 66 unjoined. Recall: 112 found, 7 wrong,
+  18 unjoined.
 
+About one in ten of recall's leaf links that could be judged disagreed with weak labels.
 Most wrong joins sit in one clip, and the re-identification model may have been trained on
 the same dataset split. The second tracker setting is another configuration on the same
 clips, not new footage. Nothing is validated on other footage, resolutions or frame rates:
@@ -662,7 +673,9 @@ watermark badge under the same restriction rule.
   25 fps. Multi-shot clips, close-ups without calibration (no position evidence, so strict
   joins nothing there) and replays are untested, and so is a long wide shot: memory grows
   with pieces x frames of a shot. Rows without an embedding weaken the step without
-  stopping it (the note counts them); only when no row has one is it skipped.
+  stopping it (the note counts them); only when no row has one is it skipped. The recall
+  mode joins more and errs more (see the validation status); its leaves are pieces of one
+  to four boxes, where an embedding says little.
 - Relink ignores jersey numbers and joins pieces of one appearance team even when one has
   no team label, so an identity can carry two different confident numbers or rows with and
   without a team; nothing checks or reports that yet. With a mode on, ids of 10^7 and more
@@ -674,7 +687,7 @@ watermark badge under the same restriction rule.
 [--team-names left=NAME,right=NAME] [--labels LABELS.json] [--no-calib-refine]
 [--max-highlights N] [--min-separation-s S] [--pose-model x|m|none] [--models-dir D]
 [--stages a,b,...|all] [--force] [--restrictions no_share,...] [--no-full-clip]
-[--audio-offset-s S] [--relink off|strict]`. `--out` must lie outside every git work
+[--audio-offset-s S] [--relink off|strict|recall]`. `--out` must lie outside every git work
 tree. Stages: import, shots,
 refine, kinematics, ball, audio, highlights, pose, lift3d, moments, measure, render, report;
 a stage is skipped when its inputs (by sha256), parameters and code are unchanged. Code here
@@ -704,8 +717,8 @@ list), 1 when a stage fails (`run.json` written with status failed). `python -m 
 starts these runs from a local page and shows them ([web.md](web.md)).
 
 `--relink` (default `off`) chooses the relink step of the refine stage (see "Relink"):
-`strict` cuts tracks where the tracker changed person and
-joins the pieces of one person, from the export's `embeddings.npz`. The mode is a
+`strict` and `recall` cut tracks where the tracker changed person and
+join the pieces of one person, from the export's `embeddings.npz`. The mode is a
 parameter of the import and the refine stage, so changing it runs both again; with `off` the
 import reads no embedding and both stages write what they wrote before the step existed.
 A run that reads the embeddings carries the tag `hl3`, also when the export's receipt does
@@ -960,6 +973,12 @@ not rescaled.
 | `LinkParams.margin` | 0.6 | fitted | the strict setting, chosen by a pre-registered rule on all 13 clips over 16 margins with and without leaves; 9 of 13 leave-one-clip-out folds choose the same. Of 137 returns, fully held out (setting chosen and weights fitted without the judged clip): 67 right, 3 wrong, 67 lost; this frozen setting with held-out weights (the setting itself was chosen on all 13 clips, so not held out for that choice): 70 right, 2 wrong, 65 lost |
 | `LinkParams.w_cos`, `LinkParams.w_sink_lo`, `LinkParams.w_plug` | 7.1758068639395765; 0.64737768782866; -0.10943515159871339 | fitted | logistic pair model on pairs of solid pieces with the annotations of all 13 clips; its intercept is not used |
 | `LinkParams.sink_floor`, `LinkParams.sink_clip` | 0.001; 0.98 | hand-set | clip of the position score before its log odds; not recorded |
+
+### gbf.relink.leaves (relink: the recall mode's margin)
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `RECALL_MARGIN` | 0.2 | fitted | the recall setting (margin 0.2 with leaves) chosen by the same pre-registered rule on all 13 clips; 10 of 13 leave-one-clip-out folds choose the same. Of 137 returns, fully held out (setting chosen and weights fitted without the judged clip): 106 right, 7 wrong, 24 lost; this frozen setting with held-out weights (the setting itself was chosen on all 13 clips, so not held out for that choice): 112 right, 7 wrong, 18 lost; about one in ten leaf links that could be judged disagrees with weak labels |
 
 ### gbf.kinematics (box-size, trend and jump tests, speed chord)
 
