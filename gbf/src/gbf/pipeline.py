@@ -100,6 +100,7 @@ from gbf import role_check as role_check_mod
 from gbf import shots_grammar as shots_mod
 from gbf import side_check as side_check_mod
 from gbf import sngs_import as import_mod
+from gbf import stitch as stitch_mod
 from gbf import team_check as team_check_mod
 from gbf import track_tools as track_tools_mod
 from gbf.ingest import cuts as cuts_mod
@@ -785,7 +786,17 @@ def _stage_shots(run: _Run) -> list[str]:
 
 def _stage_refine(run: _Run) -> list[str]:
     shots = run.table("shots.parquet")
-    tracks, counts = enhance_mod.clean_tracks(run.import_tracks(), shots)
+    facts = run.facts
+    imported = run.import_tracks()
+    tracks, counts = enhance_mod.clean_tracks(
+        imported,
+        shots,
+        frame_size=(facts.width, facts.height) if facts is not None else None,
+        fps=float(facts.fps) if facts is not None else None,
+    )
+    reads = stitch_mod.raw_reads(imported, tracks)
+    if counts["pieces_split_at_reentry"]:
+        run.notes.append(_reentry_note(counts))
     calib = run.import_calib()
     report: dict[str, Any] | None = None
     if run.config.refine_calibration:
@@ -795,6 +806,7 @@ def _stage_refine(run: _Run) -> list[str]:
         )
     tracks, teams = _check_team_labels(run, tracks)
     tracks, roles = _check_role_labels(run, tracks)
+    stitches = _audit_stitches(run, tracks, calib, shots, teams, roles, reads)
     sides = _check_sides(run, tracks)
     run.write(tracks, TRACKS)
     run.write(calib, CALIB)
@@ -804,6 +816,7 @@ def _stage_refine(run: _Run) -> list[str]:
         "tracks": counts,
         "teams": teams,
         "roles": roles,
+        "stitch_audit": stitches,
         "sides": sides,
         "calibration": report
         or {
@@ -816,9 +829,10 @@ def _stage_refine(run: _Run) -> list[str]:
     }
     _json_write(run.path("refine/refine.json"), summary)
     run.result_extras["refine"] = {
-        "tracks": counts,
+        "tracks": {key: value for key, value in counts.items() if key != "reentry_pieces"},
         "teams": teams["counts"],
         "roles": {key: roles[key] for key in ("verdict", "crowded_share", "rows_cleared")},
+        "stitch_audit": stitches["counts"],
         "sides": {
             key: sides[key]
             for key in ("verdict", "attack_direction_known", "difference_m", "interval_m")
@@ -830,6 +844,20 @@ def _stage_refine(run: _Run) -> list[str]:
     if report is not None:
         run.notes.append(_refine_note(report, shots))
     return [TRACKS, CALIB, "refine/refine.json"]
+
+
+def _reentry_note(counts: Mapping[str, Any]) -> str:
+    """The report note on the track ids split where a player left the picture and came back
+    (gbf.track_tools.split_tracks): how many, and what that changes."""
+    pieces = counts["reentry_pieces"]
+    tracks = len({piece["source_track_id"] for piece in pieces})
+    gap_s = f"{track_tools_mod.REENTRY_MIN_GAP_S:g}"
+    return (
+        f"{tracks} 条插件轨迹在同一镜头内出画后再入画（在画面边缘消失至少 {gap_s} 秒），"
+        f"共拆出 {len(pieces)} 段新轨迹：球员不在画面里时"
+        "跟踪器没有框可跟，回到画面时给的编号只凭外观，可能是另一名球员的。新轨迹的球队按自己的"
+        "球衣颜色核对、号码按自己的读数判断，不沿用出画前的；同一名球员出画前后会是两个轨迹编号。"
+    )
 
 
 def _refine_note(report: Mapping[str, Any], shots: pd.DataFrame) -> str:
@@ -917,9 +945,10 @@ def _teams_judged(report: Mapping[str, Any]) -> bool:
 def _clear_split_pieces(
     tracks: pd.DataFrame, report: dict[str, Any]
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
-    """Once both teams have a shirt colour, a piece of a track split off at a cut (an id of
-    gbf.track_tools.ID_STRIDE or more) whose shirt could not be checked loses its team label
-    too: it was inherited from the player who had the id before the cut.
+    """Once both teams have a shirt colour, a piece of a track split off at a cut or a
+    re-entry into the picture (an id of gbf.track_tools.ID_STRIDE or more,
+    gbf.track_tools.split_tracks) whose shirt could not be checked loses its team label too:
+    it was inherited from the player who had the id before the cut or the gap.
 
     Returns a copy of ``tracks`` without those labels, and ``report`` updated in place: such
     a piece's entry gets ``cleared`` "split_piece" (gbf.team_check marks the contradicted
@@ -977,7 +1006,7 @@ def _team_note(report: Mapping[str, Any]) -> str:
     if kept:
         parts.append(f"{kept} 条轨迹球衣样本太少、未能核对，沿用插件的球队标签")
     if pieces:
-        parts.append(f"{pieces} 条切镜后拆出的轨迹无法核对球衣，也不标球队")
+        parts.append(f"{pieces} 条切镜或出画再入画后拆出的轨迹无法核对球衣，也不标球队")
     return "球队标签按球衣颜色核对：" + "；".join(parts) + "。"
 
 
@@ -999,6 +1028,56 @@ def _role_note(report: Mapping[str, Any]) -> str:
         f"（{report['crowded_share']:.0%}）同时有两人以上被插件标成裁判、站在场内，"
         "而规则只允许一名裁判在场内。插件只给标成球员的人分队，所以分队也不可信："
         "球队标签全部清空，依赖球队的数值（最近对手等）不再计算。角色沿用插件的，未经核对。"
+    )
+
+
+def _audit_stitches(
+    run: _Run,
+    tracks: pd.DataFrame,
+    calib: pd.DataFrame,
+    shots: pd.DataFrame,
+    teams: Mapping[str, Any],
+    roles: Mapping[str, Any],
+    reads: pd.DataFrame,
+) -> dict[str, Any]:
+    """Audit which pieces of one person could be re-joined (gbf.stitch). Audit mode: the
+    decisions go to refine.json and a report note, the track table stays as it is."""
+    report = stitch_mod.audit(
+        tracks,
+        calib,
+        shots,
+        fps=float(run.rate),
+        team_report=teams,
+        role_report=roles,
+        reads=reads,
+    )
+    if report["counts"]["pairs"]:
+        run.notes.append(_stitch_note(report))
+    return report
+
+
+def _stitch_note(report: Mapping[str, Any]) -> str:
+    """The report note on the stitch audit: what it would join and that nothing changed."""
+    counts = report["counts"]
+    decisions = counts["decisions"]
+    parts = [
+        "拼接审计（只记录，不改轨迹编号）：检查了同一镜头内 "
+        f"{counts['pairs']} 对前后相接的轨迹片段，"
+        f"{decisions['stitch']} 对按规则可以证明是同一名球员"
+    ]
+    if decisions["stitch_path_disabled"]:
+        parts.append(
+            f"{decisions['stitch_path_disabled']} 对只有球衣号码一致（号码路径还没启用，只记录）"
+        )
+    if decisions["conflicts_with_plugin"]:
+        parts.append(
+            f"{decisions['conflicts_with_plugin']} 对几何上可以证明，但和插件给的编号冲突，单独记录"
+        )
+    if decisions["ambiguous"]:
+        parts.append(f"{decisions['ambiguous']} 对有不止一个可能的配对，放弃")
+    return (
+        "；".join(parts)
+        + "。规则的前提还没在数据上量过，拼接也还没启用：轨迹编号、球队和所有数值都没有因此改变。"
     )
 
 
@@ -2121,6 +2200,8 @@ def _params_refine(run: _Run) -> dict[str, Any]:
         ),
         "jersey": {"min_mean_conf": 0.8, "min_reads": 5, "min_agreement": 0.7},
         "id_stride": track_tools_mod.ID_STRIDE,
+        "reentry_min_gap_s": track_tools_mod.REENTRY_MIN_GAP_S,
+        "stitch_audit": stitch_mod.DEFAULT_PARAMS.as_dict(),
         "team_check": team_check_mod.DEFAULT_PARAMS.as_dict(),
         "role_check": role_check_mod.DEFAULT_PARAMS.as_dict(),
         "side_check": side_check_mod.DEFAULT_PARAMS.as_dict(),
@@ -2215,6 +2296,9 @@ def _stage_table() -> dict[str, _Stage]:
                 _check_team_labels,
                 role_check_mod,
                 _check_role_labels,
+                stitch_mod,
+                _audit_stitches,
+                _stitch_note,
                 side_check_mod,
                 _check_sides,
                 _sides_note,

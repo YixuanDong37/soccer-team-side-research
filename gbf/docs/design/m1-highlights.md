@@ -55,7 +55,7 @@ frame / fps. Speeds in m/s in storage, km/h only on screen.
 |---|---|---|
 | `tracks.parquet` | `gbf.sngs_import` | frame int64, track_id int64, x1 y1 x2 y2 float64, conf float32, role string, team string?, jersey string?, jersey_conf float64?, foot_u foot_v float64, calib_status string, pitch_usable bool, pitch_x pitch_y float64 (NaN unless pitch-usable), in_pitch bool |
 | `calib.parquet` | `gbf.sngs_import` | one row per canonical frame (frames missing from the export get calib_status `none`): frame_index int64, width height int32, K R fixed_size_list<float64>[9] and C [3] (null when none), calib_status, calib_age int32, rep_err float64?, rep_err_n_keypoints int32, pitch_usable bool |
-| `refine/tracks.parquet`, `refine/calib.parquet`, `refine/refine.json` | `gbf.enhance`, `gbf.team_check` | the tables above after clean-up and refit: track ids split at cuts (`source_track_id` keeps the plugin's id), jersey kept only when read confidently and consistently; with plugin keypoints (`keypoints.jsonl` + receipt) the calibration of wide-shot camera groups refitted with a fixed camera centre and smooth rotation and zoom (calib_status `refined`, extra columns refined, refit_group, refit_n_points, refit_rep_err) and the ground positions recomputed, except a group whose refit is far worse on held-out keypoints than per-frame fits or did not converge, which keeps the plugin calibration (`fallback` in `refine.json`); team labels checked against the shirt colours on the original frames: a player track whose shirt colour is nearer the other team's than its own by more than the margin loses its label, which is cleared, never flipped; once both teams have a colour, a piece split off at a cut whose shirt could not be checked loses its label too (it was inherited from the id's earlier player). Then the role labels are checked against the one referee the laws allow on the pitch (`gbf.role_check`): when more than half of the frames with a pitch-usable row hold two or more people labelled referee at least 2 m inside the touchlines and goal lines, every team label is cleared and a report note says why; roles are kept (the count says that some are wrong, not which). `refine.json` has the held-out reprojection error against a per-frame free-centre fit, each fitted camera group's solver status, evaluations and whether it converged, the ground jitter before and after, and the team check's report: each track's verdict (consistent, inconsistent, unchecked; a cleared split-off piece also `cleared` "split_piece"), `cleared_inherited_tracks`, and among the counts `rows_cleared` (every player row whose label the refine stage cleared) and `rows_cleared_split_pieces`; tracks with too few shirt samples keep the plugin's label, and the report note counts them; and the role check's report under `roles`: verdict (plausible, implausible, not_judged), frames, crowded frames and their share, the most referees inside at once and the rows whose team label it cleared; last, the plugin's left/right team names are checked against where the teams stand (`gbf.side_check`, report under `sides`: verdict consistent, uncertain, contradicted, not_judged or no_teams, `attack_direction_known`, the right team's mean pitch x minus the left team's over the outfield players' pitch-usable rows (`difference_m`) with its 95 % interval from resampling whole tracks (`interval_m`), and the tracks and rows per team): the plugin names its two clusters by that comparison alone, so when the interval does not lie wholly above 0 (or a team has fewer than two tracks) the direction each team attacks counts as unknown for the later stages and a report note says why (see "Attack direction" under the highlight cues); the labels are never swapped |
+| `refine/tracks.parquet`, `refine/calib.parquet`, `refine/refine.json` | `gbf.enhance`, `gbf.team_check` | the tables above after clean-up and refit: track ids split at cuts and, within a shot, where a player left the picture and came back (`gbf.track_tools.split_tracks`: a gap of at least `REENTRY_MIN_GAP_S` without the id, with its box touching a frame edge on the frame before or after the gap; the tracker's id after such a gap rests on appearance alone and can be another player's), so a piece's team and jersey are judged on its own rows and never inherited across the gap, and one player seen before and after leaving the picture has two ids (`source_track_id` keeps the plugin's id; `refine.json` lists the re-entry pieces under `tracks.reentry_pieces`, and a report note counts them), jersey kept only when read confidently and consistently; with plugin keypoints (`keypoints.jsonl` + receipt) the calibration of wide-shot camera groups refitted with a fixed camera centre and smooth rotation and zoom (calib_status `refined`, extra columns refined, refit_group, refit_n_points, refit_rep_err) and the ground positions recomputed, except a group whose refit is far worse on held-out keypoints than per-frame fits or did not converge, which keeps the plugin calibration (`fallback` in `refine.json`); team labels checked against the shirt colours on the original frames: a player track whose shirt colour is nearer the other team's than its own by more than the margin loses its label, which is cleared, never flipped; once both teams have a colour, a piece split off at a cut or a re-entry whose shirt could not be checked loses its label too (it was inherited from the id's earlier player). Then the role labels are checked against the one referee the laws allow on the pitch (`gbf.role_check`): when more than half of the frames with a pitch-usable row hold two or more people labelled referee at least 2 m inside the touchlines and goal lines, every team label is cleared and a report note says why; roles are kept (the count says that some are wrong, not which). Then the stitch audit (`gbf.stitch`, see "Stitch audit" below) records under `stitch_audit` which pieces could be proven to be one person, changing nothing. `refine.json` has the held-out reprojection error against a per-frame free-centre fit, each fitted camera group's solver status, evaluations and whether it converged, the ground jitter before and after, and the team check's report: each track's verdict (consistent, inconsistent, unchecked; a cleared split-off piece also `cleared` "split_piece"), `cleared_inherited_tracks`, and among the counts `rows_cleared` (every player row whose label the refine stage cleared) and `rows_cleared_split_pieces`; tracks with too few shirt samples keep the plugin's label, and the report note counts them; and the role check's report under `roles`: verdict (plausible, implausible, not_judged), frames, crowded frames and their share, the most referees inside at once and the rows whose team label it cleared; last, the plugin's left/right team names are checked against where the teams stand (`gbf.side_check`, report under `sides`: verdict consistent, uncertain, contradicted, not_judged or no_teams, `attack_direction_known`, the right team's mean pitch x minus the left team's over the outfield players' pitch-usable rows (`difference_m`) with its 95 % interval from resampling whole tracks (`interval_m`), and the tracks and rows per team): the plugin names its two clusters by that comparison alone, so when the interval does not lie wholly above 0 (or a team has fewer than two tracks) the direction each team attacks counts as unknown for the later stages and a report note says why (see "Attack direction" under the highlight cues); the labels are never swapped |
 | `shots.parquet` | `gbf.shots_grammar` | shot_id int64, start_frame int64, end_frame int64 (inclusive), shot_type string (wide, medium, close), fresh_share float64, median_box_h float64 |
 | `ball_track.parquet` | `gbf.ball` | frame int64, u v float64, radius_px float64, conf float32 (NaN unless detected), status string (detected, interpolated, missing), candidate_count int32, pitch_x pitch_y float64 (ball-centre plane z = -0.11, NaN unless pitch-usable), ground_assumption bool |
 | `ball_events.parquet`, `ball_contacts.parquet` | `gbf.ball` | `BALL_EVENT_COLUMNS`: frame, kind (direction_change, speed_up, slow_down), magnitude (bh/s), u, v, nearest_track_id, nearest_team, nearest_dist_box_h, then shot_id, angle_deg, speed_before, speed_after, at_foot. Strike profile and contact profile (`CONTACT_PARAMS`); `ball_events` needs the keyword `shots` |
@@ -186,6 +186,74 @@ before the cut into the close-up, and merged parts wholly before it are dropped.
 are read only when the shoulders are at least 35 px apart. This rule was added after the
 development clip's hand label for the close-up was compared with the output, so that
 label no longer checks it independently.
+
+## Stitch audit (re-joining two pieces of one person)
+
+Splitting ids at a re-entry (above) leaves one player with two ids, and so does the plugin
+when it gives a player it lost a fresh id. The refine stage audits which pieces could be
+re-joined (`gbf.stitch`, after the team and role checks), in AUDIT MODE: the decisions go to
+`refine.json` under `stitch_audit` (`mode` "audit", `applied` false) and a report note, and
+the track table, its ids and every later stage stay as they are. A wrong stitch would bring
+back exactly the error the split removes, so a pair is joined only when one of two proofs
+holds; otherwise the pieces stay apart.
+
+- Geometry (path G, enabled in the audit). From A's last clean row (anchor, within
+  `anchor_max_age_s` of A's last row; clean: box at least `clean_min_box_px_1080` tall, not
+  touching a frame edge, on a pitch-usable frame, overlapping no other box), A's person is
+  within r = `max_speed_mps` x elapsed time + 2 x `position_error_m` of the anchor: the reach
+  disc. On a frame within `window_s` of B's start (and within the shot), the disc is covered
+  when it lies inside the pitch less `pitch_margin_m` and the image of its rim at the grass
+  and at `head_height_m` lies in front of the camera, inside the image less the margin and
+  the graphics bands, with a person at least `min_person_px_1080` tall all along it (the rims
+  are polygons of `boundary_points` corners circumscribed about the disc, so their hull
+  contains its image). Every box of that frame that meets the image of the disc counts, of
+  any id (-1 included), role or team: the only one must be B's (a decision frame, with B's
+  row clean and shaped like one person; B's row merely not clean decides nothing); any other
+  box, a second row of B, or a row of B whose box misses the image makes a contradiction
+  frame, and a covered frame with no box at all is a missing frame (the person who must
+  stand there was not detected: S3 visibly failed). On every frame of the window, a placed
+  row of B (ground point, not at a frame edge) beyond r is a contradiction. B is A's person
+  with `min_decision_frames` decision frames over `min_decision_span_s`, the first within
+  `first_decision_max_frames` of B's first clean row, no contradiction and at most
+  `max_missing_frames` missing frames. Vetoes of this path: another piece lost within
+  `rival_horizon_s` before B began that could have reached B's first clean row (or has no
+  clean row to say where it went); a camera that is not continuous from the anchor on (a
+  frame without calibration, or a rotation, focal or centre change beyond the per-frame
+  limits since its last non-held calibration); the window ends at the first such break
+  inside it.
+- Jersey (path J, off: `jersey_enabled` false). Both pieces read one number on their own
+  raw per-row reads (taken from the import table, since `confident_jerseys` rewrites them):
+  at least `jersey_min_reads` reads, `jersey_min_agreement` of them, mean confidence
+  `jersey_min_mean_conf`, over `jersey_min_span_s`; both teams verified and equal; no other
+  piece of the team (or without a team) reading that number while A or B is seen, or a
+  number one edit away; within reach when both have positions; and for two pieces of one
+  plugin id, the plugin's reads must vary within its tracks (`diagnostics.jersey_reads`),
+  else they may be one tracklet vote. Passing pairs are listed as `stitch_path_disabled`.
+
+Both paths: majority roles (share `role_majority`) equal and player or goalkeeper; neither
+piece jumps (two consecutive clean rows further apart than one person runs in the time
+between them: an id switch inside it); no team contradiction (the labels left in the table
+differ; or both teams verified and different, a verified team being the team check's
+consistent verdict with `nearer_team` = team, no sample against and not cleared, prototypes
+at least `min_prototype_distance` apart, roles plausible; or one piece's own colour evidence
+against the other's verified team); no two different confident numbers. Every pair a path
+passes is a partner of its pieces. A piece with several partners on one side keeps the
+nearest when they form a chain whose links are enabled proofs agreeing with the plugin (the
+others `implied_by_chain`), else all are `ambiguous`; a pair against the plugin's own id
+(B continues the plugin id of another earlier piece) is listed under
+`conflicts_with_plugin`. Pairs are pieces of one shot at most `candidate_max_gap_s` apart;
+the report lists stitches with their evidence, conflicts, ambiguous and implied pairs, and
+the first `max_listed_abstentions` abstentions with their reasons and evidence (all
+counted).
+
+The proof assumes (S1) speeds up to `max_speed_mps`, (S2) ground points within
+`position_error_m`, (S3) a person wholly in the picture, on the pitch, tall enough and not
+under graphics has a row, and (S5) continuous camera motion within a shot (checked). S1-S3
+and the OCR precision are measured on the SoccerNet-GSR dev clips, gates pre-registered and
+certified once on the holdout before any stitch may change a track. The geometric proof
+rarely holds for a real exit (the disc starts half outside the picture and grows by about
+24 m in diameter per second): it covers quick returns and fragments; most re-entries stay
+apart.
 
 ## Highlight cues (per frame)
 
@@ -566,6 +634,7 @@ gbf.pipeline's own settings are listed with the module they are passed to.
 | `SAME_SPOT_FOOT_BOX_H` | 0.05 | hand-set | the image-plane test without ground positions, 9 cm at the players' own scale (docstring); value not recorded |
 | `OFF_PITCH_MARGIN_M` | 0.5 | hand-set | docstring: the Laws of the Game end the technical area 1 m from the touchline, so a coach stands at least twice this far out, while a player taking a throw-in stands on or just behind the line |
 | `PITCH_HALF_LENGTH_M`, `PITCH_HALF_WIDTH_M` | 52.5; 34.0 | football fact | SoccerNet's 105 x 68 m pitch |
+| `REENTRY_MIN_GAP_S` | 0.4 | hand-set | docstring: longer than the frame or two a detector drops a person half cut off by the frame edge (10 frames at 25 fps, against the 3 frames gbf.kinematics bridges), so the player was out of sight; not checked on the clip |
 
 ### gbf.calib_refine (`RefineSettings`; the refine stage passes the run's `rep_err_max_px`)
 
@@ -621,6 +690,32 @@ Added 2026-10-31 after the dev clips of the gates.v1 evaluation showed the plugi
 | `SideCheckParams.seed` | 0 | hand-set | convention: as in the frozen evaluation's bootstrap |
 | `SideCheckParams.level` | 0.95 | hand-set | convention: the usual central interval |
 | `SideCheckParams.min_tracks` | 2 | hand-set | convention: one track a team cannot be resampled |
+
+### gbf.stitch (`StitchParams`; the refine stage uses `DEFAULT_PARAMS`, audit mode)
+
+Added 2026-11-13 with the stitch audit (see "Stitch audit" above). No value was looked at on any clip: they are starting values for an audit that changes nothing, to be replaced by measurements on the SoccerNet-GSR dev clips (position error by distance to the camera, detector misses inside covered discs, OCR precision) before the rule may be enabled.
+
+| Parameter | Value | Kind | Provenance |
+|---|---|---|---|
+| `StitchParams.max_speed_mps` | 12.0 | football fact | above the fastest match sprints (about 10.5-11 m/s); the same bound as gbf.kinematics |
+| `StitchParams.position_error_m` | 2.0 | hand-set | the README's "about a metre off", doubled; replaced by the GSR dev P99 position deviation |
+| `StitchParams.window_s`, `StitchParams.anchor_max_age_s` | 2.0; 2.0 | hand-set | the reach disc outgrows the picture within about 1.5 s anyway; not recorded otherwise |
+| `StitchParams.min_decision_frames`, `StitchParams.min_decision_span_s`, `StitchParams.first_decision_max_frames` | 8; 0.3; 5 | hand-set | occlusions and merged boxes last a few frames; from the design review, not measured |
+| `StitchParams.max_missing_frames` | 0 | hand-set | none tolerated until the detector's misses inside covered discs are measured |
+| `StitchParams.head_height_m`, `StitchParams.person_height_m` | 2.4; 1.8 | football fact | a tall player (about 1.95 m) with a jump; a typical player |
+| `StitchParams.min_person_px_1080` | 50.0 | hand-set | the detector's small-person limit is unmeasured |
+| `StitchParams.cover_margin_px_1080` | 15.0 | hand-set | margin for the rim sampling and calibration residuals; not recorded |
+| `StitchParams.graphics_top_share`, `StitchParams.graphics_bottom_share` | 0.12; 0.08 | hand-set | where score and caption graphics usually sit; no overlay mask is estimated yet |
+| `StitchParams.pitch_margin_m` | 3.0 | hand-set | the plugin may drop people near the lines; its drop rate there is unmeasured |
+| `StitchParams.clean_min_box_px_1080` | 50.0 | hand-set | the team check's 50 px (`TeamCheckParams.min_box_height_px`), scaled with the picture like the other pixel limits |
+| `StitchParams.max_width_per_height`, `StitchParams.box_height_ratio` | 0.8; (0.6, 1.5) | hand-set | one standing or running person; two side by side are wider; not recorded |
+| `StitchParams.role_majority` | 0.8 | hand-set | not recorded |
+| `StitchParams.rival_horizon_s`, `StitchParams.candidate_max_gap_s` | 2.0; 10.0 | hand-set | not recorded |
+| `StitchParams.max_rotation_deg_per_frame`, `StitchParams.max_focal_change_per_frame`, `StitchParams.max_centre_move_m_per_frame` | 3.0; 0.05; 5.0 | hand-set | meant to catch missed cuts and flipped calibrations, not to judge pans; not measured |
+| `StitchParams.min_prototype_distance` | 20.0 | hand-set | twice `TeamCheckParams.margin` |
+| `StitchParams.jersey_min_reads`, `StitchParams.jersey_min_agreement`, `StitchParams.jersey_min_mean_conf`, `StitchParams.jersey_min_span_s` | 10; 0.95; 0.85; 1.0 | hand-set | stricter than `confident_jerseys`; the OCR precision is unmeasured |
+| `StitchParams.jersey_rival_min_reads`, `StitchParams.jersey_rival_min_conf` | 2; 0.5 | hand-set | not recorded |
+| `StitchParams.jersey_voted_share` | 0.9 | hand-set | not recorded |
 
 ### gbf.kinematics (box-size, trend and jump tests, speed chord)
 

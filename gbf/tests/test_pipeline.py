@@ -33,6 +33,7 @@ from gbf import contracts
 from gbf import measure as measure_module
 from gbf import pipeline as pipeline_module
 from gbf import render as render_module
+from gbf import stitch as stitch_module
 from gbf.audio import decode_mono
 from gbf.geometry import Camera, project, synthetic_broadcast_camera
 from gbf.ingest import probe
@@ -961,6 +962,30 @@ def test_final_highlights_are_ranked_and_the_refine_stage_reports_why_it_did_not
     assert refine["roles"]["verdict"] == "plausible"
     assert refine["roles"]["rows_cleared"] == 0
     assert "角色标签不合理" not in report
+    # The stitch audit ran in audit mode: it records, it changes nothing.
+    audit = refine["stitch_audit"]
+    assert audit["mode"] == "audit"
+    assert audit["applied"] is False
+    assert audit["paths_enabled"] == {"geometry": True, "jersey": False}
+    assert set(audit["counts"]["decisions"]) == set(stitch_module.DECISIONS)
+    run = read_json(out / "run.json")
+    assert run["result"]["facts"]["refine"]["stitch_audit"] == audit["counts"]
+
+
+def test_the_stitch_note_says_what_the_audit_would_join_and_that_nothing_changed() -> None:
+    decisions = dict.fromkeys(stitch_module.DECISIONS, 0)
+    decisions.update(stitch=2, stitch_path_disabled=1, conflicts_with_plugin=1, ambiguous=3)
+    note = pipeline_module._stitch_note({"counts": {"pairs": 12, "decisions": decisions}})
+    assert note.startswith("拼接审计（只记录，不改轨迹编号）：检查了同一镜头内 12 对")
+    assert "2 对按规则可以证明是同一名球员" in note
+    assert "1 对只有球衣号码一致（号码路径还没启用，只记录）" in note
+    assert "1 对几何上可以证明，但和插件给的编号冲突" in note
+    assert "3 对有不止一个可能的配对" in note
+    assert note.endswith("轨迹编号、球队和所有数值都没有因此改变。")
+    quiet = dict.fromkeys(stitch_module.DECISIONS, 0)
+    plain = pipeline_module._stitch_note({"counts": {"pairs": 4, "decisions": quiet}})
+    assert "号码" not in plain
+    assert "冲突" not in plain
 
 
 def test_labels_are_compared_and_shown_in_the_report(
@@ -1431,7 +1456,7 @@ def test_the_team_note_counts_tracks_kept_unchecked_and_every_cleared_row_is_cou
     assert run.notes == [
         "球队标签按球衣颜色核对：7 条轨迹球衣样本足够，其中 1 条的球队标签与球衣颜色矛盾，"
         "改为未知球队（不翻转）；2 条轨迹球衣样本太少、未能核对，沿用插件的球队标签；"
-        "1 条切镜后拆出的轨迹无法核对球衣，也不标球队。"
+        "1 条切镜或出画再入画后拆出的轨迹无法核对球衣，也不标球队。"
     ]
     teams = {
         track: set(group.astype(object).where(group.notna(), None))

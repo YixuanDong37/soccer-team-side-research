@@ -50,6 +50,7 @@ M1_MODULES = (
     "gbf.team_check",
     "gbf.role_check",
     "gbf.side_check",
+    "gbf.stitch",
     "gbf.kinematics",
     "gbf.ball",
     "gbf.audio",
@@ -73,6 +74,10 @@ NOT_TUNED: Mapping[str, Mapping[str, str]] = {
     "gbf.sngs_import": {"MAX_LISTED_PROBLEMS": "length of an error report"},
     "gbf.shots_grammar": {"REFERENCE_HEIGHT_PX": "the 1080-line reference height"},
     "gbf.track_tools": {"ID_STRIDE": "id scheme of tracks split at cuts"},
+    "gbf.stitch": {
+        "StitchParams.boundary_points": "sampling of the disc rims (numerical guard)",
+        "StitchParams.max_listed_abstentions": "length of a report list",
+    },
     "gbf.calib_refine": {
         "_LOGF_MIN": "focal-length bound of the fit (numerical guard)",
         "_LOGF_MAX": "focal-length bound of the fit (numerical guard)",
