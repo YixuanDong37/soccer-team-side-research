@@ -1,0 +1,453 @@
+{
+ "split": {
+  "project": {
+   "lost": 133,
+   "undetected": 30,
+   "wrong": 4
+  },
+  "relaxed": {
+   "lost": 128,
+   "wrong": 7,
+   "no rows": 32
+  }
+ },
+ "plugin": {
+  "project": {
+   "lost": 93,
+   "wrong": 14,
+   "undetected": 30,
+   "right": 30
+  },
+  "relaxed": {
+   "lost": 98,
+   "wrong": 12,
+   "no rows": 32,
+   "right": 25
+  }
+ },
+ "mutual": {
+  "project": {
+   "lost": 105,
+   "right": 26,
+   "undetected": 30,
+   "wrong": 6
+  },
+  "relaxed": {
+   "lost": 99,
+   "right": 26,
+   "wrong": 10,
+   "no rows": 32
+  }
+ },
+ "cuts_only": {
+  "project": {
+   "lost": 137,
+   "undetected": 30
+  },
+  "relaxed": {
+   "lost": 132,
+   "no rows": 33,
+   "wrong": 2
+  }
+ },
+ "strict|none": {
+  "project": {
+   "right": 33,
+   "lost": 100,
+   "undetected": 30,
+   "wrong": 4
+  },
+  "relaxed": {
+   "right": 36,
+   "lost": 93,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 29,
+   "lost": 85,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "strict|no bridge < 2 clean": {
+  "project": {
+   "right": 28,
+   "lost": 107,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 29,
+   "lost": 101,
+   "no rows": 33,
+   "wrong": 4
+  },
+  "relaxed_without_162": {
+   "right": 26,
+   "lost": 88,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "strict|no bridge < 5 rows": {
+  "project": {
+   "right": 29,
+   "lost": 106,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 30,
+   "lost": 100,
+   "no rows": 33,
+   "wrong": 4
+  },
+  "relaxed_without_162": {
+   "right": 27,
+   "lost": 87,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "strict|clean >= 2": {
+  "project": {
+   "right": 26,
+   "lost": 109,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 27,
+   "lost": 103,
+   "no rows": 33,
+   "wrong": 4
+  },
+  "relaxed_without_162": {
+   "right": 24,
+   "lost": 90,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "strict|rows >= 5": {
+  "project": {
+   "right": 28,
+   "lost": 107,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 29,
+   "lost": 101,
+   "no rows": 33,
+   "wrong": 4
+  },
+  "relaxed_without_162": {
+   "right": 26,
+   "lost": 88,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "margin_0.50|none": {
+  "project": {
+   "right": 91,
+   "lost": 42,
+   "undetected": 30,
+   "wrong": 4
+  },
+  "relaxed": {
+   "right": 94,
+   "lost": 34,
+   "no rows": 33,
+   "wrong": 6
+  },
+  "relaxed_without_162": {
+   "right": 86,
+   "lost": 28,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "margin_0.50|no bridge < 2 clean": {
+  "project": {
+   "right": 75,
+   "lost": 60,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 78,
+   "lost": 51,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 74,
+   "lost": 40,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "margin_0.50|no bridge < 5 rows": {
+  "project": {
+   "right": 74,
+   "lost": 61,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 78,
+   "lost": 51,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 74,
+   "lost": 40,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "margin_0.50|clean >= 2": {
+  "project": {
+   "right": 73,
+   "lost": 62,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 76,
+   "lost": 53,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 72,
+   "lost": 42,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "margin_0.50|rows >= 5": {
+  "project": {
+   "right": 73,
+   "lost": 62,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 77,
+   "lost": 52,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 73,
+   "lost": 41,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "balanced|none": {
+  "project": {
+   "right": 93,
+   "lost": 37,
+   "undetected": 30,
+   "wrong": 7
+  },
+  "relaxed": {
+   "right": 96,
+   "lost": 29,
+   "no rows": 33,
+   "wrong": 9
+  },
+  "relaxed_without_162": {
+   "right": 88,
+   "lost": 25,
+   "no rows": 31,
+   "wrong": 3
+  }
+ },
+ "balanced|no bridge < 2 clean": {
+  "project": {
+   "right": 77,
+   "lost": 58,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 81,
+   "lost": 48,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 76,
+   "lost": 38,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "balanced|no bridge < 5 rows": {
+  "project": {
+   "right": 76,
+   "lost": 58,
+   "undetected": 30,
+   "wrong": 3
+  },
+  "relaxed": {
+   "right": 80,
+   "lost": 48,
+   "no rows": 33,
+   "wrong": 6
+  },
+  "relaxed_without_162": {
+   "right": 76,
+   "lost": 37,
+   "no rows": 31,
+   "wrong": 3
+  }
+ },
+ "balanced|clean >= 2": {
+  "project": {
+   "right": 75,
+   "lost": 60,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 79,
+   "lost": 50,
+   "no rows": 33,
+   "wrong": 5
+  },
+  "relaxed_without_162": {
+   "right": 74,
+   "lost": 40,
+   "no rows": 31,
+   "wrong": 2
+  }
+ },
+ "balanced|rows >= 5": {
+  "project": {
+   "right": 75,
+   "lost": 59,
+   "undetected": 30,
+   "wrong": 3
+  },
+  "relaxed": {
+   "right": 79,
+   "lost": 49,
+   "no rows": 33,
+   "wrong": 6
+  },
+  "relaxed_without_162": {
+   "right": 75,
+   "lost": 38,
+   "no rows": 31,
+   "wrong": 3
+  }
+ },
+ "recall|none": {
+  "project": {
+   "right": 110,
+   "undetected": 30,
+   "lost": 20,
+   "wrong": 7
+  },
+  "relaxed": {
+   "right": 111,
+   "no rows": 33,
+   "lost": 13,
+   "wrong": 10
+  },
+  "relaxed_without_162": {
+   "right": 103,
+   "no rows": 31,
+   "lost": 9,
+   "wrong": 4
+  }
+ },
+ "recall|no bridge < 2 clean": {
+  "project": {
+   "right": 88,
+   "lost": 47,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 89,
+   "lost": 39,
+   "no rows": 33,
+   "wrong": 6
+  },
+  "relaxed_without_162": {
+   "right": 84,
+   "lost": 29,
+   "no rows": 31,
+   "wrong": 3
+  }
+ },
+ "recall|no bridge < 5 rows": {
+  "project": {
+   "right": 85,
+   "lost": 49,
+   "undetected": 30,
+   "wrong": 3
+  },
+  "relaxed": {
+   "right": 88,
+   "lost": 39,
+   "no rows": 33,
+   "wrong": 7
+  },
+  "relaxed_without_162": {
+   "right": 85,
+   "lost": 27,
+   "no rows": 31,
+   "wrong": 4
+  }
+ },
+ "recall|clean >= 2": {
+  "project": {
+   "right": 86,
+   "lost": 49,
+   "undetected": 30,
+   "wrong": 2
+  },
+  "relaxed": {
+   "right": 88,
+   "lost": 40,
+   "no rows": 33,
+   "wrong": 6
+  },
+  "relaxed_without_162": {
+   "right": 83,
+   "lost": 30,
+   "no rows": 31,
+   "wrong": 3
+  }
+ },
+ "recall|rows >= 5": {
+  "project": {
+   "right": 83,
+   "lost": 51,
+   "undetected": 30,
+   "wrong": 3
+  },
+  "relaxed": {
+   "right": 87,
+   "lost": 40,
+   "no rows": 33,
+   "wrong": 7
+  },
+  "relaxed_without_162": {
+   "right": 84,
+   "lost": 28,
+   "no rows": 31,
+   "wrong": 4
+  }
+ }
+}

@@ -1,0 +1,24 @@
+SNGS-107: pieces with a height 43, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 33, different 414
+SNGS-163: pieces with a height 50, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 42, different 562
+SNGS-106: pieces with a height 45, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 32, different 464
+SNGS-097: pieces with a height 42, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 36, different 384
+SNGS-067: pieces with a height 61, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 74, different 828
+SNGS-100: pieces with a height 51, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 45, different 586
+SNGS-066: pieces with a height 53, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 51, different 631
+SNGS-161: pieces with a height 44, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 33, different 433
+SNGS-169: pieces with a height 50, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 42, different 559
+SNGS-162: pieces with a height 67, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 102, different 993
+SNGS-151: pieces with a height 38, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 19, different 324
+SNGS-102: pieces with a height 39, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 25, different 336
+SNGS-112: pieces with a height 42, median foot reprojection error 0.00 px, rows kept 100%, same-person pairs 40, different 389
+
+within-piece spread of the row heights (IQR), median over pieces: 0.096 m
+same person, piece to piece: sd of the piece medians, median over persons: 0.045 m
+|dh| same person      (n 574): median 0.076 m, p90 0.209 m
+|dh| different people (n 6903, same team): median 0.093 m, p90 0.238 m
+AUC of -|dh| (same vs different, same team): 0.560
+AUC among pairs with raw prototype cosine >= 0.90 (same 510, different 347): 0.591
+veto |dh| > 0.05 m: removes 71% of different-people pairs, 67.2% of same-person pairs; among hard pairs: 74% / 66.1%
+veto |dh| > 0.08 m: removes 56% of different-people pairs, 46.7% of same-person pairs; among hard pairs: 60% / 44.5%
+veto |dh| > 0.10 m: removes 47% of different-people pairs, 38.5% of same-person pairs; among hard pairs: 48% / 36.7%
+veto |dh| > 0.15 m: removes 29% of different-people pairs, 20.2% of same-person pairs; among hard pairs: 31% / 18.8%

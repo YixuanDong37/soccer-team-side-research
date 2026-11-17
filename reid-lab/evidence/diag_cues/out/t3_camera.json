@@ -1,0 +1,280 @@
+{
+ "view": {
+  "visible_pitch_share": {
+   "n": 9588,
+   "mean": 0.296,
+   "p10": 0.168,
+   "p50": 0.26,
+   "p90": 0.475,
+   "max": 0.849
+  },
+  "visible_width_at_halfway_axis_m": {
+   "n": 9582,
+   "mean": 43.074,
+   "p10": 27.5,
+   "p50": 41.25,
+   "p90": 59.0,
+   "max": 111.5
+  },
+  "abs_pan_speed_mps": {
+   "n": 9347,
+   "mean": 17.881,
+   "p50": 2.061,
+   "p90": 8.267,
+   "p99": 21.496,
+   "max": 64175.364
+  },
+  "frames_without_camera": 162,
+  "frames": 9750
+ },
+ "sides": {
+  "returns": 167,
+  "same_lateral_side": 166,
+  "share": 0.994,
+  "both_boxes_touch_left_or_right": 152,
+  "of_those_same_side": 151,
+  "scored_same_lateral_side": 136,
+  "scored": 137
+ },
+ "exit_cause": {
+  "lateral_exits": 158,
+  "camera_driven": 113,
+  "player_moving_inwards": 86,
+  "boundary_speed_away_mps": {
+   "n": 147,
+   "mean": 6.395,
+   "p10": -0.625,
+   "p50": 5.0,
+   "p90": 14.875,
+   "max": 68.75
+  },
+  "player_speed_outwards_mps": {
+   "n": 158,
+   "mean": -0.191,
+   "p10": -2.307,
+   "p50": -0.252,
+   "p90": 1.705,
+   "max": 4.826
+  }
+ },
+ "pan_at_exit": {
+  "pans_away_gt_1mps": 108,
+  "about_still": 26,
+  "pans_towards_gt_1mps": 13,
+  "no_camera": 11
+ },
+ "entry_cause": {
+  "lateral_entries": 158,
+  "camera_driven": 130
+ },
+ "still_visible_share": {
+  "share_eq_0": 0.353,
+  "share_le_0.1": 0.635,
+  "share_le_0.25": 0.731,
+  "share_le_0.5": 0.814,
+  "mean": 0.214
+ },
+ "still_visible30_share": {
+  "share_eq_0": 0.419,
+  "share_le_0.1": 0.689,
+  "share_le_0.25": 0.784,
+  "share_le_0.5": 0.844,
+  "mean": 0.168
+ },
+ "line_visible_share": {
+  "share_eq_0": 0.431,
+  "share_le_0.1": 0.826,
+  "share_le_0.25": 0.928,
+  "share_le_0.5": 0.952,
+  "mean": 0.074
+ },
+ "line_visible30_share": {
+  "share_eq_0": 0.611,
+  "share_le_0.1": 0.916,
+  "share_le_0.25": 0.964,
+  "share_le_0.5": 0.976,
+  "mean": 0.04
+ },
+ "exit_point_visible_at_entry": 0.461,
+ "pair_cues": [
+  {
+   "set": "all candidates",
+   "true": 153,
+   "wrong": 7292,
+   "same side: true pass": 0.9216,
+   "same side: wrong pass": 0.5627,
+   "speed gate 8,3: true pass": 0.9935,
+   "speed gate 8,3: wrong pass": 0.8316,
+   "path<= 0.1: true pass": 0.7516,
+   "path<= 0.1: wrong pass": 0.1746,
+   "path<= 0.3: true pass": 0.9085,
+   "path<= 0.3: wrong pass": 0.3339,
+   "AUC(-path share)": 0.8654
+  },
+  {
+   "set": "both end boxes touch left/right",
+   "true": 88,
+   "wrong": 1390,
+   "same side: true pass": 0.9886,
+   "same side: wrong pass": 0.6281,
+   "speed gate 8,3: true pass": 0.9886,
+   "speed gate 8,3: wrong pass": 0.8374,
+   "path<= 0.1: true pass": 0.9318,
+   "path<= 0.1: wrong pass": 0.4957,
+   "path<= 0.3: true pass": 0.9773,
+   "path<= 0.3: wrong pass": 0.6086,
+   "AUC(-path share)": 0.7546
+  },
+  {
+   "set": "gap 10-49 frames",
+   "true": 24,
+   "wrong": 778,
+   "same side: true pass": 0.9583,
+   "same side: wrong pass": 0.5154,
+   "speed gate 8,3: true pass": 0.9583,
+   "speed gate 8,3: wrong pass": 0.1774,
+   "path<= 0.1: true pass": 0.875,
+   "path<= 0.1: wrong pass": 0.0668,
+   "path<= 0.3: true pass": 0.9167,
+   "path<= 0.3: wrong pass": 0.0938,
+   "AUC(-path share)": 0.9422
+  },
+  {
+   "set": "gap 50-124",
+   "true": 45,
+   "wrong": 1255,
+   "same side: true pass": 0.9556,
+   "same side: wrong pass": 0.6207,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 0.6239,
+   "path<= 0.1: true pass": 0.7778,
+   "path<= 0.1: wrong pass": 0.1745,
+   "path<= 0.3: true pass": 0.9111,
+   "path<= 0.3: wrong pass": 0.2733,
+   "AUC(-path share)": 0.882
+  },
+  {
+   "set": "gap 125-249",
+   "true": 43,
+   "wrong": 2169,
+   "same side: true pass": 0.907,
+   "same side: wrong pass": 0.6307,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 0.9465,
+   "path<= 0.1: true pass": 0.6977,
+   "path<= 0.1: wrong pass": 0.2185,
+   "path<= 0.3: true pass": 0.9302,
+   "path<= 0.3: wrong pass": 0.3891,
+   "AUC(-path share)": 0.8396
+  },
+  {
+   "set": "gap >= 250",
+   "true": 41,
+   "wrong": 3090,
+   "same side: true pass": 0.878,
+   "same side: wrong pass": 0.5032,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 1.0,
+   "path<= 0.1: true pass": 0.7073,
+   "path<= 0.1: wrong pass": 0.1709,
+   "path<= 0.3: true pass": 0.878,
+   "path<= 0.3: wrong pass": 0.3803,
+   "AUC(-path share)": 0.8207
+  },
+  {
+   "set": "after team+role ok",
+   "true": 153,
+   "wrong": 2732,
+   "same side: true pass": 0.9216,
+   "same side: wrong pass": 0.5717,
+   "speed gate 8,3: true pass": 0.9935,
+   "speed gate 8,3: wrong pass": 0.862,
+   "path<= 0.1: true pass": 0.7516,
+   "path<= 0.1: wrong pass": 0.1768,
+   "path<= 0.3: true pass": 0.9085,
+   "path<= 0.3: wrong pass": 0.3331,
+   "AUC(-path share)": 0.8623
+  },
+  {
+   "set": "after team+role ok and speed gate",
+   "true": 152,
+   "wrong": 2355,
+   "same side: true pass": 0.9276,
+   "same side: wrong pass": 0.5851,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 1.0,
+   "path<= 0.1: true pass": 0.7566,
+   "path<= 0.1: wrong pass": 0.1958,
+   "path<= 0.3: true pass": 0.9145,
+   "path<= 0.3: wrong pass": 0.3703,
+   "AUC(-path share)": 0.854
+  },
+  {
+   "set": "... and gap >= 125",
+   "true": 84,
+   "wrong": 1984,
+   "same side: true pass": 0.8929,
+   "same side: wrong pass": 0.562,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 1.0,
+   "path<= 0.1: true pass": 0.7024,
+   "path<= 0.1: wrong pass": 0.19,
+   "path<= 0.3: true pass": 0.9048,
+   "path<= 0.3: wrong pass": 0.3755,
+   "AUC(-path share)": 0.8339
+  },
+  {
+   "set": "after team+role, speed, same side",
+   "true": 141,
+   "wrong": 1378,
+   "same side: true pass": 1.0,
+   "same side: wrong pass": 1.0,
+   "speed gate 8,3: true pass": 1.0,
+   "speed gate 8,3: wrong pass": 1.0,
+   "path<= 0.1: true pass": 0.8085,
+   "path<= 0.1: wrong pass": 0.3208,
+   "path<= 0.3: true pass": 0.9433,
+   "path<= 0.3: wrong pass": 0.4891,
+   "AUC(-path share)": 0.8065
+  }
+ ],
+ "funnel": [
+  {
+   "gate": "candidates",
+   "true pairs kept": 153,
+   "wrong pairs kept": 7292,
+   "wrong per true": 47.66
+  },
+  {
+   "gate": "+ team and role agree (or team missing)",
+   "true pairs kept": 153,
+   "wrong pairs kept": 2732,
+   "wrong per true": 17.86
+  },
+  {
+   "gate": "+ speed gate v=8, e=3",
+   "true pairs kept": 152,
+   "wrong pairs kept": 2355,
+   "wrong per true": 15.49
+  },
+  {
+   "gate": "+ same lateral side",
+   "true pairs kept": 141,
+   "wrong pairs kept": 1378,
+   "wrong per true": 9.77
+  },
+  {
+   "gate": "+ straight path <= 30% in the picture",
+   "true pairs kept": 133,
+   "wrong pairs kept": 674,
+   "wrong per true": 5.07
+  }
+ ],
+ "after_all_gates": {
+  "later_pieces": 236,
+  "single_candidate": 78,
+  "single_and_true": 39,
+  "candidates_per_later_piece_p50": 3.0,
+  "p90": 7.0
+ }
+}

@@ -1,0 +1,32 @@
+SNGS-107 ok
+SNGS-163 ok
+SNGS-106 ok
+SNGS-097 ok
+SNGS-067 ok
+SNGS-100 ok
+SNGS-066 ok
+SNGS-161 ok
+SNGS-169 ok
+SNGS-162 ok
+SNGS-151 ok
+SNGS-102 ok
+SNGS-112 ok
+all equal
+exit=0
+native tables written: {'SNGS-107': 2954, 'SNGS-163': 2889, 'SNGS-106': 2310, 'SNGS-097': 1709, 'SNGS-067': 3510, 'SNGS-100': 1875, 'SNGS-066': 2555, 'SNGS-161': 1848, 'SNGS-169': 5495, 'SNGS-162': 5178, 'SNGS-151': 3572, 'SNGS-102': 1338, 'SNGS-112': 2904}
+exit=0
+SNGS-107 admissible pairs 959 | not in both: 0 | largest difference 0.00e+00
+SNGS-163 admissible pairs 655 | not in both: 0 | largest difference 0.00e+00
+SNGS-106 admissible pairs 961 | not in both: 0 | largest difference 0.00e+00
+SNGS-097 admissible pairs 621 | not in both: 0 | largest difference 0.00e+00
+SNGS-067 admissible pairs 1224 | not in both: 0 | largest difference 0.00e+00
+SNGS-100 admissible pairs 601 | not in both: 0 | largest difference 0.00e+00
+SNGS-066 admissible pairs 1084 | not in both: 0 | largest difference 0.00e+00
+SNGS-161 admissible pairs 479 | not in both: 0 | largest difference 0.00e+00
+SNGS-169 admissible pairs 1399 | not in both: 0 | largest difference 0.00e+00
+SNGS-162 admissible pairs 1848 | not in both: 0 | largest difference 0.00e+00
+SNGS-151 admissible pairs 1077 | not in both: 0 | largest difference 0.00e+00
+SNGS-102 admissible pairs 517 | not in both: 0 | largest difference 0.00e+00
+SNGS-112 admissible pairs 968 | not in both: 0 | largest difference 0.00e+00
+identical
+exit=0

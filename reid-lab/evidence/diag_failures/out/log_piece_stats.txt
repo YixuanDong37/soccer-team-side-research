@@ -1,0 +1,17 @@
+{
+ "pieces": 1190,
+ "known identity (>= 5 matched rows)": 807,
+ "1-4 matched rows": 274,
+ "no matched row": 109,
+ "<= 4 rows": 307,
+ "strict descriptor (>= 5 clean rows)": 755,
+ "no embedding at all": 0,
+ "player with verified team": 486,
+ "eligible for appearance_match": 462,
+ "known and eligible": 459,
+ "known, not eligible: team unverified": 334,
+ "known, not eligible: clean rows < 5": 70,
+ "known, not eligible: role": 98,
+ "rows": 115178,
+ "rows in pieces <= 4 rows": 592
+}

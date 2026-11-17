@@ -1,0 +1,131 @@
+clips whose left/right naming is flipped against the annotation: ['SNGS-106']
+row accuracy with the labels as given (no flip undone): 0.9466
+=== TEAM, row level (matched rows) ===
+{'matched_rows_of_annotated_players_gk': 102646, 'coverage': np.float64(0.994), 'accuracy_where_labelled': np.float64(0.9885)}
+annotated referee rows with a gbf team label: 0.0036 of 7292
+         seq   rows  coverage  accuracy  L->L  L->R  R->L  R->R
+0   SNGS-066  10483  0.980921  0.959934  5564   386    26  4307
+1   SNGS-067   8112  0.998521  0.974691  4075   119    86  3820
+2   SNGS-097   9087  0.999230  0.989427  3704    92     4  5280
+3   SNGS-100   7530  0.996414  0.996135  3467    16    13  4007
+4   SNGS-102   8216  1.000000  0.997566  3720     2    18  4476
+5   SNGS-106   4952  0.973748  0.943592  2440     8   264  2110
+6   SNGS-107   7866  0.999110  0.998855  3617     4     5  4233
+7   SNGS-112   7815  0.980294  0.999608  3597     3     0  4061
+8   SNGS-151   7370  0.996879  0.998639  3826     8     2  3511
+9   SNGS-161   7577  0.997492  0.998148  3643     3    11  3901
+10  SNGS-162   8714  0.998967  0.995175  3733     9    33  4930
+11  SNGS-163   6921  0.999856  0.994075  3432    27    14  3447
+12  SNGS-169   8003  0.996876  0.997242  3702    13     9  4254
+by gbf role of the row:
+               rows  coverage  accuracy
+role                                   
+goalkeeper   3193.0  0.999060  0.925392
+player      99406.0  0.994326  0.990520
+referee        47.0  0.000000       NaN
+by annotated role:
+               rows  coverage  accuracy
+role_ref                               
+goalkeeper   3354.0  0.999106  0.928380
+player      99292.0  0.993846  0.990525
+by edge / box height (720p):
+                     rows  coverage  accuracy
+edge  hbin                                   
+False (0, 30]       253.0  1.000000  0.992095
+      (30, 40]     2862.0  0.991964  0.976752
+      (40, 60]    30882.0  0.991937  0.988313
+      (60, 90]    51948.0  0.996612  0.986827
+      (90, 2000]  13406.0  0.996942  0.996259
+True  (0, 30]        13.0  0.923077  1.000000
+      (30, 40]       59.0  0.966102  1.000000
+      (40, 60]      608.0  0.929276  0.989381
+      (60, 90]     1444.0  0.956371  0.998552
+      (90, 2000]   1171.0  0.986336  0.992208
+
+=== TEAM, piece level ===
+pieces: 1190 with identity: 807 of annotated players/GK: 748
+                                      set  pieces  coverage  accuracy  wrong  mixed_labels
+0   all pieces with identity (players/GK)     748  0.986631  0.991870      6             0
+1                    starts at image edge     155  0.941935  1.000000      0             0
+2                      ends at image edge     199  0.979899  1.000000      0             0
+3                  starts or ends at edge     307  0.970684  1.000000      0             0
+4                                 neither     441  0.997732  0.986364      6             0
+5                re-entry pieces (k >= 1)      49  0.816327  1.000000      0             0
+6               piece of a return's row A     113  0.991150  1.000000      0             0
+7               piece of a return's row B     112  0.964286  1.000000      0             0
+8                               rows < 10      45  0.977778  0.977273      1             0
+9                              rows 10-49     222  0.972973  0.995370      1             0
+10                            rows 50-199     294  0.989796  0.989691      3             0
+11                            rows >= 200     187  1.000000  0.994652      1             0
+12                  annotated goalkeepers      41  1.000000  0.926829      3             0
+13        team check verdict = consistent     504  1.000000  0.996032      2             0
+14        team check verdict = not_listed      40  0.975000  0.923077      3             0
+15         team check verdict = unchecked     204  0.955882  0.994872      1             0
+cleared reasons: {nan: 978, None: 169, 'split_piece': 42, 'inconsistent': 1}
+wrong-team pieces by clip: {'SNGS-066': 3, 'SNGS-106': 3}
+wrong-team pieces rows quantiles: {'n': 6, 'mean': 99.833, 'p50': 102.0, 'p75': 153.75, 'p90': 180.5, 'p95': 193.75, 'p99': 204.35, 'max': 207.0}  purity: {'n': 6, 'mean': 0.728, 'p50': 0.733, 'p75': 1.0, 'p90': 1.0, 'p95': 1.0, 'p99': 1.0, 'max': 1.0}
+wrong-team pieces with purity >= 0.9: 3
+pieces of annotated referees: 59 with a gbf team: 1 gbf role: {'referee': 58, 'player': 1}
+
+=== TEAM, pair level ===
+{'scored_returns': 137, 'both_pieces_have_team': 116, 'labels_equal': 110, 'labels_differ': 6, 'one_missing': 21, 'both_missing': 0, 'A_team_wrong': 4, 'B_team_wrong': 4, 'both_verified(consistent)': 75}
+differing-label returns:
+          seq  gap a_team b_team ref_team       a_ver       b_ver  a_role  b_role ref_role  a_ident_ok  b_ident_ok  a_rows  b_rows  a_role_share  b_role_share
+44   SNGS-067   80  right   left    right   unchecked   unchecked  player  player   player       False       False       4       6           1.0           1.0
+48   SNGS-067  236   left  right     left   unchecked   unchecked  player  player   player        True       False       9       3           1.0           1.0
+60   SNGS-066  127  right   left    right  consistent  consistent  player  player   player        True       False     159     375           1.0           1.0
+102  SNGS-162  185  right   left     left  consistent  consistent  player  player   player       False        True     417     123           1.0           1.0
+118  SNGS-151  157  right   left    right  consistent   unchecked  player  player   player        True       False     341       2           1.0           1.0
+126  SNGS-102   74  right   left     left   unchecked  consistent  player  player   player       False        True      26      21           1.0           1.0
+  pair type (annotation)  pairs  both labelled  share labelled  labels equal  equal share
+0            same_person    737            714        0.968792           709     0.992997
+1  diff_person_same_team   5532           5361        0.969089          5286     0.986010
+2  diff_person_diff_team   6348           6159        0.970227            72     0.011690
+
+=== ROLE ===
+row level, confusion (rows: annotated role, cols: gbf role):
+role        goalkeeper  player  referee
+role_ref                               
+goalkeeper        3190     164        0
+player               3   99242       47
+referee              1      26     7265
+row accuracy: 0.9978
+piece level, confusion (annotated role of the piece's person vs piece majority role):
+role        goalkeeper  player  referee
+role_ref                               
+goalkeeper          39       2        0
+player               0     706        1
+referee              0       1       58
+pieces involved in scored returns: 218
+role      player  referee
+role_ref                 
+player       216        0
+referee        1        1
+{'pieces': 218, 'accuracy': 0.9954, 'wrong': 1, 'role_major_share_p10': 1.0, 'mixed_role_pieces': 0}
+wrong-role return pieces:
+          seq  piece  rows    role role_ref  role_major_share    purity   team team_ref
+397  SNGS-067     62    14  player  referee               1.0  0.428571  right      NaN
+{'pairs': 137, 'A_role_ok': 136, 'B_role_ok': 137, 'A_and_B_roles_equal': 136, 'roles_differ': 1, 'ref_goalkeeper_returns': 0}
+         seq  gap   a_role  b_role ref_role  a_rows  b_rows  a_role_share  b_role_share  a_ident_ok  b_ident_ok
+45  SNGS-067   80  referee  player   player      33     201           1.0           1.0       False        True
+role by annotated role, pieces by size:
+                   size      mean
+role_ref   size                  
+goalkeeper <10        9  0.888889
+           10-49     12  1.000000
+           50-199    15  0.933333
+           >=200      5  1.000000
+player     <10       36  1.000000
+           10-49    210  0.995238
+           50-199   279  1.000000
+           >=200    182  1.000000
+referee    <10        8  1.000000
+           10-49     18  0.944444
+           50-199    19  1.000000
+           >=200     14  1.000000
+{'same_person_pairs': 803, 'same_person_roles_equal': 798, 'diff_person_pairs': 14009, 'diff_person_roles_equal': 10512}
+
+=== EXTRAS ===
+{'returns_both_pieces_are_the_person': 89, 'both_labelled': 84, 'labels_equal': 84, 'labels_differ': 0, 'one_label_missing': 5, 'A_missing': 1, 'B_missing': 4, 'roles_equal': 89}
+returns by (A piece is the person, B piece is the person): {(False, False): 8, (False, True): 18, (True, False): 22, (True, True): 89}
+{'pieces_with_identity_without_team': 10, 'a_sibling_piece_of_the_plugin_id_has_a_team': 9, 'sibling_team_right': 8, 'sibling_team_wrong': 1}

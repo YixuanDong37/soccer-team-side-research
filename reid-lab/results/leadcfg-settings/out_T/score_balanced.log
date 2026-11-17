@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point balanced (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 156,
+  "right": 104,
+  "wrong": 11,
+  "lost": 41,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.6667,
+  "wrong_share": 0.0705,
+  "links": 263,
+  "links_right": 220,
+  "links_wrong": 20,
+  "links_unknown": 23,
+  "link_precision": 0.9167,
+  "impure_row_share": 0.02477
+ },
+ "clips_without_entry": []
+}

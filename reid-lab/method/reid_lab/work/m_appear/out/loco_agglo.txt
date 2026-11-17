@@ -1,0 +1,16 @@
+family agglo: LOCO held-out (headline) and in-sample (secondary), by lam
+lam= 1 HELD-OUT right  87 wrong 16 lost  34 | links r/w/u 281/16/248 | impure 0.0375
+        in-sample right  89 wrong  7 lost  41 | links r/w/u 273/10/244 | impure 0.0341  params {'kind': 'w', 'margin': 0.15, 't_abs': 0.4}
+        chosen per fold: {'{"kind": "w", "margin": 0.15, "t_abs": 0.4}': 10, '{"kind": "tc", "margin": 0.1, "t_abs": 0.55}': 2, '{"kind": "tc", "margin": 0.0, "t_abs": 0.55}': 1}
+lam= 2 HELD-OUT right  74 wrong  7 lost  56 | links r/w/u 239/ 8/197 | impure 0.0310
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 9, '{"kind": "w", "margin": 0.25, "t_abs": 0.45}': 1, '{"kind": "w", "margin": 0.15, "t_abs": 0.4}': 2}
+lam= 3 HELD-OUT right  67 wrong  6 lost  64 | links r/w/u 226/ 3/187 | impure 0.0286
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 3, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 8, '{"kind": "w", "margin": 0.25, "t_abs": 0.45}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.6}': 1}
+lam= 5 HELD-OUT right  67 wrong  6 lost  64 | links r/w/u 214/ 3/180 | impure 0.0286
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 10, '{"kind": "w", "margin": 0.3, "t_abs": 0.45}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.6}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 1}
+lam=10 HELD-OUT right  60 wrong  6 lost  71 | links r/w/u 201/ 3/165 | impure 0.0283
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 8, '{"kind": "tc", "margin": 0.4, "t_abs": 0.65}': 3, '{"kind": "w", "margin": 0.3, "t_abs": 0.45}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.6}': 1}

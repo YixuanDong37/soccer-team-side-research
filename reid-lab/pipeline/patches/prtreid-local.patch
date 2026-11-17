@@ -1,0 +1,11 @@
+diff --git a/setup.py b/setup.py
+index d551c2b..83a7750 100644
+--- a/setup.py
++++ b/setup.py
+@@ -41,5 +41,5 @@ setup(
+     install_requires=get_requirements(),
+     extras_require={"labels": get_requirements("requirements_labels.txt")},
+     keywords=['Person Re-Identification', 'Deep Learning', 'Computer Vision'],
+-    ext_modules=cythonize(ext_modules)
++    # ext_modules dropped: the Cython rank extension needs MSVC and only speeds up evaluation
+ )

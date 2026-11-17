@@ -1,0 +1,1 @@
+SNGS-106 blind fuse_r1 fold: rule B {'strict': (0.6, 'off'), 'balanced': (0.2, 'off'), 'recall': (0.2, 'off')} | r1 pair model w [6.9547, 0.6552, -0.1398] b -7.1332 | linker2c(covis 1) == linker2: True | label files opened: 12 (held-out: 0 ) | fitted / cached files of other agents read: [] | blocked: [] | 1082.7 s

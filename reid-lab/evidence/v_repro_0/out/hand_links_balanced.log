@@ -1,0 +1,16 @@
+SNGS-107 {'right': 20, 'wrong': 0, 'unknown': 35, 'impure': 14} tracked matched rows 8207 | same as score.py
+SNGS-163 {'right': 17, 'wrong': 0, 'unknown': 22, 'impure': 172} tracked matched rows 7526 | same as score.py
+SNGS-106 {'right': 24, 'wrong': 0, 'unknown': 38, 'impure': 60} tracked matched rows 5657 | same as score.py
+SNGS-097 {'right': 20, 'wrong': 1, 'unknown': 22, 'impure': 343} tracked matched rows 9700 | same as score.py
+SNGS-067 {'right': 31, 'wrong': 0, 'unknown': 33, 'impure': 119} tracked matched rows 8538 | same as score.py
+SNGS-100 {'right': 30, 'wrong': 2, 'unknown': 18, 'impure': 171} tracked matched rows 8056 | same as score.py
+SNGS-066 {'right': 22, 'wrong': 1, 'unknown': 20, 'impure': 432} tracked matched rows 11208 | same as score.py
+SNGS-161 {'right': 28, 'wrong': 0, 'unknown': 9, 'impure': 17} tracked matched rows 8297 | same as score.py
+SNGS-169 {'right': 20, 'wrong': 0, 'unknown': 47, 'impure': 46} tracked matched rows 8489 | same as score.py
+SNGS-162 {'right': 33, 'wrong': 5, 'unknown': 53, 'impure': 603} tracked matched rows 9270 | same as score.py
+SNGS-151 {'right': 6, 'wrong': 0, 'unknown': 35, 'impure': 28} tracked matched rows 7833 | same as score.py
+SNGS-102 {'right': 21, 'wrong': 0, 'unknown': 18, 'impure': 12} tracked matched rows 8836 | same as score.py
+SNGS-112 {'right': 18, 'wrong': 1, 'unknown': 26, 'impure': 58} tracked matched rows 8321 | same as score.py
+pooled: links 290 / 10 / 376 | impure share 0.01887 | score.py: 290 / 10 / 376 | 0.01887
+majority ties met: 13
+all clips agree

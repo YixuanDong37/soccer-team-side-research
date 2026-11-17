@@ -1,0 +1,15 @@
+clip      rows   gbf-now  cuts-only  strict  balanced  recall   (impure rows)
+SNGS-107    8207      94      13      13      14      14
+SNGS-163    7526     453     171     172     172     172
+SNGS-106    5657     248      60      60      60      60
+SNGS-097    9700     318     171     171     343     343
+SNGS-067    8538     332     119     119     119     120
+SNGS-100    8056     207      55      55     171     171
+SNGS-066   11208     611     349     349     432     432
+SNGS-161    8297      91      17      17      17      17
+SNGS-169    8489      71      44      45      46      48
+SNGS-162    9270     349      51     352     603     603
+SNGS-151    7833      36      28      28      28      28
+SNGS-102    8836      25      11      11      12      12
+SNGS-112    8321      39       9      20      58      79
+pooled share: split 2.61%  cuts 1.00%  strict 1.28%  balanced 1.89%  recall 1.91%

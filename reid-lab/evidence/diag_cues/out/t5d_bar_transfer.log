@@ -1,0 +1,19 @@
+                         score  target precision (fit clips)  bar min  bar max  held-out same kept  recall  held-out hard kept  held-out precision  worst held-out clip
+0                     mean_all                          0.90    0.934    0.949                 430   0.583                  57               0.883                0.657
+1                     mean_all                          0.95    0.945    0.971                 219   0.297                  28               0.887                0.688
+2                     mean_all                          0.98    0.965    0.994                  50   0.068                  13               0.794                0.774
+3                   median_all                          0.90    0.920    0.936                 469   0.636                  61               0.885                0.653
+4                   median_all                          0.95    0.938    0.969                 183   0.248                  26               0.876                0.700
+5                   median_all                          0.98    0.962    0.979                  90   0.122                  12               0.882                0.769
+6         mean_all_teamcentred                          0.90    0.514    0.575                 613   0.832                  70               0.898                0.761
+7         mean_all_teamcentred                          0.95    0.603    0.728                 499   0.677                  35               0.934                0.798
+8         mean_all_teamcentred                          0.98    0.726    0.888                 193   0.262                  15               0.928                0.839
+9       median_all_teamcentred                          0.90    0.500    0.545                 628   0.852                  71               0.898                0.759
+10      median_all_teamcentred                          0.95    0.596    0.718                 520   0.706                  33               0.940                0.806
+11      median_all_teamcentred                          0.98    0.715    0.889                 222   0.301                  16               0.933                0.832
+12            mean_clean_snorm                          0.90    2.653    3.968                 237   0.322                  31               0.884                0.656
+13            mean_clean_snorm                          0.95    3.875    5.714                  76   0.103                  10               0.884                0.556
+14            mean_clean_snorm                          0.98    4.765    6.440                  56   0.076                   6               0.903                0.600
+15  mean_all_teamcentred_snorm                          0.90    3.074    3.248                 455   0.617                  53               0.896                0.684
+16  mean_all_teamcentred_snorm                          0.95    4.841    7.932                  95   0.129                  12               0.888                0.700
+17  mean_all_teamcentred_snorm                          0.98    7.078    8.763                  20   0.027                   2               0.909                0.500

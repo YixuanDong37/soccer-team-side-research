@@ -1,0 +1,22 @@
+SNGS-107 1550 pairs, 385 admissible; pos_sink >= 0.5: 16
+SNGS-163 1756 pairs, 381 admissible; pos_sink >= 0.5: 13
+SNGS-106 2316 pairs, 985 admissible; pos_sink >= 0.5: 24
+SNGS-097 851 pairs, 378 admissible; pos_sink >= 0.5: 24
+SNGS-067 1309 pairs, 493 admissible; pos_sink >= 0.5: 9
+SNGS-100 2035 pairs, 517 admissible; pos_sink >= 0.5: 24
+SNGS-066 2406 pairs, 662 admissible; pos_sink >= 0.5: 25
+SNGS-161 3748 pairs, 1120 admissible; pos_sink >= 0.5: 28
+SNGS-169 2262 pairs, 605 admissible; pos_sink >= 0.5: 20
+SNGS-162 2152 pairs, 659 admissible; pos_sink >= 0.5: 18
+SNGS-151 2659 pairs, 504 admissible; pos_sink >= 0.5: 18
+SNGS-102 919 pairs, 286 admissible; pos_sink >= 0.5: 19
+SNGS-112 973 pairs, 309 admissible; pos_sink >= 0.5: 23
+ a      b  pos_adm  pos_z  pos_p_in  pos_p_out  pos_sink  pos_rank_in  pos_rank_out  pos_n_in  pos_n_out  pos_kind
+12     23     True -2.500     0.842      0.955     0.972          1.0           1.0       2.0        2.0       0.0
+11     31     True -0.359     0.972      0.987     0.967          1.0           1.0       4.0        9.0       0.0
+44     50     True -0.797     0.962      0.967     0.955          1.0           1.0      12.0        4.0       0.0
+15     41     True -1.188     0.963      0.886     0.942          1.0           1.0       7.0        8.0       0.0
+34     49     True -4.222     0.665      0.651     0.939          1.0           1.0       1.0        1.0       0.0
+41     43     True -1.485     0.865      0.928     0.914          1.0           1.0       9.0        6.0       0.0
+31     45     True -1.643     0.881      0.943     0.885          1.0           1.0      10.0        5.0       2.0
+17 100017     True -3.169     0.541      0.901     0.879          1.0           1.0       2.0        3.0       2.0

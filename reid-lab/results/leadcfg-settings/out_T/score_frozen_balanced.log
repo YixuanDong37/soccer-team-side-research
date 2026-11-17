@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point balanced (frozen all-13 numbers and choice: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 156,
+  "right": 108,
+  "wrong": 12,
+  "lost": 36,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.6923,
+  "wrong_share": 0.0769,
+  "links": 254,
+  "links_right": 215,
+  "links_wrong": 17,
+  "links_unknown": 22,
+  "link_precision": 0.9267,
+  "impure_row_share": 0.02458
+ },
+ "clips_without_entry": []
+}

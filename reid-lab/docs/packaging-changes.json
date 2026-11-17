@@ -1,0 +1,75 @@
+{
+ "what": "lines changed while packaging; every other shipped file is a byte copy of the source with CRLF turned into LF",
+ "changes": [
+  {
+   "file": "evidence/v_repro_0/out/audit_method.log",
+   "line": 15,
+   "now": "'<python-install-dir>'",
+   "why": "a user-home path (the Python install folder) in a list of opened path roots"
+  },
+  {
+   "file": "pipeline/track_clip.sh",
+   "line": 5,
+   "now": "e.g. /data/clips/match-01/clip.mp4",
+   "why": "the example argument named the folder of a clip that is not part of this delivery"
+  },
+  {
+   "file": "pipeline/track_clip.sh",
+   "line": 6,
+   "now": "e.g. D:/data/plugin-runs/x",
+   "why": "example argument with a path of the original machine"
+  },
+  {
+   "file": "pipeline/track_clip.sh",
+   "line": 8,
+   "now": "# keep Git Bash from rewriting drive-less /folder/... arguments",
+   "why": "comment with a path of the original machine"
+  },
+  {
+   "file": "pipeline/track_clip_leadcfg.sh",
+   "line": 7,
+   "now": "# keep Git Bash from rewriting drive-less /folder/... arguments",
+   "why": "comment with a path of the original machine"
+  },
+  {
+   "file": "evidence/critic/o4_nopos.py",
+   "line": 3,
+   "now": "recompressed video, calibration less often usable)?",
+   "why": "docstring wording about a clip that is not part of this delivery"
+  }
+ ],
+ "added_beyond_the_plan": [
+  "results/leadcfg-settings/refit_R/ (fitted parameters and aggregate reports of the lead-settings refit)",
+  "results/headline-numbers.csv and .json (generated from the shipped result files)"
+ ],
+ "kept_but_note": [
+  {
+   "file": "evidence/critic/out/o5b_closed_set.txt",
+   "lines_naming_an_annotated_person": 1
+  },
+  {
+   "file": "evidence/fuse/README.md",
+   "lines_naming_an_annotated_person": 3
+  },
+  {
+   "file": "evidence/v_repro_1/README.md",
+   "lines_naming_an_annotated_person": 5
+  },
+  {
+   "file": "evidence/v_robust_0/README.md",
+   "lines_naming_an_annotated_person": 1
+  },
+  {
+   "file": "evidence/v_robust_1/README.md",
+   "lines_naming_an_annotated_person": 1
+  },
+  {
+   "file": "method/reid_lab/work/fuse_r1/README.md",
+   "lines_naming_an_annotated_person": 3
+  },
+  {
+   "file": "method/reid_lab/work/m_appear/README.md",
+   "lines_naming_an_annotated_person": 1
+  }
+ ]
+}

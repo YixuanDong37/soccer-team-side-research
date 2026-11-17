@@ -1,0 +1,10 @@
+annotated returns of outfield players: 167
+seen     : median 10, quartiles 9-10, max 10;  distribution {5: 2, 6: 8, 7: 9, 8: 14, 9: 14, 10: 120}
+absent   : median 3, quartiles 2-5, max 8;  distribution {1: 23, 2: 33, 3: 32, 4: 29, 5: 22, 6: 18, 7: 8, 8: 2}
+same_side: median 3, quartiles 1-4, max 8;  distribution {1: 45, 2: 36, 3: 28, 4: 24, 5: 18, 6: 9, 7: 6, 8: 1}
+together : median 1, quartiles 0-2, max 6;  distribution {0: 59, 1: 44, 2: 31, 3: 12, 4: 10, 5: 10, 6: 1}
+returns with the returner as the ONLY absent team-mate: 23 (14%); at most 2 absent: 56 (34%); at most 3: 88 (53%)
+... counting only absent team-mates last seen in the same image half: only 1: 45 (27%); at most 2: 81 (49%); at most 3: 109 (65%)
+chance level of a blind guess among the absent team-mates: mean 1/absent = 0.40; same image half: 0.51
+per clip, median absent team-mates at a return: {'SNGS-107': 4.0, 'SNGS-163': 4.5, 'SNGS-106': 3.0, 'SNGS-097': 2.5, 'SNGS-067': 3.0, 'SNGS-100': 2.0, 'SNGS-066': 3.0, 'SNGS-161': 4.0, 'SNGS-169': 3.0, 'SNGS-162': 4.5, 'SNGS-151': 4.0, 'SNGS-102': 4.5, 'SNGS-112': 1.0}
+per clip, returns with another team-mate re-entering within 1 s: {'SNGS-107': 14, 'SNGS-163': 14, 'SNGS-106': 2, 'SNGS-097': 3, 'SNGS-067': 10, 'SNGS-100': 2, 'SNGS-066': 9, 'SNGS-161': 7, 'SNGS-169': 10, 'SNGS-162': 16, 'SNGS-151': 8, 'SNGS-102': 11, 'SNGS-112': 2}

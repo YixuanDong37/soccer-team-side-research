@@ -1,0 +1,1 @@
+SNGS-066 blind fuse fold: margins {'strict': 0.9, 'balanced': 0.25, 'recall': 0.2} | pair model w [7.3321, 0.6637, 1.0853] b -7.1749 | label files opened: 12 (held-out: 0 ) | fitted files of other agents read: [] | blocked: [] | 151.5 s

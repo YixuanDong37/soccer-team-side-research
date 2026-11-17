@@ -1,0 +1,33 @@
+split baseline: right   0  wrong  3  lost 153 | links   0: right   0 wrong  0 unknown   0 | impure rows 2.62%
+emit>=2 theta 0.70  LOCO held-out: right  21  wrong  3  lost 132 | links  53: right  32 wrong  1 unknown  20 | impure rows 2.68%   || in-sample: R23 W3 L130 links r34 w1 u20
+emit>=2 theta 0.65  LOCO held-out: right  32  wrong  5  lost 119 | links  71: right  44 wrong  2 unknown  25 | impure rows 2.75%   || in-sample: R34 W5 L117 links r46 w2 u24
+emit>=2 theta 0.60  LOCO held-out: right  41  wrong  7  lost 108 | links  82: right  52 wrong  4 unknown  26 | impure rows 2.77%   || in-sample: R42 W5 L109 links r53 w3 u26
+emit>=2 theta 0.55  LOCO held-out: right  49  wrong  8  lost  99 | links  97: right  59 wrong  6 unknown  32 | impure rows 2.92%   || in-sample: R49 W8 L99 links r60 w6 u31
+emit>=2 theta 0.50  LOCO held-out: right  57  wrong 10  lost  89 | links 118: right  67 wrong 10 unknown  41 | impure rows 3.23%   || in-sample: R55 W9 L92 links r66 w9 u38
+emit>=2 theta 0.45  LOCO held-out: right  60  wrong 12  lost  84 | links 125: right  69 wrong 13 unknown  43 | impure rows 3.35%   || in-sample: R60 W12 L84 links r69 w12 u43
+emit>=2 theta 0.40  LOCO held-out: right  65  wrong 14  lost  77 | links 134: right  74 wrong 15 unknown  45 | impure rows 3.47%   || in-sample: R64 W13 L79 links r73 w14 u45
+emit>=2 theta 0.35  LOCO held-out: right  78  wrong 20  lost  58 | links 166: right  85 wrong 23 unknown  58 | impure rows 3.94%   || in-sample: R80 W19 L57 links r86 w22 u59
+emit>=2 theta 0.30  LOCO held-out: right  82  wrong 20  lost  54 | links 178: right  88 wrong 24 unknown  66 | impure rows 4.01%   || in-sample: R87 W22 L47 links r92 w26 u65
+emit>=2 theta 0.25  LOCO held-out: right  87  wrong 26  lost  43 | links 192: right  93 wrong 30 unknown  69 | impure rows 4.21%   || in-sample: R90 W25 L41 links r95 w29 u71
+emit>=2 theta 0.20  LOCO held-out: right  88  wrong 29  lost  39 | links 199: right  94 wrong 32 unknown  73 | impure rows 4.26%   || in-sample: R91 W28 L37 links r96 w32 u74
+emit>=1 theta 0.70  LOCO held-out: right  21  wrong  3  lost 132 | links  60: right  35 wrong  1 unknown  24 | impure rows 2.68%   || in-sample: R23 W3 L130 links r37 w1 u24
+emit>=1 theta 0.65  LOCO held-out: right  32  wrong  5  lost 119 | links  79: right  48 wrong  2 unknown  29 | impure rows 2.75%   || in-sample: R34 W5 L117 links r50 w2 u29
+emit>=1 theta 0.60  LOCO held-out: right  43  wrong  7  lost 106 | links  94: right  59 wrong  4 unknown  31 | impure rows 2.77%   || in-sample: R44 W5 L107 links r60 w3 u31
+emit>=1 theta 0.55  LOCO held-out: right  51  wrong  9  lost  96 | links 116: right  66 wrong  8 unknown  42 | impure rows 3.02%   || in-sample: R51 W8 L97 links r67 w7 u38
+emit>=1 theta 0.50  LOCO held-out: right  61  wrong 12  lost  83 | links 144: right  76 wrong 13 unknown  55 | impure rows 3.47%   || in-sample: R60 W11 L85 links r76 w12 u52
+emit>=1 theta 0.45  LOCO held-out: right  65  wrong 14  lost  77 | links 156: right  79 wrong 16 unknown  61 | impure rows 3.58%   || in-sample: R66 W14 L76 links r80 w15 u61
+emit>=1 theta 0.40  LOCO held-out: right  71  wrong 17  lost  68 | links 170: right  85 wrong 20 unknown  65 | impure rows 3.94%   || in-sample: R71 W16 L69 links r85 w19 u65
+emit>=1 theta 0.35  LOCO held-out: right  88  wrong 27  lost  41 | links 217: right  99 wrong 33 unknown  85 | impure rows 4.75%   || in-sample: R90 W26 L40 links r100 w32 u87
+emit>=1 theta 0.30  LOCO held-out: right  92  wrong 29  lost  35 | links 244: right 103 wrong 36 unknown 105 | impure rows 4.93%   || in-sample: R97 W30 L29 links r107 w37 u101
+emit>=1 theta 0.25  LOCO held-out: right 100  wrong 36  lost  20 | links 269: right 111 wrong 45 unknown 113 | impure rows 5.30%   || in-sample: R102 W35 L19 links r112 w44 u112
+emit>=1 theta 0.20  LOCO held-out: right 101  wrong 39  lost  16 | links 279: right 112 wrong 48 unknown 119 | impure rows 5.54%   || in-sample: R103 W38 L15 links r113 w47 u118
+METHOD_pos_e2_t60: right  41  wrong  7  lost 108 | links  82: right  52 wrong  4 unknown  26 | impure rows 2.77%
+METHOD_pos_e2_t50: right  57  wrong 10  lost  89 | links 118: right  67 wrong 10 unknown  41 | impure rows 3.23%
+METHOD_pos_e2_t40: right  65  wrong 14  lost  77 | links 134: right  74 wrong 15 unknown  45 | impure rows 3.47%
+METHOD_pos_e1_t60: right  43  wrong  7  lost 106 | links  94: right  59 wrong  4 unknown  31 | impure rows 2.77%
+METHOD_pos_e1_t50: right  61  wrong 12  lost  83 | links 144: right  76 wrong 13 unknown  55 | impure rows 3.47%
+METHOD_pos_e1_t40: right  71  wrong 17  lost  68 | links 170: right  85 wrong 20 unknown  65 | impure rows 3.94%
+METHOD_pos_strict: (emit, theta) chosen per fold [(2, 0.65), (2, 0.7)] -> right  27  wrong  3  lost 126 | links  60: right  39 wrong  1 unknown  20 | impure rows 2.68%
+METHOD_pos_balanced: (emit, theta) chosen per fold [(1, 0.5), (1, 0.6), (2, 0.5)] -> right  47  wrong 11  lost  98 | links 107: right  60 wrong 10 unknown  37 | impure rows 3.28%
+in-sample strict: (emit, theta) (2, 0.7) -> right  23  wrong  3  lost 130 | links  55: right  34 wrong  1 unknown  20 | impure rows 2.68%
+in-sample balanced: (emit, theta) (1, 0.6) -> right  44  wrong  5  lost 107 | links  94: right  60 wrong  3 unknown  31 | impure rows 2.76%

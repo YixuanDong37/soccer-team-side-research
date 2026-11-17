@@ -1,0 +1,22 @@
+gbf pieces (no cuts)
+  piece 28: matched boxes 47, frames 206-382, persons {21: 33, 19: 6, 14: 5, 3: 3}
+    frames 0-297: {19: 6, 14: 5, 3: 3}
+    frames 298-1000000: {21: 33}
+  piece 14: matched boxes 182, frames 0-184, persons {22: 182}
+  piece 6: matched boxes 212, frames 0-216, persons {21: 210, 9: 2}
+  piece 49: matched boxes 69, frames 306-388, persons {22: 69}
+  piece 63: matched boxes 50, frames 391-478, persons {21: 50}
+after the held-out cuts
+  piece 28: matched boxes 14, frames 206-232, persons {19: 6, 14: 5, 3: 3}
+    frames 0-297: {19: 6, 14: 5, 3: 3}
+    frames 298-1000000: {}
+  piece 10000028: matched boxes 31, frames 299-341, persons {21: 31}
+  piece 14: matched boxes 182, frames 0-184, persons {22: 182}
+  piece 6: matched boxes 212, frames 0-216, persons {21: 210, 9: 2}
+  piece 49: matched boxes 69, frames 306-388, persons {22: 69}
+  piece 63: matched boxes 50, frames 391-478, persons {21: 50}
+cuts of piece 28 (held-out weights): [(28, 298), (28, 381)]
+label-free: piece 28: boxes 18, clean 9, frames 206-232, plugin id [28]
+label-free: piece 10000028: boxes 38, clean 0, frames 298-341, plugin id [28]
+label-free: piece 14: boxes 184, clean 182, frames 0-184, plugin id [14]
+split: {'seq': 'SNGS-066', 'ref_id': 21, 'last': 218, 'first': 287, 'gap': 68, 'piece_a': 6, 'piece_b': 28, 'frame_a': 216, 'frame_b': 299, 'outcome': 'wrong', 'b_group_before': {19: 6, 14: 5, 3: 3}}

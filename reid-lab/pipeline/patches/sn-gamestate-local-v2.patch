@@ -1,0 +1,81 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 4f07cff..7f8a1f4 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -9,12 +9,8 @@ dependencies = [
+     "tracklab==1.3.24",
+     "easyocr==1.7.1",
+     "soccernet==0.1.55",
+-    "torch==1.13.1",
+-    "prtreid @ git+https://github.com/VlSomers/prtreid",
+-    "mmocr==1.0.1",
+-    "mmdet~=3.1.0",
+-    "openmim==0.3.9",
+-    "torchreid @ git+https://github.com/VlSomers/bpbreid",
++    "prtreid @ file:///C:/Research/plugins/prtreid",
++    "torchreid @ file:///C:/Research/plugins/bpbreid",
+     "lightning==2.0.9",
+     "tracklab_calibration",
+     "numpy==1.26.4",
+diff --git a/sn_gamestate/calibration/nbjw_calib.py b/sn_gamestate/calibration/nbjw_calib.py
+index 8c840c3..7788287 100644
+--- a/sn_gamestate/calibration/nbjw_calib.py
++++ b/sn_gamestate/calibration/nbjw_calib.py
+@@ -176,7 +176,7 @@ class NBJW_Calib(ImageLevelModule):
+         return image
+ 
+     def process(self, batch: Any, detections: pd.DataFrame, metadatas: pd.DataFrame):
+-        predictions = metadatas["keypoints"][0]
++        predictions = metadatas["keypoints"].iloc[0]  # positional: the index holds image ids (local patch)
+ 
+         self.cam.update(predictions)
+         h = self.cam.get_homography_from_ground_plane(use_ransac=50, inverse=True)
+diff --git a/sn_gamestate/jersey/easyocr_api.py b/sn_gamestate/jersey/easyocr_api.py
+index 909a05d..26b556a 100644
+--- a/sn_gamestate/jersey/easyocr_api.py
++++ b/sn_gamestate/jersey/easyocr_api.py
+@@ -40,7 +40,7 @@ class EasyOCR(DetectionLevelModule):
+         jersey_number_detection = []
+         jersey_number_confidence = []
+         images_np = [img.cpu().numpy() for img in batch['img']]
+-        self.reader = easyocr.Reader(['en'], gpu=True)
++        # local patch: reuse the reader built in __init__ (upstream rebuilt it every batch)
+         if self.batch_size == 1:
+             for img in batch['img']:
+                 img_np = img.cpu().numpy()
+@@ -62,7 +62,7 @@ class EasyOCR(DetectionLevelModule):
+                 jersey_number_confidence.append(jn[2])
+         else:
+             results = self.reader.readtext_batched(images_np, n_width=64, n_height=128,
+-                                                   workers=8, **self.cfg)
++                                                   workers=0, **self.cfg)  # local patch: no thread pool
+             for result in results:
+                 if result == []:
+                     jn = self.no_jersey_number()
+diff --git a/sn_gamestate/team/tracklet_team_clustering_api.py b/sn_gamestate/team/tracklet_team_clustering_api.py
+index 021729a..d085899 100644
+--- a/sn_gamestate/team/tracklet_team_clustering_api.py
++++ b/sn_gamestate/team/tracklet_team_clustering_api.py
+@@ -33,7 +33,7 @@ class TrackletTeamClustering(VideoLevelModule):
+             if np.isnan(track_id):
+                 continue
+             embeddings = np.mean(np.vstack(group.embeddings.values), axis=0)
+-            embeddings_list.append({'track_id': track_id, 'embeddings': embeddings})
++            embeddings_list.append({'track_id': track_id, 'embeddings': embeddings, 'n_detections': len(group)})
+ 
+         if not embeddings_list:  # Check if embeddings_list is empty
+             detections['team_cluster'] = np.nan  # Initialize 'team_cluster' with a default value
+@@ -46,7 +46,12 @@ class TrackletTeamClustering(VideoLevelModule):
+         else:
+             # Perform KMeans clustering on the embeddings
+             embeddings = np.vstack(embedding_tracklet.embeddings.values)
+-            kmeans = KMeans(n_clusters=2, random_state=0).fit(embeddings)
++            # local patch: weighted KMeans. Each tracklet weighs as many detections as it has, so
++            # short fragments cannot pull the split towards box size, and 10 initialisations
++            # (scikit-learn >= 1.4 defaults to one, which can stop in a poor minimum).
++            kmeans = KMeans(n_clusters=2, random_state=0, n_init=10).fit(
++                embeddings, sample_weight=embedding_tracklet['n_detections'].to_numpy(dtype=float)
++            )
+             embedding_tracklet['team_cluster'] = kmeans.labels_
+ 
+         # Map the team cluster back to the original detections DataFrame

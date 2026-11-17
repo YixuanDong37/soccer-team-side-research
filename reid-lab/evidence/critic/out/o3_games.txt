@@ -1,0 +1,85 @@
+match of each dev clip: {'SNGS-107': '6', 'SNGS-163': '9', 'SNGS-106': '6', 'SNGS-097': '6', 'SNGS-067': '4', 'SNGS-100': '6', 'SNGS-066': '4', 'SNGS-161': '9', 'SNGS-169': '9', 'SNGS-162': '9', 'SNGS-151': '9', 'SNGS-102': '6', 'SNGS-112': '6'}
+clips per match: {'6': 6, '9': 5, '4': 2}
+
+== fuse_r1 rule B, held-out per clip, pooled per match ==
+strict    all:  67 /  3 /  67 | links 312 /  7 /  25
+          match 4:  10 /  1 /  10 | links  57 /  1 /   9   (2 clips)
+          match 6:  30 /  0 /  19 | links 145 /  2 /  10   (6 clips)
+          match 9:  27 /  2 /  38 | links 110 /  4 /   6   (5 clips)
+balanced  all:  85 /  5 /  47 | links 378 / 16 /  30
+          match 4:  13 /  1 /   7 | links  70 /  1 /  11   (2 clips)
+          match 6:  35 /  0 /  14 | links 170 /  5 /  10   (6 clips)
+          match 9:  37 /  4 /  26 | links 138 / 10 /   9   (5 clips)
+recall    all: 106 /  7 /  24 | links 414 / 17 / 260
+          match 4:  15 /  1 /   5 | links  76 /  2 /  40   (2 clips)
+          match 6:  39 /  0 /  10 | links 183 /  5 /  77   (6 clips)
+          match 9:  52 /  6 /   9 | links 155 / 10 / 143   (5 clips)
+
+== fixed setting (leaves off), held-out weights, pooled per match: right / wrong / lost ==
+margin   match  4         match  6         match  9         match 9 without SNGS-162
+ 0.10     14 /  2 /   5     38 /  0 /  11     44 /  5 /  18     40 /  0 /   9
+ 0.15     14 /  2 /   5     38 /  0 /  11     44 /  4 /  19     40 /  0 /   9
+ 0.20     14 /  1 /   6     38 /  0 /  11     43 /  4 /  20     39 /  0 /  10
+ 0.25     14 /  1 /   6     38 /  0 /  11     43 /  4 /  20     39 /  0 /  10
+ 0.30     14 /  1 /   6     37 /  0 /  12     40 /  4 /  23     36 /  0 /  13
+ 0.35     13 /  1 /   7     36 /  0 /  13     39 /  3 /  25     35 /  0 /  14
+ 0.40     13 /  1 /   7     35 /  0 /  14     37 /  3 /  27     33 /  0 /  16
+ 0.45     13 /  1 /   7     34 /  0 /  15     36 /  3 /  28     33 /  0 /  16
+ 0.50     13 /  1 /   7     33 /  0 /  16     35 /  3 /  29     32 /  0 /  17
+ 0.55     10 /  1 /  10     32 /  0 /  17     34 /  2 /  31     31 /  0 /  18
+ 0.60      9 /  0 /  12     31 /  0 /  18     30 /  2 /  35     27 /  0 /  22
+ 0.70      7 /  0 /  14     27 /  0 /  22     24 /  2 /  41     21 /  0 /  28
+ 0.80      7 /  0 /  14     19 /  0 /  30     14 /  1 /  52     11 /  0 /  38
+ 0.90      2 /  0 /  19     13 /  0 /  36     10 /  0 /  57      8 /  0 /  41
+ 1.00      0 /  0 /  21      5 /  0 /  44      7 /  0 /  60      5 /  0 /  44
+ 1.20      0 /  0 /  21      1 /  0 /  48      0 /  0 /  67      0 /  0 /  49
+
+== setting chosen WITHOUT the held-out clip's match (weights still leave-one-clip-out) ==
+rule B       strict   :  70 /  2 /  65 | links 317 /  6 /  24 | settings per held-out match {'4': ['0.50', '0.60'], '6': ['0.60'], '9': ['0.60', '0.70']}
+      match 4:  12 /  0 /   9 | links  61 /  0 /   8
+      match 6:  31 /  0 /  18 | links 146 /  2 /  10
+      match 9:  27 /  2 /  38 | links 110 /  4 /   6
+rule B       balanced :  89 /  6 /  42 | links 360 / 11 / 116 | settings per held-out match {'4': ['0.20', '0.50'], '6': ['0.40', '0.45'], '9': ['0.45+leaves', '0.50+leaves']}
+      match 4:  13 /  1 /   7 | links  69 /  1 /  11
+      match 6:  35 /  0 /  14 | links 162 /  3 /  10
+      match 9:  41 /  5 /  21 | links 129 /  7 /  95
+rule B       recall   :  94 /  7 /  36 | links 387 / 15 / 147 | settings per held-out match {'4': ['0.15+leaves', '0.20+leaves'], '6': ['0.20', '0.25'], '9': ['0.45+leaves', '0.50+leaves']}
+      match 4:  15 /  2 /   4 | links  77 /  3 /  40
+      match 6:  38 /  0 /  11 | links 181 /  5 /  12
+      match 9:  41 /  5 /  21 | links 129 /  7 /  95
+rule R0      strict   :  41 /  4 /  92 | links 212 /  5 /  68 | settings per held-out match {'4': ['0.90+leaves'], '6': ['0.90+leaves'], '9': ['0.60', '0.70', '0.70+leaves', '0.80+leaves']}
+      match 4:   2 /  0 /  19 | links  23 /  0 /   9
+      match 6:  13 /  0 /  36 | links  90 /  1 /  35
+      match 9:  26 /  4 /  37 | links  99 /  4 /  24
+rule R0      balanced :  71 /  2 /  64 | links 317 /  6 /  29 | settings per held-out match {'4': ['0.60'], '6': ['0.60', '0.90+leaves'], '9': ['0.50', '0.60']}
+      match 4:   9 /  0 /  12 | links  56 /  0 /   6
+      match 6:  29 /  0 /  20 | links 141 /  2 /  16
+      match 9:  33 /  2 /  32 | links 120 /  4 /   7
+rule R0      recall   :  94 /  7 /  36 | links 389 / 16 / 120 | settings per held-out match {'4': ['0.15', '0.20'], '6': ['0.20', '0.25'], '9': ['0.40+leaves', '0.45+leaves', '0.50+leaves']}
+      match 4:  14 /  2 /   5 | links  77 /  3 /  11
+      match 6:  38 /  0 /  11 | links 181 /  5 /  12
+      match 9:  42 /  5 /  20 | links 131 /  8 /  97
+rule Rcap    strict   :  95 /  7 /  35 | links 369 / 13 / 160 | settings per held-out match {'4': ['0.35'], '6': ['0.60'], '9': ['0.25+leaves']}
+      match 4:  13 /  1 /   7 | links  68 /  1 /  11
+      match 6:  31 /  0 /  18 | links 146 /  2 /  10
+      match 9:  51 /  6 /  10 | links 155 / 10 / 139
+rule Rcap    balanced : 100 /  8 /  29 | links 388 / 15 / 192 | settings per held-out match {'4': ['0.35+leaves'], '6': ['0.40', '0.45'], '9': ['0.10+leaves', '0.25+leaves']}
+      match 4:  14 /  1 /   6 | links  68 /  1 /  38
+      match 6:  35 /  0 /  14 | links 162 /  3 /  10
+      match 9:  51 /  7 /   9 | links 158 / 11 / 144
+rule Rcap    recall   : 111 /  9 /  17 | links 420 / 19 / 317 | settings per held-out match {'4': ['0.10+leaves', '0.20+leaves'], '6': ['0.15+leaves', '0.20+leaves'], '9': ['0.10+leaves', '0.25+leaves']}
+      match 4:  15 /  2 /   4 | links  78 /  3 /  43
+      match 6:  45 /  0 /   4 | links 184 /  5 / 130
+      match 9:  51 /  7 /   9 | links 158 / 11 / 144
+rule Rnotrim strict   :  41 /  4 /  92 | links 212 /  5 /  68 | settings per held-out match {'4': ['0.90+leaves'], '6': ['0.90+leaves'], '9': ['0.60', '0.70', '0.70+leaves', '0.80+leaves']}
+      match 4:   2 /  0 /  19 | links  23 /  0 /   9
+      match 6:  13 /  0 /  36 | links  90 /  1 /  35
+      match 9:  26 /  4 /  37 | links  99 /  4 /  24
+rule Rnotrim balanced :  71 /  2 /  64 | links 317 /  6 /  29 | settings per held-out match {'4': ['0.60'], '6': ['0.60', '0.90+leaves'], '9': ['0.50', '0.60']}
+      match 4:   9 /  0 /  12 | links  56 /  0 /   6
+      match 6:  29 /  0 /  20 | links 141 /  2 /  16
+      match 9:  33 /  2 /  32 | links 120 /  4 /   7
+rule Rnotrim recall   :  94 /  7 /  36 | links 389 / 16 / 120 | settings per held-out match {'4': ['0.15', '0.20'], '6': ['0.20', '0.25'], '9': ['0.40+leaves', '0.45+leaves', '0.50+leaves']}
+      match 4:  14 /  2 /   5 | links  77 /  3 /  11
+      match 6:  38 /  0 /  11 | links 181 /  5 /  12
+      match 9:  42 /  5 /  20 | links 131 /  8 /  97

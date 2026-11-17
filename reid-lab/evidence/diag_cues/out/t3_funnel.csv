@@ -1,0 +1,6 @@
+gate,true pairs kept,wrong pairs kept,wrong per true
+candidates,153,7292,47.66
++ team and role agree (or team missing),153,2732,17.86
+"+ speed gate v=8, e=3",152,2355,15.49
++ same lateral side,141,1378,9.77
++ straight path <= 30% in the picture,133,674,5.07

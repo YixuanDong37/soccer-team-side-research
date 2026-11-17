@@ -1,0 +1,483 @@
+{
+  "archive": "C:\\Research\\gbf-data\\external\\sn-gsr-2025-ce84ee7\\download\\train.zip",
+  "archive_sha256": "f216ebed0347f5af52ee7d975a9b5f6f33b5370bdbed75dd1aded9f8b5ae8316",
+  "seed": "gbf-gsr-v1",
+  "clips_in_archive": 57,
+  "order": [
+    "SNGS-111",
+    "SNGS-072",
+    "SNGS-152",
+    "SNGS-159",
+    "SNGS-107",
+    "SNGS-163",
+    "SNGS-106",
+    "SNGS-097",
+    "SNGS-067",
+    "SNGS-100",
+    "SNGS-066",
+    "SNGS-161",
+    "SNGS-169",
+    "SNGS-162",
+    "SNGS-151",
+    "SNGS-102",
+    "SNGS-112",
+    "SNGS-158",
+    "SNGS-063",
+    "SNGS-069",
+    "SNGS-115",
+    "SNGS-099",
+    "SNGS-155",
+    "SNGS-104",
+    "SNGS-098",
+    "SNGS-068",
+    "SNGS-156",
+    "SNGS-070",
+    "SNGS-170",
+    "SNGS-061",
+    "SNGS-153",
+    "SNGS-075",
+    "SNGS-064",
+    "SNGS-165",
+    "SNGS-167",
+    "SNGS-062",
+    "SNGS-060",
+    "SNGS-103",
+    "SNGS-160",
+    "SNGS-105",
+    "SNGS-108",
+    "SNGS-073",
+    "SNGS-154",
+    "SNGS-164",
+    "SNGS-157",
+    "SNGS-077",
+    "SNGS-114",
+    "SNGS-074",
+    "SNGS-168",
+    "SNGS-076",
+    "SNGS-110",
+    "SNGS-101",
+    "SNGS-166",
+    "SNGS-065",
+    "SNGS-071",
+    "SNGS-109",
+    "SNGS-113"
+  ],
+  "smoothing_fit_left_out": [
+    "SNGS-111",
+    "SNGS-072",
+    "SNGS-152",
+    "SNGS-159"
+  ],
+  "selected": [
+    "SNGS-107",
+    "SNGS-163",
+    "SNGS-106",
+    "SNGS-097",
+    "SNGS-067",
+    "SNGS-100",
+    "SNGS-066",
+    "SNGS-161",
+    "SNGS-169",
+    "SNGS-162",
+    "SNGS-151",
+    "SNGS-102",
+    "SNGS-112",
+    "SNGS-158",
+    "SNGS-063",
+    "SNGS-069",
+    "SNGS-115",
+    "SNGS-099",
+    "SNGS-155",
+    "SNGS-104",
+    "SNGS-098",
+    "SNGS-068",
+    "SNGS-156",
+    "SNGS-070",
+    "SNGS-170",
+    "SNGS-061",
+    "SNGS-153",
+    "SNGS-075",
+    "SNGS-064",
+    "SNGS-165",
+    "SNGS-167",
+    "SNGS-062",
+    "SNGS-060",
+    "SNGS-103",
+    "SNGS-160",
+    "SNGS-105",
+    "SNGS-108",
+    "SNGS-073",
+    "SNGS-154",
+    "SNGS-164",
+    "SNGS-157",
+    "SNGS-077",
+    "SNGS-114",
+    "SNGS-074",
+    "SNGS-168",
+    "SNGS-076",
+    "SNGS-110",
+    "SNGS-101",
+    "SNGS-166",
+    "SNGS-065"
+  ],
+  "unused": [
+    "SNGS-071",
+    "SNGS-109",
+    "SNGS-113"
+  ],
+  "clips": {
+    "SNGS-107": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23116090
+    },
+    "SNGS-163": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19801334
+    },
+    "SNGS-106": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23667358
+    },
+    "SNGS-097": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24735693
+    },
+    "SNGS-067": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 25153870
+    },
+    "SNGS-100": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24826721
+    },
+    "SNGS-066": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 29619552
+    },
+    "SNGS-161": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19109912
+    },
+    "SNGS-169": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 21650070
+    },
+    "SNGS-162": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24645648
+    },
+    "SNGS-151": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 28307157
+    },
+    "SNGS-102": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 27168289
+    },
+    "SNGS-112": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23496354
+    },
+    "SNGS-158": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19906780
+    },
+    "SNGS-063": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 29296107
+    },
+    "SNGS-069": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 21658188
+    },
+    "SNGS-115": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23395638
+    },
+    "SNGS-099": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19668785
+    },
+    "SNGS-155": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19579758
+    },
+    "SNGS-104": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 25193954
+    },
+    "SNGS-098": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 18305554
+    },
+    "SNGS-068": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24603216
+    },
+    "SNGS-156": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23614278
+    },
+    "SNGS-070": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19926375
+    },
+    "SNGS-170": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23461514
+    },
+    "SNGS-061": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 21398146
+    },
+    "SNGS-153": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 22013986
+    },
+    "SNGS-075": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24159228
+    },
+    "SNGS-064": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 28840401
+    },
+    "SNGS-165": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19795675
+    },
+    "SNGS-167": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23029256
+    },
+    "SNGS-062": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 30837079
+    },
+    "SNGS-060": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 27286145
+    },
+    "SNGS-103": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 26186038
+    },
+    "SNGS-160": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 19699669
+    },
+    "SNGS-105": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23368610
+    },
+    "SNGS-108": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 21386082
+    },
+    "SNGS-073": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 27540389
+    },
+    "SNGS-154": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23438645
+    },
+    "SNGS-164": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 25999603
+    },
+    "SNGS-157": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 20099399
+    },
+    "SNGS-077": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 23500236
+    },
+    "SNGS-114": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24551666
+    },
+    "SNGS-074": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 27929578
+    },
+    "SNGS-168": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 24557281
+    },
+    "SNGS-076": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 43522988
+    },
+    "SNGS-110": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 21878259
+    },
+    "SNGS-101": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 17143388
+    },
+    "SNGS-166": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 25502486
+    },
+    "SNGS-065": {
+      "images": 750,
+      "first": 1,
+      "last": 750,
+      "contiguous": true,
+      "labels_bytes": 25821899
+    }
+  },
+  "restrictions": [
+    "publish numbers only, never frames (registries/data.toml soccernet-gsr-2025)"
+  ]
+}

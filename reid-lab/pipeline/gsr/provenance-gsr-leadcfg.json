@@ -1,0 +1,71 @@
+{
+ "built_on": "2026-11-15",
+ "what": "Local rebuild of the project plugin-sngs export with the tracker settings of the lead 2026-11-15 desktop runtime (GBF-Windows-x64-20261115, predictor/adapter), re-implemented in tools/run_tracklab_leadcfg.py; run on SN-GSR-2025 train clips (revision ce84ee7d9acb2f9fe999ceed2b38e303ffa5efb9) at 1280x720 for the re-entry test",
+ "sn_gamestate": {
+  "repository": "https://github.com/SoccerNet/sn-gamestate",
+  "commit": "1c958345067218297d221e45e1a6405f975f83e0",
+  "local_patch": "C:/Research/plugins/patches/sn-gamestate-local-v2.patch",
+  "local_patch_sha256": "ff2236e0bc2d6f744547faf22019ad4be16672e63d3090596d7b01fcefb0fa75",
+  "patch_contents": [
+   "pyproject.toml: torch 1.13.1 pin and the MMOCR stack removed; prtreid and bpbreid from local copies",
+   "sn_gamestate/calibration/nbjw_calib.py: metadatas['keypoints'].iloc[0] (positional; the index holds image ids)",
+   "sn_gamestate/jersey/easyocr_api.py: the reader built once in __init__ is reused; readtext_batched with workers=0",
+   "sn_gamestate/team/tracklet_team_clustering_api.py: weighted KMeans (sample_weight = detections per tracklet) with n_init=10; upstream's unweighted single-init KMeans (scikit-learn 1.6.1 default) split this clip's players by box size, not by kit"
+  ]
+ },
+ "prtreid": {
+  "commit": "30617a75967e84d5d516959c4b84cbeea6f56493",
+  "local_patch_sha256": "a18c422000b63015b79f002f565f095ff507b91095798f8d42baf79a417a5e1a",
+  "patch": "Cython rank extension not built (evaluation only)"
+ },
+ "bpbreid": {
+  "commit": "a2dc4304284784d8b2c061764512f0698aa38c21",
+  "local_patch_sha256": "1fe808fa176717df5c062fc6c36095a4f0238a1ca1970fd380a0e66bb6b6baff",
+  "patch": "Cython rank extension not built (evaluation only)"
+ },
+ "tracklab": {
+  "version": "1.3.24",
+  "runtime_patch": "VideoReader replaced by tools/exact_reader.ExactVideoReader (ffmpeg, decode order); frames checked byte-identical to gbf's decoder before the run"
+ },
+ "torch": "2.7.1+cu128 (instead of the pinned 1.13.1, which cannot use an RTX 50-series GPU); checkpoints loaded with weights_only=True and an allowlist of yacs CfgNode and numpy scalar types",
+ "pipeline": "bbox_detector yolo_ultralytics (yolo11m, imgsz 1280, BGR input fix) -> reid prtreid -> track bpbreid_strong_sort (ecc=True, camera_update wired before each frame) -> pitch nbjw_calib (keypoints moved to cell centres) -> calibration nbjw_calib (1280x720, use_prev_homography=true) -> tracklet_agg (attributes [role], no jersey OCR) -> team kmeans_embeddings -> team_side mean_position",
+ "weights_sha256": {
+  "SV_kp": "7ea78fa76aaf94976a8eca428d6e3c59697a93430cba1a4603e20284b61f5113",
+  "SV_lines": "2751242917f8c0f858a396e0cfe4521be39fe07bf049590eb21714526acecac1",
+  "prtreid-soccernet-baseline.pth.tar": "1304562c4c930a4a54bbf2d44e221eb911fe31408f6875c5058b2d6ed621cf3b",
+  "hrnetv2_w32_imagenet_pretrained.pth": "dc9eeb4f307e3f9bd6e7a13e546962bd8c578db1ca9caed6f7fff71770beb7bb",
+  "yolo11m.pt": "d5ffc1a674953a08e11a8d21e022781b1b23a19b730afc309290bd9fb5305b95",
+  "easyocr craft_mlt_25k.pth": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+  "easyocr english_g2.pth": "e2272681d9d67a04e2dff396b6e95077bc19001f8f6d3593c307b9852e1c29e8"
+ },
+ "licences": "sn-gamestate GPL-3.0; NBJW GPL-2.0-only; prtreid/bpbreid Hippocratic-3.0 (hl3); ultralytics AGPL-3.0 (agpl_network_source); EasyOCR Apache-2.0; weights from Zenodo CC-BY-4.0 (prtreid treated as HL3 by the project registry)",
+ "source_data": {
+  "dataset": "SoccerNet/SN-GSR-2025",
+  "revision": "ce84ee7d9acb2f9fe999ceed2b38e303ffa5efb9",
+  "archive": "train.zip",
+  "archive_sha256": "f216ebed0347f5af52ee7d975a9b5f6f33b5370bdbed75dd1aded9f8b5ae8316",
+  "video": "img1/000001-000750.jpg (1920x1080) -> 1280x720 lanczos, H.264 CRF 18, yuvj420p, 25 fps",
+  "rules": "registries/data.toml soccernet-gsr-2025: local processing and evaluation; publish numbers only, never frames; never committed"
+ },
+ "lead_runtime_settings": {
+  "source": "GBF-Windows-x64-20261115 predictor/adapter/plugin_launcher.py and runner.py (read, not run)",
+  "reimplemented": [
+   "YOLO preprocess hands BGR so the network sees RGB",
+   "YOLO imgsz 1280",
+   "BPBReIDStrongSORT.process calls tracker.camera_update(prev, current) when ecc",
+   "NBJW keypoints +1 input pixel to the cell centre, lines rebuilt",
+   "seeds 42 (torch, numpy, random)"
+  ],
+  "hydra_overrides": [
+   "pipeline=[bbox_detector,reid,track,pitch,calibration,tracklet_agg,team,team_side]",
+   "modules.tracklet_agg.cfg.attributes=[role]",
+   "modules.track.cfg.ecc=True",
+   "modules.calibration.use_prev_homography=true"
+  ],
+  "not_matched": [
+   "PyTorch 2.7.1 on the GPU instead of OpenVINO f32 on the CPU (same checkpoints)",
+   "1280x720 H.264 CRF 18 input instead of 1920x1080 lossless PNG frames",
+   "default batch sizes (reid 64, detector 8) instead of 8 and 1"
+  ]
+ }
+}

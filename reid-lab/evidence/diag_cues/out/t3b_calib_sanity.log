@@ -1,0 +1,20 @@
+frames: 9750 ; status: {'refined': 5250, 'fresh': 4338, 'none': 162} ; pitch_usable: 9427
+frames with an implausible focal length (outside 700-8000 px at 720p): 97 ; of those pitch_usable: 22
+frames with an implausible camera centre: 115 ; of those pitch_usable: 31
+          usable  no_camera  odd_focal  odd_focal_usable  odd_centre_usable  focal_p50  cam_y  cam_h  centre_moves
+seq                                                                                                               
+SNGS-066     737          0         11                 0                  0     2171.7   54.2   11.1    75093575.2
+SNGS-067     750          0          0                 0                  0     1648.9   54.3   11.0           0.0
+SNGS-097     750          0          0                 0                  0     1820.7   49.1    9.3           0.0
+SNGS-100     700         32         22                11                 11     2448.4   48.4    9.2    48255717.3
+SNGS-102     750          0          0                 0                  0     1306.5   50.2    9.5           0.0
+SNGS-106     750          0          0                 0                  0     1772.0   49.3    9.2           0.0
+SNGS-107     750          0          0                 0                  0     1696.4   50.1    9.5           0.0
+SNGS-112     750          0          0                 0                  0     1808.0   50.2    9.5           0.0
+SNGS-151     681         34          1                 0                  1     2328.9   49.5    8.7          92.2
+SNGS-161     673         52         18                 4                  8     2469.6   48.3    8.4   117477508.3
+SNGS-162     750          0          0                 0                  0     1902.9   49.4    8.7           0.0
+SNGS-163     682         42         21                 5                  6     2531.0   48.2    8.4    50579228.5
+SNGS-169     704          2         24                 2                  5     2108.6   48.0    8.4       11656.1
+usable frames by status: {'size': {'fresh': 4338, 'none': 162, 'refined': 5250}, 'sum': {'fresh': 4177, 'none': 0, 'refined': 5250}}
+frame-to-frame focal change on usable frames, |log ratio| quantiles: {'n': 9392, 'mean': 0.012, 'p50': 0.003, 'p90': 0.03, 'p99': 0.45, 'max': 0.839}

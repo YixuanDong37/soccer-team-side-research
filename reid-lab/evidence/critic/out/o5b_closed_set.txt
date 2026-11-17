@@ -1,0 +1,25 @@
+returns with a probe (>= 5 embedded rows in the 3 s after the return) and a gallery entry of the person: 157 of 167
+
+-- raw cosine
+   every team-mate seen before                 : candidates median 10; true person is the most similar in 139 of 157 (88.5%); lead >= 0.02: 137, >= 0.05: 118, >= 0.10: 77
+   only team-mates absent from the picture     : candidates median 3; true person is the most similar in 146 of 157 (93.0%); lead >= 0.02: 144, >= 0.05: 136, >= 0.10: 115
+   absent and last seen in the same image half : candidates median 2; true person is the most similar in 146 of 157 (93.0%); lead >= 0.02: 144, >= 0.05: 138, >= 0.10: 126
+   all    without SNGS-162  : top-1 128 of 137
+   all    SNGS-162 only     : top-1 11 of 20
+   all    gap > 10 s        : top-1 37 of 41
+   absent without SNGS-162  : top-1 133 of 137
+   absent SNGS-162 only     : top-1 13 of 20
+   absent gap > 10 s        : top-1 39 of 41
+
+-- team-centred cosine
+   every team-mate seen before                 : candidates median 10; true person is the most similar in 138 of 157 (87.9%); lead >= 0.02: 138, >= 0.05: 138, >= 0.10: 138
+   only team-mates absent from the picture     : candidates median 3; true person is the most similar in 147 of 157 (93.6%); lead >= 0.02: 147, >= 0.05: 146, >= 0.10: 146
+   absent and last seen in the same image half : candidates median 2; true person is the most similar in 147 of 157 (93.6%); lead >= 0.02: 147, >= 0.05: 146, >= 0.10: 146
+   all    without SNGS-162  : top-1 127 of 137
+   all    SNGS-162 only     : top-1 11 of 20
+   all    gap > 10 s        : top-1 36 of 41
+   absent without SNGS-162  : top-1 132 of 137
+   absent SNGS-162 only     : top-1 15 of 20
+   absent gap > 10 s        : top-1 38 of 41
+
+returns where the true person is NOT the most similar absent team-mate (team-centred): [('SNGS-163', 8, -0.456), ('SNGS-100', 13, -0.072), ('SNGS-066', 15, -0.196), ('SNGS-066', 22, -0.237), ('SNGS-162', 2, -0.282), ('SNGS-162', 8, -0.628), ('SNGS-162', 9, -0.358), ('SNGS-162', 12, -0.761), ('SNGS-162', 21, -0.403), ('SNGS-102', 6, -0.176)]

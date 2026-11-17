@@ -1,0 +1,12 @@
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_strict.json: 314 links, 221 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_balanced.json: 676 links, 221 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_recall.json: 761 links, 221 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_frozen_strict.json: 306 links, 219 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_frozen_balanced.json: 744 links, 219 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_frozen_recall.json: 766 links, 219 cuts
+exit=0
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_margin_0.50.json: 624 links, 221 cuts
+exit=0
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_margin_0.80.json: 415 links, 221 cuts
+wrote C:/Research/plugins/tools/reid_lab/work/v_repro_0/METHOD_margin_0.10.json: 827 links, 221 cuts
+exit=0

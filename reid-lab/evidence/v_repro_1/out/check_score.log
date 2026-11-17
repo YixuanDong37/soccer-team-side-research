@@ -1,0 +1,4 @@
+split {"scored": 137, "right": 0, "wrong": 4, "lost": 133, "undetected": 30, "untracked": 0, "right_share": 0.0, "wrong_share": 0.0292, "links": 0, "links_right": 0, "links_wrong": 0, "links_unknown": 0, "link_precision": null, "impure_row_share": 0.02614}
+plugin {"scored": 137, "right": 30, "wrong": 14, "lost": 93, "undetected": 30, "untracked": 0, "right_share": 0.219, "wrong_share": 0.1022, "links": 93, "links_right": 33, "links_wrong": 10, "links_unknown": 50, "link_precision": 0.7674, "impure_row_share": 0.03085}
+mutual {"scored": 137, "right": 26, "wrong": 6, "lost": 105, "undetected": 30, "untracked": 0, "right_share": 0.1898, "wrong_share": 0.0438, "links": 69, "links_right": 60, "links_wrong": 7, "links_unknown": 2, "link_precision": 0.8955, "impure_row_share": 0.03028}
+problems: none

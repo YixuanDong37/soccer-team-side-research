@@ -1,0 +1,35 @@
+margin 0.1   held-out  116 / 9 / 12 equal
+margin 0.1   in-sample 116 / 11 / 10 equal
+margin 0.15  held-out  114 / 7 / 16 equal
+margin 0.15  in-sample 113 / 8 / 16 equal
+margin 0.2   held-out  112 / 7 / 18 equal
+margin 0.2   in-sample 112 / 7 / 18 equal
+margin 0.25  held-out  110 / 7 / 20 equal
+margin 0.25  in-sample 109 / 6 / 22 equal
+margin 0.3   held-out  105 / 6 / 26 equal
+margin 0.3   in-sample 103 / 6 / 28 equal
+margin 0.35  held-out  104 / 6 / 27 equal
+margin 0.35  in-sample 101 / 6 / 30 equal
+margin 0.4   held-out  97 / 6 / 34 equal
+margin 0.4   in-sample 98 / 6 / 33 equal
+margin 0.45  held-out  94 / 5 / 38 equal
+margin 0.45  in-sample 93 / 6 / 38 equal
+margin 0.5   held-out  91 / 4 / 42 equal
+margin 0.5   in-sample 90 / 4 / 43 equal
+margin 0.55  held-out  84 / 4 / 49 equal
+margin 0.55  in-sample 83 / 4 / 50 equal
+margin 0.6   held-out  78 / 4 / 55 equal
+margin 0.6   in-sample 79 / 4 / 54 equal
+margin 0.7   held-out  64 / 4 / 69 equal
+margin 0.7   in-sample 64 / 4 / 69 equal
+margin 0.8   held-out  51 / 1 / 85 equal
+margin 0.8   in-sample 51 / 1 / 85 equal
+margin 0.9   held-out  31 / 0 / 106 equal
+margin 0.9   in-sample 37 / 0 / 100 equal
+margin 1.0   held-out  21 / 0 / 116 equal
+margin 1.0   in-sample 20 / 0 / 117 equal
+margin 1.2   held-out  2 / 0 / 135 equal
+margin 1.2   in-sample 2 / 0 / 135 equal
+largest difference of a pair-model weight over the 14 fits: 0.0
+r0 REPRODUCES fuse
+exit 0

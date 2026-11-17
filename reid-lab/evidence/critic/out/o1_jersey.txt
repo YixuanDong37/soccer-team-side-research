@@ -1,0 +1,161 @@
+== coverage of the annotated jersey number ==
+annotated players + goalkeepers with a number: 209 of 281 (74%)
+scored returns whose person has a number: 110 of 137; undetected returns: 24 of 30
+pieces with a read under 'all': 723 (pieces of known identity: 807)
+pieces with a read under 'known5': 567 (pieces of known identity: 807)
+pieces with a read under 'h60x10': 381 (pieces of known identity: 807)
+pieces with a read under 'h80x10': 216 (pieces of known identity: 807)
+pieces with a read under 'h100x10': 81 (pieces of known identity: 807)
+pieces with a read under 'now': 16 (pieces of known identity: 807)
+today's reads (tracks.jersey) against the annotation, per piece: agree 15, differ 0, cannot judge 1
+
+== right / wrong / lost of 137 | links right / wrong / unknown | impure rows ==
+
+-- base: gbf now (no cuts, no links)
+   base                            0.0 /  4.0 /  133.0 | links    0.0 /  0.0 /    0.0 | impure 2.61%
+   all      confirm              103.0 /  8.0 /   26.0 | links  289.0 /  0.0 /  225.0 | impure 2.61%
+   known5   confirm               88.0 /  7.0 /   42.0 | links  358.0 /  0.0 /    0.0 | impure 2.61%
+   h60x10   confirm               66.0 /  6.0 /   65.0 | links  184.0 /  0.0 /    0.0 | impure 2.61%
+   h80x10   confirm               35.0 /  4.0 /   98.0 | links   78.0 /  0.0 /    0.0 | impure 2.61%
+   h100x10  confirm               11.0 /  4.0 /  122.0 | links   16.0 /  0.0 /    0.0 | impure 2.61%
+   p50      confirm               28.6 /  5.2 /  103.2 | links  121.5 /  0.0 /    0.0 | impure 2.61%
+   p25      confirm                8.5 /  4.3 /  124.2 | links   36.5 /  0.0 /    0.0 | impure 2.61%
+   p10      confirm                1.2 /  4.0 /  131.8 | links    6.0 /  0.0 /    0.0 | impure 2.61%
+   now      confirm                1.0 /  4.0 /  132.0 | links    1.0 /  0.0 /    0.0 | impure 2.61%
+
+-- base: cuts only
+   base                            0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   all      veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   all      confirm              108.0 /  1.0 /   28.0 | links  283.0 /  0.0 /  341.0 | impure 1.00%
+   all      both                 108.0 /  1.0 /   28.0 | links  283.0 /  0.0 /  341.0 | impure 1.00%
+   known5   veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   known5   confirm               90.0 /  0.0 /   47.0 | links  388.0 /  0.0 /    0.0 | impure 1.00%
+   known5   both                  90.0 /  0.0 /   47.0 | links  388.0 /  0.0 /    0.0 | impure 1.00%
+   h60x10   veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   h60x10   confirm               65.0 /  0.0 /   72.0 | links  193.0 /  0.0 /    0.0 | impure 1.00%
+   h60x10   both                  65.0 /  0.0 /   72.0 | links  193.0 /  0.0 /    0.0 | impure 1.00%
+   h80x10   veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   h80x10   confirm               34.0 /  0.0 /  103.0 | links   77.0 /  0.0 /    0.0 | impure 1.00%
+   h80x10   both                  34.0 /  0.0 /  103.0 | links   77.0 /  0.0 /    0.0 | impure 1.00%
+   h100x10  veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   h100x10  confirm               11.0 /  0.0 /  126.0 | links   17.0 /  0.0 /    0.0 | impure 1.00%
+   h100x10  both                  11.0 /  0.0 /  126.0 | links   17.0 /  0.0 /    0.0 | impure 1.00%
+   p50      veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   p50      confirm               28.2 /  0.0 /  108.8 | links  132.2 /  0.0 /    0.0 | impure 1.00%
+   p50      both                  28.2 /  0.0 /  108.8 | links  132.2 /  0.0 /    0.0 | impure 1.00%
+   p25      veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   p25      confirm                8.0 /  0.0 /  129.0 | links   39.3 /  0.0 /    0.0 | impure 1.00%
+   p25      both                   8.0 /  0.0 /  129.0 | links   39.3 /  0.0 /    0.0 | impure 1.00%
+   p10      veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   p10      confirm                1.1 /  0.0 /  135.9 | links    7.0 /  0.0 /    0.0 | impure 1.00%
+   p10      both                   1.1 /  0.0 /  135.9 | links    7.0 /  0.0 /    0.0 | impure 1.00%
+   now      veto                   0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /    0.0 | impure 1.00%
+   now      confirm                1.0 /  0.0 /  136.0 | links    1.0 /  0.0 /    0.0 | impure 1.00%
+   now      both                   1.0 /  0.0 /  136.0 | links    1.0 /  0.0 /    0.0 | impure 1.00%
+
+-- base: fuse_r1 strict (held-out)
+   base                           67.0 /  3.0 /   67.0 | links  312.0 /  7.0 /   25.0 | impure 1.61%
+   all      veto                  67.0 /  1.0 /   69.0 | links  312.0 /  4.0 /   24.0 | impure 1.29%
+   all      confirm              117.0 /  1.0 /   19.0 | links  595.0 /  7.0 /  366.0 | impure 2.74%
+   all      both                 117.0 /  1.0 /   19.0 | links  595.0 /  4.0 /  365.0 | impure 1.39%
+   known5   veto                  67.0 /  1.0 /   69.0 | links  312.0 /  4.0 /   25.0 | impure 1.29%
+   known5   confirm              100.0 /  0.0 /   37.0 | links  700.0 /  7.0 /   25.0 | impure 2.49%
+   known5   both                 100.0 /  0.0 /   37.0 | links  700.0 /  4.0 /   25.0 | impure 1.38%
+   h60x10   veto                  67.0 /  2.0 /   68.0 | links  312.0 /  5.0 /   25.0 | impure 1.45%
+   h60x10   confirm               89.0 /  1.0 /   47.0 | links  505.0 /  7.0 /   25.0 | impure 2.30%
+   h60x10   both                  89.0 /  1.0 /   47.0 | links  505.0 /  5.0 /   25.0 | impure 1.53%
+   h80x10   veto                  67.0 /  2.0 /   68.0 | links  312.0 /  6.0 /   25.0 | impure 1.47%
+   h80x10   confirm               79.0 /  1.0 /   57.0 | links  389.0 /  7.0 /   25.0 | impure 2.06%
+   h80x10   both                  79.0 /  1.0 /   57.0 | links  389.0 /  6.0 /   25.0 | impure 1.54%
+   h100x10  veto                  67.0 /  2.0 /   68.0 | links  312.0 /  6.0 /   25.0 | impure 1.47%
+   h100x10  confirm               70.0 /  2.0 /   65.0 | links  329.0 /  7.0 /   25.0 | impure 1.91%
+   h100x10  both                  70.0 /  2.0 /   65.0 | links  329.0 /  6.0 /   25.0 | impure 1.47%
+   p50      veto                  67.0 /  2.2 /   67.8 | links  311.9 /  6.0 /   25.0 | impure 1.48%
+   p50      confirm               77.5 /  2.1 /   57.4 | links  444.2 /  7.0 /   25.0 | impure 1.91%
+   p50      both                  77.5 /  1.8 /   57.8 | links  444.1 /  6.0 /   25.0 | impure 1.57%
+   p25      veto                  67.0 /  2.9 /   67.2 | links  311.9 /  6.8 /   25.0 | impure 1.58%
+   p25      confirm               70.5 /  2.6 /   63.9 | links  351.3 /  7.0 /   25.0 | impure 1.70%
+   p25      both                  70.5 /  2.5 /   64.0 | links  351.2 /  6.8 /   25.0 | impure 1.65%
+   p10      veto                  67.0 /  3.0 /   67.0 | links  312.0 /  7.0 /   25.0 | impure 1.61%
+   p10      confirm               67.3 /  3.0 /   66.7 | links  319.1 /  7.0 /   25.0 | impure 1.63%
+   p10      both                  67.3 /  3.0 /   66.7 | links  319.1 /  7.0 /   25.0 | impure 1.63%
+   now      veto                  67.0 /  3.0 /   67.0 | links  312.0 /  7.0 /   25.0 | impure 1.61%
+   now      confirm               67.0 /  3.0 /   67.0 | links  313.0 /  7.0 /   25.0 | impure 1.61%
+   now      both                  67.0 /  3.0 /   67.0 | links  313.0 /  7.0 /   25.0 | impure 1.61%
+
+-- base: fuse_r1 balanced (held-out)
+   base                           85.0 /  5.0 /   47.0 | links  378.0 / 16.0 /   30.0 | impure 2.12%
+   all      veto                  85.0 /  3.0 /   49.0 | links  378.0 / 12.0 /   29.0 | impure 1.65%
+   all      confirm              120.0 /  2.0 /   15.0 | links  661.0 / 16.0 /  371.0 | impure 3.99%
+   all      both                 120.0 /  2.0 /   15.0 | links  661.0 / 12.0 /  370.0 | impure 2.26%
+   known5   veto                  85.0 /  3.0 /   49.0 | links  378.0 / 12.0 /   30.0 | impure 1.65%
+   known5   confirm              103.0 /  1.0 /   33.0 | links  766.0 / 16.0 /   30.0 | impure 3.73%
+   known5   both                 103.0 /  1.0 /   33.0 | links  766.0 / 12.0 /   30.0 | impure 2.26%
+   h60x10   veto                  85.0 /  4.0 /   48.0 | links  378.0 / 13.0 /   30.0 | impure 1.82%
+   h60x10   confirm               97.0 /  2.0 /   38.0 | links  571.0 / 16.0 /   30.0 | impure 3.06%
+   h60x10   both                  97.0 /  2.0 /   38.0 | links  571.0 / 13.0 /   30.0 | impure 1.92%
+   h80x10   veto                  85.0 /  4.0 /   48.0 | links  377.0 / 15.0 /   30.0 | impure 1.95%
+   h80x10   confirm               93.0 /  2.0 /   42.0 | links  455.0 / 16.0 /   30.0 | impure 2.81%
+   h80x10   both                  93.0 /  2.0 /   42.0 | links  454.0 / 15.0 /   30.0 | impure 2.05%
+   h100x10  veto                  85.0 /  4.0 /   48.0 | links  378.0 / 15.0 /   30.0 | impure 1.98%
+   h100x10  confirm               87.0 /  4.0 /   46.0 | links  395.0 / 16.0 /   30.0 | impure 2.42%
+   h100x10  both                  87.0 /  4.0 /   46.0 | links  395.0 / 15.0 /   30.0 | impure 1.98%
+   p50      veto                  85.0 /  4.2 /   47.8 | links  377.6 / 14.7 /   30.0 | impure 1.93%
+   p50      confirm               91.0 /  3.5 /   42.5 | links  510.2 / 16.0 /   30.0 | impure 2.81%
+   p50      both                  91.0 /  3.1 /   42.9 | links  509.8 / 14.7 /   30.0 | impure 2.33%
+   p25      veto                  85.0 /  4.8 /   47.1 | links  377.8 / 15.8 /   30.0 | impure 2.08%
+   p25      confirm               87.2 /  4.3 /   45.5 | links  417.3 / 16.0 /   30.0 | impure 2.34%
+   p25      both                  87.2 /  4.2 /   45.5 | links  417.1 / 15.8 /   30.0 | impure 2.24%
+   p10      veto                  85.0 /  5.0 /   47.0 | links  378.0 / 15.9 /   30.0 | impure 2.12%
+   p10      confirm               85.2 /  5.0 /   46.8 | links  385.1 / 16.0 /   30.0 | impure 2.17%
+   p10      both                  85.2 /  5.0 /   46.8 | links  385.1 / 15.9 /   30.0 | impure 2.16%
+   now      veto                  85.0 /  5.0 /   47.0 | links  378.0 / 16.0 /   30.0 | impure 2.12%
+   now      confirm               85.0 /  5.0 /   47.0 | links  379.0 / 16.0 /   30.0 | impure 2.12%
+   now      both                  85.0 /  5.0 /   47.0 | links  379.0 / 16.0 /   30.0 | impure 2.12%
+
+-- base: fuse_r1 recall (held-out)
+   base                          106.0 /  7.0 /   24.0 | links  414.0 / 17.0 /  260.0 | impure 2.17%
+   all      veto                 106.0 /  3.0 /   28.0 | links  414.0 / 13.0 /  253.0 | impure 1.70%
+   all      confirm              125.0 /  2.0 /   10.0 | links  697.0 / 17.0 /  601.0 | impure 5.75%
+   all      both                 125.0 /  2.0 /   10.0 | links  697.0 / 13.0 /  594.0 | impure 2.94%
+   known5   veto                 106.0 /  5.0 /   26.0 | links  414.0 / 13.0 /  260.0 | impure 1.71%
+   known5   confirm              117.0 /  2.0 /   18.0 | links  802.0 / 17.0 /  260.0 | impure 3.99%
+   known5   both                 116.0 /  3.0 /   18.0 | links  802.0 / 13.0 /  260.0 | impure 2.51%
+   h60x10   veto                 106.0 /  6.0 /   25.0 | links  414.0 / 14.0 /  260.0 | impure 1.87%
+   h60x10   confirm              113.0 /  3.0 /   21.0 | links  607.0 / 17.0 /  260.0 | impure 3.33%
+   h60x10   both                 112.0 /  4.0 /   21.0 | links  607.0 / 14.0 /  260.0 | impure 2.19%
+   h80x10   veto                 106.0 /  6.0 /   25.0 | links  413.0 / 16.0 /  260.0 | impure 2.00%
+   h80x10   confirm              111.0 /  4.0 /   22.0 | links  491.0 / 17.0 /  260.0 | impure 2.86%
+   h80x10   both                 111.0 /  4.0 /   22.0 | links  490.0 / 16.0 /  260.0 | impure 2.10%
+   h100x10  veto                 106.0 /  6.0 /   25.0 | links  414.0 / 16.0 /  260.0 | impure 2.03%
+   h100x10  confirm              107.0 /  6.0 /   24.0 | links  431.0 / 17.0 /  260.0 | impure 2.47%
+   h100x10  both                 107.0 /  6.0 /   24.0 | links  431.0 / 16.0 /  260.0 | impure 2.03%
+   p50      veto                 106.0 /  6.2 /   24.8 | links  413.6 / 15.7 /  260.0 | impure 1.99%
+   p50      confirm              109.9 /  5.0 /   22.1 | links  546.2 / 17.0 /  260.0 | impure 2.96%
+   p50      both                 109.5 /  5.0 /   22.5 | links  545.8 / 15.7 /  260.0 | impure 2.48%
+   p25      veto                 106.0 /  6.8 /   24.1 | links  413.8 / 16.8 /  260.0 | impure 2.13%
+   p25      confirm              107.5 /  6.2 /   23.2 | links  453.3 / 17.0 /  260.0 | impure 2.42%
+   p25      both                 107.5 /  6.2 /   23.4 | links  453.1 / 16.8 /  260.0 | impure 2.32%
+   p10      veto                 106.0 /  7.0 /   24.0 | links  414.0 / 16.9 /  260.0 | impure 2.17%
+   p10      confirm              106.1 /  6.9 /   24.0 | links  421.1 / 17.0 /  260.0 | impure 2.22%
+   p10      both                 106.0 /  7.0 /   24.0 | links  421.1 / 16.9 /  260.0 | impure 2.21%
+   now      veto                 106.0 /  7.0 /   24.0 | links  414.0 / 17.0 /  260.0 | impure 2.17%
+   now      confirm              106.0 /  7.0 /   24.0 | links  415.0 / 17.0 /  260.0 | impure 2.17%
+   now      both                 106.0 /  7.0 /   24.0 | links  415.0 / 17.0 /  260.0 | impure 2.17%
+
+== the same without SNGS-162 (119 scored returns) ==
+-- base: fuse_r1 strict (held-out)
+   base                           64.0 /  1.0 /   54.0 | links  274.0 /  3.0 /   24.0 | impure 1.36%
+   all      both                 107.0 /  0.0 /   12.0 | links  535.0 /  2.0 /  345.0 | impure 1.21%
+   h80x10   both                  72.0 /  1.0 /   46.0 | links  337.0 /  3.0 /   24.0 | impure 1.36%
+   p25      both                  67.0 /  0.8 /   51.2 | links  311.2 /  3.0 /   24.0 | impure 1.36%
+-- base: fuse_r1 balanced (held-out)
+   base                           81.0 /  1.0 /   37.0 | links  330.0 /  6.0 /   27.0 | impure 1.55%
+   all      both                 109.0 /  0.0 /   10.0 | links  591.0 /  4.0 /  348.0 | impure 1.29%
+   h80x10   both                  85.0 /  1.0 /   33.0 | links  392.0 /  6.0 /   27.0 | impure 1.52%
+   p25      both                  82.7 /  0.8 /   35.5 | links  367.1 /  6.0 /   27.0 | impure 1.57%
+-- base: fuse_r1 recall (held-out)
+   base                           98.0 /  1.0 /   20.0 | links  369.0 /  7.0 /  218.0 | impure 1.59%
+   all      both                 112.0 /  0.0 /    7.0 | links  630.0 /  5.0 /  534.0 | impure 2.02%
+   h80x10   both                  99.0 /  1.0 /   19.0 | links  431.0 /  7.0 /  218.0 | impure 1.56%
+   p25      both                  99.0 /  0.8 /   19.3 | links  406.1 /  7.0 /  218.0 | impure 1.64%

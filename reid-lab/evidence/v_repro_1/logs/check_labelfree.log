@@ -1,0 +1,16 @@
+SNGS-162 heldout strict 43 links 32 cuts = METHOD file
+SNGS-162 heldout balanced 61 links 32 cuts = METHOD file
+SNGS-162 heldout recall 97 links 32 cuts = METHOD file
+SNGS-162 frozen strict 44 links 33 cuts = METHOD file
+SNGS-162 frozen balanced 52 links 33 cuts = METHOD file
+SNGS-162 frozen recall 102 links 33 cuts = METHOD file
+SNGS-066 heldout strict 28 links 22 cuts = METHOD file
+SNGS-066 heldout balanced 29 links 22 cuts = METHOD file
+SNGS-066 heldout recall 45 links 22 cuts = METHOD file
+SNGS-066 frozen strict 23 links 23 cuts = METHOD file
+SNGS-066 frozen balanced 30 links 23 cuts = METHOD file
+SNGS-066 frozen recall 45 links 23 cuts = METHOD file
+files opened: 993 ; annotation files among them: none
+label modules imported: none
+APPLY PATH IS LABEL-FREE AND REPRODUCES THE METHOD FILES
+exit 0

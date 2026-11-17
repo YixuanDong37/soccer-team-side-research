@@ -1,0 +1,23 @@
+# Blindfolded re-run of every LOCO fold of fuse_r1 against its published files
+
+| fold | pair model max abs diff (r1 / r0) | rule B choices equal | all 4 rules x 2 linkers equal | links at the 3 points equal | cuts equal | held-out links equal: 32 settings r1 / 16 r0 | fit-clip cells equal | fit-clip label files opened | held-out labels opened | fitted or cached files of other agents read | blocked attempts |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| SNGS-107 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-163 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-106 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-097 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-067 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-100 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-066 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-161 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-169 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-162 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-151 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-102 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+| SNGS-112 | 0.0e+00 / 0.0e+00 | True | True | True | True | True / True | True | 12 | False | 0 | 0 |
+
+| point | blind re-run (score.evaluate) | fuse_r1's METHOD file (score.evaluate) |
+|---|---|---|
+| strict | 67 / 3 / 67 | 312 / 7 / 25 | 1.61% | 67 / 3 / 67 | 312 / 7 / 25 | 1.61% |
+| balanced | 85 / 5 / 47 | 378 / 16 / 30 | 2.12% | 85 / 5 / 47 | 378 / 16 / 30 | 2.12% |
+| recall | 106 / 7 / 24 | 414 / 17 / 260 | 2.17% | 106 / 7 / 24 | 414 / 17 / 260 | 2.17% |

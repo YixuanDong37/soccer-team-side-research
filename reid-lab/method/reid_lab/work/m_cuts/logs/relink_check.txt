@@ -1,0 +1,14 @@
+SNGS-107 pairs 49 49 same pairs: True max |cos diff|: 0.0 same links: True links 4
+SNGS-163 pairs 106 106 same pairs: True max |cos diff|: 0.0 same links: True links 6
+SNGS-106 pairs 118 118 same pairs: True max |cos diff|: 0.0 same links: True links 12
+SNGS-097 pairs 129 129 same pairs: True max |cos diff|: 0.0 same links: True links 4
+SNGS-067 pairs 0 0 same pairs: True max |cos diff|: 0.0 same links: True links 0
+SNGS-100 pairs 191 191 same pairs: True max |cos diff|: 0.0 same links: True links 7
+SNGS-066 pairs 30 30 same pairs: True max |cos diff|: 0.0 same links: True links 0
+SNGS-161 pairs 94 94 same pairs: True max |cos diff|: 0.0 same links: True links 9
+SNGS-169 pairs 126 126 same pairs: True max |cos diff|: 0.0 same links: True links 6
+SNGS-162 pairs 278 278 same pairs: True max |cos diff|: 0.0 same links: True links 9
+SNGS-151 pairs 56 56 same pairs: True max |cos diff|: 0.0 same links: True links 2
+SNGS-102 pairs 41 41 same pairs: True max |cos diff|: 0.0 same links: True links 5
+SNGS-112 pairs 65 65 same pairs: True max |cos diff|: 0.0 same links: True links 5
+problems: 0

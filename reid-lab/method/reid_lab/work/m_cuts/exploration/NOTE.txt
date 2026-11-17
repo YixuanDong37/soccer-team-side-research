@@ -1,0 +1,6 @@
+Early exploration and diagnosis scripts, kept for the record. They were run against earlier
+versions of ../features.py (before the recursive segmentation and the small-side candidates) and
+read ../diag_switches.json / the csv files next to them by relative path; several no longer run
+against the final features.py (explore5.py, explore10.py use functions/columns that were removed).
+All of them are DIAGNOSIS: they read label-derived tables and produce no method result.
+What each showed is summarised in ../README.md ("What was tried").

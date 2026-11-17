@@ -1,0 +1,14 @@
+all non-referee pieces with a prototype (the method)               right  75 wrong  6 lost  56 | links 438 r/w/u 238/ 2/198 prec 0.992 impure 0.0280
+only pieces with gbf's verified team                               right  53 wrong  8 lost  76 | links 163 r/w/u 149/ 6/  8 prec 0.961 impure 0.0307
+only pieces with a team label (no nearest-mean team)               right  69 wrong  6 lost  62 | links 411 r/w/u 234/ 2/175 prec 0.992 impure 0.0279
+only pieces with >= 5 clean rows                                   right  67 wrong  6 lost  64 | links 258 r/w/u 244/ 3/ 11 prec 0.988 impure 0.0299
+only pieces labelled player (no goalkeepers)                       right  75 wrong  6 lost  56 | links 396 r/w/u 225/ 2/169 prec 0.991 impure 0.0280
+groups may share up to 3 frames (max_shared=3)                     right  75 wrong  6 lost  56 | links 437 r/w/u 249/ 2/186 prec 0.992 impure 0.0280
+need a rival on both sides (need_rival)                            right  59 wrong  6 lost  72 | links 241 r/w/u 189/ 1/ 51 prec 0.995 impure 0.0276
+no mutual-best requirement                                         right  77 wrong  9 lost  51 | links 497 r/w/u 252/ 7/238 prec 0.973 impure 0.0322
+rival = shares >= 5 frames (covis=5)                               right  89 wrong 13 lost  35 | links 532 r/w/u 279/11/242 prec 0.962 impure 0.0340
+linkage avg                                                        right  73 wrong  7 lost  57 | links 428 r/w/u 239/ 2/187 prec 0.992 impure 0.0277
+linkage min                                                        right  68 wrong  6 lost  63 | links 399 r/w/u 230/ 1/168 prec 0.996 impure 0.0276
+kind tc at the same setting                                        right  77 wrong  9 lost  51 | links 450 r/w/u 238/ 7/205 prec 0.971 impure 0.0298
+kind raw (no centring), t_abs 0.9, margin 0.05                     right  69 wrong  9 lost  59 | links 400 r/w/u 223/ 6/171 prec 0.974 impure 0.0301
+kind raw (no centring), t_abs 0.9, margin 0.1                      right  41 wrong  5 lost  91 | links 257 r/w/u 145/ 1/111 prec 0.993 impure 0.0262

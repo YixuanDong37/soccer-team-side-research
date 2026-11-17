@@ -1,0 +1,11 @@
+METHOD_strict.json: 344 links, 221 cuts, 1411 sub-pieces -> 1067 identities (548 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_balanced.json: 424 links, 221 cuts, 1411 sub-pieces -> 987 identities (644 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_recall.json: 691 links, 221 cuts, 1411 sub-pieces -> 720 identities (948 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_fixed_strict.json: 347 links, 221 cuts, 1411 sub-pieces -> 1064 identities (553 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_fixed_balanced.json: 403 links, 221 cuts, 1411 sub-pieces -> 1008 identities (626 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_fixed_recall.json: 743 links, 221 cuts, 1411 sub-pieces -> 668 identities (999 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_frozen_strict.json: 345 links, 219 cuts, 1409 sub-pieces -> 1064 identities (551 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_frozen_balanced.json: 403 links, 219 cuts, 1409 sub-pieces -> 1006 identities (627 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_frozen_recall.json: 743 links, 219 cuts, 1409 sub-pieces -> 666 identities (998 sub-pieces take part in a link; 0 of their rows carry the role referee)
+METHOD_cuts_only.json: 0 links, 221 cuts, 1411 sub-pieces -> 1411 identities (0 sub-pieces take part in a link; 0 of their rows carry the role referee)
+ALL METHOD FILES STRUCTURALLY CONSISTENT

@@ -1,0 +1,60 @@
+=== JERSEY, row level ===
+matched rows of annotated players/GK: 102646 ; annotation has a number on 0.8442
+rows with tracks.jersey: 4937 (0.0481) ; rows with jersey_conf: 4937
+jersey without conf: 0 ; conf without jersey: 0
+{'matched_player_rows': 102646, 'annotation_has_number_share': 0.8442, 'rows_with_jersey': 4937, 'coverage': 0.0481, 'rows_with_jersey_and_annotated_number': 4887, 'accuracy': 1.0, 'rows_with_jersey_where_annotation_has_none': 50}
+by clip:
+             rows  ann_has_number  coverage  judged  accuracy
+seq                                                          
+SNGS-066  10483.0        0.919012  0.012592   132.0       1.0
+SNGS-067   8112.0        0.604413  0.000000     0.0       NaN
+SNGS-097   9087.0        0.983823  0.005502     0.0       NaN
+SNGS-100   7530.0        0.932802  0.113015   851.0       1.0
+SNGS-102   8216.0        0.875122  0.090677   745.0       1.0
+SNGS-106   4952.0        0.776454  0.000000     0.0       NaN
+SNGS-107   7866.0        0.864607  0.040427   318.0       1.0
+SNGS-112   7815.0        0.863212  0.035956   281.0       1.0
+SNGS-151   7370.0        0.751425  0.141520  1043.0       1.0
+SNGS-161   7577.0        0.985086  0.099644   755.0       1.0
+SNGS-162   8714.0        0.627725  0.055658   485.0       1.0
+SNGS-163   6921.0        0.969947  0.040023   277.0       1.0
+SNGS-169   8003.0        0.797951  0.000000     0.0       NaN
+by jersey_conf (rows with a jersey and an annotated number):
+                 rows  accuracy
+cbin                           
+(-0.001, 0.0]  4092.0       1.0
+(0.0, 0.3]       46.0       1.0
+(0.3, 0.5]       55.0       1.0
+(0.5, 0.7]       56.0       1.0
+(0.7, 0.85]      72.0       1.0
+(0.85, 0.95]     85.0       1.0
+(0.95, 1.0]     481.0       1.0
+rows with jersey_conf but no jersey kept (conf distribution): {'n': 0}
+gbf role of rows with a jersey: {'player': 4887, 'goalkeeper': 50}
+
+=== JERSEY, piece level ===
+{'pieces_with_identity': 748, 'annotated_person_has_number': 567, 'pieces_with_jersey': 16, 'coverage': 0.0214, 'pieces_with_several_numbers': 0, 'judged': 15, 'right': 15, 'wrong': 0, 'jersey_on_person_without_annotated_number': 1}
+pieces with a jersey, by clip: {'SNGS-066': 1, 'SNGS-097': 1, 'SNGS-100': 3, 'SNGS-102': 1, 'SNGS-107': 2, 'SNGS-112': 1, 'SNGS-151': 3, 'SNGS-161': 2, 'SNGS-162': 1, 'SNGS-163': 1}
+share of the piece's rows carrying the jersey: {'n': 16, 'mean': 1.0, 'p50': 1.0, 'p75': 1.0, 'p90': 1.0, 'p95': 1.0, 'p99': 1.0, 'max': 1.0}
+wrong pieces:
+Empty DataFrame
+Columns: [seq, piece, rows, jersey_rows, jersey, j_ref, jersey_conf_mean, purity, team, team_ref]
+Index: []
+piece accuracy by mean jersey_conf:
+               size  mean
+cbin                     
+(-0.001, 0.5]    13   1.0
+(0.5, 0.7]        1   1.0
+(0.7, 0.85]       1   1.0
+piece accuracy by number of rows with the jersey:
+             size  mean
+nbin                   
+(24, 99]        1   1.0
+(99, 10000]    14   1.0
+{'persons_with_pieces': 279, 'persons_with_a_jersey_piece': 15, 'persons_with_two_or_more_jersey_pieces': 1}
+
+=== JERSEY, pair level ===
+{'scored_returns': 137, 'A_piece_has_jersey': 7, 'B_piece_has_jersey': 4, 'both': 1, 'both_equal': 1}
+time-disjoint pairs, both with a jersey: {'same_person': {'pairs': 1, 'equal_number': 1}, 'diff_person': {'pairs': 1, 'equal_number': 0}, 'unknown': {'pairs': 0, 'equal_number': 0}}
+... and the same gbf team label: {'same_person': {'pairs': 1, 'equal_number': 1}, 'diff_person': {'pairs': 1, 'equal_number': 0}, 'unknown': {'pairs': 0, 'equal_number': 0}}
+pieces with a jersey in total (any identity): 16 ; by clip: {'SNGS-066': 1, 'SNGS-097': 1, 'SNGS-100': 3, 'SNGS-102': 1, 'SNGS-107': 2, 'SNGS-112': 1, 'SNGS-151': 3, 'SNGS-161': 2, 'SNGS-162': 1, 'SNGS-163': 1}

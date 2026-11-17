@@ -1,0 +1,230 @@
+{
+ "name": "m_space/pos_e1_t60",
+ "pooled": {
+  "scored": 137,
+  "right": 28,
+  "wrong": 4,
+  "lost": 105,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.2044,
+  "wrong_share": 0.0292,
+  "links": 82,
+  "links_right": 42,
+  "links_wrong": 1,
+  "links_unknown": 39,
+  "link_precision": 0.9767,
+  "impure_row_share": 0.02625
+ },
+ "per_clip": {
+  "SNGS-107": {
+   "returns": {
+    "right": 2,
+    "wrong": 1,
+    "lost": 13,
+    "undetected": 2,
+    "untracked": 0
+   },
+   "links": {
+    "n": 8,
+    "right": 3,
+    "wrong": 0,
+    "unknown": 5
+   },
+   "impure_rows": 94
+  },
+  "SNGS-163": {
+   "returns": {
+    "right": 1,
+    "wrong": 0,
+    "lost": 10,
+    "undetected": 5,
+    "untracked": 0
+   },
+   "links": {
+    "n": 2,
+    "right": 2,
+    "wrong": 0,
+    "unknown": 0
+   },
+   "impure_rows": 453
+  },
+  "SNGS-106": {
+   "returns": {
+    "right": 2,
+    "wrong": 0,
+    "lost": 5,
+    "undetected": 1,
+    "untracked": 0
+   },
+   "links": {
+    "n": 7,
+    "right": 2,
+    "wrong": 0,
+    "unknown": 5
+   },
+   "impure_rows": 248
+  },
+  "SNGS-097": {
+   "returns": {
+    "right": 3,
+    "wrong": 0,
+    "lost": 3,
+    "undetected": 4,
+    "untracked": 0
+   },
+   "links": {
+    "n": 7,
+    "right": 2,
+    "wrong": 0,
+    "unknown": 5
+   },
+   "impure_rows": 318
+  },
+  "SNGS-067": {
+   "returns": {
+    "right": 1,
+    "wrong": 0,
+    "lost": 9,
+    "undetected": 3,
+    "untracked": 0
+   },
+   "links": {
+    "n": 5,
+    "right": 4,
+    "wrong": 0,
+    "unknown": 1
+   },
+   "impure_rows": 332
+  },
+  "SNGS-100": {
+   "returns": {
+    "right": 1,
+    "wrong": 0,
+    "lost": 3,
+    "undetected": 1,
+    "untracked": 0
+   },
+   "links": {
+    "n": 3,
+    "right": 1,
+    "wrong": 0,
+    "unknown": 2
+   },
+   "impure_rows": 207
+  },
+  "SNGS-066": {
+   "returns": {
+    "right": 2,
+    "wrong": 1,
+    "lost": 8,
+    "undetected": 2,
+    "untracked": 0
+   },
+   "links": {
+    "n": 4,
+    "right": 3,
+    "wrong": 0,
+    "unknown": 1
+   },
+   "impure_rows": 611
+  },
+  "SNGS-161": {
+   "returns": {
+    "right": 3,
+    "wrong": 0,
+    "lost": 11,
+    "undetected": 2,
+    "untracked": 0
+   },
+   "links": {
+    "n": 6,
+    "right": 3,
+    "wrong": 0,
+    "unknown": 3
+   },
+   "impure_rows": 91
+  },
+  "SNGS-169": {
+   "returns": {
+    "right": 4,
+    "wrong": 0,
+    "lost": 11,
+    "undetected": 1,
+    "untracked": 0
+   },
+   "links": {
+    "n": 11,
+    "right": 4,
+    "wrong": 0,
+    "unknown": 7
+   },
+   "impure_rows": 71
+  },
+  "SNGS-162": {
+   "returns": {
+    "right": 2,
+    "wrong": 2,
+    "lost": 14,
+    "undetected": 2,
+    "untracked": 0
+   },
+   "links": {
+    "n": 8,
+    "right": 5,
+    "wrong": 0,
+    "unknown": 3
+   },
+   "impure_rows": 350
+  },
+  "SNGS-151": {
+   "returns": {
+    "right": 2,
+    "wrong": 0,
+    "lost": 7,
+    "undetected": 5,
+    "untracked": 0
+   },
+   "links": {
+    "n": 9,
+    "right": 2,
+    "wrong": 0,
+    "unknown": 7
+   },
+   "impure_rows": 36
+  },
+  "SNGS-102": {
+   "returns": {
+    "right": 3,
+    "wrong": 0,
+    "lost": 9,
+    "undetected": 2,
+    "untracked": 0
+   },
+   "links": {
+    "n": 5,
+    "right": 5,
+    "wrong": 0,
+    "unknown": 0
+   },
+   "impure_rows": 25
+  },
+  "SNGS-112": {
+   "returns": {
+    "right": 2,
+    "wrong": 0,
+    "lost": 2,
+    "undetected": 0,
+    "untracked": 0
+   },
+   "links": {
+    "n": 7,
+    "right": 6,
+    "wrong": 1,
+    "unknown": 0
+   },
+   "impure_rows": 50
+  }
+ },
+ "clips_without_entry": []
+}

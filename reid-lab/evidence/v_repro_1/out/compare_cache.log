@@ -1,0 +1,4 @@
+cut_index.json equal
+cuts.json: keys here 182 there 520 common 182 different 0 missing there 0
+pkl tables here: 160 exactly equal to fuse_r1's: 160 max abs diff of unequal floats: 0.0
+problems: none 

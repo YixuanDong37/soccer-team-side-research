@@ -1,0 +1,31 @@
+right / wrong / lost of 137 | links right / wrong / unknown | impure rows   (cuts only: 0 / 0 / 137, 1.00%)
+
+-- margin 0.60, leaves off
+   bonus x 1.00                    70.0 /  2.0 /   65.0 | links  319.0 /  6.0 /  22.0 | impure 1.44%
+   bonus x 0.75                    59.0 /  2.0 /   76.0 | links  277.0 /  5.0 /  17.0 | impure 1.30%
+   bonus x 0.50                    31.0 /  2.0 /  104.0 | links  180.0 /  4.0 /  10.0 | impure 1.26%
+   bonus x 0.25                     1.0 /  0.0 /  136.0 | links   21.0 /  0.0 /   4.0 | impure 1.00%
+   bonus x 0.00                     0.0 /  0.0 /  137.0 | links    0.0 /  0.0 /   0.0 | impure 1.00%
+   position unknown for 25% pieces   42.0 /  1.3 /   93.7 | links  190.7 /  4.3 /  14.3 | impure 1.23%
+   position unknown for 50% pieces   18.7 /  0.3 /  118.0 | links   96.0 /  2.3 /   8.0 | impure 1.04%
+   position unknown for 75% pieces    4.7 /  0.0 /  132.3 | links   26.7 /  1.0 /   2.0 | impure 1.02%
+
+-- margin 0.40, leaves off
+   bonus x 1.00                    85.0 /  4.0 /   48.0 | links  361.0 / 12.0 /  30.0 | impure 1.81%
+   bonus x 0.75                    84.0 /  4.0 /   49.0 | links  361.0 / 11.0 /  28.0 | impure 1.81%
+   bonus x 0.50                    75.0 /  2.0 /   60.0 | links  341.0 /  6.0 /  26.0 | impure 1.34%
+   bonus x 0.25                    47.0 /  2.0 /   88.0 | links  234.0 /  4.0 /  13.0 | impure 1.29%
+   bonus x 0.00                     5.0 /  0.0 /  132.0 | links   48.0 /  0.0 /   5.0 | impure 1.00%
+   position unknown for 25% pieces   51.7 /  3.0 /   82.3 | links  239.3 /  8.7 /  21.3 | impure 1.54%
+   position unknown for 50% pieces   26.3 /  0.7 /  110.0 | links  147.7 /  4.0 /  13.7 | impure 1.14%
+   position unknown for 75% pieces   10.3 /  0.0 /  126.7 | links   78.3 /  1.0 /   6.7 | impure 1.02%
+
+-- margin 0.20, leaves off
+   bonus x 1.00                    95.0 /  5.0 /   37.0 | links  415.0 / 17.0 /  36.0 | impure 2.14%
+   bonus x 0.75                    94.0 /  5.0 /   38.0 | links  411.0 / 16.0 /  36.0 | impure 2.14%
+   bonus x 0.50                    93.0 /  5.0 /   39.0 | links  407.0 / 15.0 /  35.0 | impure 2.13%
+   bonus x 0.25                    82.0 /  5.0 /   50.0 | links  381.0 / 12.0 /  29.0 | impure 1.81%
+   bonus x 0.00                    64.0 /  4.0 /   69.0 | links  305.0 /  9.0 /  18.0 | impure 1.56%
+   position unknown for 25% pieces   81.0 /  5.3 /   50.7 | links  358.7 / 16.3 /  29.0 | impure 2.04%
+   position unknown for 50% pieces   71.0 /  4.0 /   62.0 | links  333.3 / 13.0 /  23.0 | impure 1.74%
+   position unknown for 75% pieces   64.3 /  4.0 /   68.7 | links  312.3 / 10.3 /  17.3 | impure 1.57%

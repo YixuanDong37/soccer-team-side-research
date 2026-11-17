@@ -1,0 +1,105 @@
+SNGS-107 check 1 no bonus 0.25 41 links equal
+SNGS-107 check 1 no bonus 0.5 0 links equal
+SNGS-107 check 1 no bonus 0.9 0 links equal
+SNGS-107 check 1 bonus 0.25 67 links equal
+SNGS-107 check 1 bonus 0.5 54 links equal
+SNGS-107 check 1 bonus 0.9 31 links equal
+SNGS-107 check 2 margin 0.15 38 core links, 28 leaf links, 65 solid of 101 pieces: ok
+SNGS-107 check 2 margin 0.5 29 core links, 19 leaf links, 65 solid of 101 pieces: ok
+SNGS-163 check 1 no bonus 0.25 27 links equal
+SNGS-163 check 1 no bonus 0.5 0 links equal
+SNGS-163 check 1 no bonus 0.9 0 links equal
+SNGS-163 check 1 bonus 0.25 52 links equal
+SNGS-163 check 1 bonus 0.5 39 links equal
+SNGS-163 check 1 bonus 0.9 14 links equal
+SNGS-163 check 2 margin 0.15 30 core links, 20 leaf links, 67 solid of 109 pieces: ok
+SNGS-163 check 2 margin 0.5 21 core links, 13 leaf links, 67 solid of 109 pieces: ok
+SNGS-106 check 1 no bonus 0.25 34 links equal
+SNGS-106 check 1 no bonus 0.5 0 links equal
+SNGS-106 check 1 no bonus 0.9 0 links equal
+SNGS-106 check 1 bonus 0.25 62 links equal
+SNGS-106 check 1 bonus 0.5 50 links equal
+SNGS-106 check 1 bonus 0.9 16 links equal
+SNGS-106 check 2 margin 0.15 40 core links, 24 leaf links, 68 solid of 101 pieces: ok
+SNGS-106 check 2 margin 0.5 32 core links, 19 leaf links, 68 solid of 101 pieces: ok
+SNGS-097 check 1 no bonus 0.25 27 links equal
+SNGS-097 check 1 no bonus 0.5 0 links equal
+SNGS-097 check 1 no bonus 0.9 0 links equal
+SNGS-097 check 1 bonus 0.25 43 links equal
+SNGS-097 check 1 bonus 0.5 35 links equal
+SNGS-097 check 1 bonus 0.9 21 links equal
+SNGS-097 check 2 margin 0.15 29 core links, 15 leaf links, 56 solid of 80 pieces: ok
+SNGS-097 check 2 margin 0.5 23 core links, 12 leaf links, 56 solid of 80 pieces: ok
+SNGS-067 check 1 no bonus 0.25 26 links equal
+SNGS-067 check 1 no bonus 0.5 0 links equal
+SNGS-067 check 1 no bonus 0.9 0 links equal
+SNGS-067 check 1 bonus 0.25 73 links equal
+SNGS-067 check 1 bonus 0.5 63 links equal
+SNGS-067 check 1 bonus 0.9 24 links equal
+SNGS-067 check 2 margin 0.15 53 core links, 20 leaf links, 92 solid of 131 pieces: ok
+SNGS-067 check 2 margin 0.5 44 core links, 16 leaf links, 92 solid of 131 pieces: ok
+SNGS-100 check 1 no bonus 0.25 32 links equal
+SNGS-100 check 1 no bonus 0.5 0 links equal
+SNGS-100 check 1 no bonus 0.9 0 links equal
+SNGS-100 check 1 bonus 0.25 51 links equal
+SNGS-100 check 1 bonus 0.5 41 links equal
+SNGS-100 check 1 bonus 0.9 18 links equal
+SNGS-100 check 2 margin 0.15 42 core links, 15 leaf links, 75 solid of 105 pieces: ok
+SNGS-100 check 2 margin 0.5 34 core links, 11 leaf links, 75 solid of 105 pieces: ok
+SNGS-066 check 1 no bonus 0.25 20 links equal
+SNGS-066 check 1 no bonus 0.5 0 links equal
+SNGS-066 check 1 no bonus 0.9 0 links equal
+SNGS-066 check 1 bonus 0.25 44 links equal
+SNGS-066 check 1 bonus 0.5 36 links equal
+SNGS-066 check 1 bonus 0.9 18 links equal
+SNGS-066 check 2 margin 0.15 38 core links, 10 leaf links, 86 solid of 116 pieces: ok
+SNGS-066 check 2 margin 0.5 30 core links, 8 leaf links, 86 solid of 116 pieces: ok
+SNGS-161 check 1 no bonus 0.25 22 links equal
+SNGS-161 check 1 no bonus 0.5 0 links equal
+SNGS-161 check 1 no bonus 0.9 0 links equal
+SNGS-161 check 1 bonus 0.25 41 links equal
+SNGS-161 check 1 bonus 0.5 37 links equal
+SNGS-161 check 1 bonus 0.9 20 links equal
+SNGS-161 check 2 margin 0.15 31 core links, 12 leaf links, 60 solid of 81 pieces: ok
+SNGS-161 check 2 margin 0.5 31 core links, 5 leaf links, 60 solid of 81 pieces: ok
+SNGS-169 check 1 no bonus 0.25 31 links equal
+SNGS-169 check 1 no bonus 0.5 0 links equal
+SNGS-169 check 1 no bonus 0.9 0 links equal
+SNGS-169 check 1 bonus 0.25 80 links equal
+SNGS-169 check 1 bonus 0.5 63 links equal
+SNGS-169 check 1 bonus 0.9 30 links equal
+SNGS-169 check 2 margin 0.15 39 core links, 37 leaf links, 75 solid of 149 pieces: ok
+SNGS-169 check 2 margin 0.5 27 core links, 23 leaf links, 75 solid of 149 pieces: ok
+SNGS-162 check 1 no bonus 0.25 56 links equal
+SNGS-162 check 1 no bonus 0.5 0 links equal
+SNGS-162 check 1 no bonus 0.9 0 links equal
+SNGS-162 check 1 bonus 0.25 91 links equal
+SNGS-162 check 1 bonus 0.5 80 links equal
+SNGS-162 check 1 bonus 0.9 46 links equal
+SNGS-162 check 2 margin 0.15 62 core links, 40 leaf links, 98 solid of 158 pieces: ok
+SNGS-162 check 2 margin 0.5 49 core links, 29 leaf links, 98 solid of 158 pieces: ok
+SNGS-151 check 1 no bonus 0.25 29 links equal
+SNGS-151 check 1 no bonus 0.5 0 links equal
+SNGS-151 check 1 no bonus 0.9 0 links equal
+SNGS-151 check 1 bonus 0.25 52 links equal
+SNGS-151 check 1 bonus 0.5 41 links equal
+SNGS-151 check 1 bonus 0.9 20 links equal
+SNGS-151 check 2 margin 0.15 24 core links, 23 leaf links, 61 solid of 110 pieces: ok
+SNGS-151 check 2 margin 0.5 12 core links, 14 leaf links, 61 solid of 110 pieces: ok
+SNGS-102 check 1 no bonus 0.25 23 links equal
+SNGS-102 check 1 no bonus 0.5 0 links equal
+SNGS-102 check 1 no bonus 0.9 0 links equal
+SNGS-102 check 1 bonus 0.25 39 links equal
+SNGS-102 check 1 bonus 0.5 38 links equal
+SNGS-102 check 1 bonus 0.9 20 links equal
+SNGS-102 check 2 margin 0.15 27 core links, 13 leaf links, 57 solid of 71 pieces: ok
+SNGS-102 check 2 margin 0.5 25 core links, 12 leaf links, 57 solid of 71 pieces: ok
+SNGS-112 check 1 no bonus 0.25 38 links equal
+SNGS-112 check 1 no bonus 0.5 0 links equal
+SNGS-112 check 1 no bonus 0.9 0 links equal
+SNGS-112 check 1 bonus 0.25 50 links equal
+SNGS-112 check 1 bonus 0.5 45 links equal
+SNGS-112 check 1 bonus 0.9 30 links equal
+SNGS-112 check 2 margin 0.15 30 core links, 24 leaf links, 63 solid of 97 pieces: ok
+SNGS-112 check 2 margin 0.5 24 core links, 18 leaf links, 63 solid of 97 pieces: ok
+ALL CHECKS PASS

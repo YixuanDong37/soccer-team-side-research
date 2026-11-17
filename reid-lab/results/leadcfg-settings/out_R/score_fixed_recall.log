@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point recall (the all-13 choice of the setting, applied to every clip with the weights fitted without it)",
+ "pooled": {
+  "scored": 156,
+  "right": 118,
+  "wrong": 13,
+  "lost": 25,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.7564,
+  "wrong_share": 0.0833,
+  "links": 266,
+  "links_right": 221,
+  "links_wrong": 21,
+  "links_unknown": 24,
+  "link_precision": 0.9132,
+  "impure_row_share": 0.0289
+ },
+ "clips_without_entry": []
+}

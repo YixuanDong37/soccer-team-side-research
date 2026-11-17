@@ -1,0 +1,63 @@
+sampled row pairs: {'diff_same_team': 780000, 'diff_team': 260000, 'same': 780000}
+
+=== overall (equal numbers of pairs per kind, so precision is at a 1:1 prior) ===
+                                            rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0  all rows; same person vs other person of the same team      780000      780000         0.832         0.912         0.718         0.891  0.964      0.664        0.993        0.966        0.917
+1       all rows; same person vs person of the other team      780000      260000         0.832         0.912         0.349         0.730  0.998      0.983        1.000        1.000        1.000
+2     both rows clean (not clipped, no overlap, >= 40 px)      471579      466481         0.840         0.916         0.713         0.890  0.970      0.705        0.994        0.975        0.939
+
+=== by the smaller box height of the two rows (720p px; rows not clipped, no overlap) ===
+         rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0      min height 0-30        3272        3194         0.766         0.865         0.770         0.904  0.823      0.282        0.873        0.696        0.636
+1     min height 30-40       28294       32287         0.812         0.898         0.735         0.907  0.933      0.425        0.966        0.883        0.806
+2     min height 40-50      111568      129078         0.828         0.909         0.711         0.896  0.962      0.615        0.988        0.954        0.899
+3     min height 50-60      115952      138115         0.828         0.909         0.706         0.891  0.963      0.647        0.991        0.956        0.901
+4     min height 60-80      177485      169860         0.849         0.920         0.715         0.883  0.976      0.776        0.996        0.985        0.960
+5    min height 80-110       60436       28703         0.863         0.928         0.740         0.898  0.979      0.746        0.996        0.992        0.980
+6  min height 110-2000        6138         725         0.891         0.945         0.791         0.912  0.985      0.792        0.999        0.998        0.994
+
+=== by clipping at the image border (no overlap, >= 40 px) ===
+                                    rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0       neither row clipped, neither within 10 px      461837      456562         0.840         0.916         0.713         0.890  0.970      0.704        0.994        0.975        0.938
+1  a row within 10 px of the border, none clipped        9742        9919         0.846         0.915         0.720         0.883  0.978      0.740        0.995        0.979        0.953
+2                   one row clipped by the border       25311       25313         0.818         0.899         0.721         0.883  0.958      0.631        0.992        0.952        0.887
+3                               both rows clipped        1066         281         0.849         0.916         0.733         0.944  0.945      0.181        0.989        0.976        0.966
+
+=== by overlap with another box (largest share of a row's box covered; not clipped, >= 40 px) ===
+            rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0  overlap 0 (no overlap)      471579      466481         0.840         0.916         0.713         0.890  0.970      0.705        0.994        0.975        0.939
+1           overlap 0-0.1      108595      110224         0.834         0.911         0.714         0.889  0.966      0.673        0.993        0.968        0.920
+2         overlap 0.1-0.3      102583      101693         0.821         0.907         0.726         0.891  0.954      0.626        0.992        0.952        0.885
+3         overlap 0.3-0.6       22125       21311         0.821         0.905         0.726         0.888  0.956      0.626        0.992        0.953        0.887
+4           overlap 0.6-1        1190        1121         0.808         0.888         0.713         0.890  0.936      0.491        0.979        0.880        0.832
+
+=== by time apart (same-person pairs; the different-person pairs are the clean pool) ===
+   rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0    1-2 s apart       52911      466481         0.883         0.941         0.713          0.89  0.987      0.877        0.989        0.954        0.881
+1    2-5 s apart      117156      466481         0.860         0.928         0.713          0.89  0.979      0.793        0.988        0.950        0.874
+2   5-10 s apart      122313      466481         0.839         0.913         0.713          0.89  0.970      0.684        0.974        0.903        0.794
+3  10-20 s apart      127547      466481         0.824         0.904         0.713          0.89  0.960      0.616        0.963        0.865        0.729
+4  20-31 s apart       51652      466481         0.821         0.901         0.713          0.89  0.957      0.593        0.902        0.702        0.503
+
+=== by detection confidence (smaller of the two; clean rows) ===
+       rows compared  same pairs  diff pairs  cos same p10  cos same p50  cos diff p50  cos diff p99    AUC  TPR@FPR1%  prec@rec0.5  prec@rec0.8  prec@rec0.9
+0   min conf 0.0-0.5       84292       88654         0.808         0.904         0.711         0.888  0.951      0.617        0.990        0.952        0.876
+1  min conf 0.5-0.65      150661      171521         0.826         0.910         0.707         0.888  0.963      0.667        0.992        0.963        0.910
+2  min conf 0.65-0.8      209093      195534         0.859         0.922         0.718         0.892  0.982      0.754        0.995        0.984        0.963
+3  min conf 0.8-1.01       27533       10772         0.879         0.936         0.747         0.906  0.986      0.771        0.997        0.994        0.988
+
+=== per clip (clean rows): where a global cosine bar would sit ===
+         seq  cos same p05  cos same p50  cos diff p50  cos diff p95  cos diff p99    AUC  TPR@FPR1%
+0   SNGS-107         0.853         0.932         0.707         0.820         0.855  0.991      0.947
+1   SNGS-163         0.761         0.901         0.684         0.841         0.886  0.950      0.602
+2   SNGS-106         0.750         0.905         0.699         0.804         0.844  0.964      0.832
+3   SNGS-097         0.854         0.927         0.683         0.801         0.841  0.994      0.966
+4   SNGS-067         0.824         0.915         0.747         0.864         0.897  0.968      0.664
+5   SNGS-100         0.834         0.919         0.683         0.807         0.843  0.990      0.939
+6   SNGS-066         0.809         0.918         0.783         0.890         0.920  0.928      0.481
+7   SNGS-161         0.802         0.914         0.718         0.849         0.887  0.967      0.696
+8   SNGS-169         0.791         0.894         0.725         0.856         0.888  0.951      0.545
+9   SNGS-162         0.798         0.914         0.745         0.868         0.926  0.945      0.396
+10  SNGS-151         0.764         0.900         0.701         0.853         0.898  0.944      0.521
+11  SNGS-102         0.847         0.923         0.709         0.811         0.850  0.992      0.947
+12  SNGS-112         0.852         0.926         0.698         0.818         0.858  0.991      0.940

@@ -1,0 +1,20 @@
+position bonus as a function of the position score pos_sink (all-13 pair model, cosine units): 0.001 -> 0.00, 0.003 -> 0.10, 0.01 -> 0.21, 0.03 -> 0.31, 0.1 -> 0.42, 0.3 -> 0.55, 0.5 -> 0.62, 0.9 -> 0.82, 0.98 -> 0.97
+a link at margin m needs appearance + bonus >= 0.5 + m (nobody rival 0.5): strict 1.10, balanced 0.90, recall 0.70
+
+strict: core links 344
+  gap < 50: n 230; merge appearance 10/50/90%: 0.64 / 0.82 / 0.92; merge bonus: 0.56 / 0.73 / 0.84; pair pos_sink: 0.40 / 0.78 / 0.92; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 0; pos_sink < 0.1: 2; judged right / wrong: 206 / 3
+  50-124: n 70; merge appearance 10/50/90%: 0.64 / 0.79 / 0.90; merge bonus: 0.48 / 0.63 / 0.77; pair pos_sink: 0.21 / 0.57 / 0.85; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 0; pos_sink < 0.1: 4; judged right / wrong: 64 / 3
+  125-250: n 30; merge appearance 10/50/90%: 0.62 / 0.77 / 0.91; merge bonus: 0.51 / 0.59 / 0.67; pair pos_sink: 0.26 / 0.46 / 0.61; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 0; pos_sink < 0.1: 1; judged right / wrong: 28 / 1
+  > 250 (10 s): n 14; merge appearance 10/50/90%: 0.73 / 0.80 / 0.88; merge bonus: 0.44 / 0.53 / 0.60; pair pos_sink: 0.11 / 0.24 / 0.44; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 0; pos_sink < 0.1: 1; judged right / wrong: 14 / 0
+
+balanced: core links 424
+  gap < 50: n 261; merge appearance 10/50/90%: 0.60 / 0.81 / 0.92; merge bonus: 0.53 / 0.72 / 0.83; pair pos_sink: 0.37 / 0.77 / 0.91; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 136; pos_sink < 0.1: 4; judged right / wrong: 231 / 6
+  50-124: n 87; merge appearance 10/50/90%: 0.57 / 0.76 / 0.89; merge bonus: 0.45 / 0.61 / 0.76; pair pos_sink: 0.12 / 0.46 / 0.83; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 42; pos_sink < 0.1: 7; judged right / wrong: 78 / 5
+  125-250: n 51; merge appearance 10/50/90%: 0.55 / 0.76 / 0.88; merge bonus: 0.39 / 0.55 / 0.65; pair pos_sink: 0.06 / 0.35 / 0.59; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 22; pos_sink < 0.1: 7; judged right / wrong: 45 / 5
+  > 250 (10 s): n 25; merge appearance 10/50/90%: 0.65 / 0.76 / 0.88; merge bonus: 0.39 / 0.53 / 0.60; pair pos_sink: 0.06 / 0.24 / 0.44; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 8; pos_sink < 0.1: 5; judged right / wrong: 24 / 0
+
+recall: core links 467
+  gap < 50: n 279; merge appearance 10/50/90%: 0.58 / 0.81 / 0.92; merge bonus: 0.51 / 0.71 / 0.83; pair pos_sink: 0.31 / 0.77 / 0.91; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 210; pos_sink < 0.1: 6; judged right / wrong: 245 / 6
+  50-124: n 93; merge appearance 10/50/90%: 0.52 / 0.76 / 0.89; merge bonus: 0.40 / 0.60 / 0.76; pair pos_sink: 0.11 / 0.44 / 0.82; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 62; pos_sink < 0.1: 9; judged right / wrong: 83 / 6
+  125-250: n 57; merge appearance 10/50/90%: 0.55 / 0.75 / 0.88; merge bonus: 0.37 / 0.54 / 0.65; pair pos_sink: 0.06 / 0.28 / 0.57; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 35; pos_sink < 0.1: 11; judged right / wrong: 51 / 5
+  > 250 (10 s): n 38; merge appearance 10/50/90%: 0.50 / 0.76 / 0.87; merge bonus: 0.41 / 0.53 / 0.60; pair pos_sink: 0.08 / 0.22 / 0.44; links whose appearance alone reaches the bar (m_app >= 0.5 + margin): 24; pos_sink < 0.1: 7; judged right / wrong: 35 / 0

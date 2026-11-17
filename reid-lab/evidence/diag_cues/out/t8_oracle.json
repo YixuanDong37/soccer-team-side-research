@@ -1,0 +1,70 @@
+{
+ "return_piece_status": {
+  "A=another person / B=another person": 1,
+  "A=another person / B=none (<5 matched rows)": 2,
+  "A=another person / B=the person": 5,
+  "A=none (<5 matched rows) / B=another person": 2,
+  "A=none (<5 matched rows) / B=none (<5 matched rows)": 3,
+  "A=none (<5 matched rows) / B=the person": 13,
+  "A=the person / B=another person": 4,
+  "A=the person / B=none (<5 matched rows)": 18,
+  "A=the person / B=the person": 89
+ },
+ "oracles": [
+  {
+   "oracle": "O1 link by majority person (>= 5 rows)",
+   "right": 105,
+   "wrong": 7,
+   "lost": 25,
+   "links": 505,
+   "links_wrong": 0,
+   "impure_row_share": 0.02614
+  },
+  {
+   "oracle": "O2 link by majority person (>= 1 row)",
+   "right": 128,
+   "wrong": 8,
+   "lost": 1,
+   "links": 775,
+   "links_wrong": 0,
+   "impure_row_share": 0.02614
+  },
+  {
+   "oracle": "O3 cut at identity changes, then link",
+   "right": 130,
+   "wrong": 6,
+   "lost": 1,
+   "links": 857,
+   "links_wrong": 0,
+   "impure_row_share": 0.00517
+  },
+  {
+   "oracle": "(baseline) split",
+   "right": 0,
+   "wrong": 4,
+   "lost": 133,
+   "links": 0,
+   "links_wrong": 0,
+   "impure_row_share": 0.02614
+  },
+  {
+   "oracle": "(baseline) plugin",
+   "right": 30,
+   "wrong": 14,
+   "lost": 93,
+   "links": 93,
+   "links_wrong": 10,
+   "impure_row_share": 0.03085
+  },
+  {
+   "oracle": "(baseline) mutual",
+   "right": 26,
+   "wrong": 6,
+   "lost": 105,
+   "links": 69,
+   "links_wrong": 7,
+   "impure_row_share": 0.03028
+  }
+ ],
+ "o3_cuts": 82
+}

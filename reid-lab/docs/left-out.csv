@@ -1,0 +1,190 @@
+path,bytes,reason,decided_by
+evidence/critic/out/o2b_settled_wrong.txt,3560,text listing: 27 of 59 lines name an annotated person or return,builder
+evidence/diag_cues/out/t0_sanity.csv,686,"per-item rows with ids/labels: ann_rows,persons",planner
+evidence/diag_cues/out/t1_pieces.csv,228535,"per-item rows with ids/labels: jersey_ref,piece,ref_id,role_ref,team_ref",planner
+evidence/diag_cues/out/t1_return_pairs.csv,13408,"138 rows keyed by clip, per-item table",planner
+evidence/diag_cues/out/t2_piece_pairs.csv,1453506,"per-item rows with ids/labels: a,b",planner
+evidence/diag_cues/out/t2_position.json,27270,per-item label ids: ref_id,planner
+evidence/diag_cues/out/t2_returns.csv,53074,"per-item rows with ids/labels: T_ann,ax_ann,ay_ann,bx_ann,by_ann,d_ann,piece_a,piece_b,ref_",planner
+evidence/diag_cues/out/t3_piece_pairs.csv,930789,"per-item rows with ids/labels: a,b",planner
+evidence/diag_cues/out/t3_returns.csv,47524,per-item rows with ids/labels: ref_id,planner
+evidence/diag_cues/out/t3_view_per_frame.csv,1227697,per-item rows with ids/labels: frame,planner
+evidence/diag_cues/out/t3b_calib_frames.csv,1106516,per-item rows with ids/labels: frame,planner
+evidence/diag_cues/out/t4_jersey.json,1744,per-item label ids: persons,planner
+evidence/diag_cues/out/t4_jersey_rows_per_clip.csv,842,per-item rows with ids/labels: ann_has_number,planner
+evidence/diag_cues/out/t5b_appearance_pieces.json,47749,per-item list by name (pieces/candidates/pairs/returns/links),planner
+evidence/diag_cues/out/t5b_piece_pairs.parquet,3071069,binary or run data,planner
+evidence/diag_cues/out/t5b_pieces.csv,125340,"per-item rows with ids/labels: piece,ref_id,role_ref,team_ref",planner
+evidence/diag_cues/out/t5b_return_pairs.csv,14230,"per-item rows with ids/labels: a,b,ref_id",planner
+evidence/diag_cues/out/t5c_piece_pairs.parquet,4184110,binary or run data,planner
+evidence/diag_cues/out/t6_role_pieces_confusion.csv,87,per-item rows with ids/labels: role_ref,planner
+evidence/diag_cues/out/t6_role_return_pieces_confusion.csv,52,per-item rows with ids/labels: role_ref,planner
+evidence/diag_cues/out/t6_role_rows_confusion.csv,97,per-item rows with ids/labels: role_ref,planner
+evidence/diag_cues/out/t7_candidates.json,24270,per-item list by name (pieces/candidates/pairs/returns/links),planner
+evidence/diag_cues/out/t7_candidates.parquet,766084,binary or run data,planner
+evidence/diag_failures/out/METHOD_oracle_O1_links_known.json,5673,oracle link list built from the annotations,builder
+evidence/diag_failures/out/METHOD_oracle_O2_links_any.json,8601,oracle link list built from the annotations,builder
+evidence/diag_failures/out/METHOD_oracle_O3_cuts_links_known.json,8188,oracle link list built from the annotations,builder
+evidence/diag_failures/out/METHOD_oracle_O4_cuts_links_any.json,11123,oracle link list built from the annotations,builder
+evidence/diag_failures/out/METHOD_oracle_O5_candidate_pairs_only.json,2538,oracle link list built from the annotations,builder
+evidence/diag_failures/out/METHOD_oracle_O6_cuts1_links_any.json,29052,oracle link list built from the annotations,builder
+evidence/diag_failures/out/appendix.md,41267,text listing: 167 of 189 lines name an annotated person or return,builder
+evidence/diag_failures/out/fragments.csv,9479,"per-item rows with ids/labels: clip,piece,ref_id",planner
+evidence/diag_failures/out/holes.csv,40790,"per-item rows with ids/labels: clip,label,piece",planner
+evidence/diag_failures/out/id_split_suspects.csv,1639,per-item rows with annotation ids and jersey numbers,builder
+evidence/diag_failures/out/log_fragments.txt,23305,printed per-item table: up to 12 rows for one clip,builder
+evidence/diag_failures/out/log_id_split_suspects.txt,3882,printed per-item table: up to 5 rows for one clip,builder
+evidence/diag_failures/out/log_mutual_funnel.txt,12892,printed per-return table with label judgements,builder
+evidence/diag_failures/out/log_mutual_links.txt,8175,printed per-link table with label judgements,builder
+evidence/diag_failures/out/log_plugin_joins.txt,32881,printed per-item table: up to 13 rows for one clip,builder
+evidence/diag_failures/out/log_swap_suspects.txt,4359,printed per-item table: up to 10 rows for one clip,builder
+evidence/diag_failures/out/log_switches.txt,22732,printed per-item table: up to 18 rows for one clip,builder
+evidence/diag_failures/out/log_undetected.txt,22571,printed per-item table: up to 11 rows for one clip,builder
+evidence/diag_failures/out/mixed_pieces.csv,5401,"per-item rows with ids/labels: clip,piece",planner
+evidence/diag_failures/out/mutual_funnel.csv,15055,per-item rows with ids/labels: clip,planner
+evidence/diag_failures/out/mutual_links.csv,12109,"per-item rows with ids/labels: clip,earlier,label,later",planner
+evidence/diag_failures/out/pathg_pairs.json,666121,per-item list by name (pieces/candidates/pairs/returns/links),planner
+evidence/diag_failures/out/plugin_joins.csv,18748,"per-item rows with ids/labels: clip,earlier,label,later",planner
+evidence/diag_failures/out/returns.csv,139535,"per-item rows with ids/labels: a_team_agrees_ann,ann_dist_m,ann_exit_x,ann_exit_y,ann_jerse",planner
+evidence/diag_failures/out/swap_suspects.csv,532,per-item rows with annotation ids and jersey numbers,builder
+evidence/diag_failures/out/switch_returns.csv,1424,"per-item rows with ids/labels: clip,piece_b,ref_id",planner
+evidence/diag_failures/out/undetected.csv,4614,"per-item rows with ids/labels: ann_box_h_720p,ann_box_w_720p,ann_w_over_h_in_window,ann_w_o",planner
+evidence/diag_failures/returns.csv,157702,"per-item rows with ids/labels: a_team_agrees_ann,ann_dist_m,ann_exit_x,ann_exit_y,ann_jerse",planner
+evidence/fuse/out/wrong_links.txt,1186,text listing: 14 of 16 lines name an annotated person or return,builder
+evidence/fuse/report-fuse.html,20287,html not shipped,planner
+evidence/m_keep/diag_returns.csv,17004,"per-item rows with ids/labels: pa,pb,ref",planner
+evidence/m_keep/diag_table.csv,45551,"per-item rows with ids/labels: a,b",planner
+evidence/v_leak_1/out/blind/SNGS-066.pkl,390529,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-067.pkl,407929,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-097.pkl,394195,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-100.pkl,405995,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-102.pkl,389468,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-106.pkl,406797,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-107.pkl,397877,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-112.pkl,403019,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-151.pkl,388937,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-161.pkl,388788,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-162.pkl,412627,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-163.pkl,389670,binary or run data,planner
+evidence/v_leak_1/out/blind/SNGS-169.pkl,406693,binary or run data,planner
+evidence/v_leak_1/out/blind_folds.pkl,4986308,binary or run data,planner
+evidence/v_leak_1/out/test_per_fold_cache/SNGS-112_first_run.pkl,403019,binary or run data,planner
+evidence/v_leak_1/out/test_per_fold_cache/SNGS-162.pkl,412627,binary or run data,planner
+evidence/v_repro_0/out/compare_hand_balanced.log,1969,text listing: 10 of 14 lines name an annotated person or return,builder
+evidence/v_repro_0/out/compare_hand_recall.log,1982,text listing: 10 of 14 lines name an annotated person or return,builder
+evidence/v_repro_0/out/compare_hand_strict.log,1975,text listing: 10 of 14 lines name an annotated person or return,builder
+evidence/v_repro_0/out/d5_merges_app.txt,2214,one row per merge with its label judgement,builder
+evidence/v_repro_0/out/d5_merges_pos.txt,4203,one row per merge with its label judgement,builder
+evidence/v_repro_0/out/hand_balanced.json,70346,"per-return list with annotation ids (key ""ref"")",builder
+evidence/v_repro_0/out/hand_balanced.log,3867,text listing: 10 of 26 lines name an annotated person or return,builder
+evidence/v_repro_0/out/hand_recall.json,69746,"per-return list with annotation ids (key ""ref"")",builder
+evidence/v_repro_0/out/hand_recall.log,3847,text listing: 10 of 26 lines name an annotated person or return,builder
+evidence/v_repro_0/out/hand_strict.json,72776,"per-return list with annotation ids (key ""ref"")",builder
+evidence/v_repro_0/out/hand_strict.log,3894,text listing: 10 of 26 lines name an annotated person or return,builder
+evidence/v_repro_0/out/wrong_links.txt,1186,text listing: 14 of 16 lines name an annotated person or return,builder
+evidence/v_repro_0/snapshot_after.tsv,66704,"file snapshot lists (timestamps, machine paths)",planner
+evidence/v_repro_0/snapshot_before.tsv,66704,"file snapshot lists (timestamps, machine paths)",planner
+evidence/v_repro_1/logs/diag_points.log,11164,text listing: 18 of 106 lines name an annotated person or return,builder
+evidence/v_repro_1/out/compare_hand_balanced.log,1055,text listing: 10 of 14 lines name an annotated person or return,builder
+evidence/v_repro_1/out/diag_points.json,25022,"per-item label ids: person,wrong_returns",planner
+evidence/v_repro_1/out/diag_points.md,11155,text listing: 18 of 104 lines name an annotated person or return,builder
+evidence/v_repro_1/out/hand_balanced.json,65776,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_balanced.log,4459,text listing: 10 of 63 lines name an annotated person or return,builder
+evidence/v_repro_1/out/hand_balanced.picks.json,1155,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_balanced.wrong.json,586,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_cuts_only.json,67140,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_fixed_balanced.json,65807,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_fixed_recall.json,65064,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_fixed_strict.json,65922,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_recall.json,65386,per-item label ids: person,planner
+evidence/v_repro_1/out/hand_strict.json,66057,per-item label ids: person,planner
+evidence/v_repro_1/out/trace_picks_balanced.log,6469,text listing: 30 of 72 lines name an annotated person or return,builder
+evidence/v_repro_1/out/trace_wrong_balanced.log,3683,text listing: 15 of 42 lines name an annotated person or return,builder
+evidence/v_repro_1/snapshot_after.tsv,263899,"file snapshot lists (timestamps, machine paths)",planner
+evidence/v_repro_1/snapshot_before.tsv,187822,"file snapshot lists (timestamps, machine paths)",planner
+evidence/v_robust_0/out/links_balanced.csv,204474,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_0/out/links_margin_0.50.csv,189527,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_0/out/links_recall.csv,228778,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_0/out/links_strict.csv,95713,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_0/out/r12_relaxed.log,3163,text listing: 10 of 43 lines name an annotated person or return,builder
+evidence/v_robust_0/out/r12_relaxed.md,3163,text listing: 10 of 43 lines name an annotated person or return,builder
+evidence/v_robust_0/out/r5_wrong.log,30387,text listing: 70 of 229 lines name an annotated person or return,builder
+evidence/v_robust_0/out/r5_wrong.md,30387,text listing: 70 of 229 lines name an annotated person or return,builder
+evidence/v_robust_0/out/r7_team_role.log,4709,text listing: 18 of 51 lines name an annotated person or return,builder
+evidence/v_robust_0/out/r7_team_role.md,4709,text listing: 18 of 51 lines name an annotated person or return,builder
+evidence/v_robust_0/out/returns_balanced.csv,8992,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_0/out/returns_margin_0.50.csv,8926,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_0/out/returns_recall.csv,9020,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_0/out/returns_strict.csv,8799,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_0/out/t1_probe_links.txt,2613,text listing: 5 of 25 lines name an annotated person or return,builder
+evidence/v_robust_0/out/t3_probe_longgap.txt,1598,text listing: 4 of 8 lines name an annotated person or return,builder
+evidence/v_robust_1/out/links_balanced.csv,150580,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/links_fixed_balanced.csv,143471,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/links_fixed_recall.csv,261665,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/links_fixed_strict.csv,123786,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/links_recall.csv,243754,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/links_strict.csv,122633,"per-item rows with ids/labels: a,b",planner
+evidence/v_robust_1/out/r12_mixed.log,2785,text listing: 15 of 48 lines name an annotated person or return,builder
+evidence/v_robust_1/out/r12_mixed.md,2785,text listing: 15 of 48 lines name an annotated person or return,builder
+evidence/v_robust_1/out/r5_log.txt,53358,text listing: 107 of 370 lines name an annotated person or return,builder
+evidence/v_robust_1/out/r5_wrong.md,53358,text listing: 107 of 370 lines name an annotated person or return,builder
+evidence/v_robust_1/out/r7_team_role.log,4004,text listing: 12 of 48 lines name an annotated person or return,builder
+evidence/v_robust_1/out/r7_team_role.md,4004,text listing: 12 of 48 lines name an annotated person or return,builder
+evidence/v_robust_1/out/returns_balanced.csv,8992,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/returns_fixed_balanced.csv,8995,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/returns_fixed_recall.csv,9061,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/returns_fixed_strict.csv,8913,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/returns_recall.csv,9079,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/returns_strict.csv,8920,"per-item rows with ids/labels: piece_a,piece_b,ref_id",planner
+evidence/v_robust_1/out/t1_probe_split_wrong.log,3027,text listing: 11 of 12 lines name an annotated person or return,builder
+evidence/v_robust_1/out/t1_probe_split_wrong.txt,3027,text listing: 11 of 12 lines name an annotated person or return,builder
+evidence/v_robust_1/out/t3_probe_roles.log,7715,text listing: 35 of 53 lines name an annotated person or return,builder
+evidence/v_robust_1/out/t3_probe_roles.txt,7715,text listing: 35 of 53 lines name an annotated person or return,builder
+gbf-data/gsr-runs/viewer.html,30206,html,planner
+method/reid_lab/work/fuse_r1/logs/diag_points.log,11157,text listing: 18 of 105 lines name an annotated person or return,builder
+method/reid_lab/work/fuse_r1/out/diag_points.json,25022,"per-item label ids: person,wrong_returns",planner
+method/reid_lab/work/fuse_r1/out/diag_points.md,11155,text listing: 18 of 104 lines name an annotated person or return,builder
+method/reid_lab/work/fuse_r1/report-fuse_r1.html,19000,html not shipped,planner
+method/reid_lab/work/m_appear/diag_returns.csv,13541,"per-item rows with ids/labels: pa,pb,ref",planner
+method/reid_lab/work/m_appear/diag_swaps.out,3043,text listing: 12 of 19 lines name an annotated person or return,builder
+method/reid_lab/work/m_cuts/diag_switches.json,11113,"per-item label ids: from_ref,to_ref",planner
+method/reid_lab/work/m_cuts/exploration/diag_cand.csv,557077,"per-item rows with ids/labels: f0,f1,piece",planner
+method/reid_lab/work/m_cuts/exploration/diag_gaps.csv,191341,"per-item rows with ids/labels: f0,f1,piece",planner
+method/reid_lab/work/m_cuts/exploration/diag_takeover.csv,25289,"per-item rows with ids/labels: f0,f1,piece",planner
+method/reid_lab/work/m_cuts/logs/diag_final_p0.7.txt,5103,text listing: 21 of 61 lines name an annotated person or return,builder
+method/reid_lab/work/m_cuts/logs/diag_wrong.txt,3535,text listing: 4 of 37 lines name an annotated person or return,builder
+method/reid_lab/work/m_cuts/methods/heldout_p0.3_cuts.csv,77642,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.5_cutlink_candidates.csv,47169,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.5_cuts.csv,65629,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.7_cutlink_candidates.csv,40681,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.7_cuts.csv,56742,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.9_cutlink_candidates.csv,33091,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/heldout_p0.9_cuts.csv,45932,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.3_cuts.csv,78984,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.5_cutlink_candidates.csv,46952,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.5_cuts.csv,65364,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.7_cutlink_candidates.csv,40279,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.7_cuts.csv,56256,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.9_cutlink_candidates.csv,33082,"per-item rows with ids/labels: earlier,later",planner
+method/reid_lab/work/m_cuts/methods/insample_p0.9_cuts.csv,45907,"per-item rows with ids/labels: f0,f1,label,piece,sw_id",planner
+method/reid_lab/work/m_cuts/report-m_cuts.html,17029,html not shipped,planner
+method/reid_lab/work/m_space/oracle_returns.csv,19374,"per-item rows with ids/labels: pa,pb,ref",planner
+method/reid_lab/work/m_space/oracle_returns_rank.csv,9864,"per-item rows with ids/labels: pb,ref",planner
+pipeline/analysis/analyze_run.py,5153,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/camera_check_by_frame.py,3071,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/compare_jersey_reads.py,4092,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/compare_refit.py,6117,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/kit_colour_check.py,5113,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/kit_groups.py,1806,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+pipeline/analysis/team_cluster_variants.py,4978,earlier diagnostics outside the GSR re-entry path (optional in the plan; left out),planner
+tools/fetch_parallel.py,3259,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools/fetch_ranges.py,4461,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools/jersey_crops.py,1461,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools/merge_jerseys.py,4356,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools/mmocr_jerseys.py,6021,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools/retag_teams.py,3256,"not part of the GSR re-entry path (downloads, jersey OCR, team retag)",planner
+tools_leadcfg/reid_lab/__init__.py,104,lab copy with other paths only; regenerate with relocate.py make-lab,planner
+tools_leadcfg/reid_lab/check_score.py,1910,lab copy with other paths only; regenerate with relocate.py make-lab,planner
+tools_leadcfg/reid_lab/data.py,6177,lab copy with other paths only; regenerate with relocate.py make-lab,planner
+tools_leadcfg/reid_lab/score.py,11711,lab copy with other paths only; regenerate with relocate.py make-lab,planner
+tools_leadcfg/reid_lab/work,0,lab copy of work/ (code identical modulo paths and CRLF; 81 MB of caches),planner

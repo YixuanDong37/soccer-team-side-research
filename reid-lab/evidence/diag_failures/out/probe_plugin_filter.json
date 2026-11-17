@@ -1,0 +1,72 @@
+{
+ "all plugin joins (= plugin baseline)": {
+  "right": 30,
+  "wrong": 14,
+  "lost": 93,
+  "links": 93,
+  "links_right": 33,
+  "links_wrong": 10,
+  "links_unknown": 50,
+  "impure_row_share": 0.03085
+ },
+ "cos_any >= 0.88": {
+  "right": 27,
+  "wrong": 5,
+  "lost": 105,
+  "links": 53,
+  "links_right": 33,
+  "links_wrong": 3,
+  "links_unknown": 17,
+  "impure_row_share": 0.02644
+ },
+ "cos_any >= 0.90": {
+  "right": 25,
+  "wrong": 5,
+  "lost": 107,
+  "links": 48,
+  "links_right": 33,
+  "links_wrong": 3,
+  "links_unknown": 12,
+  "impure_row_share": 0.02643
+ },
+ "cos_any >= 0.92": {
+  "right": 25,
+  "wrong": 5,
+  "lost": 107,
+  "links": 47,
+  "links_right": 32,
+  "links_wrong": 3,
+  "links_unknown": 12,
+  "impure_row_share": 0.02643
+ },
+ "cos_any >= 0.90, both pieces >= 5 rows": {
+  "right": 24,
+  "wrong": 4,
+  "lost": 109,
+  "links": 39,
+  "links_right": 33,
+  "links_wrong": 3,
+  "links_unknown": 3,
+  "impure_row_share": 0.02641
+ },
+ "cos_any >= 0.90, both >= 5 rows, <= 1 other piece scores higher": {
+  "right": 24,
+  "wrong": 4,
+  "lost": 109,
+  "links": 39,
+  "links_right": 33,
+  "links_wrong": 3,
+  "links_unknown": 3,
+  "impure_row_share": 0.02641
+ },
+ "cos_any >= 0.90, both >= 10 rows, no other piece scores higher": {
+  "right": 20,
+  "wrong": 4,
+  "lost": 113,
+  "links": 34,
+  "links_right": 29,
+  "links_wrong": 3,
+  "links_unknown": 2,
+  "impure_row_share": 0.02641
+ }
+}

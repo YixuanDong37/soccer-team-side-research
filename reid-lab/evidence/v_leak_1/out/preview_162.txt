@@ -1,0 +1,44 @@
+strict ('r1',) -> ('r1', False, 0.6) {'budget': 3, 'right': 63, 'wrong': 0, 'J': 53.0, 'Jtrim': 60.0, 'dropped': 'SNGS-112'} | held-out SNGS-162: 3 / 2 / 13 links 38/4/1
+strict ('r1', 'r0') -> ('r0', False, 0.6) {'budget': 3, 'right': 66, 'wrong': 0, 'J': 56.0, 'Jtrim': 63.0, 'dropped': 'SNGS-112'} | held-out SNGS-162: 6 / 4 / 8 links 26/3/40
+strict ('r1', 'n3', 'n10') -> ('r1', False, 0.6) {'budget': 3, 'right': 63, 'wrong': 0, 'J': 53.0, 'Jtrim': 60.0, 'dropped': 'SNGS-112'} | held-out SNGS-162: 3 / 2 / 13 links 38/4/1
+strict ('r1', 'c5') -> ('c5', False, 0.6) {'budget': 3, 'right': 65, 'wrong': 0, 'J': 55.0, 'Jtrim': 62.0, 'dropped': 'SNGS-112'} | held-out SNGS-162: 3 / 2 / 13 links 38/4/1
+strict ('r1', 'r0', 'n3', 'n10', 'c5') -> ('r0', False, 0.6) {'budget': 3, 'right': 66, 'wrong': 0, 'J': 56.0, 'Jtrim': 63.0, 'dropped': 'SNGS-112'} | held-out SNGS-162: 6 / 4 / 8 links 26/3/40
+
+balanced ('r1',) -> ('r1', False, 0.15) {'budget': 6, 'right': 92, 'wrong': 2, 'J': 62.0, 'Jtrim': 71.0, 'dropped': 'SNGS-066'} | held-out SNGS-162: 4 / 4 / 10 links 48/10/3
+balanced ('r1', 'r0') -> ('r0', False, 0.25) {'budget': 6, 'right': 101, 'wrong': 1, 'J': 83.0, 'Jtrim': 86.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 7 / 6 / 5 links 33/5/53
+balanced ('r1', 'n3', 'n10') -> ('n3', False, 0.35) {'budget': 6, 'right': 86, 'wrong': 1, 'J': 71.0, 'Jtrim': 74.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 5 / 5 / 8 links 40/8/14
+balanced ('r1', 'c5') -> ('c5', False, 0.4) {'budget': 6, 'right': 83, 'wrong': 1, 'J': 68.0, 'Jtrim': 71.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 4 / 3 / 11 links 41/9/3
+balanced ('r1', 'r0', 'n3', 'n10', 'c5') -> ('r0', False, 0.25) {'budget': 6, 'right': 101, 'wrong': 1, 'J': 83.0, 'Jtrim': 86.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 7 / 6 / 5 links 33/5/53
+
+recall ('r1',) -> ('r1', True, 0.25) {'budget': 12, 'right': 101, 'wrong': 1, 'J': 83.0, 'Jtrim': 84.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 8 / 6 / 4 links 45/10/42
+recall ('r1', 'r0') -> ('r0', False, 0.2) {'budget': 12, 'right': 104, 'wrong': 1, 'J': 97.0, 'Jtrim': 96.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 7 / 6 / 5 links 32/5/56
+recall ('r1', 'n3', 'n10') -> ('n3', True, 0.15) {'budget': 12, 'right': 107, 'wrong': 3, 'J': 86.0, 'Jtrim': 85.0, 'dropped': 'SNGS-066'} | held-out SNGS-162: 8 / 6 / 4 links 43/8/50
+recall ('r1', 'c5') -> ('r1', True, 0.25) {'budget': 12, 'right': 101, 'wrong': 1, 'J': 83.0, 'Jtrim': 84.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 8 / 6 / 4 links 45/10/42
+recall ('r1', 'r0', 'n3', 'n10', 'c5') -> ('r0', False, 0.2) {'budget': 12, 'right': 104, 'wrong': 1, 'J': 97.0, 'Jtrim': 96.0, 'dropped': 'SNGS-100'} | held-out SNGS-162: 7 / 6 / 5 links 32/5/56
+
+fit-clip tables at strict, per variant (leaves off): margin: right wrong | Jtrim
+r1 0.5 right 75 wrong 1 lw 3 | held-out: 3 / 3 / 12 links 39/6/2
+r1 0.55 right 68 wrong 1 lw 2 | held-out: 3 / 2 / 13 links 39/4/2
+r1 0.6 right 63 wrong 0 lw 1 | held-out: 3 / 2 / 13 links 38/4/1
+r1 0.7 right 46 wrong 0 lw 0 | held-out: 3 / 2 / 13 links 35/4/1
+r1 0.8 right 30 wrong 0 lw 0 | held-out: 3 / 1 / 14 links 31/3/1
+r0 0.5 right 78 wrong 1 lw 3 | held-out: 7 / 4 / 7 links 28/4/45
+r0 0.55 right 74 wrong 0 lw 2 | held-out: 7 / 4 / 7 links 27/4/43
+r0 0.6 right 66 wrong 0 lw 1 | held-out: 6 / 4 / 8 links 26/3/40
+r0 0.7 right 52 wrong 0 lw 1 | held-out: 6 / 4 / 8 links 23/3/34
+r0 0.8 right 37 wrong 0 lw 1 | held-out: 6 / 1 / 11 links 21/2/27
+n3 0.5 right 74 wrong 1 lw 3 | held-out: 4 / 4 / 10 links 35/4/10
+n3 0.55 right 69 wrong 1 lw 2 | held-out: 4 / 4 / 10 links 34/4/9
+n3 0.6 right 60 wrong 0 lw 1 | held-out: 4 / 4 / 10 links 34/3/8
+n3 0.7 right 43 wrong 0 lw 0 | held-out: 4 / 4 / 10 links 28/3/7
+n3 0.8 right 24 wrong 0 lw 0 | held-out: 3 / 1 / 14 links 23/2/3
+n10 0.5 right 73 wrong 1 lw 3 | held-out: 3 / 3 / 12 links 34/7/1
+n10 0.55 right 69 wrong 1 lw 3 | held-out: 3 / 2 / 13 links 34/6/1
+n10 0.6 right 63 wrong 1 lw 2 | held-out: 3 / 2 / 13 links 33/4/0
+n10 0.7 right 44 wrong 0 lw 1 | held-out: 3 / 2 / 13 links 30/4/0
+n10 0.8 right 30 wrong 0 lw 0 | held-out: 3 / 1 / 14 links 25/3/0
+c5 0.5 right 77 wrong 1 lw 3 | held-out: 3 / 3 / 12 links 40/7/2
+c5 0.55 right 71 wrong 1 lw 2 | held-out: 3 / 2 / 13 links 40/5/2
+c5 0.6 right 65 wrong 0 lw 1 | held-out: 3 / 2 / 13 links 38/4/1
+c5 0.7 right 48 wrong 0 lw 0 | held-out: 3 / 2 / 13 links 35/4/1
+c5 0.8 right 31 wrong 0 lw 0 | held-out: 3 / 1 / 14 links 31/3/1

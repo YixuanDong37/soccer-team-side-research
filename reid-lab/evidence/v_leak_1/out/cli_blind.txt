@@ -1,0 +1,63 @@
+## METHOD_blind_strict.json (exit 0)
+{
+ "name": "v_leak_1 blindfolded re-run of fuse_r1, point strict (LOCO held-out)",
+ "pooled": {
+  "scored": 137,
+  "right": 67,
+  "wrong": 3,
+  "lost": 67,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.4891,
+  "wrong_share": 0.0219,
+  "links": 344,
+  "links_right": 312,
+  "links_wrong": 7,
+  "links_unknown": 25,
+  "link_precision": 0.9781,
+  "impure_row_share": 0.01611
+ },
+ "clips_without_entry": []
+}
+## METHOD_blind_balanced.json (exit 0)
+{
+ "name": "v_leak_1 blindfolded re-run of fuse_r1, point balanced (LOCO held-out)",
+ "pooled": {
+  "scored": 137,
+  "right": 85,
+  "wrong": 5,
+  "lost": 47,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6204,
+  "wrong_share": 0.0365,
+  "links": 424,
+  "links_right": 378,
+  "links_wrong": 16,
+  "links_unknown": 30,
+  "link_precision": 0.9594,
+  "impure_row_share": 0.02123
+ },
+ "clips_without_entry": []
+}
+## METHOD_blind_recall.json (exit 0)
+{
+ "name": "v_leak_1 blindfolded re-run of fuse_r1, point recall (LOCO held-out)",
+ "pooled": {
+  "scored": 137,
+  "right": 106,
+  "wrong": 7,
+  "lost": 24,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.7737,
+  "wrong_share": 0.0511,
+  "links": 691,
+  "links_right": 414,
+  "links_wrong": 17,
+  "links_unknown": 260,
+  "link_precision": 0.9606,
+  "impure_row_share": 0.02175
+ },
+ "clips_without_entry": []
+}

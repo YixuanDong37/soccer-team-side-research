@@ -1,0 +1,4 @@
+returns: hand 167 score.py 167 | same set of returns: True
+outcomes equal: 167 different: 0
+score.py: {'right': 67, 'lost': 67, 'undetected': 30, 'wrong': 3} | hand: {'right': 67, 'lost': 67, 'undetected': 30, 'wrong': 3}
+other problems: none

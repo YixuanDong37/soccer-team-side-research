@@ -1,0 +1,6 @@
+./__pycache__
+./work/diag_failures/__pycache__
+./work/fuse/__pycache__
+./work/m_appear/__pycache__
+./work/m_cuts/__pycache__
+./work/m_keep/__pycache__

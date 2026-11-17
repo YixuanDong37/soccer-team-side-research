@@ -1,0 +1,11 @@
+team guessed from the nearer team mean embedding, on pieces that DO have a gbf label: agrees with the label in 724 of 738 (0.981)
+unlabelled pieces with identity: 10
+                    pairs centring of unlabelled pieces  same  hard  cos same p10  cos same p50  cos hard p50  cos hard p99  AUC same vs hard  prec@rec0.8
+0    both pieces labelled                           raw   714  5361         0.888         0.951         0.770         0.942             0.968        0.762
+1    both pieces labelled                          clip   714  5361         0.441         0.800        -0.073         0.585             0.984        0.935
+2    both pieces labelled                       nearest   714  5361         0.441         0.800        -0.073         0.585             0.984        0.935
+3    both pieces labelled                       partner   714  5361         0.441         0.800        -0.073         0.585             0.984        0.935
+4  one or both unlabelled                           raw    23   171         0.869         0.930         0.726         0.898             0.982        0.826
+5  one or both unlabelled                          clip    23   171         0.420         0.594        -0.032         0.404             0.994        0.950
+6  one or both unlabelled                       nearest    23   171         0.541         0.738        -0.071         0.624             0.988        0.792
+7  one or both unlabelled                       partner    23   171         0.541         0.738        -0.061         0.624             0.987        0.792

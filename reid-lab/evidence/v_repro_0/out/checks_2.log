@@ -1,0 +1,19 @@
+heldout strict ok
+heldout balanced ok
+heldout recall ok
+frozen strict ok
+frozen balanced ok
+frozen recall ok
+method.py reproduces the scored links
+exit=0
+METHOD_balanced.json 676 links in 278 groups: ok
+METHOD_frozen_balanced.json 744 links in 276 groups: ok
+METHOD_frozen_recall.json 766 links in 275 groups: ok
+METHOD_frozen_strict.json 306 links in 189 groups: ok
+METHOD_margin_0.10.json 827 links in 282 groups: ok
+METHOD_margin_0.50.json 624 links in 276 groups: ok
+METHOD_margin_0.80.json 415 links in 222 groups: ok
+METHOD_recall.json 761 links in 273 groups: ok
+METHOD_strict.json 314 links in 184 groups: ok
+all groups consistent
+exit=0

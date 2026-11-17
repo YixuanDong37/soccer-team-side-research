@@ -1,0 +1,125 @@
+later pieces B (identity known, player/GK, starting at frame >= 10, with earlier pieces): 568 ; candidate pairs: 20633
+labels: {'wrong': 12825, 'unknown': 7071, 'true': 737}
+
+--- all later pieces B ---
+     gates  returning B  true candidate kept  kept share  candidates per B p50 true:wrong+unknown  top-1 is the person (raw cos)  share raw  top-1 is the person (team-centred)  share tc  new B  new B left without candidate
+0  no gate          404                  404       1.000                  38.0             1:21.9                            360      0.891                                 358     0.886    164                             0
+1     role          404                  404       1.000                  31.5             1:17.9                            360      0.891                                 358     0.886    164                             8
+2   + team          404                  403       0.998                  16.0              1:9.2                            360      0.891                                 358     0.886    164                            23
+3  + speed          404                  402       0.995                  13.0              1:7.7                            362      0.896                                 359     0.889    164                            36
+4   + side          404                  402       0.995                  13.0              1:7.4                            362      0.896                                 360     0.891    164                            36
+5   + path          404                  169       0.418                   4.0              1:7.2                            151      0.374                                 151     0.374    164                           107
+
+--- B starts at an image edge (re-entry candidates) ---
+     gates  returning B  true candidate kept  kept share  candidates per B p50 true:wrong+unknown  top-1 is the person (raw cos)  share raw  top-1 is the person (team-centred)  share tc  new B  new B left without candidate
+0  no gate          118                  118       1.000                  45.5             1:27.9                            109      0.924                                 108     0.915     34                             0
+1     role          118                  118       1.000                  39.5             1:23.8                            109      0.924                                 108     0.915     34                             4
+2   + team          118                  118       1.000                  22.0             1:13.0                            109      0.924                                 108     0.915     34                             9
+3  + speed          118                  118       1.000                  18.0             1:11.1                            109      0.924                                 108     0.915     34                            14
+4   + side          118                  118       1.000                  16.0             1:10.2                            109      0.924                                 109     0.924     34                            14
+5   + path          118                  112       0.949                   7.0              1:6.1                            104      0.881                                 104     0.881     34                            14
+
+--- B starts at an image edge, candidates with a gap >= 10 frames ---
+     gates  returning B  true candidate kept  kept share  candidates per B p50 true:wrong+unknown  top-1 is the person (raw cos)  share raw  top-1 is the person (team-centred)  share tc  new B  new B left without candidate
+0  no gate          118                  116       0.983                  44.0             1:27.3                            107      0.907                                 107     0.907     32                             0
+1     role          118                  116       0.983                  38.5             1:23.3                            107      0.907                                 107     0.907     32                             3
+2   + team          118                  116       0.983                  22.0             1:12.8                            107      0.907                                 107     0.907     32                             8
+3  + speed          118                  116       0.983                  18.0             1:11.2                            107      0.907                                 107     0.907     32                            12
+4   + side          118                  116       0.983                  16.0             1:10.3                            107      0.907                                 108     0.915     32                            12
+5   + path          118                  109       0.924                   6.5              1:6.1                            101      0.856                                 102     0.864     32                            12
+
+prior that a later piece is a person seen before: {'B_pieces': 568, 'returning_share': 0.711, 'B_at_edge': 152, 'returning_share_at_edge': 0.776, 'returning_share_not_at_edge': 0.688}
+
+=== accept the top-1 candidate when cosine >= bar and it leads the runner-up by >= margin (gates role+team+speed+side) ===
+      score   bar  margin  mutual best  right links  wrong links  to a piece of unknown identity  precision (judged)
+0   cos_raw  0.00    0.00        False          362          105                              65               0.775
+1   cos_raw  0.00    0.00         True          267           16                              38               0.943
+2   cos_raw  0.00    0.03        False          196           42                              31               0.824
+3   cos_raw  0.00    0.03         True          150            6                              18               0.962
+4   cos_raw  0.00    0.05        False          158           30                              22               0.840
+5   cos_raw  0.00    0.05         True          119            5                              12               0.960
+6   cos_raw  0.00    0.10        False          104            9                              14               0.920
+7   cos_raw  0.00    0.10         True           81            0                               7               1.000
+8   cos_raw  0.00    0.15        False           66            7                              13               0.904
+9   cos_raw  0.00    0.15         True           49            0                               6               1.000
+10  cos_raw  0.90    0.00        False          347           37                              45               0.904
+11  cos_raw  0.90    0.00         True          262           16                              34               0.942
+12  cos_raw  0.90    0.03        False          184           14                              18               0.929
+13  cos_raw  0.90    0.03         True          146            6                              15               0.961
+14  cos_raw  0.90    0.05        False          149           12                              11               0.925
+15  cos_raw  0.90    0.05         True          116            5                               9               0.959
+16  cos_raw  0.90    0.10        False           99            1                               6               0.990
+17  cos_raw  0.90    0.10         True           80            0                               4               1.000
+18  cos_raw  0.90    0.15        False           62            1                               5               0.984
+19  cos_raw  0.90    0.15         True           48            0                               3               1.000
+20  cos_raw  0.93    0.00        False          322           26                              37               0.925
+21  cos_raw  0.93    0.00         True          247           14                              30               0.946
+22  cos_raw  0.93    0.03        False          169           12                              16               0.934
+23  cos_raw  0.93    0.03         True          136            6                              13               0.958
+24  cos_raw  0.93    0.05        False          138           10                               9               0.932
+25  cos_raw  0.93    0.05         True          107            5                               7               0.955
+26  cos_raw  0.93    0.10        False           94            1                               4               0.989
+27  cos_raw  0.93    0.10         True           76            0                               2               1.000
+28  cos_raw  0.93    0.15        False           59            1                               4               0.983
+29  cos_raw  0.93    0.15         True           46            0                               2               1.000
+30  cos_raw  0.95    0.00        False          265           14                              20               0.950
+31  cos_raw  0.95    0.00         True          216           11                              19               0.952
+32  cos_raw  0.95    0.03        False          147            5                               9               0.967
+33  cos_raw  0.95    0.03         True          123            4                               8               0.969
+34  cos_raw  0.95    0.05        False          119            4                               6               0.967
+35  cos_raw  0.95    0.05         True           96            3                               5               0.970
+36  cos_raw  0.95    0.10        False           81            0                               3               1.000
+37  cos_raw  0.95    0.10         True           68            0                               2               1.000
+38  cos_raw  0.95    0.15        False           49            0                               3               1.000
+39  cos_raw  0.95    0.15         True           40            0                               2               1.000
+40   cos_tc -1.00    0.00        False          360          101                              71               0.781
+41   cos_tc -1.00    0.00         True          265           17                              41               0.940
+42   cos_tc -1.00    0.03        False          306           82                              56               0.789
+43   cos_tc -1.00    0.03         True          227           12                              33               0.950
+44   cos_tc -1.00    0.05        False          276           71                              49               0.795
+45   cos_tc -1.00    0.05         True          202           10                              28               0.953
+46   cos_tc -1.00    0.10        False          229           50                              37               0.821
+47   cos_tc -1.00    0.10         True          170            9                              22               0.950
+48   cos_tc -1.00    0.15        False          198           38                              31               0.839
+49   cos_tc -1.00    0.15         True          147            7                              19               0.955
+50   cos_tc  0.50    0.00        False          350           28                              49               0.926
+51   cos_tc  0.50    0.00         True          264           15                              39               0.946
+52   cos_tc  0.50    0.03        False          296           22                              39               0.931
+53   cos_tc  0.50    0.03         True          226           12                              31               0.950
+54   cos_tc  0.50    0.05        False          267           19                              33               0.934
+55   cos_tc  0.50    0.05         True          202           10                              26               0.953
+56   cos_tc  0.50    0.10        False          222           16                              25               0.933
+57   cos_tc  0.50    0.10         True          170            9                              20               0.950
+58   cos_tc  0.50    0.15        False          192           13                              22               0.937
+59   cos_tc  0.50    0.15         True          147            7                              17               0.955
+60   cos_tc  0.60    0.00        False          337           20                              43               0.944
+61   cos_tc  0.60    0.00         True          261           15                              35               0.946
+62   cos_tc  0.60    0.03        False          287           16                              33               0.947
+63   cos_tc  0.60    0.03         True          225           12                              27               0.949
+64   cos_tc  0.60    0.05        False          258           13                              27               0.952
+65   cos_tc  0.60    0.05         True          201           10                              22               0.953
+66   cos_tc  0.60    0.10        False          215           12                              21               0.947
+67   cos_tc  0.60    0.10         True          169            9                              18               0.949
+68   cos_tc  0.60    0.15        False          185           10                              18               0.949
+69   cos_tc  0.60    0.15         True          146            7                              15               0.954
+70   cos_tc  0.70    0.00        False          303           12                              36               0.962
+71   cos_tc  0.70    0.00         True          241           10                              31               0.960
+72   cos_tc  0.70    0.03        False          256            9                              27               0.966
+73   cos_tc  0.70    0.03         True          206            8                              23               0.963
+74   cos_tc  0.70    0.05        False          229            6                              21               0.974
+75   cos_tc  0.70    0.05         True          184            6                              18               0.968
+76   cos_tc  0.70    0.10        False          194            5                              17               0.975
+77   cos_tc  0.70    0.10         True          155            5                              14               0.969
+78   cos_tc  0.70    0.15        False          166            4                              14               0.976
+79   cos_tc  0.70    0.15         True          133            4                              11               0.971
+80   cos_tc  0.80    0.00        False          233            6                              21               0.975
+81   cos_tc  0.80    0.00         True          191            6                              19               0.970
+82   cos_tc  0.80    0.03        False          193            5                              15               0.975
+83   cos_tc  0.80    0.03         True          161            5                              13               0.970
+84   cos_tc  0.80    0.05        False          173            3                              10               0.983
+85   cos_tc  0.80    0.05         True          144            3                               8               0.980
+86   cos_tc  0.80    0.10        False          144            3                               9               0.980
+87   cos_tc  0.80    0.10         True          121            3                               7               0.976
+88   cos_tc  0.80    0.15        False          126            2                               7               0.984
+89   cos_tc  0.80    0.15         True          105            2                               5               0.981
+returning B in total (upper bound of right links): 404

@@ -1,0 +1,21 @@
+{
+ "name": "fuse_r1 fixed setting margin 0.5, leaves off (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 81,
+  "wrong": 4,
+  "lost": 52,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.5912,
+  "wrong_share": 0.0292,
+  "links": 383,
+  "links_right": 345,
+  "links_wrong": 9,
+  "links_unknown": 29,
+  "link_precision": 0.9746,
+  "impure_row_share": 0.0178
+ },
+ "clips_without_entry": []
+}
+exit 0

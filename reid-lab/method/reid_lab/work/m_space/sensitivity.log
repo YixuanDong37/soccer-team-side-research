@@ -1,0 +1,14 @@
+default              NLL 1.3706 border 1.2929 | theta 0.5: R36 W4 L97 links r47 w1 u30 | theta 0.4: R51 W8 L78 links r58 w7 u51
+MAX_SPEED 6          NLL 1.3636 border 1.3023 | theta 0.5: R37 W4 L96 links r47 w2 u34 | theta 0.4: R52 W8 L77 links r59 w7 u50
+MAX_SPEED 10         NLL 1.3720 border 1.2937 | theta 0.5: R36 W4 L97 links r47 w1 u30 | theta 0.4: R52 W8 L77 links r59 w7 u48
+VIEW_MARGIN_PX 0     NLL 1.3722 border 1.2989 | theta 0.5: R36 W4 L97 links r46 w1 u33 | theta 0.4: R54 W8 L75 links r61 w7 u50
+VIEW_MARGIN_PX 50    NLL 1.3720 border 1.2969 | theta 0.5: R36 W4 L97 links r47 w1 u30 | theta 0.4: R51 W8 L78 links r58 w7 u51
+ADV_KERNEL_M 8       NLL 1.3625 border 1.2804 | theta 0.5: R37 W4 L96 links r48 w2 u30 | theta 0.4: R53 W8 L76 links r59 w7 u50
+ADV_KERNEL_M 30      NLL 1.3761 border 1.3092 | theta 0.5: R37 W4 L96 links r47 w1 u31 | theta 0.4: R54 W8 L75 links r60 w7 u49
+FLOW_HALF 3          NLL 1.3641 border 1.2906 | theta 0.5: R35 W4 L98 links r46 w1 u30 | theta 0.4: R51 W9 L77 links r58 w7 u52
+FLOW_HALF 12         NLL 1.3827 border 1.3168 | theta 0.5: R37 W4 L96 links r47 w1 u30 | theta 0.4: R51 W8 L78 links r57 w7 u51
+END_WINDOW 12        NLL 1.4030 border 1.2848 | theta 0.5: R36 W4 L97 links r47 w1 u29 | theta 0.4: R53 W6 L78 links r61 w6 u47
+END_WINDOW 50        NLL 1.3374 border 1.3169 | theta 0.5: R33 W6 L98 links r45 w5 u34 | theta 0.4: R52 W8 L77 links r61 w7 u50
+CV_HORIZON_S 0.5     NLL 1.3783 border 1.2960 | theta 0.5: R35 W4 L98 links r46 w2 u31 | theta 0.4: R50 W8 L79 links r57 w7 u52
+CV_HORIZON_S 2       NLL 1.3674 border 1.3034 | theta 0.5: R36 W5 L96 links r46 w2 u31 | theta 0.4: R50 W9 L78 links r57 w7 u47
+START_RADIUS 5       NLL 1.3709 border 1.2934 | theta 0.5: R37 W4 L96 links r47 w2 u31 | theta 0.4: R51 W8 L78 links r58 w7 u50

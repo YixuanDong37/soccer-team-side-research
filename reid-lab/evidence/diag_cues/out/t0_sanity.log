@@ -1,0 +1,20 @@
+         seq  returns  scored  tracks_rows  matched  ann_rows  pieces  pieces_ident  persons  same_piece_ab  untracked_rows
+0   SNGS-107       18      16         8742     8207     11831      91            57       24              0               0
+1   SNGS-163       16      11         7999     7526      9843      90            61       24              0               0
+2   SNGS-106        8       7         5842     5657     11720      81            55       23              0               0
+3   SNGS-097       10       6         9871     9700     12098      74            53       21              0               0
+4   SNGS-067       13      10         8971     8538     14032     103            79       25              0               0
+5   SNGS-100        5       4         8204     8056     12462      80            65       25              0               0
+6   SNGS-066       13      11        11712    11208     15022      93            71       24              0               0
+7   SNGS-161       16      14         8554     8297     10244      75            58       24              0               0
+8   SNGS-169       16      15         9070     8489     10966     123            65       24              0               0
+9   SNGS-162       20      18         9836     9270     12829     125            85       24              0               0
+10  SNGS-151       14       9         8499     7833      9876      98            50       24              0               0
+11  SNGS-102       14      12         9089     8836     12537      66            51       24              0               0
+12  SNGS-112        4       4         8789     8321     11100      91            57       25              0               0
+{'returns': 167, 'scored': 137, 'tracks_rows': 115178, 'matched': 109938, 'ann_rows': 154560, 'pieces': 1190, 'pieces_ident': 807, 'persons': 311, 'same_piece_ab': 0, 'untracked_rows': 0}
+persons with >1 team value: 0 ; >1 jersey value: 0 ; >1 role: 0
+{'goalkeeper': 20, 'player': 261, 'referee': 30}
+Empty DataFrame
+Columns: [role, team, jersey, rows, team_values, jersey_values, role_values, seq]
+Index: []

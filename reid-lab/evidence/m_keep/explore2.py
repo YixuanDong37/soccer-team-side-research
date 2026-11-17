@@ -1,0 +1,25 @@
+import sys, json
+sys.path.insert(0, "C:/Research/plugins/tools")
+from reid_lab import data
+import numpy as np, pandas as pd
+pd.set_option("display.width", 250); pd.set_option("display.max_columns", 50)
+seq = "SNGS-107"
+c = data.calib(seq)
+print(c.dtypes)
+print(c.iloc[0].to_dict())
+print(c.calib_status.value_counts() if "calib_status" in c else "")
+t = data.tracks(seq)
+print(t.role.value_counts(dropna=False))
+print(t.team.value_counts(dropna=False))
+print(t.calib_status.value_counts(dropna=False))
+print((t.track_id < 0).sum(), len(t))
+r = data.refine(seq)
+print(json.dumps(r["stitch_audit"]["params"], indent=0)[:1500])
+print(json.dumps(r["stitch_audit"]["counts"], indent=0)[:1500])
+print(json.dumps(r["stitch_audit"]["abstentions"][:2], indent=0)[:2500])
+print(json.dumps(r["teams"]["counts"]), json.dumps(r["teams"]["prototypes"])[:500])
+a = data.appearance(seq)
+print(json.dumps(a["reentry_pairs"])[:1500])
+print(json.dumps(a["impostor_same_team"]), json.dumps(a["genuine_all_gaps"]))
+E = data.embeddings(seq)
+print(E.shape, np.isnan(E[:,0]).mean(), data.clean_rows(seq).mean())

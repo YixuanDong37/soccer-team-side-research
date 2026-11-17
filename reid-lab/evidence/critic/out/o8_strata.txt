@@ -1,0 +1,55 @@
+median box height after the return (720p px): quartiles [48.0, 55.0, 69.0, 85.0, 101.0] (10 / 25 / 50 / 75 / 90%)
+
+== by box height after the return (720p px) ==
+  fuse_r1 strict
+    under 45 px    n  12: same   6 ( 50%), earlier 0, wrong 1, lost 5, nobox 0
+    45-60 px       n  41: same  20 ( 49%), earlier 1, wrong 1, lost 19, nobox 0
+    60-80 px       n  57: same  28 ( 49%), earlier 0, wrong 3, lost 26, nobox 0
+    80 px and up   n  50: same  29 ( 58%), earlier 0, wrong 0, lost 20, nobox 1
+  fuse_r1 balanced
+    under 45 px    n  12: same   6 ( 50%), earlier 0, wrong 2, lost 4, nobox 0
+    45-60 px       n  41: same  26 ( 63%), earlier 2, wrong 2, lost 11, nobox 0
+    60-80 px       n  57: same  42 ( 74%), earlier 0, wrong 4, lost 11, nobox 0
+    80 px and up   n  50: same  34 ( 68%), earlier 0, wrong 1, lost 14, nobox 1
+  fuse_r1 recall
+    under 45 px    n  12: same   8 ( 67%), earlier 0, wrong 2, lost 2, nobox 0
+    45-60 px       n  41: same  32 ( 78%), earlier 2, wrong 2, lost 5, nobox 0
+    60-80 px       n  57: same  49 ( 86%), earlier 1, wrong 4, lost 3, nobox 0
+    80 px and up   n  50: same  42 ( 84%), earlier 0, wrong 1, lost 6, nobox 1
+
+== by length of the absence ==
+  fuse_r1 strict
+    under 2 s      n  25: same  21 ( 84%), earlier 0, wrong 0, lost 3, nobox 1
+    2-5 s          n  49: same  32 ( 65%), earlier 1, wrong 2, lost 11, nobox 3
+    5-10 s         n  49: same  17 ( 35%), earlier 0, wrong 2, lost 29, nobox 1
+    10-20 s        n  41: same  13 ( 32%), earlier 0, wrong 1, lost 24, nobox 3
+    over 20 s      n   3: same   0 (  0%), earlier 0, wrong 0, lost 3, nobox 0
+  fuse_r1 balanced
+    under 2 s      n  25: same  23 ( 92%), earlier 0, wrong 1, lost 0, nobox 1
+    2-5 s          n  49: same  37 ( 76%), earlier 1, wrong 3, lost 5, nobox 3
+    5-10 s         n  49: same  29 ( 59%), earlier 0, wrong 4, lost 15, nobox 1
+    10-20 s        n  41: same  18 ( 44%), earlier 1, wrong 1, lost 18, nobox 3
+    over 20 s      n   3: same   1 ( 33%), earlier 0, wrong 0, lost 2, nobox 0
+  fuse_r1 recall
+    under 2 s      n  25: same  23 ( 92%), earlier 0, wrong 1, lost 0, nobox 1
+    2-5 s          n  49: same  41 ( 84%), earlier 1, wrong 3, lost 1, nobox 3
+    5-10 s         n  49: same  36 ( 73%), earlier 1, wrong 4, lost 7, nobox 1
+    10-20 s        n  41: same  30 ( 73%), earlier 1, wrong 1, lost 6, nobox 3
+    over 20 s      n   3: same   1 ( 33%), earlier 0, wrong 0, lost 2, nobox 0
+
+== by matched boxes in the 2 s after the return ==
+  fuse_r1 strict
+    under 10       n  19: same   4 ( 21%), earlier 0, wrong 0, lost 8, nobox 7
+    10-24          n  31: same  13 ( 42%), earlier 1, wrong 1, lost 16, nobox 0
+    25-44          n  57: same  29 ( 51%), earlier 0, wrong 2, lost 26, nobox 0
+    45-50          n  60: same  37 ( 62%), earlier 0, wrong 2, lost 20, nobox 1
+  fuse_r1 balanced
+    under 10       n  19: same   4 ( 21%), earlier 0, wrong 1, lost 7, nobox 7
+    10-24          n  31: same  18 ( 58%), earlier 2, wrong 2, lost 9, nobox 0
+    25-44          n  57: same  39 ( 68%), earlier 0, wrong 3, lost 15, nobox 0
+    45-50          n  60: same  47 ( 78%), earlier 0, wrong 3, lost 9, nobox 1
+  fuse_r1 recall
+    under 10       n  19: same   8 ( 42%), earlier 1, wrong 1, lost 2, nobox 7
+    10-24          n  31: same  23 ( 74%), earlier 1, wrong 2, lost 5, nobox 0
+    25-44          n  57: same  48 ( 84%), earlier 0, wrong 3, lost 6, nobox 0
+    45-50          n  60: same  52 ( 87%), earlier 1, wrong 3, lost 3, nobox 1

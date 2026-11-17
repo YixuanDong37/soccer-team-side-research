@@ -1,0 +1,155 @@
+{
+ "split": {
+  "right": 0,
+  "mixed": 0,
+  "minority": 0,
+  "wrong": 4,
+  "wrong_plus_mixed": 4,
+  "clean_right": 0,
+  "clean_precision": 0.0,
+  "cases": []
+ },
+ "plugin": {
+  "right": 30,
+  "mixed": 2,
+  "minority": 1,
+  "wrong": 14,
+  "wrong_plus_mixed": 16,
+  "clean_right": 28,
+  "clean_precision": 0.6364,
+  "cases": [
+   "SNGS-106 person 5 (39 boxes) with {4: 72} [not the majority]",
+   "SNGS-162 person 17 (354 boxes) with {2: 8}"
+  ]
+ },
+ "mutual": {
+  "right": 26,
+  "mixed": 3,
+  "minority": 0,
+  "wrong": 6,
+  "wrong_plus_mixed": 9,
+  "clean_right": 23,
+  "clean_precision": 0.7188,
+  "cases": [
+   "SNGS-107 person 19 (217 boxes) with {18: 67}",
+   "SNGS-169 person 16 (150 boxes) with {18: 58}",
+   "SNGS-151 person 2 (536 boxes) with {12: 6}"
+  ]
+ },
+ "cuts_only": {
+  "right": 0,
+  "mixed": 0,
+  "minority": 0,
+  "wrong": 0,
+  "wrong_plus_mixed": 0,
+  "clean_right": 0,
+  "clean_precision": null,
+  "cases": []
+ },
+ "strict": {
+  "right": 67,
+  "mixed": 2,
+  "minority": 0,
+  "wrong": 3,
+  "wrong_plus_mixed": 5,
+  "clean_right": 65,
+  "clean_precision": 0.9286,
+  "cases": [
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}"
+  ]
+ },
+ "balanced": {
+  "right": 85,
+  "mixed": 4,
+  "minority": 0,
+  "wrong": 5,
+  "wrong_plus_mixed": 9,
+  "clean_right": 81,
+  "clean_precision": 0.9,
+  "cases": [
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}",
+   "SNGS-162 person 17 (515 boxes) with {2: 8}",
+   "SNGS-151 person 2 (536 boxes) with {12: 6}"
+  ]
+ },
+ "recall": {
+  "right": 106,
+  "mixed": 7,
+  "minority": 0,
+  "wrong": 7,
+  "wrong_plus_mixed": 14,
+  "clean_right": 99,
+  "clean_precision": 0.8761,
+  "cases": [
+   "SNGS-163 person 18 (272 boxes) with {4: 17}",
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}",
+   "SNGS-169 person 10 (511 boxes) with {22: 6}",
+   "SNGS-162 person 8 (270 boxes) with {15: 6}",
+   "SNGS-162 person 17 (515 boxes) with {2: 8}",
+   "SNGS-151 person 2 (536 boxes) with {12: 6}"
+  ]
+ },
+ "fixed_strict": {
+  "right": 70,
+  "mixed": 2,
+  "minority": 0,
+  "wrong": 2,
+  "wrong_plus_mixed": 4,
+  "clean_right": 68,
+  "clean_precision": 0.9444,
+  "cases": [
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}"
+  ]
+ },
+ "fixed_balanced": {
+  "right": 85,
+  "mixed": 4,
+  "minority": 0,
+  "wrong": 4,
+  "wrong_plus_mixed": 8,
+  "clean_right": 81,
+  "clean_precision": 0.9101,
+  "cases": [
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}",
+   "SNGS-162 person 17 (515 boxes) with {2: 8}",
+   "SNGS-151 person 2 (536 boxes) with {12: 6}"
+  ]
+ },
+ "fixed_recall": {
+  "right": 112,
+  "mixed": 7,
+  "minority": 0,
+  "wrong": 7,
+  "wrong_plus_mixed": 14,
+  "clean_right": 105,
+  "clean_precision": 0.8824,
+  "cases": [
+   "SNGS-163 person 18 (272 boxes) with {4: 17}",
+   "SNGS-066 person 6 (442 boxes) with {14: 20}",
+   "SNGS-161 person 12 (403 boxes) with {19: 10}",
+   "SNGS-169 person 10 (511 boxes) with {22: 6}",
+   "SNGS-162 person 8 (270 boxes) with {15: 6}",
+   "SNGS-162 person 17 (517 boxes) with {2: 8}",
+   "SNGS-151 person 2 (536 boxes) with {12: 6}"
+  ]
+ },
+ "leaf_recall": {
+  "links": 224,
+  "agree": 167,
+  "disagree": 20,
+  "none": 37,
+  "disagree_outside_162": 11
+ },
+ "leaf_fixed_recall": {
+  "links": 275,
+  "agree": 205,
+  "disagree": 20,
+  "none": 50,
+  "disagree_outside_162": 11
+ }
+}

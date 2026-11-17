@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point recall (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 156,
+  "right": 116,
+  "wrong": 13,
+  "lost": 27,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.7436,
+  "wrong_share": 0.0833,
+  "links": 264,
+  "links_right": 212,
+  "links_wrong": 19,
+  "links_unknown": 33,
+  "link_precision": 0.9177,
+  "impure_row_share": 0.02868
+ },
+ "clips_without_entry": []
+}

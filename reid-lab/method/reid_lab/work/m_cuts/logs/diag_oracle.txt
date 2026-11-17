@@ -1,0 +1,94 @@
+SNGS-107: switches 2 in 2 pieces; impure rows 94 (1.145%) in 13 pieces -> oracle cuts 17 (0.207%); returns {'right': 0, 'wrong': 1, 'lost': 15, 'undetected': 2, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 16, 'undetected': 2, 'untracked': 0}
+     {'piece': 30, 'from_ref': 18, 'to_ref': 19, 'last_a': 320, 'first_b': 349, 'rows_a': 67, 'rows_b': 143}
+     {'piece': 36, 'from_ref': 9, 'to_ref': 10, 'last_a': 489, 'first_b': 642, 'rows_a': 178, 'rows_b': 10}
+SNGS-163: switches 9 in 7 pieces; impure rows 453 (6.019%) in 20 pieces -> oracle cuts 35 (0.465%); returns {'right': 0, 'wrong': 0, 'lost': 11, 'undetected': 5, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 11, 'undetected': 5, 'untracked': 0}
+     {'piece': 6, 'from_ref': 11, 'to_ref': 18, 'last_a': 78, 'first_b': 97, 'rows_a': 78, 'rows_b': 44}
+     {'piece': 6, 'from_ref': 18, 'to_ref': 4, 'last_a': 151, 'first_b': 152, 'rows_a': 44, 'rows_b': 11}
+     {'piece': 6, 'from_ref': 4, 'to_ref': 18, 'last_a': 163, 'first_b': 175, 'rows_a': 11, 'rows_b': 79}
+     {'piece': 8, 'from_ref': 10, 'to_ref': 23, 'last_a': 183, 'first_b': 331, 'rows_a': 147, 'rows_b': 229}
+     {'piece': 9, 'from_ref': 6, 'to_ref': 25, 'last_a': 192, 'first_b': 539, 'rows_a': 184, 'rows_b': 22}
+     {'piece': 16, 'from_ref': 18, 'to_ref': 11, 'last_a': 103, 'first_b': 106, 'rows_a': 73, 'rows_b': 14}
+     {'piece': 45, 'from_ref': 7, 'to_ref': 5, 'last_a': 526, 'first_b': 593, 'rows_a': 216, 'rows_b': 104}
+     {'piece': 55, 'from_ref': 22, 'to_ref': 2, 'last_a': 333, 'first_b': 573, 'rows_a': 32, 'rows_b': 16}
+     {'piece': 64, 'from_ref': 13, 'to_ref': 14, 'last_a': 453, 'first_b': 639, 'rows_a': 28, 'rows_b': 79}
+SNGS-106: switches 9 in 8 pieces; impure rows 248 (4.384%) in 24 pieces -> oracle cuts 60 (1.061%); returns {'right': 0, 'wrong': 0, 'lost': 7, 'undetected': 1, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 7, 'undetected': 1, 'untracked': 0}
+     {'piece': 3, 'from_ref': 2, 'to_ref': 3, 'last_a': 160, 'first_b': 333, 'rows_a': 134, 'rows_b': 40}
+     {'piece': 6, 'from_ref': 17, 'to_ref': 14, 'last_a': 17, 'first_b': 37, 'rows_a': 8, 'rows_b': 107}
+     {'piece': 29, 'from_ref': 16, 'to_ref': 8, 'last_a': 230, 'first_b': 231, 'rows_a': 17, 'rows_b': 12}
+     {'piece': 30, 'from_ref': 2, 'to_ref': 16, 'last_a': 350, 'first_b': 462, 'rows_a': 23, 'rows_b': 40}
+     {'piece': 30, 'from_ref': 16, 'to_ref': 21, 'last_a': 565, 'first_b': 587, 'rows_a': 40, 'rows_b': 134}
+     {'piece': 34, 'from_ref': 5, 'to_ref': 4, 'last_a': 345, 'first_b': 367, 'rows_a': 10, 'rows_b': 18}
+     {'piece': 46, 'from_ref': 15, 'to_ref': 24, 'last_a': 612, 'first_b': 688, 'rows_a': 13, 'rows_b': 21}
+     {'piece': 58, 'from_ref': 24, 'to_ref': 15, 'last_a': 623, 'first_b': 634, 'rows_a': 6, 'rows_b': 101}
+     {'piece': 100011, 'from_ref': 5, 'to_ref': 4, 'last_a': 283, 'first_b': 453, 'rows_a': 37, 'rows_b': 72}
+SNGS-097: switches 5 in 4 pieces; impure rows 318 (3.278%) in 16 pieces -> oracle cuts 20 (0.206%); returns {'right': 0, 'wrong': 0, 'lost': 6, 'undetected': 4, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 6, 'undetected': 4, 'untracked': 0}
+     {'piece': 5, 'from_ref': 4, 'to_ref': 11, 'last_a': 491, 'first_b': 492, 'rows_a': 466, 'rows_b': 82}
+     {'piece': 8, 'from_ref': 2, 'to_ref': 7, 'last_a': 178, 'first_b': 179, 'rows_a': 146, 'rows_b': 335}
+     {'piece': 41, 'from_ref': 20, 'to_ref': 2, 'last_a': 429, 'first_b': 596, 'rows_a': 65, 'rows_b': 150}
+     {'piece': 52, 'from_ref': 18, 'to_ref': 16, 'last_a': 521, 'first_b': 522, 'rows_a': 8, 'rows_b': 5}
+     {'piece': 52, 'from_ref': 16, 'to_ref': 18, 'last_a': 526, 'first_b': 528, 'rows_a': 5, 'rows_b': 27}
+SNGS-067: switches 11 in 9 pieces; impure rows 332 (3.888%) in 31 pieces -> oracle cuts 92 (1.078%); returns {'right': 0, 'wrong': 0, 'lost': 10, 'undetected': 3, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 10, 'undetected': 3, 'untracked': 0}
+     {'piece': 9, 'from_ref': 15, 'to_ref': 3, 'last_a': 6, 'first_b': 38, 'rows_a': 7, 'rows_b': 5}
+     {'piece': 9, 'from_ref': 3, 'to_ref': 15, 'last_a': 42, 'first_b': 43, 'rows_a': 5, 'rows_b': 50}
+     {'piece': 9, 'from_ref': 15, 'to_ref': 16, 'last_a': 192, 'first_b': 216, 'rows_a': 50, 'rows_b': 46}
+     {'piece': 21, 'from_ref': 8, 'to_ref': 16, 'last_a': 220, 'first_b': 271, 'rows_a': 12, 'rows_b': 160}
+     {'piece': 22, 'from_ref': 2, 'to_ref': 18, 'last_a': 263, 'first_b': 268, 'rows_a': 38, 'rows_b': 170}
+     {'piece': 23, 'from_ref': 13, 'to_ref': 8, 'last_a': 233, 'first_b': 238, 'rows_a': 24, 'rows_b': 41}
+     {'piece': 29, 'from_ref': 15, 'to_ref': 2, 'last_a': 281, 'first_b': 294, 'rows_a': 45, 'rows_b': 23}
+     {'piece': 38, 'from_ref': 8, 'to_ref': 13, 'last_a': 455, 'first_b': 645, 'rows_a': 112, 'rows_b': 52}
+     {'piece': 40, 'from_ref': 2, 'to_ref': 9, 'last_a': 393, 'first_b': 415, 'rows_a': 30, 'rows_b': 27}
+     {'piece': 62, 'from_ref': 20, 'to_ref': 9, 'last_a': 561, 'first_b': 574, 'rows_a': 6, 'rows_b': 6}
+     {'piece': 100069, 'from_ref': 20, 'to_ref': 7, 'last_a': 686, 'first_b': 691, 'rows_a': 126, 'rows_b': 7}
+SNGS-100: switches 7 in 6 pieces; impure rows 207 (2.570%) in 24 pieces -> oracle cuts 73 (0.906%); returns {'right': 0, 'wrong': 0, 'lost': 4, 'undetected': 1, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 4, 'undetected': 1, 'untracked': 0}
+     {'piece': 2, 'from_ref': 15, 'to_ref': 16, 'last_a': 254, 'first_b': 421, 'rows_a': 177, 'rows_b': 9}
+     {'piece': 7, 'from_ref': 16, 'to_ref': 17, 'last_a': 77, 'first_b': 97, 'rows_a': 72, 'rows_b': 29}
+     {'piece': 7, 'from_ref': 17, 'to_ref': 18, 'last_a': 131, 'first_b': 157, 'rows_a': 29, 'rows_b': 10}
+     {'piece': 11, 'from_ref': 5, 'to_ref': 8, 'last_a': 92, 'first_b': 217, 'rows_a': 60, 'rows_b': 5}
+     {'piece': 14, 'from_ref': 22, 'to_ref': 21, 'last_a': 94, 'first_b': 169, 'rows_a': 16, 'rows_b': 20}
+     {'piece': 34, 'from_ref': 22, 'to_ref': 16, 'last_a': 234, 'first_b': 311, 'rows_a': 26, 'rows_b': 9}
+     {'piece': 49, 'from_ref': 20, 'to_ref': 16, 'last_a': 425, 'first_b': 691, 'rows_a': 56, 'rows_b': 57}
+SNGS-066: switches 17 in 13 pieces; impure rows 611 (5.451%) in 34 pieces -> oracle cuts 110 (0.981%); returns {'right': 0, 'wrong': 1, 'lost': 10, 'undetected': 2, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 11, 'undetected': 2, 'untracked': 0}
+     {'piece': 10, 'from_ref': 6, 'to_ref': 14, 'last_a': 65, 'first_b': 74, 'rows_a': 40, 'rows_b': 20}
+     {'piece': 10, 'from_ref': 14, 'to_ref': 6, 'last_a': 117, 'first_b': 148, 'rows_a': 20, 'rows_b': 94}
+     {'piece': 12, 'from_ref': 7, 'to_ref': 14, 'last_a': 151, 'first_b': 178, 'rows_a': 65, 'rows_b': 62}
+     {'piece': 15, 'from_ref': 13, 'to_ref': 3, 'last_a': 25, 'first_b': 29, 'rows_a': 26, 'rows_b': 65}
+     {'piece': 15, 'from_ref': 3, 'to_ref': 6, 'last_a': 108, 'first_b': 126, 'rows_a': 65, 'rows_b': 10}
+     {'piece': 15, 'from_ref': 6, 'to_ref': 15, 'last_a': 139, 'first_b': 145, 'rows_a': 10, 'rows_b': 44}
+     {'piece': 16, 'from_ref': 18, 'to_ref': 8, 'last_a': 140, 'first_b': 152, 'rows_a': 103, 'rows_b': 6}
+     {'piece': 16, 'from_ref': 8, 'to_ref': 15, 'last_a': 171, 'first_b': 200, 'rows_a': 6, 'rows_b': 76}
+     {'piece': 17, 'from_ref': 3, 'to_ref': 2, 'last_a': 19, 'first_b': 20, 'rows_a': 9, 'rows_b': 237}
+     {'piece': 18, 'from_ref': 15, 'to_ref': 6, 'last_a': 43, 'first_b': 46, 'rows_a': 22, 'rows_b': 21}
+     {'piece': 22, 'from_ref': 14, 'to_ref': 13, 'last_a': 60, 'first_b': 73, 'rows_a': 26, 'rows_b': 665}
+     {'piece': 23, 'from_ref': 3, 'to_ref': 17, 'last_a': 168, 'first_b': 179, 'rows_a': 25, 'rows_b': 50}
+     {'piece': 28, 'from_ref': 19, 'to_ref': 21, 'last_a': 214, 'first_b': 299, 'rows_a': 6, 'rows_b': 33}
+     {'piece': 44, 'from_ref': 6, 'to_ref': 19, 'last_a': 336, 'first_b': 410, 'rows_a': 12, 'rows_b': 323}
+     {'piece': 45, 'from_ref': 17, 'to_ref': 19, 'last_a': 319, 'first_b': 336, 'rows_a': 13, 'rows_b': 28}
+     {'piece': 48, 'from_ref': 11, 'to_ref': 17, 'last_a': 488, 'first_b': 499, 'rows_a': 133, 'rows_b': 227}
+     {'piece': 50, 'from_ref': 14, 'to_ref': 18, 'last_a': 321, 'first_b': 322, 'rows_a': 12, 'rows_b': 399}
+SNGS-161: switches 3 in 2 pieces; impure rows 91 (1.097%) in 8 pieces -> oracle cuts 13 (0.157%); returns {'right': 0, 'wrong': 0, 'lost': 14, 'undetected': 2, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 14, 'undetected': 2, 'untracked': 0}
+     {'piece': 11, 'from_ref': 9, 'to_ref': 12, 'last_a': 72, 'first_b': 307, 'rows_a': 72, 'rows_b': 225}
+     {'piece': 37, 'from_ref': 12, 'to_ref': 19, 'last_a': 161, 'first_b': 168, 'rows_a': 35, 'rows_b': 6}
+     {'piece': 37, 'from_ref': 19, 'to_ref': 12, 'last_a': 173, 'first_b': 174, 'rows_a': 6, 'rows_b': 133}
+SNGS-169: switches 5 in 3 pieces; impure rows 71 (0.836%) in 25 pieces -> oracle cuts 46 (0.542%); returns {'right': 0, 'wrong': 0, 'lost': 15, 'undetected': 1, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 15, 'undetected': 1, 'untracked': 0}
+     {'piece': 43, 'from_ref': 10, 'to_ref': 22, 'last_a': 692, 'first_b': 693, 'rows_a': 334, 'rows_b': 6}
+     {'piece': 43, 'from_ref': 22, 'to_ref': 10, 'last_a': 698, 'first_b': 710, 'rows_a': 6, 'rows_b': 34}
+     {'piece': 65, 'from_ref': 22, 'to_ref': 10, 'last_a': 692, 'first_b': 699, 'rows_a': 333, 'rows_b': 11}
+     {'piece': 65, 'from_ref': 10, 'to_ref': 22, 'last_a': 709, 'first_b': 712, 'rows_a': 11, 'rows_b': 35}
+     {'piece': 72, 'from_ref': 24, 'to_ref': 23, 'last_a': 563, 'first_b': 740, 'rows_a': 158, 'rows_b': 8}
+SNGS-162: switches 6 in 6 pieces; impure rows 349 (3.765%) in 39 pieces -> oracle cuts 65 (0.701%); returns {'right': 0, 'wrong': 2, 'lost': 16, 'undetected': 2, 'untracked': 0} -> {'right': 0, 'wrong': 2, 'lost': 16, 'undetected': 2, 'untracked': 0}
+     {'piece': 6, 'from_ref': 13, 'to_ref': 22, 'last_a': 176, 'first_b': 205, 'rows_a': 151, 'rows_b': 140}
+     {'piece': 13, 'from_ref': 16, 'to_ref': 19, 'last_a': 269, 'first_b': 307, 'rows_a': 219, 'rows_b': 54}
+     {'piece': 20, 'from_ref': 8, 'to_ref': 15, 'last_a': 184, 'first_b': 189, 'rows_a': 56, 'rows_b': 6}
+     {'piece': 23, 'from_ref': 9, 'to_ref': 5, 'last_a': 206, 'first_b': 228, 'rows_a': 19, 'rows_b': 425}
+     {'piece': 30, 'from_ref': 6, 'to_ref': 18, 'last_a': 272, 'first_b': 430, 'rows_a': 49, 'rows_b': 47}
+     {'piece': 106, 'from_ref': 18, 'to_ref': 14, 'last_a': 654, 'first_b': 655, 'rows_a': 18, 'rows_b': 91}
+SNGS-151: switches 1 in 1 pieces; impure rows 36 (0.460%) in 13 pieces -> oracle cuts 22 (0.281%); returns {'right': 0, 'wrong': 0, 'lost': 9, 'undetected': 5, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 9, 'undetected': 5, 'untracked': 0}
+     {'piece': 35, 'from_ref': 14, 'to_ref': 22, 'last_a': 526, 'first_b': 543, 'rows_a': 14, 'rows_b': 200}
+SNGS-102: switches 1 in 1 pieces; impure rows 25 (0.283%) in 8 pieces -> oracle cuts 13 (0.147%); returns {'right': 0, 'wrong': 0, 'lost': 12, 'undetected': 2, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 12, 'undetected': 2, 'untracked': 0}
+     {'piece': 36, 'from_ref': 3, 'to_ref': 14, 'last_a': 347, 'first_b': 355, 'rows_a': 14, 'rows_b': 24}
+SNGS-112: switches 2 in 2 pieces; impure rows 39 (0.469%) in 7 pieces -> oracle cuts 13 (0.156%); returns {'right': 0, 'wrong': 0, 'lost': 4, 'undetected': 0, 'untracked': 0} -> {'right': 0, 'wrong': 0, 'lost': 4, 'undetected': 0, 'untracked': 0}
+     {'piece': 19, 'from_ref': 10, 'to_ref': 16, 'last_a': 312, 'first_b': 354, 'rows_a': 98, 'rows_b': 12}
+     {'piece': 44, 'from_ref': 15, 'to_ref': 20, 'last_a': 398, 'first_b': 726, 'rows_a': 16, 'rows_b': 14}
+{'switches': 78, 'imp': 2874, 'imp_oracle': 579, 'rows': 109938} 0.026142007313212902 0.005266604813622224
+split       {'scored': 137, 'right': 0, 'wrong': 4, 'lost': 133, 'undetected': 30, 'untracked': 0, 'right_share': 0.0, 'wrong_share': 0.0292, 'links': 0, 'links_right': 0, 'links_wrong': 0, 'links_unknown': 0, 'link_precision': None, 'impure_row_share': 0.02614}
+oracle cuts {'scored': 137, 'right': 0, 'wrong': 2, 'lost': 135, 'undetected': 30, 'untracked': 0, 'right_share': 0.0, 'wrong_share': 0.0146, 'links': 0, 'links_right': 0, 'links_wrong': 0, 'links_unknown': 0, 'link_precision': None, 'impure_row_share': 0.00527}

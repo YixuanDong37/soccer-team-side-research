@@ -1,0 +1,30 @@
+weak-known pairs 20431 imm 789
+min rows [1,2) pairs   6994 imm  248 diff   6181 | cos_w imm q10/q50/q90 0.25/0.62/0.86 diff q50/q90/q99 0.00/0.21/0.50 | imm with sink>=.4: 134, diff with sink>=.4: 19 | imm plug 5 diff plug 9
+min rows [2,5) pairs   4724 imm  163 diff   4167 | cos_w imm q10/q50/q90 0.23/0.64/0.83 diff q50/q90/q99 -0.00/0.22/0.54 | imm with sink>=.4: 73, diff with sink>=.4: 19 | imm plug 4 diff plug 7
+min rows [5,15) pairs   3115 imm  116 diff   2765 | cos_w imm q10/q50/q90 0.28/0.69/0.89 diff q50/q90/q99 -0.03/0.18/0.48 | imm with sink>=.4: 67, diff with sink>=.4: 9 | imm plug 2 diff plug 5
+min rows [15,50) pairs   3226 imm  140 diff   2875 | cos_w imm q10/q50/q90 0.55/0.77/0.89 diff q50/q90/q99 -0.05/0.18/0.53 | imm with sink>=.4: 78, diff with sink>=.4: 10 | imm plug 11 diff plug 3
+min rows [50,1000000) pairs   2372 imm  122 diff   2098 | cos_w imm q10/q50/q90 0.55/0.77/0.89 diff q50/q90/q99 -0.09/0.14/0.52 | imm with sink>=.4: 77, diff with sink>=.4: 8 | imm plug 14 diff plug 2
+
+short-piece pairs (min rows < 5), by evidence:
+  plug                     n   29 imm    9 same-not-imm   4 diff   16
+  sink>=.5                 n  197 imm  168 same-not-imm   3 diff   26
+  sink .3-.5               n  108 imm   67 same-not-imm   9 diff   32
+  plug & cos_raw>=.85      n   10 imm    6 same-not-imm   2 diff    2
+  plug & cos_raw<.85       n   19 imm    3 same-not-imm   2 diff   14
+  plug & sink>=.2          n    9 imm    7 same-not-imm   0 diff    2
+  cos_w>=.5                n  841 imm  277 same-not-imm 455 diff  109
+  cos_w>=.5 & sink>=.2     n  252 imm  206 same-not-imm  36 diff   10
+  cos_w>=.3 & sink>=.3     n  245 imm  217 same-not-imm  10 diff   18
+  sink>=.5 & cos_w<.2      n   13 imm    3 same-not-imm   0 diff   10
+  sink>=.5 & kind>=1       n   23 imm   22 same-not-imm   1 diff    0
+  sink>=.5 & kind==0       n  174 imm  146 same-not-imm   2 diff   26
+
+longer pairs (min rows >= 5), weak labels:
+  plug                     n   38 imm   27 same-not-imm   1 diff   10
+  sink>=.5                 n  202 imm  182 same-not-imm   5 diff   15
+  sink>=.5 & kind>=1       n   41 imm   38 same-not-imm   0 diff    3
+  sink>=.5 & kind==0       n  161 imm  144 same-not-imm   5 diff   12
+  sink>=.5 & cos_w<.2      n    6 imm    2 same-not-imm   0 diff    4
+  sink>=.5 & cos_w>=.2     n  196 imm  180 same-not-imm   5 diff   11
+  plug & cos_raw>=.85      n   32 imm   27 same-not-imm   1 diff    4
+  plug & cos_raw<.85       n    6 imm    0 same-not-imm   0 diff    6

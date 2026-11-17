@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 cuts only (m_cuts P >= 0.7 with the weights fitted without the clip; no links)",
+ "pooled": {
+  "scored": 156,
+  "right": 0,
+  "wrong": 2,
+  "lost": 154,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.0,
+  "wrong_share": 0.0128,
+  "links": 0,
+  "links_right": 0,
+  "links_wrong": 0,
+  "links_unknown": 0,
+  "link_precision": null,
+  "impure_row_share": 0.01268
+ },
+ "clips_without_entry": []
+}

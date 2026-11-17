@@ -1,0 +1,10 @@
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_strict.json: 196 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_balanced.json: 263 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_recall.json: 362 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_frozen_strict.json: 203 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_frozen_balanced.json: 254 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_frozen_recall.json: 379 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_fixed_strict.json: 203 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_fixed_balanced.json: 253 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_fixed_recall.json: 377 links, 126 cuts
+wrote C:/Research/plugins/tools_leadcfg/reid_lab/work/fuse_r1/METHOD_cuts_only.json: 0 links, 126 cuts

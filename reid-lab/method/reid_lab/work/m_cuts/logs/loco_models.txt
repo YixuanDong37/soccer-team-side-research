@@ -1,0 +1,121 @@
+candidates 3059 {'F': 2116, 'f': 377, 'T': 229, 'U': 179, 't': 158} true switches 78
+baseline split: R/W/L 0/4/133 links 0/0/0 impure 0.0261
+baseline mutual: R/W/L 26/6/105 links 60/7/2 impure 0.0303
+baseline plugin: R/W/L 30/14/93 links 33/10/50 impure 0.0308
+lr(cos): held-out log-loss 0.1680; all-13 weights (standardised) [-1.75] bias -3.16
+ p>=0.9
+   held-out : cuts 127 T  31 F   1 t  52 f   3 U 40 prec 0.969 sw_hit 24/78 | split+cuts R/W/L 0/2/135 impure 0.0178 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0219 | (adj) 26/4/107 links 58/7/4 | (drop) 25/4/108 links 56/5/2
+   in-sample: cuts 128 T  32 F   1 t  52 f   3 U 40 prec 0.970 sw_hit 24/78 | split+cuts R/W/L 0/2/135 impure 0.0178 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0218 | (adj) 26/4/107 links 58/7/4 | (drop) 25/4/108 links 56/5/2
+ p>=0.7
+   held-out : cuts 177 T  47 F   4 t  69 f   8 U 49 prec 0.922 sw_hit 36/78 | split+cuts R/W/L 0/2/135 impure 0.0135 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0176 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 52/5/2
+   in-sample: cuts 177 T  47 F   4 t  69 f   8 U 49 prec 0.922 sw_hit 36/78 | split+cuts R/W/L 0/2/135 impure 0.0135 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0176 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 52/5/2
+ p>=0.5
+   held-out : cuts 229 T  57 F   9 t  87 f  20 U 56 prec 0.864 sw_hit 42/78 | split+cuts R/W/L 0/2/135 impure 0.0115 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0155 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 50/5/2
+   in-sample: cuts 231 T  58 F   9 t  87 f  21 U 56 prec 0.866 sw_hit 43/78 | split+cuts R/W/L 0/2/135 impure 0.0114 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0155 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 50/5/2
+ p>=0.3
+   held-out : cuts 283 T  63 F  19 t  96 f  34 U 71 prec 0.768 sw_hit 48/78 | split+cuts R/W/L 0/2/135 impure 0.0092 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0133 | (adj) 26/4/107 links 50/7/12 | (drop) 23/4/110 links 44/5/2
+   in-sample: cuts 286 T  63 F  20 t  98 f  34 U 71 prec 0.759 sw_hit 48/78 | split+cuts R/W/L 0/2/135 impure 0.0092 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0132 | (adj) 26/4/107 links 50/7/12 | (drop) 23/4/110 links 44/5/2
+lr(mm): held-out log-loss 0.1959; all-13 weights (standardised) [-2.06] bias -3.47
+ p>=0.9
+   held-out : cuts  59 T  21 F   1 t  19 f   0 U 18 prec 0.955 sw_hit 17/78 | split+cuts R/W/L 0/3/134 impure 0.0201 | mutual+cuts(app) 26/5/106 links 60/7/2 impure 0.0242 | (adj) 26/5/106 links 58/8/3 | (drop) 25/5/107 links 57/6/2
+   in-sample: cuts  60 T  20 F   1 t  21 f   0 U 18 prec 0.952 sw_hit 16/78 | split+cuts R/W/L 0/3/134 impure 0.0201 | mutual+cuts(app) 26/5/106 links 60/7/2 impure 0.0243 | (adj) 26/5/106 links 58/8/3 | (drop) 25/5/107 links 57/6/2
+ p>=0.7
+   held-out : cuts 118 T  48 F   1 t  41 f   1 U 27 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/3/134 impure 0.0136 | mutual+cuts(app) 26/5/106 links 61/6/2 impure 0.0177 | (adj) 26/5/106 links 57/7/5 | (drop) 24/5/108 links 54/5/2
+   in-sample: cuts 120 T  48 F   1 t  42 f   1 U 28 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/3/134 impure 0.0136 | mutual+cuts(app) 26/5/106 links 61/6/2 impure 0.0177 | (adj) 26/5/106 links 57/7/5 | (drop) 24/5/108 links 54/5/2
+ p>=0.5
+   held-out : cuts 160 T  54 F   1 t  67 f   2 U 36 prec 0.982 sw_hit 42/78 | split+cuts R/W/L 0/1/136 impure 0.0096 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0136 | (adj) 26/2/109 links 55/6/8 | (drop) 24/2/111 links 50/4/2
+   in-sample: cuts 160 T  54 F   1 t  68 f   2 U 35 prec 0.982 sw_hit 42/78 | split+cuts R/W/L 0/1/136 impure 0.0096 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0136 | (adj) 26/2/109 links 55/6/8 | (drop) 24/2/111 links 50/4/2
+ p>=0.3
+   held-out : cuts 207 T  59 F   2 t  89 f  10 U 47 prec 0.967 sw_hit 46/78 | split+cuts R/W/L 0/0/137 impure 0.0088 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0128 | (adj) 26/1/110 links 55/6/8 | (drop) 24/1/112 links 49/4/2
+   in-sample: cuts 210 T  60 F   3 t  90 f  10 U 47 prec 0.952 sw_hit 46/78 | split+cuts R/W/L 0/0/137 impure 0.0081 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0122 | (adj) 26/1/110 links 55/6/8 | (drop) 24/1/112 links 49/4/2
+lr(cos,mm): held-out log-loss 0.1593; all-13 weights (standardised) [-1.36, -0.78] bias -3.27
+ p>=0.9
+   held-out : cuts 135 T  40 F   1 t  55 f   2 U 37 prec 0.976 sw_hit 31/78 | split+cuts R/W/L 0/2/135 impure 0.0151 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0192 | (adj) 26/4/107 links 57/7/5 | (drop) 24/4/109 links 54/5/2
+   in-sample: cuts 136 T  40 F   1 t  54 f   3 U 38 prec 0.976 sw_hit 31/78 | split+cuts R/W/L 0/2/135 impure 0.0151 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0192 | (adj) 26/4/107 links 57/7/5 | (drop) 24/4/109 links 54/5/2
+ p>=0.7
+   held-out : cuts 184 T  52 F   2 t  75 f   5 U 50 prec 0.963 sw_hit 40/78 | split+cuts R/W/L 0/2/135 impure 0.0121 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0162 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 52/5/2
+   in-sample: cuts 184 T  52 F   2 t  76 f   6 U 48 prec 0.963 sw_hit 40/78 | split+cuts R/W/L 0/2/135 impure 0.0121 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0162 | (adj) 26/4/107 links 55/7/7 | (drop) 24/4/109 links 52/5/2
+ p>=0.5
+   held-out : cuts 224 T  59 F   4 t  91 f  16 U 54 prec 0.937 sw_hit 45/78 | split+cuts R/W/L 0/2/135 impure 0.0089 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0129 | (adj) 26/4/107 links 54/7/8 | (drop) 24/4/109 links 48/5/2
+   in-sample: cuts 223 T  58 F   5 t  90 f  16 U 54 prec 0.921 sw_hit 44/78 | split+cuts R/W/L 0/2/135 impure 0.0101 | mutual+cuts(app) 26/4/107 links 61/6/2 impure 0.0142 | (adj) 26/4/107 links 54/7/8 | (drop) 24/4/109 links 48/5/2
+ p>=0.3
+   held-out : cuts 274 T  66 F  14 t  97 f  31 U 66 prec 0.825 sw_hit 50/78 | split+cuts R/W/L 0/1/136 impure 0.0079 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0120 | (adj) 26/2/109 links 51/6/12 | (drop) 23/2/112 links 44/4/2
+   in-sample: cuts 276 T  67 F  13 t  98 f  31 U 67 prec 0.838 sw_hit 51/78 | split+cuts R/W/L 0/1/136 impure 0.0078 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0118 | (adj) 26/2/109 links 51/6/12 | (drop) 23/2/112 links 44/4/2
+lr(cos,lgap): held-out log-loss 0.1603; all-13 weights (standardised) [-1.71, 0.46] bias -3.23
+ p>=0.9
+   held-out : cuts 154 T  43 F   1 t  60 f   5 U 45 prec 0.977 sw_hit 34/78 | split+cuts R/W/L 0/1/136 impure 0.0141 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0182 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+   in-sample: cuts 156 T  43 F   1 t  62 f   6 U 44 prec 0.977 sw_hit 34/78 | split+cuts R/W/L 0/1/136 impure 0.0141 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0182 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+ p>=0.7
+   held-out : cuts 212 T  57 F   5 t  86 f  11 U 53 prec 0.919 sw_hit 43/78 | split+cuts R/W/L 0/1/136 impure 0.0114 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0155 | (adj) 26/3/108 links 54/7/8 | (drop) 24/3/110 links 49/5/2
+   in-sample: cuts 212 T  57 F   5 t  86 f  11 U 53 prec 0.919 sw_hit 43/78 | split+cuts R/W/L 0/1/136 impure 0.0114 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0155 | (adj) 26/3/108 links 54/7/8 | (drop) 24/3/110 links 49/5/2
+ p>=0.5
+   held-out : cuts 243 T  61 F   7 t  95 f  21 U 59 prec 0.897 sw_hit 46/78 | split+cuts R/W/L 0/0/137 impure 0.0098 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0139 | (adj) 26/2/109 links 54/7/8 | (drop) 24/2/111 links 48/5/2
+   in-sample: cuts 245 T  62 F   6 t  97 f  22 U 58 prec 0.912 sw_hit 47/78 | split+cuts R/W/L 0/0/137 impure 0.0094 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0135 | (adj) 26/2/109 links 54/7/8 | (drop) 24/2/111 links 48/5/2
+ p>=0.3
+   held-out : cuts 305 T  68 F  18 t 105 f  44 U 70 prec 0.791 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0073 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0114 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 42/4/2
+   in-sample: cuts 305 T  68 F  17 t 108 f  42 U 70 prec 0.800 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0073 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0114 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 42/4/2
+lr(cos,mm,lgap): held-out log-loss 0.1534; all-13 weights (standardised) [-1.35, -0.72, 0.43] bias -3.32
+ p>=0.9
+   held-out : cuts 163 T  48 F   1 t  67 f   4 U 43 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+   in-sample: cuts 165 T  48 F   1 t  67 f   5 U 44 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+ p>=0.7
+   held-out : cuts 209 T  58 F   3 t  89 f   8 U 51 prec 0.951 sw_hit 43/78 | split+cuts R/W/L 0/1/136 impure 0.0113 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0154 | (adj) 26/3/108 links 55/7/7 | (drop) 24/3/110 links 51/5/2
+   in-sample: cuts 206 T  58 F   2 t  87 f   8 U 51 prec 0.967 sw_hit 43/78 | split+cuts R/W/L 0/1/136 impure 0.0113 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0154 | (adj) 26/3/108 links 55/7/7 | (drop) 24/3/110 links 51/5/2
+ p>=0.5
+   held-out : cuts 240 T  63 F   4 t  99 f  20 U 54 prec 0.940 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0081 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0122 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 47/4/2
+   in-sample: cuts 241 T  63 F   4 t 100 f  20 U 54 prec 0.940 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0081 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 47/4/2
+ p>=0.3
+   held-out : cuts 298 T  69 F  17 t 107 f  40 U 65 prec 0.802 sw_hit 53/78 | split+cuts R/W/L 0/0/137 impure 0.0074 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0114 | (adj) 26/1/110 links 52/6/11 | (drop) 24/1/112 links 44/4/2
+   in-sample: cuts 297 T  68 F  17 t 107 f  40 U 65 prec 0.800 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0074 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0115 | (adj) 26/1/110 links 52/6/11 | (drop) 24/1/112 links 44/4/2
+lr(cos,mm,lgap,ld): held-out log-loss 0.1520; all-13 weights (standardised) [-1.36, -0.67, 0.32, 0.3] bias -3.34
+ p>=0.9
+   held-out : cuts 179 T  47 F   1 t  77 f   5 U 49 prec 0.979 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+   in-sample: cuts 179 T  47 F   1 t  76 f   5 U 50 prec 0.979 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+ p>=0.7
+   held-out : cuts 221 T  59 F   3 t  96 f   9 U 54 prec 0.952 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0140 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+   in-sample: cuts 219 T  59 F   2 t  95 f  10 U 53 prec 0.967 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0141 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+ p>=0.5
+   held-out : cuts 255 T  63 F   6 t 105 f  20 U 61 prec 0.913 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0080 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 54/6/9 | (drop) 24/1/112 links 46/4/2
+   in-sample: cuts 254 T  63 F   6 t 105 f  20 U 60 prec 0.913 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0080 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 54/6/9 | (drop) 24/1/112 links 46/4/2
+ p>=0.3
+   held-out : cuts 300 T  67 F  14 t 109 f  41 U 69 prec 0.827 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0075 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0115 | (adj) 26/1/110 links 50/6/13 | (drop) 24/1/112 links 41/4/2
+   in-sample: cuts 305 T  68 F  14 t 109 f  43 U 71 prec 0.829 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0065 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0106 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 40/4/2
+lr(cos,lgap,ld): held-out log-loss 0.1576; all-13 weights (standardised) [-1.68, 0.33, 0.38] bias -3.26
+ p>=0.9
+   held-out : cuts 177 T  46 F   1 t  74 f   5 U 51 prec 0.979 sw_hit 36/78 | split+cuts R/W/L 0/1/136 impure 0.0135 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0176 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+   in-sample: cuts 178 T  47 F   1 t  75 f   5 U 50 prec 0.979 sw_hit 36/78 | split+cuts R/W/L 0/1/136 impure 0.0135 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0176 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 52/5/2
+ p>=0.7
+   held-out : cuts 229 T  56 F   5 t  95 f  15 U 58 prec 0.918 sw_hit 42/78 | split+cuts R/W/L 0/0/137 impure 0.0114 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0155 | (adj) 26/2/109 links 54/7/8 | (drop) 24/2/111 links 50/5/2
+   in-sample: cuts 231 T  58 F   5 t  96 f  15 U 57 prec 0.921 sw_hit 44/78 | split+cuts R/W/L 0/0/137 impure 0.0101 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0142 | (adj) 26/2/109 links 54/7/8 | (drop) 24/2/111 links 49/5/2
+ p>=0.5
+   held-out : cuts 266 T  62 F   9 t 105 f  25 U 65 prec 0.873 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0083 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0124 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 45/4/2
+   in-sample: cuts 264 T  62 F   7 t 106 f  24 U 65 prec 0.899 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0081 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 45/4/2
+ p>=0.3
+   held-out : cuts 311 T  69 F  15 t 110 f  45 U 72 prec 0.821 sw_hit 53/78 | split+cuts R/W/L 0/0/137 impure 0.0063 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0103 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 40/4/2
+   in-sample: cuts 312 T  70 F  16 t 112 f  43 U 71 prec 0.814 sw_hit 54/78 | split+cuts R/W/L 0/0/137 impure 0.0061 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0102 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 40/4/2
+lr(cos,mm,lgap,ld,side): held-out log-loss 0.1523; all-13 weights (standardised) [-1.36, -0.67, 0.32, 0.3, -0.01] bias -3.34
+ p>=0.9
+   held-out : cuts 179 T  47 F   1 t  78 f   5 U 48 prec 0.979 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+   in-sample: cuts 181 T  47 F   1 t  77 f   5 U 51 prec 0.979 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0173 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 53/5/2
+ p>=0.7
+   held-out : cuts 223 T  59 F   3 t  96 f  10 U 55 prec 0.952 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0140 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+   in-sample: cuts 222 T  59 F   2 t  96 f  11 U 54 prec 0.967 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0140 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+ p>=0.5
+   held-out : cuts 256 T  63 F   6 t 105 f  20 U 62 prec 0.913 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0080 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 54/6/9 | (drop) 24/1/112 links 46/4/2
+   in-sample: cuts 256 T  63 F   6 t 105 f  21 U 61 prec 0.913 sw_hit 48/78 | split+cuts R/W/L 0/0/137 impure 0.0080 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0121 | (adj) 26/1/110 links 54/6/9 | (drop) 24/1/112 links 46/4/2
+ p>=0.3
+   held-out : cuts 301 T  67 F  14 t 109 f  42 U 69 prec 0.827 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0075 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0115 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 40/4/2
+   in-sample: cuts 307 T  68 F  14 t 111 f  43 U 71 prec 0.829 sw_hit 52/78 | split+cuts R/W/L 0/0/137 impure 0.0065 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0106 | (adj) 26/1/110 links 49/6/14 | (drop) 23/1/113 links 40/4/2
+lr(cos,md,mr,lgap,ld): held-out log-loss 0.1515; all-13 weights (standardised) [-1.14, -0.39, -0.67, 0.32, 0.29] bias -3.38
+ p>=0.9
+   held-out : cuts 179 T  48 F   1 t  76 f   5 U 49 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0172 | (adj) 26/3/108 links 56/7/6 | (drop) 24/3/110 links 52/5/2
+   in-sample: cuts 180 T  49 F   1 t  76 f   5 U 49 prec 0.980 sw_hit 37/78 | split+cuts R/W/L 0/1/136 impure 0.0132 | mutual+cuts(app) 26/3/108 links 61/6/2 impure 0.0172 | (adj) 26/3/108 links 55/7/7 | (drop) 24/3/110 links 51/5/2
+ p>=0.7
+   held-out : cuts 219 T  59 F   3 t  97 f   8 U 52 prec 0.952 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0140 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+   in-sample: cuts 217 T  60 F   2 t  95 f   8 U 52 prec 0.968 sw_hit 45/78 | split+cuts R/W/L 0/0/137 impure 0.0100 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0140 | (adj) 26/2/109 links 55/7/7 | (drop) 24/2/111 links 51/5/2
+ p>=0.5
+   held-out : cuts 257 T  64 F   7 t 104 f  19 U 63 prec 0.901 sw_hit 49/78 | split+cuts R/W/L 0/0/137 impure 0.0079 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0120 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 47/4/2
+   in-sample: cuts 256 T  65 F   6 t 103 f  20 U 62 prec 0.915 sw_hit 49/78 | split+cuts R/W/L 0/0/137 impure 0.0079 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0120 | (adj) 26/1/110 links 53/6/10 | (drop) 24/1/112 links 46/4/2
+ p>=0.3
+   held-out : cuts 302 T  70 F  13 t 109 f  41 U 69 prec 0.843 sw_hit 54/78 | split+cuts R/W/L 0/0/137 impure 0.0063 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0104 | (adj) 26/1/110 links 48/6/15 | (drop) 23/1/113 links 39/4/2
+   in-sample: cuts 305 T  72 F  13 t 108 f  42 U 70 prec 0.847 sw_hit 55/78 | split+cuts R/W/L 0/0/137 impure 0.0061 | mutual+cuts(app) 26/2/109 links 61/6/2 impure 0.0102 | (adj) 26/1/110 links 48/6/15 | (drop) 23/1/113 links 39/4/2

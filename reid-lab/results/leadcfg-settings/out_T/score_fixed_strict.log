@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point strict (the all-13 choice of the setting, applied to every clip with the weights fitted without it)",
+ "pooled": {
+  "scored": 156,
+  "right": 83,
+  "wrong": 10,
+  "lost": 63,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.5321,
+  "wrong_share": 0.0641,
+  "links": 203,
+  "links_right": 174,
+  "links_wrong": 12,
+  "links_unknown": 17,
+  "link_precision": 0.9355,
+  "impure_row_share": 0.02307
+ },
+ "clips_without_entry": []
+}

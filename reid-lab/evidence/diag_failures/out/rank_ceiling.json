@@ -1,0 +1,334 @@
+{
+ "all earlier pieces": {
+  "new: pieces B": 182,
+  "new: would link (top-1 exists)": 153,
+  "new: no candidate": 29,
+  "returning: pieces B": 403,
+  "returning: top-1 is the person": 358,
+  "returning: top-1 is a fragment (unknown)": 25,
+  "returning: top-1 is another person": 20,
+  "cos>=0.9, margin>=0.0": {
+   "right": 341,
+   "wrong": 19,
+   "new": 50
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 310,
+   "wrong": 17,
+   "new": 28
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 251,
+   "wrong": 15,
+   "new": 9
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 332,
+   "wrong": 10,
+   "new": 94
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 300,
+   "wrong": 6,
+   "new": 65
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 317,
+   "wrong": 10,
+   "new": 31
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 291,
+   "wrong": 9,
+   "new": 21
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 263,
+   "wrong": 5,
+   "new": 13
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 218,
+   "wrong": 5,
+   "new": 5
+  }
+ },
+ "strict descriptors only (>= 5 clean rows both)": {
+  "new: pieces B": 182,
+  "new: no candidate": 52,
+  "returning: pieces B": 403,
+  "returning: top-1 is the person": 324,
+  "new: would link (top-1 exists)": 130,
+  "returning: true piece removed by the restriction": 15,
+  "returning: top-1 is another person": 34,
+  "returning: no candidate": 41,
+  "returning: top-1 is a fragment (unknown)": 4,
+  "cos>=0.9, margin>=0.0": {
+   "right": 309,
+   "wrong": 22,
+   "new": 25
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 281,
+   "wrong": 19,
+   "new": 6
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 228,
+   "wrong": 17,
+   "new": 0
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 308,
+   "wrong": 17,
+   "new": 81
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 290,
+   "wrong": 15,
+   "new": 57
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 295,
+   "wrong": 11,
+   "new": 15
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 270,
+   "wrong": 10,
+   "new": 5
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 255,
+   "wrong": 8,
+   "new": 3
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 210,
+   "wrong": 8,
+   "new": 0
+  }
+ },
+ "earlier piece ended at an image edge": {
+  "new: pieces B": 182,
+  "new: would link (top-1 exists)": 132,
+  "new: no candidate": 50,
+  "returning: pieces B": 403,
+  "returning: no candidate": 15,
+  "returning: true piece removed by the restriction": 221,
+  "returning: top-1 is another person": 195,
+  "returning: top-1 is a fragment (unknown)": 42,
+  "returning: top-1 is the person": 151,
+  "cos>=0.9, margin>=0.0": {
+   "right": 141,
+   "wrong": 24,
+   "new": 24
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 125,
+   "wrong": 15,
+   "new": 10
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 98,
+   "wrong": 12,
+   "new": 3
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 148,
+   "wrong": 134,
+   "new": 89
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 133,
+   "wrong": 102,
+   "new": 72
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 140,
+   "wrong": 16,
+   "new": 15
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 124,
+   "wrong": 13,
+   "new": 8
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 113,
+   "wrong": 11,
+   "new": 5
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 92,
+   "wrong": 9,
+   "new": 2
+  }
+ },
+ "ended at an edge, B starts at the same side": {
+  "new: pieces B": 182,
+  "new: no candidate": 159,
+  "returning: pieces B": 403,
+  "returning: no candidate": 287,
+  "returning: top-1 is the person": 87,
+  "new: would link (top-1 exists)": 23,
+  "returning: true piece removed by the restriction": 23,
+  "returning: top-1 is another person": 23,
+  "returning: top-1 is a fragment (unknown)": 6,
+  "cos>=0.9, margin>=0.0": {
+   "right": 82,
+   "wrong": 8,
+   "new": 3
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 74,
+   "wrong": 4,
+   "new": 2
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 58,
+   "wrong": 3,
+   "new": 0
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 86,
+   "wrong": 14,
+   "new": 16
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 79,
+   "wrong": 12,
+   "new": 12
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 82,
+   "wrong": 5,
+   "new": 3
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 74,
+   "wrong": 3,
+   "new": 2
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 70,
+   "wrong": 3,
+   "new": 1
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 55,
+   "wrong": 2,
+   "new": 0
+  }
+ },
+ "within reach (8 m/s + 4 m)": {
+  "new: pieces B": 182,
+  "new: no candidate": 46,
+  "new: would link (top-1 exists)": 136,
+  "returning: pieces B": 403,
+  "returning: top-1 is the person": 357,
+  "returning: top-1 is a fragment (unknown)": 25,
+  "returning: top-1 is another person": 21,
+  "returning: true piece removed by the restriction": 2,
+  "cos>=0.9, margin>=0.0": {
+   "right": 340,
+   "wrong": 19,
+   "new": 43
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 308,
+   "wrong": 17,
+   "new": 28
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 248,
+   "wrong": 16,
+   "new": 9
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 333,
+   "wrong": 11,
+   "new": 86
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 307,
+   "wrong": 7,
+   "new": 58
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 318,
+   "wrong": 11,
+   "new": 29
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 291,
+   "wrong": 10,
+   "new": 21
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 270,
+   "wrong": 6,
+   "new": 13
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 224,
+   "wrong": 6,
+   "new": 5
+  }
+ },
+ "gap <= 10 s": {
+  "new: pieces B": 182,
+  "new: would link (top-1 exists)": 153,
+  "new: no candidate": 29,
+  "returning: pieces B": 403,
+  "returning: top-1 is the person": 313,
+  "returning: true piece removed by the restriction": 49,
+  "returning: top-1 is another person": 48,
+  "returning: top-1 is a fragment (unknown)": 42,
+  "cos>=0.9, margin>=0.0": {
+   "right": 295,
+   "wrong": 20,
+   "new": 47
+  },
+  "cos>=0.93, margin>=0.0": {
+   "right": 270,
+   "wrong": 16,
+   "new": 27
+  },
+  "cos>=0.95, margin>=0.0": {
+   "right": 216,
+   "wrong": 14,
+   "new": 9
+  },
+  "cos>=0.0, margin>=0.03": {
+   "right": 296,
+   "wrong": 26,
+   "new": 100
+  },
+  "cos>=0.0, margin>=0.05": {
+   "right": 270,
+   "wrong": 15,
+   "new": 66
+  },
+  "cos>=0.9, margin>=0.03": {
+   "right": 280,
+   "wrong": 11,
+   "new": 30
+  },
+  "cos>=0.93, margin>=0.03": {
+   "right": 259,
+   "wrong": 9,
+   "new": 20
+  },
+  "cos>=0.93, margin>=0.05": {
+   "right": 238,
+   "wrong": 5,
+   "new": 12
+  },
+  "cos>=0.95, margin>=0.05": {
+   "right": 193,
+   "wrong": 4,
+   "new": 5
+  }
+ }
+}

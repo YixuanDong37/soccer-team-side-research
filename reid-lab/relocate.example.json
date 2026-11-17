@@ -1,0 +1,16 @@
+{
+ "_comment": "Example for: python relocate.py --config relocate.example.json   Copy it, put in your own locations, and remove the keys you do not need. Keys that start with _ are ignored. Flags on the command line win over this file.",
+ "RUNS_DIR": "D:/data/gsr-runs",
+ "RUNS_LEADCFG_DIR": "D:/data/gsr-runs-leadcfg",
+ "GSR_TRAIN_DIR": "D:/data/sn-gsr-2025/train",
+ "GBF_REPO": "D:/code/gbf",
+ "SNGS_DIR": "D:/code/sn-gamestate",
+ "_optional": "PYTHON defaults to GBF_REPO/.venv/Scripts/python.exe; GSR_ROOT to the parent of GSR_TRAIN_DIR; TOOLS_ROOT, PIPELINE_ROOT, EVIDENCE_ROOT, PATCH_DIR and LEADCFG_ROOT to folders inside this package. Set them only when you moved those folders.",
+ "PYTHON": "",
+ "GSR_ROOT": "",
+ "TOOLS_ROOT": "",
+ "PIPELINE_ROOT": "",
+ "EVIDENCE_ROOT": "",
+ "PATCH_DIR": "",
+ "LEADCFG_ROOT": ""
+}

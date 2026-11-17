@@ -1,0 +1,222 @@
+{
+ "team_flipped_clips": [
+  "SNGS-106"
+ ],
+ "team_rows_accuracy_as_given": 0.9466,
+ "team_rows": {
+  "matched_rows_of_annotated_players_gk": 102646,
+  "coverage": 0.994,
+  "accuracy_where_labelled": 0.9885,
+  "annotated_referee_rows_with_a_team_label": 0.0036
+ },
+ "team_pieces": [
+  {
+   "set": "all pieces with identity (players/GK)",
+   "pieces": 748,
+   "coverage": 0.9866310160427807,
+   "accuracy": 0.991869918699187,
+   "wrong": 6,
+   "mixed_labels": 0
+  },
+  {
+   "set": "starts at image edge",
+   "pieces": 155,
+   "coverage": 0.9419354838709677,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "ends at image edge",
+   "pieces": 199,
+   "coverage": 0.9798994974874372,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "starts or ends at edge",
+   "pieces": 307,
+   "coverage": 0.9706840390879479,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "neither",
+   "pieces": 441,
+   "coverage": 0.9977324263038548,
+   "accuracy": 0.9863636363636363,
+   "wrong": 6,
+   "mixed_labels": 0
+  },
+  {
+   "set": "re-entry pieces (k >= 1)",
+   "pieces": 49,
+   "coverage": 0.8163265306122449,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "piece of a return's row A",
+   "pieces": 113,
+   "coverage": 0.9911504424778761,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "piece of a return's row B",
+   "pieces": 112,
+   "coverage": 0.9642857142857143,
+   "accuracy": 1.0,
+   "wrong": 0,
+   "mixed_labels": 0
+  },
+  {
+   "set": "rows < 10",
+   "pieces": 45,
+   "coverage": 0.9777777777777777,
+   "accuracy": 0.9772727272727273,
+   "wrong": 1,
+   "mixed_labels": 0
+  },
+  {
+   "set": "rows 10-49",
+   "pieces": 222,
+   "coverage": 0.972972972972973,
+   "accuracy": 0.9953703703703703,
+   "wrong": 1,
+   "mixed_labels": 0
+  },
+  {
+   "set": "rows 50-199",
+   "pieces": 294,
+   "coverage": 0.9897959183673469,
+   "accuracy": 0.9896907216494846,
+   "wrong": 3,
+   "mixed_labels": 0
+  },
+  {
+   "set": "rows >= 200",
+   "pieces": 187,
+   "coverage": 1.0,
+   "accuracy": 0.9946524064171123,
+   "wrong": 1,
+   "mixed_labels": 0
+  },
+  {
+   "set": "annotated goalkeepers",
+   "pieces": 41,
+   "coverage": 1.0,
+   "accuracy": 0.926829268292683,
+   "wrong": 3,
+   "mixed_labels": 0
+  },
+  {
+   "set": "team check verdict = consistent",
+   "pieces": 504,
+   "coverage": 1.0,
+   "accuracy": 0.996031746031746,
+   "wrong": 2,
+   "mixed_labels": 0
+  },
+  {
+   "set": "team check verdict = not_listed",
+   "pieces": 40,
+   "coverage": 0.975,
+   "accuracy": 0.9230769230769231,
+   "wrong": 3,
+   "mixed_labels": 0
+  },
+  {
+   "set": "team check verdict = unchecked",
+   "pieces": 204,
+   "coverage": 0.9558823529411765,
+   "accuracy": 0.9948717948717949,
+   "wrong": 1,
+   "mixed_labels": 0
+  }
+ ],
+ "team_referee_pieces": {
+  "pieces": 59,
+  "with_team": 1
+ },
+ "team_return_pairs": {
+  "scored_returns": 137,
+  "both_pieces_have_team": 116,
+  "labels_equal": 110,
+  "labels_differ": 6,
+  "one_missing": 21,
+  "both_missing": 0,
+  "A_team_wrong": 4,
+  "B_team_wrong": 4,
+  "both_verified(consistent)": 75
+ },
+ "team_pairs_all": [
+  {
+   "pair type (annotation)": "same_person",
+   "pairs": 737,
+   "both labelled": 714,
+   "share labelled": 0.9687924016282226,
+   "labels equal": 709,
+   "equal share": 0.9929971988795518
+  },
+  {
+   "pair type (annotation)": "diff_person_same_team",
+   "pairs": 5532,
+   "both labelled": 5361,
+   "share labelled": 0.9690889370932755,
+   "labels equal": 5286,
+   "equal share": 0.9860100727476218
+  },
+  {
+   "pair type (annotation)": "diff_person_diff_team",
+   "pairs": 6348,
+   "both labelled": 6159,
+   "share labelled": 0.970226843100189,
+   "labels equal": 72,
+   "equal share": 0.011690209449585971
+  }
+ ],
+ "role_rows_accuracy": 0.9978,
+ "role_pieces_accuracy": 0.995,
+ "role_return_pieces": {
+  "pieces": 218,
+  "accuracy": 0.9954,
+  "wrong": 1,
+  "role_major_share_p10": 1.0,
+  "mixed_role_pieces": 0
+ },
+ "role_return_pairs": {
+  "pairs": 137,
+  "A_role_ok": 136,
+  "B_role_ok": 137,
+  "A_and_B_roles_equal": 136,
+  "roles_differ": 1,
+  "ref_goalkeeper_returns": 0
+ },
+ "role_pairs_all": {
+  "same_person_pairs": 803,
+  "same_person_roles_equal": 798,
+  "diff_person_pairs": 14009,
+  "diff_person_roles_equal": 10512
+ },
+ "team_linkable_return_pairs": {
+  "returns_both_pieces_are_the_person": 89,
+  "both_labelled": 84,
+  "labels_equal": 84,
+  "labels_differ": 0,
+  "one_label_missing": 5,
+  "A_missing": 1,
+  "B_missing": 4,
+  "roles_equal": 89
+ },
+ "team_inherit_from_plugin_sibling": {
+  "pieces_with_identity_without_team": 10,
+  "a_sibling_piece_of_the_plugin_id_has_a_team": 9,
+  "sibling_team_right": 8,
+  "sibling_team_wrong": 1
+ }
+}

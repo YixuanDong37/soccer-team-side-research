@@ -1,0 +1,16 @@
+tables rebuilt in-process equal the cache: SNGS-162 fold None 33 cuts
+tables rebuilt in-process equal the cache: SNGS-162 fold SNGS-162 32 cuts
+tables rebuilt in-process equal the cache: SNGS-162 fold SNGS-107 33 cuts
+METHOD_strict.json equal to the file on disk
+METHOD_balanced.json equal to the file on disk
+METHOD_recall.json equal to the file on disk
+METHOD_frozen_strict.json equal to the file on disk
+METHOD_frozen_balanced.json equal to the file on disk
+METHOD_frozen_recall.json equal to the file on disk
+files opened: 1543 distinct: 965
+annotation files opened: []
+scorer / gbf.evaluate files opened: []
+gbf-data paths outside gsr-runs/SNGS-*: []
+label-reading modules loaded: []
+path roots opened: ['C:/Research/gbf-data/gsr-runs/SNGS-066/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-066/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-067/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-067/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-097/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-097/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-100/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-100/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-102/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-102/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-106/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-106/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-107/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-107/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-112/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-112/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-151/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-151/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-161/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-161/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-162/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-162/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-163/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-163/reid-embeddings.npz', 'C:/Research/gbf-data/gsr-runs/SNGS-169/gbf', 'C:/Research/gbf-data/gsr-runs/SNGS-169/reid-embeddings.npz', 'C:/Research/plugins/tools/reid_lab/__pycache__', 'C:/Research/plugins/tools/reid_lab/work', 'C:/Research/soccer-team-side-research/gbf/.venv/Lib', '<python-install-dir>']
+AUDIT clean

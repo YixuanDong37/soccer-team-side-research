@@ -1,0 +1,7 @@
+oracle,right,wrong,lost,links,links_wrong,impure_row_share
+O1 link by majority person (>= 5 rows),105,7,25,505,0,0.02614
+O2 link by majority person (>= 1 row),128,8,1,775,0,0.02614
+"O3 cut at identity changes, then link",130,6,1,857,0,0.00517
+(baseline) split,0,4,133,0,0,0.02614
+(baseline) plugin,30,14,93,93,10,0.03085
+(baseline) mutual,26,6,105,69,7,0.03028

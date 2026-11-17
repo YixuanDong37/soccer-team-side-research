@@ -1,0 +1,30 @@
+{
+ "gbf now (split)": {
+  "identities_with_two_people": 76,
+  "completeness": 0.6771,
+  "impure_rows": 2874,
+  "rows": 109938,
+  "impure_share": 0.02614
+ },
+ "plugin": {
+  "identities_with_two_people": 85,
+  "completeness": 0.692,
+  "impure_rows": 3392,
+  "rows": 109938,
+  "impure_share": 0.03085
+ },
+ "mutual": {
+  "identities_with_two_people": 80,
+  "completeness": 0.7201,
+  "impure_rows": 3329,
+  "rows": 109938,
+  "impure_share": 0.03028
+ },
+ "cuts only": {
+  "identities_with_two_people": 35,
+  "completeness": 0.677,
+  "impure_rows": 1098,
+  "rows": 109938,
+  "impure_share": 0.00999
+ }
+}

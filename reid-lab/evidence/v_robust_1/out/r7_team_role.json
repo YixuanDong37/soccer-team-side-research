@@ -1,0 +1,165 @@
+{
+ "strict": {
+  "links": 344,
+  "team_one_missing": 10,
+  "second_partner": 0,
+  "groups": 204,
+  "g_team2": 0,
+  "g_role2": 0,
+  "g_shared": 0
+ },
+ "balanced": {
+  "links": 424,
+  "team_one_missing": 14,
+  "second_partner": 0,
+  "groups": 220,
+  "g_team2": 0,
+  "g_role2": 0,
+  "g_shared": 0
+ },
+ "recall": {
+  "links": 691,
+  "team_one_missing": 34,
+  "second_partner": 125,
+  "groups": 257,
+  "g_team2": 0,
+  "g_role2": 2,
+  "g_shared": 0,
+  "role_diff": 2,
+  "role_pg": 2
+ },
+ "fixed_strict": {
+  "links": 347,
+  "team_one_missing": 11,
+  "second_partner": 0,
+  "groups": 206,
+  "g_team2": 0,
+  "g_role2": 0,
+  "g_shared": 0
+ },
+ "fixed_balanced": {
+  "links": 403,
+  "team_one_missing": 15,
+  "second_partner": 0,
+  "groups": 223,
+  "g_team2": 0,
+  "g_role2": 1,
+  "g_shared": 0,
+  "role_diff": 1,
+  "role_pg": 1
+ },
+ "fixed_recall": {
+  "links": 743,
+  "team_one_missing": 40,
+  "second_partner": 159,
+  "groups": 256,
+  "g_team2": 0,
+  "g_role2": 2,
+  "g_shared": 0,
+  "role_diff": 2,
+  "role_pg": 2
+ },
+ "frozen_strict": {
+  "links": 345,
+  "team_one_missing": 11,
+  "second_partner": 0,
+  "groups": 206,
+  "g_team2": 0,
+  "g_role2": 0,
+  "g_shared": 0
+ },
+ "frozen_balanced": {
+  "links": 403,
+  "team_one_missing": 15,
+  "second_partner": 0,
+  "groups": 224,
+  "g_team2": 0,
+  "g_role2": 1,
+  "g_shared": 0,
+  "role_diff": 1,
+  "role_pg": 1
+ },
+ "frozen_recall": {
+  "links": 743,
+  "team_one_missing": 39,
+  "second_partner": 163,
+  "groups": 255,
+  "g_team2": 0,
+  "g_role2": 2,
+  "g_shared": 0,
+  "role_diff": 2,
+  "role_pg": 2
+ },
+ "labels_strict": {
+  "matched": 338,
+  "same": 329,
+  "different": 9,
+  "different_team": 2,
+  "different_role": 0,
+  "player_goalkeeper": 0,
+  "referee_other": 0,
+  "judged_wrong": 7,
+  "judged_wrong_diff_team": 0,
+  "judged_wrong_diff_role": 0
+ },
+ "labels_balanced": {
+  "matched": 417,
+  "same": 399,
+  "different": 18,
+  "different_team": 2,
+  "different_role": 0,
+  "player_goalkeeper": 0,
+  "referee_other": 0,
+  "judged_wrong": 16,
+  "judged_wrong_diff_team": 0,
+  "judged_wrong_diff_role": 0
+ },
+ "labels_recall": {
+  "matched": 643,
+  "same": 603,
+  "different": 40,
+  "different_team": 11,
+  "different_role": 2,
+  "player_goalkeeper": 1,
+  "referee_other": 1,
+  "judged_wrong": 17,
+  "judged_wrong_diff_team": 1,
+  "judged_wrong_diff_role": 0
+ },
+ "labels_fixed_strict": {
+  "matched": 341,
+  "same": 333,
+  "different": 8,
+  "different_team": 2,
+  "different_role": 0,
+  "player_goalkeeper": 0,
+  "referee_other": 0,
+  "judged_wrong": 6,
+  "judged_wrong_diff_team": 0,
+  "judged_wrong_diff_role": 0
+ },
+ "labels_fixed_balanced": {
+  "matched": 396,
+  "same": 382,
+  "different": 14,
+  "different_team": 2,
+  "different_role": 0,
+  "player_goalkeeper": 0,
+  "referee_other": 0,
+  "judged_wrong": 12,
+  "judged_wrong_diff_team": 0,
+  "judged_wrong_diff_role": 0
+ },
+ "labels_fixed_recall": {
+  "matched": 682,
+  "same": 642,
+  "different": 40,
+  "different_team": 11,
+  "different_role": 2,
+  "player_goalkeeper": 1,
+  "referee_other": 1,
+  "judged_wrong": 17,
+  "judged_wrong_diff_team": 1,
+  "judged_wrong_diff_role": 0
+ }
+}

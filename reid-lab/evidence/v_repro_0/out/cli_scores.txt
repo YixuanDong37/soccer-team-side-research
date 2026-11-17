@@ -1,0 +1,200 @@
+### strict
+{
+ "name": "fuse point strict (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 33,
+  "wrong": 4,
+  "lost": 100,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.2409,
+  "wrong_share": 0.0292,
+  "links": 314,
+  "links_right": 152,
+  "links_wrong": 4,
+  "links_unknown": 158,
+  "link_precision": 0.9744,
+  "impure_row_share": 0.01284
+ },
+ "clips_without_entry": []
+}
+exit=0
+### balanced
+{
+ "name": "fuse point balanced (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 93,
+  "wrong": 7,
+  "lost": 37,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6788,
+  "wrong_share": 0.0511,
+  "links": 676,
+  "links_right": 290,
+  "links_wrong": 10,
+  "links_unknown": 376,
+  "link_precision": 0.9667,
+  "impure_row_share": 0.01887
+ },
+ "clips_without_entry": []
+}
+exit=0
+### recall
+{
+ "name": "fuse point recall (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 110,
+  "wrong": 7,
+  "lost": 20,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.8029,
+  "wrong_share": 0.0511,
+  "links": 761,
+  "links_right": 314,
+  "links_wrong": 10,
+  "links_unknown": 437,
+  "link_precision": 0.9691,
+  "impure_row_share": 0.01909
+ },
+ "clips_without_entry": []
+}
+exit=0
+### frozen_strict
+{
+ "name": "fuse point strict (frozen all-13 numbers: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 37,
+  "wrong": 0,
+  "lost": 100,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.2701,
+  "wrong_share": 0.0,
+  "links": 306,
+  "links_right": 152,
+  "links_wrong": 2,
+  "links_unknown": 152,
+  "link_precision": 0.987,
+  "impure_row_share": 0.01052
+ },
+ "clips_without_entry": []
+}
+exit=0
+### frozen_balanced
+{
+ "name": "fuse point balanced (frozen all-13 numbers: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 109,
+  "wrong": 6,
+  "lost": 22,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.7956,
+  "wrong_share": 0.0438,
+  "links": 744,
+  "links_right": 310,
+  "links_wrong": 10,
+  "links_unknown": 424,
+  "link_precision": 0.9688,
+  "impure_row_share": 0.01909
+ },
+ "clips_without_entry": []
+}
+exit=0
+### frozen_recall
+{
+ "name": "fuse point recall (frozen all-13 numbers: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 112,
+  "wrong": 7,
+  "lost": 18,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.8175,
+  "wrong_share": 0.0511,
+  "links": 766,
+  "links_right": 314,
+  "links_wrong": 11,
+  "links_unknown": 441,
+  "link_precision": 0.9662,
+  "impure_row_share": 0.02132
+ },
+ "clips_without_entry": []
+}
+exit=0
+### margin_0.50
+exit=127
+### margin_0.80
+{
+ "name": "fuse fixed margin 0.8 (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 51,
+  "wrong": 1,
+  "lost": 85,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.3723,
+  "wrong_share": 0.0073,
+  "links": 415,
+  "links_right": 196,
+  "links_wrong": 3,
+  "links_unknown": 216,
+  "link_precision": 0.9849,
+  "impure_row_share": 0.01196
+ },
+ "clips_without_entry": []
+}
+exit=0
+### margin_0.10
+{
+ "name": "fuse fixed margin 0.1 (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 116,
+  "wrong": 9,
+  "lost": 12,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.8467,
+  "wrong_share": 0.0657,
+  "links": 827,
+  "links_right": 330,
+  "links_wrong": 15,
+  "links_unknown": 482,
+  "link_precision": 0.9565,
+  "impure_row_share": 0.02312
+ },
+ "clips_without_entry": []
+}
+exit=0
+### margin_0.50 (second attempt; the first exited 127 without output)
+{
+ "name": "fuse fixed margin 0.5 (LOCO held-out: every clip with the numbers fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 91,
+  "wrong": 4,
+  "lost": 42,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6642,
+  "wrong_share": 0.0292,
+  "links": 624,
+  "links_right": 272,
+  "links_wrong": 7,
+  "links_unknown": 345,
+  "link_precision": 0.9749,
+  "impure_row_share": 0.01511
+ },
+ "clips_without_entry": []
+}
+exit=0

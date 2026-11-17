@@ -1,0 +1,64 @@
+# fuse_r1: uncertainty of the pooled counts (clip bootstrap, 13 clips resampled 5000 times, seed 0)
+
+Baselines: split 0 / 4 / 133; plugin 30 / 14 / 93; mutual 26 / 6 / 105
+
+## METHOD_strict.json
+
+- pooled: right 67, wrong 3 of 137; without SNGS-162: 64 / 1 / 54; SNGS-162 alone: 3 / 2 / 13
+- right share 5% / 50% / 95%: [0.382, 0.49, 0.596]; wrong share: [0.0, 0.02, 0.046] (as counts of 137: [0.0, 2.7, 6.3])
+- chance that the wrong share is within the limit: <= 4/137: 0.732, <= 7/137: 0.977, <= 14/137: 1.0 (this point's limit is 4)
+- against the baselines (same resamples): split: wrong not above 1.0, wrong below 0.654, right above 1.0, right-share gain 5%..95% [0.382, 0.596]; plugin: wrong not above 1.0, wrong below 1.0, right above 1.0, right-share gain 5%..95% [0.166, 0.373]; mutual: wrong not above 1.0, wrong below 0.89, right above 1.0, right-share gain 5%..95% [0.215, 0.379]
+- with any one clip removed: right share [0.456, 0.538], wrong count [1, 3]
+- wrong returns: 2 of 3 in one clip; 2 clips have any
+- right returns against the plugin per clip: better in 12, worse in 1 of 13
+
+## METHOD_balanced.json
+
+- pooled: right 85, wrong 5 of 137; without SNGS-162: 81 / 1 / 37; SNGS-162 alone: 4 / 4 / 10
+- right share 5% / 50% / 95%: [0.507, 0.625, 0.739]; wrong share: [0.0, 0.033, 0.082] (as counts of 137: [0.0, 4.5, 11.2])
+- chance that the wrong share is within the limit: <= 4/137: 0.418, <= 7/137: 0.739, <= 14/137: 0.991 (this point's limit is 7)
+- against the baselines (same resamples): split: wrong not above 0.46, wrong below 0.273, right above 1.0, right-share gain 5%..95% [0.507, 0.739]; plugin: wrong not above 1.0, wrong below 1.0, right above 1.0, right-share gain 5%..95% [0.307, 0.496]; mutual: wrong not above 1.0, wrong below 0.654, right above 1.0, right-share gain 5%..95% [0.344, 0.519]
+- with any one clip removed: right share [0.585, 0.681], wrong count [1, 5]
+- wrong returns: 4 of 5 in one clip; 2 clips have any
+- right returns against the plugin per clip: better in 12, worse in 0 of 13
+
+## METHOD_recall.json
+
+- pooled: right 106, wrong 7 of 137; without SNGS-162: 98 / 1 / 20; SNGS-162 alone: 8 / 6 / 4
+- right share 5% / 50% / 95%: [0.675, 0.778, 0.872]; wrong share: [0.0, 0.048, 0.119] (as counts of 137: [0.0, 6.6, 16.3])
+- chance that the wrong share is within the limit: <= 4/137: 0.349, <= 7/137: 0.566, <= 14/137: 0.908 (this point's limit is 14)
+- against the baselines (same resamples): split: wrong not above 0.361, wrong below 0.244, right above 1.0, right-share gain 5%..95% [0.675, 0.872]; plugin: wrong not above 0.992, wrong below 0.976, right above 1.0, right-share gain 5%..95% [0.463, 0.638]; mutual: wrong not above 0.46, wrong below 0.273, right above 1.0, right-share gain 5%..95% [0.504, 0.662]
+- with any one clip removed: right share [0.746, 0.824], wrong count [1, 7]
+- wrong returns: 6 of 7 in one clip; 2 clips have any
+- right returns against the plugin per clip: better in 12, worse in 0 of 13
+
+## METHOD_fixed_strict.json
+
+- pooled: right 70, wrong 2 of 137; without SNGS-162: 67 / 0 / 52; SNGS-162 alone: 3 / 2 / 13
+- right share 5% / 50% / 95%: [0.4, 0.513, 0.622]; wrong share: [0.0, 0.014, 0.038] (as counts of 137: [0.0, 1.9, 5.2])
+- chance that the wrong share is within the limit: <= 4/137: 0.88, <= 7/137: 0.993, <= 14/137: 1.0 (this point's limit is 4)
+- against the baselines (same resamples): split: wrong not above 1.0, wrong below 0.889, right above 1.0, right-share gain 5%..95% [0.4, 0.622]; plugin: wrong not above 1.0, wrong below 1.0, right above 1.0, right-share gain 5%..95% [0.193, 0.387]; mutual: wrong not above 1.0, wrong below 0.968, right above 1.0, right-share gain 5%..95% [0.238, 0.398]
+- with any one clip removed: right share [0.48, 0.563], wrong count [0, 2]
+- wrong returns: 2 of 2 in one clip; 1 clips have any
+- right returns against the plugin per clip: better in 12, worse in 1 of 13
+
+## METHOD_fixed_balanced.json
+
+- pooled: right 85, wrong 4 of 137; without SNGS-162: 81 / 1 / 37; SNGS-162 alone: 4 / 3 / 11
+- right share 5% / 50% / 95%: [0.513, 0.626, 0.73]; wrong share: [0.0, 0.026, 0.064] (as counts of 137: [0.0, 3.6, 8.8])
+- chance that the wrong share is within the limit: <= 4/137: 0.566, <= 7/137: 0.867, <= 14/137: 0.999 (this point's limit is 7)
+- against the baselines (same resamples): split: wrong not above 0.658, wrong below 0.359, right above 1.0, right-share gain 5%..95% [0.513, 0.73]; plugin: wrong not above 1.0, wrong below 1.0, right above 1.0, right-share gain 5%..95% [0.31, 0.493]; mutual: wrong not above 1.0, wrong below 0.89, right above 1.0, right-share gain 5%..95% [0.35, 0.513]
+- with any one clip removed: right share [0.593, 0.681], wrong count [1, 4]
+- wrong returns: 3 of 4 in one clip; 2 clips have any
+- right returns against the plugin per clip: better in 12, worse in 0 of 13
+
+## METHOD_fixed_recall.json
+
+- pooled: right 112, wrong 7 of 137; without SNGS-162: 104 / 1 / 14; SNGS-162 alone: 8 / 6 / 4
+- right share 5% / 50% / 95%: [0.708, 0.823, 0.918]; wrong share: [0.0, 0.048, 0.119] (as counts of 137: [0.0, 6.6, 16.3])
+- chance that the wrong share is within the limit: <= 4/137: 0.349, <= 7/137: 0.566, <= 14/137: 0.908 (this point's limit is 14)
+- against the baselines (same resamples): split: wrong not above 0.361, wrong below 0.244, right above 1.0, right-share gain 5%..95% [0.708, 0.918]; plugin: wrong not above 0.992, wrong below 0.976, right above 1.0, right-share gain 5%..95% [0.5, 0.698]; mutual: wrong not above 0.46, wrong below 0.273, right above 1.0, right-share gain 5%..95% [0.541, 0.709]
+- with any one clip removed: right share [0.793, 0.874], wrong count [1, 7]
+- wrong returns: 6 of 7 in one clip; 2 clips have any
+- right returns against the plugin per clip: better in 13, worse in 0 of 13
+

@@ -1,0 +1,16 @@
+annotated returns: 167 {'lost': 137, 'undetected': 30}
+links right / wrong / unknown: 0 0 0 | impure rows 1098 of 109938 = 0.00999
+ties in the majority of the identity of B: 0
+  SNGS-107: right 0 wrong 0 lost 16 undetected 2 untracked 0 | links 0 / 0 / 0 | impure 13
+  SNGS-163: right 0 wrong 0 lost 11 undetected 5 untracked 0 | links 0 / 0 / 0 | impure 171
+  SNGS-106: right 0 wrong 0 lost 7 undetected 1 untracked 0 | links 0 / 0 / 0 | impure 60
+  SNGS-097: right 0 wrong 0 lost 6 undetected 4 untracked 0 | links 0 / 0 / 0 | impure 171
+  SNGS-067: right 0 wrong 0 lost 10 undetected 3 untracked 0 | links 0 / 0 / 0 | impure 119
+  SNGS-100: right 0 wrong 0 lost 4 undetected 1 untracked 0 | links 0 / 0 / 0 | impure 55
+  SNGS-066: right 0 wrong 0 lost 11 undetected 2 untracked 0 | links 0 / 0 / 0 | impure 349
+  SNGS-161: right 0 wrong 0 lost 14 undetected 2 untracked 0 | links 0 / 0 / 0 | impure 17
+  SNGS-169: right 0 wrong 0 lost 15 undetected 1 untracked 0 | links 0 / 0 / 0 | impure 44
+  SNGS-162: right 0 wrong 0 lost 18 undetected 2 untracked 0 | links 0 / 0 / 0 | impure 51
+  SNGS-151: right 0 wrong 0 lost 9 undetected 5 untracked 0 | links 0 / 0 / 0 | impure 28
+  SNGS-102: right 0 wrong 0 lost 12 undetected 2 untracked 0 | links 0 / 0 / 0 | impure 11
+  SNGS-112: right 0 wrong 0 lost 4 undetected 0 untracked 0 | links 0 / 0 / 0 | impure 9

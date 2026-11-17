@@ -1,0 +1,21 @@
+SNGS-162
+  annotation shifted by -2 frames, scale 1.5: 6584 matched pairs, mean IoU 0.736
+  annotation shifted by -1 frames, scale 1.5: 8602 matched pairs, mean IoU 0.785
+  annotation shifted by +0 frames, scale 1.5: 9270 matched pairs, mean IoU 0.813
+  annotation shifted by +1 frames, scale 1.5: 7349 matched pairs, mean IoU 0.734
+  annotation shifted by +2 frames, scale 1.5: 5254 matched pairs, mean IoU 0.721
+  shift 0, scale 1.0: 155 matched pairs
+SNGS-107
+  annotation shifted by -2 frames, scale 1.5: 6555 matched pairs, mean IoU 0.730
+  annotation shifted by -1 frames, scale 1.5: 8123 matched pairs, mean IoU 0.778
+  annotation shifted by +0 frames, scale 1.5: 8207 matched pairs, mean IoU 0.783
+  annotation shifted by +1 frames, scale 1.5: 6642 matched pairs, mean IoU 0.726
+  annotation shifted by +2 frames, scale 1.5: 4941 matched pairs, mean IoU 0.721
+  shift 0, scale 1.0: 56 matched pairs
+SNGS-151
+  annotation shifted by -2 frames, scale 1.5: 6726 matched pairs, mean IoU 0.789
+  annotation shifted by -1 frames, scale 1.5: 7653 matched pairs, mean IoU 0.836
+  annotation shifted by +0 frames, scale 1.5: 7833 matched pairs, mean IoU 0.850
+  annotation shifted by +1 frames, scale 1.5: 6961 matched pairs, mean IoU 0.793
+  annotation shifted by +2 frames, scale 1.5: 5905 matched pairs, mean IoU 0.768
+  shift 0, scale 1.0: 37 matched pairs

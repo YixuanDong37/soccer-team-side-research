@@ -1,0 +1,701 @@
+{
+ "returns": {
+  "strict": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 14,
+    "wrong": 0,
+    "lost": 4,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 28,
+    "wrong": 1,
+    "lost": 13,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 14,
+    "wrong": 2,
+    "lost": 27,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 11,
+    "wrong": 0,
+    "lost": 23,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "balanced": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 15,
+    "wrong": 1,
+    "lost": 2,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 32,
+    "wrong": 1,
+    "lost": 9,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 22,
+    "wrong": 3,
+    "lost": 18,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 16,
+    "wrong": 0,
+    "lost": 18,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "recall": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 17,
+    "wrong": 1,
+    "lost": 0,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 36,
+    "wrong": 3,
+    "lost": 3,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 31,
+    "wrong": 3,
+    "lost": 9,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 22,
+    "wrong": 0,
+    "lost": 12,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "fixed_strict": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 15,
+    "wrong": 0,
+    "lost": 3,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 28,
+    "wrong": 0,
+    "lost": 14,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 14,
+    "wrong": 2,
+    "lost": 27,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 13,
+    "wrong": 0,
+    "lost": 21,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "fixed_balanced": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 15,
+    "wrong": 1,
+    "lost": 2,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 31,
+    "wrong": 1,
+    "lost": 10,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 23,
+    "wrong": 2,
+    "lost": 18,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 16,
+    "wrong": 0,
+    "lost": 18,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "fixed_recall": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 17,
+    "wrong": 1,
+    "lost": 0,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 37,
+    "wrong": 3,
+    "lost": 2,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 32,
+    "wrong": 3,
+    "lost": 8,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 26,
+    "wrong": 0,
+    "lost": 8,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "plugin": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 9,
+    "wrong": 0,
+    "lost": 9,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 14,
+    "wrong": 6,
+    "lost": 22,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 7,
+    "wrong": 5,
+    "lost": 31,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 0,
+    "wrong": 3,
+    "lost": 31,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "split": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 0,
+    "wrong": 0,
+    "lost": 18,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 0,
+    "wrong": 2,
+    "lost": 40,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 0,
+    "wrong": 1,
+    "lost": 42,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 0,
+    "wrong": 1,
+    "lost": 33,
+    "undetected": 10,
+    "untracked": 0
+   }
+  },
+  "mutual": {
+   "0.4-2 s (10-49 fr)": {
+    "right": 4,
+    "wrong": 1,
+    "lost": 13,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "2-5 s (50-124)": {
+    "right": 11,
+    "wrong": 2,
+    "lost": 29,
+    "undetected": 7,
+    "untracked": 0
+   },
+   "5-10 s (125-250)": {
+    "right": 11,
+    "wrong": 2,
+    "lost": 30,
+    "undetected": 6,
+    "untracked": 0
+   },
+   "> 10 s (251+)": {
+    "right": 0,
+    "wrong": 1,
+    "lost": 33,
+    "undetected": 10,
+    "untracked": 0
+   }
+  }
+ },
+ "links": {
+  "strict": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 87,
+    "judged_right": 75,
+    "judged_wrong": 0,
+    "judged_unknown": 12,
+    "weak_agree": 83,
+    "weak_disagree": 2,
+    "weak_none": 2
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 143,
+    "judged_right": 131,
+    "judged_wrong": 3,
+    "judged_unknown": 9,
+    "weak_agree": 137,
+    "weak_disagree": 3,
+    "weak_none": 3
+   },
+   "2-5 s (50-124)": {
+    "links": 70,
+    "judged_right": 64,
+    "judged_wrong": 3,
+    "judged_unknown": 3,
+    "weak_agree": 67,
+    "weak_disagree": 3,
+    "weak_none": 0
+   },
+   "5-10 s (125-250)": {
+    "links": 30,
+    "judged_right": 28,
+    "judged_wrong": 1,
+    "judged_unknown": 1,
+    "weak_agree": 28,
+    "weak_disagree": 1,
+    "weak_none": 1
+   },
+   "> 10 s (251+)": {
+    "links": 14,
+    "judged_right": 14,
+    "judged_wrong": 0,
+    "judged_unknown": 0,
+    "weak_agree": 14,
+    "weak_disagree": 0,
+    "weak_none": 0
+   }
+  },
+  "balanced": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 98,
+    "judged_right": 83,
+    "judged_wrong": 0,
+    "judged_unknown": 15,
+    "weak_agree": 94,
+    "weak_disagree": 2,
+    "weak_none": 2
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 163,
+    "judged_right": 148,
+    "judged_wrong": 6,
+    "judged_unknown": 9,
+    "weak_agree": 154,
+    "weak_disagree": 6,
+    "weak_none": 3
+   },
+   "2-5 s (50-124)": {
+    "links": 87,
+    "judged_right": 78,
+    "judged_wrong": 5,
+    "judged_unknown": 4,
+    "weak_agree": 81,
+    "weak_disagree": 5,
+    "weak_none": 1
+   },
+   "5-10 s (125-250)": {
+    "links": 51,
+    "judged_right": 45,
+    "judged_wrong": 5,
+    "judged_unknown": 1,
+    "weak_agree": 45,
+    "weak_disagree": 5,
+    "weak_none": 1
+   },
+   "> 10 s (251+)": {
+    "links": 25,
+    "judged_right": 24,
+    "judged_wrong": 0,
+    "judged_unknown": 1,
+    "weak_agree": 25,
+    "weak_disagree": 0,
+    "weak_none": 0
+   }
+  },
+  "recall": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 224,
+    "judged_right": 95,
+    "judged_wrong": 0,
+    "judged_unknown": 129,
+    "weak_agree": 193,
+    "weak_disagree": 7,
+    "weak_none": 24
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 229,
+    "judged_right": 150,
+    "judged_wrong": 6,
+    "judged_unknown": 73,
+    "weak_agree": 205,
+    "weak_disagree": 10,
+    "weak_none": 14
+   },
+   "2-5 s (50-124)": {
+    "links": 115,
+    "judged_right": 83,
+    "judged_wrong": 6,
+    "judged_unknown": 26,
+    "weak_agree": 102,
+    "weak_disagree": 8,
+    "weak_none": 5
+   },
+   "5-10 s (125-250)": {
+    "links": 77,
+    "judged_right": 51,
+    "judged_wrong": 5,
+    "judged_unknown": 21,
+    "weak_agree": 62,
+    "weak_disagree": 12,
+    "weak_none": 3
+   },
+   "> 10 s (251+)": {
+    "links": 46,
+    "judged_right": 35,
+    "judged_wrong": 0,
+    "judged_unknown": 11,
+    "weak_agree": 41,
+    "weak_disagree": 3,
+    "weak_none": 2
+   }
+  },
+  "fixed_strict": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 87,
+    "judged_right": 76,
+    "judged_wrong": 0,
+    "judged_unknown": 11,
+    "weak_agree": 83,
+    "weak_disagree": 2,
+    "weak_none": 2
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 145,
+    "judged_right": 134,
+    "judged_wrong": 3,
+    "judged_unknown": 8,
+    "weak_agree": 139,
+    "weak_disagree": 3,
+    "weak_none": 3
+   },
+   "2-5 s (50-124)": {
+    "links": 68,
+    "judged_right": 64,
+    "judged_wrong": 2,
+    "judged_unknown": 2,
+    "weak_agree": 66,
+    "weak_disagree": 2,
+    "weak_none": 0
+   },
+   "5-10 s (125-250)": {
+    "links": 30,
+    "judged_right": 28,
+    "judged_wrong": 1,
+    "judged_unknown": 1,
+    "weak_agree": 28,
+    "weak_disagree": 1,
+    "weak_none": 1
+   },
+   "> 10 s (251+)": {
+    "links": 17,
+    "judged_right": 17,
+    "judged_wrong": 0,
+    "judged_unknown": 0,
+    "weak_agree": 17,
+    "weak_disagree": 0,
+    "weak_none": 0
+   }
+  },
+  "fixed_balanced": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 93,
+    "judged_right": 77,
+    "judged_wrong": 1,
+    "judged_unknown": 15,
+    "weak_agree": 88,
+    "weak_disagree": 3,
+    "weak_none": 2
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 158,
+    "judged_right": 145,
+    "judged_wrong": 4,
+    "judged_unknown": 9,
+    "weak_agree": 151,
+    "weak_disagree": 4,
+    "weak_none": 3
+   },
+   "2-5 s (50-124)": {
+    "links": 80,
+    "judged_right": 72,
+    "judged_wrong": 4,
+    "judged_unknown": 4,
+    "weak_agree": 75,
+    "weak_disagree": 4,
+    "weak_none": 1
+   },
+   "5-10 s (125-250)": {
+    "links": 48,
+    "judged_right": 44,
+    "judged_wrong": 3,
+    "judged_unknown": 1,
+    "weak_agree": 44,
+    "weak_disagree": 3,
+    "weak_none": 1
+   },
+   "> 10 s (251+)": {
+    "links": 24,
+    "judged_right": 23,
+    "judged_wrong": 0,
+    "judged_unknown": 1,
+    "weak_agree": 24,
+    "weak_disagree": 0,
+    "weak_none": 0
+   }
+  },
+  "fixed_recall": {
+   "< 0.4 s (< 10 fr)": {
+    "links": 244,
+    "judged_right": 95,
+    "judged_wrong": 0,
+    "judged_unknown": 149,
+    "weak_agree": 207,
+    "weak_disagree": 7,
+    "weak_none": 30
+   },
+   "0.4-2 s (10-49 fr)": {
+    "links": 244,
+    "judged_right": 150,
+    "judged_wrong": 6,
+    "judged_unknown": 88,
+    "weak_agree": 217,
+    "weak_disagree": 10,
+    "weak_none": 17
+   },
+   "2-5 s (50-124)": {
+    "links": 125,
+    "judged_right": 83,
+    "judged_wrong": 6,
+    "judged_unknown": 36,
+    "weak_agree": 109,
+    "weak_disagree": 8,
+    "weak_none": 8
+   },
+   "5-10 s (125-250)": {
+    "links": 79,
+    "judged_right": 52,
+    "judged_wrong": 5,
+    "judged_unknown": 22,
+    "weak_agree": 63,
+    "weak_disagree": 12,
+    "weak_none": 4
+   },
+   "> 10 s (251+)": {
+    "links": 51,
+    "judged_right": 35,
+    "judged_wrong": 0,
+    "judged_unknown": 16,
+    "weak_agree": 46,
+    "weak_disagree": 3,
+    "weak_none": 2
+   }
+  }
+ },
+ "long_per_clip": {
+  "strict": {
+   "SNGS-067": {
+    "right": 1
+   },
+   "SNGS-100": {
+    "lost": 1
+   },
+   "SNGS-102": {
+    "right": 3,
+    "lost": 2
+   },
+   "SNGS-106": {
+    "lost": 1
+   },
+   "SNGS-107": {
+    "lost": 8,
+    "right": 1
+   },
+   "SNGS-151": {
+    "lost": 1,
+    "right": 1
+   },
+   "SNGS-161": {
+    "right": 3,
+    "lost": 2
+   },
+   "SNGS-162": {
+    "lost": 1
+   },
+   "SNGS-163": {
+    "lost": 7,
+    "right": 1
+   },
+   "SNGS-169": {
+    "right": 1
+   }
+  },
+  "balanced": {
+   "SNGS-067": {
+    "right": 1
+   },
+   "SNGS-100": {
+    "lost": 1
+   },
+   "SNGS-102": {
+    "right": 3,
+    "lost": 2
+   },
+   "SNGS-106": {
+    "lost": 1
+   },
+   "SNGS-107": {
+    "lost": 7,
+    "right": 2
+   },
+   "SNGS-151": {
+    "lost": 1,
+    "right": 1
+   },
+   "SNGS-161": {
+    "right": 5
+   },
+   "SNGS-162": {
+    "lost": 1
+   },
+   "SNGS-163": {
+    "lost": 5,
+    "right": 3
+   },
+   "SNGS-169": {
+    "right": 1
+   }
+  },
+  "recall": {
+   "SNGS-067": {
+    "right": 1
+   },
+   "SNGS-100": {
+    "lost": 1
+   },
+   "SNGS-102": {
+    "right": 3,
+    "lost": 2
+   },
+   "SNGS-106": {
+    "lost": 1
+   },
+   "SNGS-107": {
+    "right": 5,
+    "lost": 4
+   },
+   "SNGS-151": {
+    "right": 2
+   },
+   "SNGS-161": {
+    "right": 5
+   },
+   "SNGS-162": {
+    "lost": 1
+   },
+   "SNGS-163": {
+    "right": 5,
+    "lost": 3
+   },
+   "SNGS-169": {
+    "right": 1
+   }
+  },
+  "plugin": {
+   "SNGS-067": {
+    "lost": 1
+   },
+   "SNGS-100": {
+    "lost": 1
+   },
+   "SNGS-102": {
+    "lost": 5
+   },
+   "SNGS-106": {
+    "wrong": 1
+   },
+   "SNGS-107": {
+    "lost": 8,
+    "wrong": 1
+   },
+   "SNGS-151": {
+    "lost": 2
+   },
+   "SNGS-161": {
+    "lost": 5
+   },
+   "SNGS-162": {
+    "wrong": 1
+   },
+   "SNGS-163": {
+    "lost": 8
+   },
+   "SNGS-169": {
+    "lost": 1
+   }
+  }
+ }
+}

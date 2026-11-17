@@ -1,0 +1,9 @@
+[2026-11-15 18:33:40] R: remove the earlier fits and every cache
+[2026-11-15 18:33:40] R: m_cuts make_methods.py
+[2026-11-15 18:34:25] R: m_space run_position_linker.py
+[2026-11-15 18:35:37] R: m_space posscore.py
+[2026-11-15 18:36:13] R: fuse_r1 prep.py
+[2026-11-15 18:37:57] R: fuse_r1 fit_loco.py
+[2026-11-15 18:43:10] R: fuse_r1 method.py
+[2026-11-15 18:45:44] R done
+exit=0

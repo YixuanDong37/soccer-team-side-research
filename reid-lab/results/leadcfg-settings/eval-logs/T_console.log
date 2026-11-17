@@ -1,0 +1,11 @@
+[2026-11-15 18:28:57] check: score.py against each clip's reentry-eval.json
+mutual {"scored": 156, "right": 38, "wrong": 10, "lost": 108, "undetected": 11, "untracked": 0, "right_share": 0.2436, "wrong_share": 0.0641, "links": 66, "links_right": 58, "links_wrong": 8, "links_unknown": 0, "link_precision": 0.8788, "impure_row_share": 0.03279}
+problems: none
+[2026-11-15 18:29:13] baselines
+plugin {'scored': 156, 'right': 7, 'wrong': 7, 'lost': 142, 'undetected': 11, 'untracked': 0, 'links_right': 9, 'links_wrong': 6, 'links_unknown': 28, 'impure_row_share': 0.02928}
+split {'scored': 156, 'right': 0, 'wrong': 3, 'lost': 153, 'undetected': 11, 'untracked': 0, 'links_right': 0, 'links_wrong': 0, 'links_unknown': 0, 'impure_row_share': 0.02618}
+mutual {'scored': 156, 'right': 38, 'wrong': 10, 'lost': 108, 'undetected': 11, 'untracked': 0, 'links_right': 58, 'links_wrong': 8, 'links_unknown': 0, 'impure_row_share': 0.03279}
+[2026-11-15 18:29:28] T: evidence tables with the earlier fits (prep.py)
+[2026-11-15 18:30:44] T: METHOD files with the earlier fits (method.py)
+[2026-11-15 18:33:20] T done
+exit=0

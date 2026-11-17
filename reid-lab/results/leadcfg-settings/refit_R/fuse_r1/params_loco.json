@@ -1,0 +1,562 @@
+{
+ "SNGS-107": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.2937439704478,
+    0.453368358708184,
+    0.7813951220676993
+   ],
+   "b": -6.144762564940292,
+   "n": 3550,
+   "pos": 273,
+   "nll": 0.076105180541778
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-107]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_107.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-163": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.43965725617717,
+    0.45599549260716,
+    0.8427134105980212
+   ],
+   "b": -6.246760775193136,
+   "n": 3499,
+   "pos": 272,
+   "nll": 0.07319148041341551
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-163]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_163.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-106": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.190318887018843,
+    0.4507851169761361,
+    1.528304164152058
+   ],
+   "b": -6.1361065657487766,
+   "n": 3582,
+   "pos": 279,
+   "nll": 0.07405293987280588
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.9
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-106]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_106.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-097": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.444647058403253,
+    0.45713201703668843,
+    0.64230232651927
+   ],
+   "b": -6.209741239744857,
+   "n": 3676,
+   "pos": 279,
+   "nll": 0.07441690238239541
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-097]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_097.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-067": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.322795515189646,
+    0.43268337810158747,
+    0.8224033726715533
+   ],
+   "b": -6.119686622313061,
+   "n": 3374,
+   "pos": 266,
+   "nll": 0.07548924757650465
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.55
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-067]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_067.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-100": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.557412570257008,
+    0.4277092215610321,
+    0.7724148839010497
+   ],
+   "b": -6.104341464898464,
+   "n": 3412,
+   "pos": 266,
+   "nll": 0.07370005542251115
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.55
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-100]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_100.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-066": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.478636233457199,
+    0.4578992113831999,
+    2.2030224232432944
+   ],
+   "b": -6.297380108055116,
+   "n": 3283,
+   "pos": 267,
+   "nll": 0.07222455202673955
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.7
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.55
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-066]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_066.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-161": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.2037005640125455,
+    0.44469178199339326,
+    0.7536222755032754
+   ],
+   "b": -6.0926067011328735,
+   "n": 3375,
+   "pos": 263,
+   "nll": 0.07858667341221559
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-161]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_161.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-169": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.37761611759063,
+    0.44890597930435083,
+    0.4043062690844715
+   ],
+   "b": -6.19725887929334,
+   "n": 3558,
+   "pos": 276,
+   "nll": 0.07515089699332805
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-169]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_169.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-162": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    8.73694378921376,
+    0.4798661199215266,
+    -1.3187754457617562
+   ],
+   "b": -6.638343828169631,
+   "n": 3276,
+   "pos": 266,
+   "nll": 0.059907570385877025
+  },
+  "choice": {
+   "strict": {
+    "leaves": true,
+    "margin": 0.55
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.25
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-162]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_162.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-151": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.292346686080576,
+    0.4533089540685288,
+    0.8129243936275785
+   ],
+   "b": -6.243205281437775,
+   "n": 3547,
+   "pos": 274,
+   "nll": 0.07390422031073225
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.3
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-151]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_151.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-102": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.535548278647532,
+    0.4447782642444559,
+    0.814172713680729
+   ],
+   "b": -6.191035979509257,
+   "n": 3637,
+   "pos": 277,
+   "nll": 0.07240197394887637
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.55
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-102]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_102.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-112": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.433584706268346,
+    0.4499538420436755,
+    0.8545445279485425
+   ],
+   "b": -6.201038130825154,
+   "n": 3675,
+   "pos": 280,
+   "nll": 0.07423830739707714
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-112]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_112.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "all13": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.443763794365771,
+    0.4494943028193296,
+    0.7433067617733489
+   ],
+   "b": -6.205176292542566,
+   "n": 3775,
+   "pos": 293,
+   "nll": 0.07364850725260887
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.8
+   },
+   "balanced": {
+    "leaves": true,
+    "margin": 0.6
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts frozen weights",
+  "p_cut": 0.7,
+  "position": "m_space/params_all13.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ }
+}

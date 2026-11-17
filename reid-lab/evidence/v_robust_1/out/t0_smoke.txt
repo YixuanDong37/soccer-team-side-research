@@ -1,0 +1,12 @@
+SNGS-112 140.7 s 570 cells
+base {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+margin -10% {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+margin +10% {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+MAX_SPEED 7.2 {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+WCCN_LAMBDA 0.27 {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+MIN_CLEAN 4 {'strict': {'right': 3, 'wrong': 0, 'lost': 1}, 'balanced': {'right': 4, 'wrong': 0, 'lost': 0}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+solid from 20 boxes {'strict': {'right': 2, 'wrong': 0, 'lost': 2}, 'balanced': {'right': 3, 'wrong': 0, 'lost': 1}, 'recall': {'right': 4, 'wrong': 0, 'lost': 0}}
+
+real	2m23.522s
+user	0m0.015s
+sys	0m0.000s

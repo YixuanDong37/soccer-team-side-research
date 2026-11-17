@@ -1,0 +1,16 @@
+family mutual: LOCO held-out (headline) and in-sample (secondary), by lam
+lam= 1 HELD-OUT right  71 wrong  9 lost  57 | links r/w/u 234/13/130 | impure 0.0332
+        in-sample right  77 wrong  9 lost  51 | links r/w/u 243/13/136 | impure 0.0332  params {'kind': 'tc', 'margin': 0.0, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "tc", "margin": 0.0, "t_abs": 0.5}': 10, '{"kind": "tc", "margin": 0.1, "t_abs": 0.5}': 2, '{"kind": "tc", "margin": 0.1, "t_abs": 0.65}': 1}
+lam= 2 HELD-OUT right  58 wrong  9 lost  70 | links r/w/u 205/11/117 | impure 0.0308
+        in-sample right  66 wrong  7 lost  64 | links r/w/u 213/ 7/121 | impure 0.0291  params {'kind': 'tc', 'margin': 0.2, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.2, "t_abs": 0.4}': 2, '{"kind": "tc", "margin": 0.2, "t_abs": 0.5}': 8, '{"kind": "tc", "margin": 0.15, "t_abs": 0.65}': 1, '{"kind": "tc", "margin": 0.2, "t_abs": 0.7}': 1, '{"kind": "w", "margin": 0.15, "t_abs": 0.4}': 1}
+lam= 3 HELD-OUT right  46 wrong  8 lost  83 | links r/w/u 161/ 9/ 89 | impure 0.0303
+        in-sample right  46 wrong  5 lost  86 | links r/w/u 160/ 1/ 86 | impure 0.0263  params {'kind': 'tc', 'margin': 0.4, 't_abs': 0.7}
+        chosen per fold: {'{"kind": "tc", "margin": 0.4, "t_abs": 0.7}': 11, '{"kind": "tc", "margin": 0.4, "t_abs": 0.65}': 1, '{"kind": "w", "margin": 0.15, "t_abs": 0.4}': 1}
+lam= 5 HELD-OUT right  46 wrong  8 lost  83 | links r/w/u 161/ 9/ 89 | impure 0.0303
+        in-sample right  46 wrong  5 lost  86 | links r/w/u 160/ 1/ 86 | impure 0.0263  params {'kind': 'tc', 'margin': 0.4, 't_abs': 0.7}
+        chosen per fold: {'{"kind": "tc", "margin": 0.4, "t_abs": 0.7}': 11, '{"kind": "tc", "margin": 0.4, "t_abs": 0.65}': 1, '{"kind": "w", "margin": 0.15, "t_abs": 0.4}': 1}
+lam=10 HELD-OUT right  46 wrong  8 lost  83 | links r/w/u 161/ 9/ 89 | impure 0.0303
+        in-sample right  46 wrong  5 lost  86 | links r/w/u 160/ 1/ 86 | impure 0.0263  params {'kind': 'tc', 'margin': 0.4, 't_abs': 0.7}
+        chosen per fold: {'{"kind": "tc", "margin": 0.4, "t_abs": 0.7}': 11, '{"kind": "tc", "margin": 0.4, "t_abs": 0.65}': 1, '{"kind": "w", "margin": 0.15, "t_abs": 0.55}': 1}

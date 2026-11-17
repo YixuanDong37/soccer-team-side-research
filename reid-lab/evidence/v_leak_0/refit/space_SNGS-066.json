@@ -1,0 +1,95 @@
+{
+ "fold": "SNGS-066",
+ "par": {
+  "s": [
+   0.3466155376260282,
+   1.43450788527336,
+   0.8211214867507253
+  ],
+  "resid": "r_adv_cv",
+  "pair": [
+   "lu",
+   "ls",
+   "tu",
+   "ee",
+   "ex",
+   "fa",
+   "ba"
+  ],
+  "ctx": [
+   "one",
+   "edge",
+   "time"
+  ],
+  "w": [
+   -1.4250016872434073,
+   -0.5771763287098493,
+   -1.1613431659920617,
+   0.1664355809146878,
+   -0.3502215436465466,
+   -0.5223661277892321,
+   -0.3476446228592839
+  ],
+  "g_in": [
+   -3.5787450984808005,
+   -0.4010248984072281,
+   -0.0026764620723286744
+  ],
+  "g_out": [
+   -0.8445892876842139,
+   1.0485809802555248,
+   -1.3030272009294712
+  ],
+  "edge_weight": 3.0,
+  "nll": 1.296867451620296,
+  "n_true": 391,
+  "n_pairs": 11309
+ },
+ "theirs_fit_clips": [
+  "SNGS-107",
+  "SNGS-163",
+  "SNGS-106",
+  "SNGS-097",
+  "SNGS-067",
+  "SNGS-100",
+  "SNGS-161",
+  "SNGS-169",
+  "SNGS-162",
+  "SNGS-151",
+  "SNGS-102",
+  "SNGS-112"
+ ],
+ "fold_in_their_fit_clips": false,
+ "max_abs_diff_vs_m_space_excl": 0.0,
+ "same_config": true,
+ "n_true": [
+  391,
+  391
+ ],
+ "n_pairs": [
+  11309,
+  11309
+ ],
+ "audit": {
+  "n_opened": 36,
+  "label_files": [
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-067/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-097/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-100/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-102/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-106/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-107/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-112/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-151/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-161/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-162/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-163/Labels-GameState.json",
+   "C:/Research/gbf-data/external/sn-gsr-2025-ce84ee7/train/SNGS-169/Labels-GameState.json"
+  ],
+  "reentry_eval": [],
+  "work_code": [],
+  "work_derived": [],
+  "blocked": []
+ },
+ "seconds": 41.6
+}

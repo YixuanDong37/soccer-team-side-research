@@ -1,0 +1,810 @@
+{
+ "split": {
+  "impure": 2874,
+  "rows": 109938,
+  "share": 0.02614,
+  "vs_split": 0,
+  "vs_cuts_only": 1776,
+  "added_by_links": null,
+  "mixed_groups": 76,
+  "groups": 1081,
+  "completeness": 0.6764,
+  "ids_per_person_mean_of_clips": 4.86,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 94,
+    "rows": 8207,
+    "mixed_groups": 2,
+    "groups": 80
+   },
+   "SNGS-163": {
+    "impure": 453,
+    "rows": 7526,
+    "mixed_groups": 8,
+    "groups": 85
+   },
+   "SNGS-106": {
+    "impure": 248,
+    "rows": 5657,
+    "mixed_groups": 10,
+    "groups": 72
+   },
+   "SNGS-097": {
+    "impure": 318,
+    "rows": 9700,
+    "mixed_groups": 4,
+    "groups": 68
+   },
+   "SNGS-067": {
+    "impure": 332,
+    "rows": 8538,
+    "mixed_groups": 12,
+    "groups": 99
+   },
+   "SNGS-100": {
+    "impure": 207,
+    "rows": 8056,
+    "mixed_groups": 9,
+    "groups": 78
+   },
+   "SNGS-066": {
+    "impure": 611,
+    "rows": 11208,
+    "mixed_groups": 13,
+    "groups": 90
+   },
+   "SNGS-161": {
+    "impure": 91,
+    "rows": 8297,
+    "mixed_groups": 2,
+    "groups": 73
+   },
+   "SNGS-169": {
+    "impure": 71,
+    "rows": 8489,
+    "mixed_groups": 5,
+    "groups": 105
+   },
+   "SNGS-162": {
+    "impure": 349,
+    "rows": 9270,
+    "mixed_groups": 6,
+    "groups": 118
+   },
+   "SNGS-151": {
+    "impure": 36,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 73
+   },
+   "SNGS-102": {
+    "impure": 25,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 61
+   },
+   "SNGS-112": {
+    "impure": 39,
+    "rows": 8321,
+    "mixed_groups": 2,
+    "groups": 79
+   }
+  }
+ },
+ "plugin": {
+  "impure": 3392,
+  "rows": 109938,
+  "share": 0.03085,
+  "vs_split": 518,
+  "vs_cuts_only": 2294,
+  "added_by_links": null,
+  "mixed_groups": 85,
+  "groups": 1003,
+  "completeness": 0.6919,
+  "ids_per_person_mean_of_clips": 4.71,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 131,
+    "rows": 8207,
+    "mixed_groups": 3,
+    "groups": 77
+   },
+   "SNGS-163": {
+    "impure": 454,
+    "rows": 7526,
+    "mixed_groups": 8,
+    "groups": 81
+   },
+   "SNGS-106": {
+    "impure": 354,
+    "rows": 5657,
+    "mixed_groups": 10,
+    "groups": 63
+   },
+   "SNGS-097": {
+    "impure": 334,
+    "rows": 9700,
+    "mixed_groups": 5,
+    "groups": 60
+   },
+   "SNGS-067": {
+    "impure": 341,
+    "rows": 8538,
+    "mixed_groups": 12,
+    "groups": 92
+   },
+   "SNGS-100": {
+    "impure": 208,
+    "rows": 8056,
+    "mixed_groups": 9,
+    "groups": 75
+   },
+   "SNGS-066": {
+    "impure": 655,
+    "rows": 11208,
+    "mixed_groups": 14,
+    "groups": 86
+   },
+   "SNGS-161": {
+    "impure": 92,
+    "rows": 8297,
+    "mixed_groups": 2,
+    "groups": 65
+   },
+   "SNGS-169": {
+    "impure": 89,
+    "rows": 8489,
+    "mixed_groups": 6,
+    "groups": 95
+   },
+   "SNGS-162": {
+    "impure": 361,
+    "rows": 9270,
+    "mixed_groups": 7,
+    "groups": 111
+   },
+   "SNGS-151": {
+    "impure": 253,
+    "rows": 7833,
+    "mixed_groups": 4,
+    "groups": 66
+   },
+   "SNGS-102": {
+    "impure": 25,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 59
+   },
+   "SNGS-112": {
+    "impure": 95,
+    "rows": 8321,
+    "mixed_groups": 4,
+    "groups": 73
+   }
+  }
+ },
+ "mutual": {
+  "impure": 3329,
+  "rows": 109938,
+  "share": 0.03028,
+  "vs_split": 455,
+  "vs_cuts_only": 2231,
+  "added_by_links": null,
+  "mixed_groups": 80,
+  "groups": 1012,
+  "completeness": 0.7224,
+  "ids_per_person_mean_of_clips": 4.63,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 94,
+    "rows": 8207,
+    "mixed_groups": 2,
+    "groups": 76
+   },
+   "SNGS-163": {
+    "impure": 453,
+    "rows": 7526,
+    "mixed_groups": 8,
+    "groups": 79
+   },
+   "SNGS-106": {
+    "impure": 256,
+    "rows": 5657,
+    "mixed_groups": 9,
+    "groups": 60
+   },
+   "SNGS-097": {
+    "impure": 318,
+    "rows": 9700,
+    "mixed_groups": 4,
+    "groups": 64
+   },
+   "SNGS-067": {
+    "impure": 332,
+    "rows": 8538,
+    "mixed_groups": 12,
+    "groups": 99
+   },
+   "SNGS-100": {
+    "impure": 245,
+    "rows": 8056,
+    "mixed_groups": 10,
+    "groups": 71
+   },
+   "SNGS-066": {
+    "impure": 611,
+    "rows": 11208,
+    "mixed_groups": 13,
+    "groups": 90
+   },
+   "SNGS-161": {
+    "impure": 91,
+    "rows": 8297,
+    "mixed_groups": 2,
+    "groups": 64
+   },
+   "SNGS-169": {
+    "impure": 129,
+    "rows": 8489,
+    "mixed_groups": 6,
+    "groups": 99
+   },
+   "SNGS-162": {
+    "impure": 700,
+    "rows": 9270,
+    "mixed_groups": 9,
+    "groups": 109
+   },
+   "SNGS-151": {
+    "impure": 36,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 71
+   },
+   "SNGS-102": {
+    "impure": 25,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 56
+   },
+   "SNGS-112": {
+    "impure": 39,
+    "rows": 8321,
+    "mixed_groups": 2,
+    "groups": 74
+   }
+  }
+ },
+ "cuts_only": {
+  "impure": 1098,
+  "rows": 109938,
+  "share": 0.00999,
+  "vs_split": -1776,
+  "vs_cuts_only": 0,
+  "added_by_links": 0,
+  "mixed_groups": 35,
+  "groups": 1248,
+  "completeness": 0.6763,
+  "ids_per_person_mean_of_clips": 4.97,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 13,
+    "rows": 8207,
+    "mixed_groups": 0,
+    "groups": 87
+   },
+   "SNGS-163": {
+    "impure": 171,
+    "rows": 7526,
+    "mixed_groups": 4,
+    "groups": 95
+   },
+   "SNGS-106": {
+    "impure": 60,
+    "rows": 5657,
+    "mixed_groups": 4,
+    "groups": 90
+   },
+   "SNGS-097": {
+    "impure": 171,
+    "rows": 9700,
+    "mixed_groups": 2,
+    "groups": 72
+   },
+   "SNGS-067": {
+    "impure": 119,
+    "rows": 8538,
+    "mixed_groups": 5,
+    "groups": 126
+   },
+   "SNGS-100": {
+    "impure": 55,
+    "rows": 8056,
+    "mixed_groups": 3,
+    "groups": 98
+   },
+   "SNGS-066": {
+    "impure": 349,
+    "rows": 11208,
+    "mixed_groups": 9,
+    "groups": 108
+   },
+   "SNGS-161": {
+    "impure": 17,
+    "rows": 8297,
+    "mixed_groups": 1,
+    "groups": 76
+   },
+   "SNGS-169": {
+    "impure": 44,
+    "rows": 8489,
+    "mixed_groups": 4,
+    "groups": 122
+   },
+   "SNGS-162": {
+    "impure": 51,
+    "rows": 9270,
+    "mixed_groups": 0,
+    "groups": 144
+   },
+   "SNGS-151": {
+    "impure": 28,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 80
+   },
+   "SNGS-102": {
+    "impure": 11,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 66
+   },
+   "SNGS-112": {
+    "impure": 9,
+    "rows": 8321,
+    "mixed_groups": 0,
+    "groups": 84
+   }
+  }
+ },
+ "strict": {
+  "impure": 1412,
+  "rows": 109938,
+  "share": 0.01284,
+  "vs_split": -1462,
+  "vs_cuts_only": 314,
+  "added_by_links": 314,
+  "mixed_groups": 40,
+  "groups": 967,
+  "completeness": 0.769,
+  "ids_per_person_mean_of_clips": 3.98,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 13,
+    "rows": 8207,
+    "mixed_groups": 0,
+    "groups": 64
+   },
+   "SNGS-163": {
+    "impure": 172,
+    "rows": 7526,
+    "mixed_groups": 4,
+    "groups": 83
+   },
+   "SNGS-106": {
+    "impure": 60,
+    "rows": 5657,
+    "mixed_groups": 4,
+    "groups": 77
+   },
+   "SNGS-097": {
+    "impure": 171,
+    "rows": 9700,
+    "mixed_groups": 2,
+    "groups": 51
+   },
+   "SNGS-067": {
+    "impure": 119,
+    "rows": 8538,
+    "mixed_groups": 5,
+    "groups": 100
+   },
+   "SNGS-100": {
+    "impure": 55,
+    "rows": 8056,
+    "mixed_groups": 3,
+    "groups": 78
+   },
+   "SNGS-066": {
+    "impure": 349,
+    "rows": 11208,
+    "mixed_groups": 9,
+    "groups": 95
+   },
+   "SNGS-161": {
+    "impure": 17,
+    "rows": 8297,
+    "mixed_groups": 1,
+    "groups": 57
+   },
+   "SNGS-169": {
+    "impure": 45,
+    "rows": 8489,
+    "mixed_groups": 4,
+    "groups": 107
+   },
+   "SNGS-162": {
+    "impure": 352,
+    "rows": 9270,
+    "mixed_groups": 4,
+    "groups": 79
+   },
+   "SNGS-151": {
+    "impure": 28,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 73
+   },
+   "SNGS-102": {
+    "impure": 11,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 46
+   },
+   "SNGS-112": {
+    "impure": 20,
+    "rows": 8321,
+    "mixed_groups": 1,
+    "groups": 57
+   }
+  },
+  "clips_worse_than_split": [
+   "SNGS-162"
+  ],
+  "clips_better_than_split": [
+   "SNGS-107",
+   "SNGS-163",
+   "SNGS-106",
+   "SNGS-097",
+   "SNGS-067",
+   "SNGS-100",
+   "SNGS-066",
+   "SNGS-161",
+   "SNGS-169",
+   "SNGS-151",
+   "SNGS-102",
+   "SNGS-112"
+  ],
+  "share_of_link_impurity_in_top2_clips": 0.994
+ },
+ "margin_0.50": {
+  "impure": 1661,
+  "rows": 109938,
+  "share": 0.01511,
+  "vs_split": -1213,
+  "vs_cuts_only": 563,
+  "added_by_links": 566,
+  "mixed_groups": 44,
+  "groups": 682,
+  "completeness": 0.8721,
+  "ids_per_person_mean_of_clips": 2.98,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 14,
+    "rows": 8207,
+    "mixed_groups": 0,
+    "groups": 42
+   },
+   "SNGS-163": {
+    "impure": 172,
+    "rows": 7526,
+    "mixed_groups": 4,
+    "groups": 62
+   },
+   "SNGS-106": {
+    "impure": 60,
+    "rows": 5657,
+    "mixed_groups": 4,
+    "groups": 47
+   },
+   "SNGS-097": {
+    "impure": 171,
+    "rows": 9700,
+    "mixed_groups": 2,
+    "groups": 37
+   },
+   "SNGS-067": {
+    "impure": 119,
+    "rows": 8538,
+    "mixed_groups": 5,
+    "groups": 63
+   },
+   "SNGS-100": {
+    "impure": 171,
+    "rows": 8056,
+    "mixed_groups": 5,
+    "groups": 55
+   },
+   "SNGS-066": {
+    "impure": 349,
+    "rows": 11208,
+    "mixed_groups": 9,
+    "groups": 74
+   },
+   "SNGS-161": {
+    "impure": 17,
+    "rows": 8297,
+    "mixed_groups": 1,
+    "groups": 39
+   },
+   "SNGS-169": {
+    "impure": 46,
+    "rows": 8489,
+    "mixed_groups": 4,
+    "groups": 66
+   },
+   "SNGS-162": {
+    "impure": 444,
+    "rows": 9270,
+    "mixed_groups": 6,
+    "groups": 72
+   },
+   "SNGS-151": {
+    "impure": 28,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 54
+   },
+   "SNGS-102": {
+    "impure": 12,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 29
+   },
+   "SNGS-112": {
+    "impure": 58,
+    "rows": 8321,
+    "mixed_groups": 1,
+    "groups": 42
+   }
+  },
+  "clips_worse_than_split": [
+   "SNGS-162",
+   "SNGS-112"
+  ],
+  "clips_better_than_split": [
+   "SNGS-107",
+   "SNGS-163",
+   "SNGS-106",
+   "SNGS-097",
+   "SNGS-067",
+   "SNGS-100",
+   "SNGS-066",
+   "SNGS-161",
+   "SNGS-169",
+   "SNGS-151",
+   "SNGS-102"
+  ],
+  "share_of_link_impurity_in_top2_clips": 0.904
+ },
+ "balanced": {
+  "impure": 2075,
+  "rows": 109938,
+  "share": 0.01887,
+  "vs_split": -799,
+  "vs_cuts_only": 977,
+  "added_by_links": 983,
+  "mixed_groups": 49,
+  "groups": 634,
+  "completeness": 0.8956,
+  "ids_per_person_mean_of_clips": 2.81,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 14,
+    "rows": 8207,
+    "mixed_groups": 0,
+    "groups": 42
+   },
+   "SNGS-163": {
+    "impure": 172,
+    "rows": 7526,
+    "mixed_groups": 4,
+    "groups": 62
+   },
+   "SNGS-106": {
+    "impure": 60,
+    "rows": 5657,
+    "mixed_groups": 4,
+    "groups": 34
+   },
+   "SNGS-097": {
+    "impure": 343,
+    "rows": 9700,
+    "mixed_groups": 3,
+    "groups": 31
+   },
+   "SNGS-067": {
+    "impure": 119,
+    "rows": 8538,
+    "mixed_groups": 5,
+    "groups": 63
+   },
+   "SNGS-100": {
+    "impure": 171,
+    "rows": 8056,
+    "mixed_groups": 5,
+    "groups": 50
+   },
+   "SNGS-066": {
+    "impure": 432,
+    "rows": 11208,
+    "mixed_groups": 10,
+    "groups": 65
+   },
+   "SNGS-161": {
+    "impure": 17,
+    "rows": 8297,
+    "mixed_groups": 1,
+    "groups": 39
+   },
+   "SNGS-169": {
+    "impure": 46,
+    "rows": 8489,
+    "mixed_groups": 4,
+    "groups": 66
+   },
+   "SNGS-162": {
+    "impure": 603,
+    "rows": 9270,
+    "mixed_groups": 9,
+    "groups": 58
+   },
+   "SNGS-151": {
+    "impure": 28,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 54
+   },
+   "SNGS-102": {
+    "impure": 12,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 28
+   },
+   "SNGS-112": {
+    "impure": 58,
+    "rows": 8321,
+    "mixed_groups": 1,
+    "groups": 42
+   }
+  },
+  "clips_worse_than_split": [
+   "SNGS-097",
+   "SNGS-162",
+   "SNGS-112"
+  ],
+  "clips_better_than_split": [
+   "SNGS-107",
+   "SNGS-163",
+   "SNGS-106",
+   "SNGS-067",
+   "SNGS-100",
+   "SNGS-066",
+   "SNGS-161",
+   "SNGS-169",
+   "SNGS-151",
+   "SNGS-102"
+  ],
+  "share_of_link_impurity_in_top2_clips": 0.741
+ },
+ "recall": {
+  "impure": 2099,
+  "rows": 109938,
+  "share": 0.01909,
+  "vs_split": -775,
+  "vs_cuts_only": 1001,
+  "added_by_links": 1008,
+  "mixed_groups": 49,
+  "groups": 564,
+  "completeness": 0.9303,
+  "ids_per_person_mean_of_clips": 2.58,
+  "per_clip": {
+   "SNGS-107": {
+    "impure": 14,
+    "rows": 8207,
+    "mixed_groups": 0,
+    "groups": 31
+   },
+   "SNGS-163": {
+    "impure": 172,
+    "rows": 7526,
+    "mixed_groups": 4,
+    "groups": 53
+   },
+   "SNGS-106": {
+    "impure": 60,
+    "rows": 5657,
+    "mixed_groups": 4,
+    "groups": 34
+   },
+   "SNGS-097": {
+    "impure": 343,
+    "rows": 9700,
+    "mixed_groups": 3,
+    "groups": 31
+   },
+   "SNGS-067": {
+    "impure": 120,
+    "rows": 8538,
+    "mixed_groups": 5,
+    "groups": 52
+   },
+   "SNGS-100": {
+    "impure": 171,
+    "rows": 8056,
+    "mixed_groups": 5,
+    "groups": 49
+   },
+   "SNGS-066": {
+    "impure": 432,
+    "rows": 11208,
+    "mixed_groups": 10,
+    "groups": 63
+   },
+   "SNGS-161": {
+    "impure": 17,
+    "rows": 8297,
+    "mixed_groups": 1,
+    "groups": 35
+   },
+   "SNGS-169": {
+    "impure": 48,
+    "rows": 8489,
+    "mixed_groups": 4,
+    "groups": 49
+   },
+   "SNGS-162": {
+    "impure": 603,
+    "rows": 9270,
+    "mixed_groups": 9,
+    "groups": 57
+   },
+   "SNGS-151": {
+    "impure": 28,
+    "rows": 7833,
+    "mixed_groups": 2,
+    "groups": 46
+   },
+   "SNGS-102": {
+    "impure": 12,
+    "rows": 8836,
+    "mixed_groups": 1,
+    "groups": 28
+   },
+   "SNGS-112": {
+    "impure": 79,
+    "rows": 8321,
+    "mixed_groups": 1,
+    "groups": 36
+   }
+  },
+  "clips_worse_than_split": [
+   "SNGS-097",
+   "SNGS-162",
+   "SNGS-112"
+  ],
+  "clips_better_than_split": [
+   "SNGS-107",
+   "SNGS-163",
+   "SNGS-106",
+   "SNGS-067",
+   "SNGS-100",
+   "SNGS-066",
+   "SNGS-161",
+   "SNGS-169",
+   "SNGS-151",
+   "SNGS-102"
+  ],
+  "share_of_link_impurity_in_top2_clips": 0.723
+ }
+}

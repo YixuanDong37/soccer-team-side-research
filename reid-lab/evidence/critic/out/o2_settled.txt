@@ -1,0 +1,45 @@
+
+== settled identity, window 50 frames, first 0 frames after the return skipped; all 167 annotated returns ==
+method                           same earlier wrong lost nobox | scored 137: same earlier wrong lost nobox | undetected 30: same earlier wrong lost nobox | gap > 10 s: same earlier wrong lost nobox
+gbf now (split)                      0     0     4   155     8 |     0     0     3   134     0 |     0     0     1    21     8 |     0     0     1    40     3
+plugin                              26     2    12   119     8 |    25     2    10   100     0 |     1     0     2    19     8 |     0     0     4    37     3
+mutual                              26     2     8   123     8 |    26     1     6   104     0 |     0     1     2    19     8 |     0     0     1    40     3
+cuts only                            0     0     1   158     8 |     0     0     1   136     0 |     0     0     0    22     8 |     0     0     1    40     3
+fuse_r1 strict                      83     1     5    70     8 |    73     1     5    58     0 |    10     0     0    12     8 |    13     0     1    27     3
+fuse_r1 balanced                   108     2     9    40     8 |    95     1     9    32     0 |    13     1     0     8     8 |    19     1     1    20     3
+fuse_r1 recall                     131     3     9    16     8 |   113     1     9    14     0 |    18     2     0     2     8 |    31     1     1     8     3
+fuse_r1 frozen strict setting       86     2     4    67     8 |    76     1     4    56     0 |    10     1     0    11     8 |    15     1     1    24     3
+
+== settled identity, window 50 frames, first 12 frames after the return skipped; all 167 annotated returns ==
+method                           same earlier wrong lost nobox | scored 137: same earlier wrong lost nobox | undetected 30: same earlier wrong lost nobox | gap > 10 s: same earlier wrong lost nobox
+gbf now (split)                      0     0     3   153    11 |     0     0     2   132     3 |     0     0     1    21     8 |     0     0     1    39     4
+plugin                              26     1     8   121    11 |    25     1     6   102     3 |     1     0     2    19     8 |     0     0     3    37     4
+mutual                              27     2     7   120    11 |    27     1     5   101     3 |     0     1     2    19     8 |     0     0     1    39     4
+cuts only                            0     0     1   155    11 |     0     0     1   133     3 |     0     0     0    22     8 |     0     0     1    39     4
+fuse_r1 strict                      83     1     5    67    11 |    73     1     5    55     3 |    10     0     0    12     8 |    13     0     1    26     4
+fuse_r1 balanced                   109     2    10    35    11 |    96     1    10    27     3 |    13     1     0     8     8 |    19     1     1    19     4
+fuse_r1 recall                     129     3    10    14    11 |   111     1    10    12     3 |    18     2     0     2     8 |    31     1     1     7     4
+fuse_r1 frozen strict setting       86     2     4    64    11 |    76     1     4    53     3 |    10     1     0    11     8 |    15     1     1    23     4
+
+== settled identity, window 125 frames, first 0 frames after the return skipped; all 167 annotated returns ==
+method                           same earlier wrong lost nobox | scored 137: same earlier wrong lost nobox | undetected 30: same earlier wrong lost nobox | gap > 10 s: same earlier wrong lost nobox
+gbf now (split)                      0     0     4   159     4 |     0     0     2   135     0 |     0     0     2    24     4 |     0     0     2    41     1
+plugin                              24     4    10   125     4 |    23     4     7   103     0 |     1     0     3    22     4 |     0     0     5    38     1
+mutual                              28     2     8   125     4 |    27     1     6   103     0 |     1     1     2    22     4 |     1     0     1    41     1
+cuts only                            0     0     1   162     4 |     0     0     1   136     0 |     0     0     0    26     4 |     0     0     1    42     1
+fuse_r1 strict                      85     0     5    73     4 |    74     0     5    58     0 |    11     0     0    15     4 |    13     0     1    29     1
+fuse_r1 balanced                   113     0    10    40     4 |    97     0    10    30     0 |    16     0     0    10     4 |    21     0     1    21     1
+fuse_r1 recall                     134     2    10    17     4 |   113     1    10    13     0 |    21     1     0     4     4 |    33     0     1     9     1
+fuse_r1 frozen strict setting       89     0     4    70     4 |    77     0     4    56     0 |    12     0     0    14     4 |    16     0     1    26     1
+
+== whole-clip consistency per annotated player / goalkeeper (>= 25 matched rows) ==
+method                           rows in main identity | identities (>= 5 rows) per person | persons with >= 95% of rows in one identity
+gbf now (split)                    67.6%               | 3.01                              | 55 of 274
+plugin                             69.2%               | 2.92                              | 64 of 274
+mutual                             72.2%               | 2.79                              | 77 of 274
+cuts only                          67.6%               | 3.01                              | 55 of 274
+fuse_r1 strict                     85.2%               | 1.86                              | 155 of 274
+fuse_r1 balanced                   89.7%               | 1.60                              | 184 of 274
+fuse_r1 recall                     93.4%               | 1.47                              | 211 of 274
+fuse_r1 frozen strict setting      85.6%               | 1.84                              | 159 of 274
+ORACLE on the cut pieces           98.9%               | 1.15                              | 261 of 274

@@ -1,0 +1,19 @@
+scored returns by the identity of the piece holding row A (rows) and row B (columns):
+B                       another person  none (<5 matched rows)  the person  All
+A                                                                              
+another person                       1                       2           5    8
+none (<5 matched rows)               2                       3          13   18
+the person                           4                      18          89  111
+All                                  7                      23         107  137
+rows of pieces that hold a return's row but mostly belong to another person: {'n': 15, 'mean': 133.333, 'p50': 71.0, 'p75': 206.5, 'p90': 322.6, 'p95': 387.6, 'p99': 411.12, 'max': 417.0}
+returns whose rows A and B have the same plugin id: 29
+
+oracle ceilings on the 137 scored returns (labels decide; NOT method results):
+                                   oracle  right  wrong  lost  links  links_wrong  impure_row_share
+0  O1 link by majority person (>= 5 rows)    105      7    25    505            0           0.02614
+1   O2 link by majority person (>= 1 row)    128      8     1    775            0           0.02614
+2   O3 cut at identity changes, then link    130      6     1    857            0           0.00517
+3                        (baseline) split      0      4   133      0            0           0.02614
+4                       (baseline) plugin     30     14    93     93           10           0.03085
+5                       (baseline) mutual     26      6   105     69            7           0.03028
+cuts made by O3: 82

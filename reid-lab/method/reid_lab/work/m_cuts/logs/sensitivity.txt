@@ -1,0 +1,9 @@
+default                log-loss 0.1520 cuts 221 T 59 F 3 t 96 f 9 U 54 prec 0.952 sw 45 | split+cuts 0/0/137 impure 1.00% | mutual+cuts 26/2/109 impure 1.41%
+{'K_WIN': 10}          log-loss 0.1550 cuts 220 T 60 F 3 t 94 f 10 U 53 prec 0.952 sw 45 | split+cuts 0/0/137 impure 1.08% | mutual+cuts 26/2/109 impure 1.49%
+{'K_WIN': 40}          log-loss 0.1666 cuts 212 T 53 F 3 t 92 f 11 U 53 prec 0.946 sw 39 | split+cuts 0/0/137 impure 1.16% | mutual+cuts 26/2/109 impure 1.56%
+{'NMS_ROWS': 5}        log-loss 0.1520 cuts 225 T 61 F 3 t 97 f 9 U 55 prec 0.953 sw 45 | split+cuts 0/0/137 impure 0.99% | mutual+cuts 26/2/109 impure 1.40%
+{'NMS_ROWS': 20}       log-loss 0.1520 cuts 219 T 58 F 2 t 96 f 9 U 54 prec 0.967 sw 44 | split+cuts 0/0/137 impure 1.01% | mutual+cuts 26/2/109 impure 1.42%
+{'GAP_MIN': 1}         log-loss 0.1277 cuts 225 T 57 F 2 t 98 f 11 U 57 prec 0.966 sw 42 | split+cuts 0/0/137 impure 1.02% | mutual+cuts 26/2/109 impure 1.43%
+{'GAP_MIN': 3}         log-loss 0.1670 cuts 217 T 58 F 2 t 93 f 10 U 54 prec 0.967 sw 44 | split+cuts 0/0/137 impure 1.01% | mutual+cuts 26/2/109 impure 1.41%
+{'ALT_FRAMES': 125}    log-loss 0.1498 cuts 224 T 59 F 3 t 97 f 11 U 54 prec 0.952 sw 45 | split+cuts 0/0/137 impure 1.00% | mutual+cuts 26/2/109 impure 1.40%
+{'ALT_FRAMES': 500}    log-loss 0.1527 cuts 220 T 59 F 3 t 95 f 9 U 54 prec 0.952 sw 45 | split+cuts 0/0/137 impure 1.00% | mutual+cuts 26/2/109 impure 1.41%

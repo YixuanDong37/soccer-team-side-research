@@ -1,0 +1,12 @@
+{ "name": "v_leak blind re-run of fuse, point strict (LOCO held-out)", "pooled": { "scored": 137, "right": 33, "wrong": 4, "lost": 100, "undetected": 30, "untracked": 0, "right_share": 0.2409, "wrong_share": 0.0292, "links": 314, "links_right": 152, "links_wrong": 4, "links_unknown": 158, "link_precision": 0.9744,
+
+{ "name": "v_leak blind re-run of fuse, point balanced (LOCO held-out)", "pooled": { "scored": 137, "right": 93, "wrong": 7, "lost": 37, "undetected": 30, "untracked": 0, "right_share": 0.6788, "wrong_share": 0.0511, "links": 676, "links_right": 290, "links_wrong": 10, "links_unknown": 376, "link_precision": 0.966
+
+{ "name": "v_leak blind re-run of fuse, point recall (LOCO held-out)", "pooled": { "scored": 137, "right": 110, "wrong": 7, "lost": 20, "undetected": 30, "untracked": 0, "right_share": 0.8029, "wrong_share": 0.0511, "links": 761, "links_right": 314, "links_wrong": 10, "links_unknown": 437, "link_precision": 0.9691
+
+{ "name": "v_leak: fuse with the pair-model inputs chosen inside each fold, point strict", "pooled": { "scored": 137, "right": 16, "wrong": 4, "lost": 117, "undetected": 30, "untracked": 0, "right_share": 0.1168, "wrong_share": 0.0292, "links": 238, "links_right": 113, "links_wrong": 5, "links_unknown": 120, "link
+
+{ "name": "v_leak: fuse with the pair-model inputs chosen inside each fold, point balanced", "pooled": { "scored": 137, "right": 98, "wrong": 5, "lost": 34, "undetected": 30, "untracked": 0, "right_share": 0.7153, "wrong_share": 0.0365, "links": 728, "links_right": 311, "links_wrong": 9, "links_unknown": 408, "lin
+
+{ "name": "v_leak: fuse with the pair-model inputs chosen inside each fold, point recall", "pooled": { "scored": 137, "right": 108, "wrong": 9, "lost": 20, "undetected": 30, "untracked": 0, "right_share": 0.7883, "wrong_share": 0.0657, "links": 786, "links_right": 320, "links_wrong": 13, "links_unknown": 453, "lin
+

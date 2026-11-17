@@ -1,0 +1,20 @@
+{
+ "name": "fuse_r1 point strict (frozen all-13 numbers and choice: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 156,
+  "right": 17,
+  "wrong": 3,
+  "lost": 136,
+  "undetected": 11,
+  "untracked": 0,
+  "right_share": 0.109,
+  "wrong_share": 0.0192,
+  "links": 55,
+  "links_right": 50,
+  "links_wrong": 0,
+  "links_unknown": 5,
+  "link_precision": 1.0,
+  "impure_row_share": 0.01645
+ },
+ "clips_without_entry": []
+}

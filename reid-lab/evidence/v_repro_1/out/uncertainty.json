@@ -1,0 +1,398 @@
+{
+ "METHOD_strict.json": {
+  "right": 67,
+  "wrong": 3,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.382,
+   0.49,
+   0.596
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.02,
+   0.046
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   2.7,
+   6.3
+  ],
+  "P_wrong_share_le_4_of_137": 0.732,
+  "P_wrong_share_le_7_of_137": 0.977,
+  "P_wrong_share_le_14_of_137": 1.0,
+  "P_wrong_not_above_split": 1.0,
+  "P_wrong_below_split": 0.654,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.382,
+   0.596
+  ],
+  "P_wrong_not_above_plugin": 1.0,
+  "P_wrong_below_plugin": 1.0,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.166,
+   0.373
+  ],
+  "P_wrong_not_above_mutual": 1.0,
+  "P_wrong_below_mutual": 0.89,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.215,
+   0.379
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.456,
+   0.538
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   1,
+   3
+  ],
+  "without_SNGS-162": [
+   64,
+   1,
+   54
+  ],
+  "SNGS-162": [
+   3,
+   2,
+   13
+  ],
+  "wrong_in_worst_clip": 2,
+  "clips_with_a_wrong_return": 2,
+  "clips_better_than_plugin_in_right": 12,
+  "clips_worse_than_plugin_in_right": 1
+ },
+ "METHOD_balanced.json": {
+  "right": 85,
+  "wrong": 5,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.507,
+   0.625,
+   0.739
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.033,
+   0.082
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   4.5,
+   11.2
+  ],
+  "P_wrong_share_le_4_of_137": 0.418,
+  "P_wrong_share_le_7_of_137": 0.739,
+  "P_wrong_share_le_14_of_137": 0.991,
+  "P_wrong_not_above_split": 0.46,
+  "P_wrong_below_split": 0.273,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.507,
+   0.739
+  ],
+  "P_wrong_not_above_plugin": 1.0,
+  "P_wrong_below_plugin": 1.0,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.307,
+   0.496
+  ],
+  "P_wrong_not_above_mutual": 1.0,
+  "P_wrong_below_mutual": 0.654,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.344,
+   0.519
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.585,
+   0.681
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   1,
+   5
+  ],
+  "without_SNGS-162": [
+   81,
+   1,
+   37
+  ],
+  "SNGS-162": [
+   4,
+   4,
+   10
+  ],
+  "wrong_in_worst_clip": 4,
+  "clips_with_a_wrong_return": 2,
+  "clips_better_than_plugin_in_right": 12,
+  "clips_worse_than_plugin_in_right": 0
+ },
+ "METHOD_recall.json": {
+  "right": 106,
+  "wrong": 7,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.675,
+   0.778,
+   0.872
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.048,
+   0.119
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   6.6,
+   16.3
+  ],
+  "P_wrong_share_le_4_of_137": 0.349,
+  "P_wrong_share_le_7_of_137": 0.566,
+  "P_wrong_share_le_14_of_137": 0.908,
+  "P_wrong_not_above_split": 0.361,
+  "P_wrong_below_split": 0.244,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.675,
+   0.872
+  ],
+  "P_wrong_not_above_plugin": 0.992,
+  "P_wrong_below_plugin": 0.976,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.463,
+   0.638
+  ],
+  "P_wrong_not_above_mutual": 0.46,
+  "P_wrong_below_mutual": 0.273,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.504,
+   0.662
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.746,
+   0.824
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   1,
+   7
+  ],
+  "without_SNGS-162": [
+   98,
+   1,
+   20
+  ],
+  "SNGS-162": [
+   8,
+   6,
+   4
+  ],
+  "wrong_in_worst_clip": 6,
+  "clips_with_a_wrong_return": 2,
+  "clips_better_than_plugin_in_right": 12,
+  "clips_worse_than_plugin_in_right": 0
+ },
+ "METHOD_fixed_strict.json": {
+  "right": 70,
+  "wrong": 2,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.4,
+   0.513,
+   0.622
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.014,
+   0.038
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   1.9,
+   5.2
+  ],
+  "P_wrong_share_le_4_of_137": 0.88,
+  "P_wrong_share_le_7_of_137": 0.993,
+  "P_wrong_share_le_14_of_137": 1.0,
+  "P_wrong_not_above_split": 1.0,
+  "P_wrong_below_split": 0.889,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.4,
+   0.622
+  ],
+  "P_wrong_not_above_plugin": 1.0,
+  "P_wrong_below_plugin": 1.0,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.193,
+   0.387
+  ],
+  "P_wrong_not_above_mutual": 1.0,
+  "P_wrong_below_mutual": 0.968,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.238,
+   0.398
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.48,
+   0.563
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   0,
+   2
+  ],
+  "without_SNGS-162": [
+   67,
+   0,
+   52
+  ],
+  "SNGS-162": [
+   3,
+   2,
+   13
+  ],
+  "wrong_in_worst_clip": 2,
+  "clips_with_a_wrong_return": 1,
+  "clips_better_than_plugin_in_right": 12,
+  "clips_worse_than_plugin_in_right": 1
+ },
+ "METHOD_fixed_balanced.json": {
+  "right": 85,
+  "wrong": 4,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.513,
+   0.626,
+   0.73
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.026,
+   0.064
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   3.6,
+   8.8
+  ],
+  "P_wrong_share_le_4_of_137": 0.566,
+  "P_wrong_share_le_7_of_137": 0.867,
+  "P_wrong_share_le_14_of_137": 0.999,
+  "P_wrong_not_above_split": 0.658,
+  "P_wrong_below_split": 0.359,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.513,
+   0.73
+  ],
+  "P_wrong_not_above_plugin": 1.0,
+  "P_wrong_below_plugin": 1.0,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.31,
+   0.493
+  ],
+  "P_wrong_not_above_mutual": 1.0,
+  "P_wrong_below_mutual": 0.89,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.35,
+   0.513
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.593,
+   0.681
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   1,
+   4
+  ],
+  "without_SNGS-162": [
+   81,
+   1,
+   37
+  ],
+  "SNGS-162": [
+   4,
+   3,
+   11
+  ],
+  "wrong_in_worst_clip": 3,
+  "clips_with_a_wrong_return": 2,
+  "clips_better_than_plugin_in_right": 12,
+  "clips_worse_than_plugin_in_right": 0
+ },
+ "METHOD_fixed_recall.json": {
+  "right": 112,
+  "wrong": 7,
+  "scored": 137,
+  "right_share_q05_q50_q95": [
+   0.708,
+   0.823,
+   0.918
+  ],
+  "wrong_share_q05_q50_q95": [
+   0.0,
+   0.048,
+   0.119
+  ],
+  "wrong_count_equiv_q05_q50_q95": [
+   0.0,
+   6.6,
+   16.3
+  ],
+  "P_wrong_share_le_4_of_137": 0.349,
+  "P_wrong_share_le_7_of_137": 0.566,
+  "P_wrong_share_le_14_of_137": 0.908,
+  "P_wrong_not_above_split": 0.361,
+  "P_wrong_below_split": 0.244,
+  "P_right_above_split": 1.0,
+  "right_share_gain_over_split_q05_q95": [
+   0.708,
+   0.918
+  ],
+  "P_wrong_not_above_plugin": 0.992,
+  "P_wrong_below_plugin": 0.976,
+  "P_right_above_plugin": 1.0,
+  "right_share_gain_over_plugin_q05_q95": [
+   0.5,
+   0.698
+  ],
+  "P_wrong_not_above_mutual": 0.46,
+  "P_wrong_below_mutual": 0.273,
+  "P_right_above_mutual": 1.0,
+  "right_share_gain_over_mutual_q05_q95": [
+   0.541,
+   0.709
+  ],
+  "without_one_clip_right_share_min_max": [
+   0.793,
+   0.874
+  ],
+  "without_one_clip_wrong_count_min_max": [
+   1,
+   7
+  ],
+  "without_SNGS-162": [
+   104,
+   1,
+   14
+  ],
+  "SNGS-162": [
+   8,
+   6,
+   4
+  ],
+  "wrong_in_worst_clip": 6,
+  "clips_with_a_wrong_return": 2,
+  "clips_better_than_plugin_in_right": 13,
+  "clips_worse_than_plugin_in_right": 0
+ }
+}

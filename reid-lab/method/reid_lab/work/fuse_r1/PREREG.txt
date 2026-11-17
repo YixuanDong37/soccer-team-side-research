@@ -1,0 +1,76 @@
+fuse_r1 -- protocol fixed BEFORE any fuse_r1 result exists
+Written 2026-11-15 07:28 US Central time, before any code of fuse_r1 was run on any clip
+(the only files in this directory at this moment: copies of fuse's prep.py, evidence.py,
+pairmodel.py, linker.py, fuse_labels.py with the path string changed; an empty cache).
+
+WHAT I ALREADY KNOW (so nobody mistakes this for a blind protocol)
+- Everything in the round-0 reports of fuse, v_leak, v_repro, v_robust, including fuse's pooled
+  held-out trade-off table by margin, the per-clip tables, v_robust's guard tables (r9) and
+  rule tables (r10) and v_leak's nested tables. In particular I know that in round 0
+  (a) margins near 0.5 gave 91 right / 4 wrong held-out, (b) the round-0 rule (J, lam 10) landed
+  at margin 0.9, (c) the cap rule broke the strict limit (53 / 6 / 78), (d) "J without the fit
+  clip with the most wrong events" gave 88 / 4 / 45 with margins 0.5-0.6 (post hoc in round 0),
+  (e) taking pieces with < 5 boxes out of the linker gave 84 / 3 / 50 at margin 0.5 and
+  93 / 5 / 39 at 0.25 (v_robust, diagnosis).
+- So the DESIGN and the RULE below are informed by round-0 held-out results of a similar method.
+  What is blind is only: the results of the changed method (tiers, solid-only position table,
+  leaves) under the rule below. The 37 reserved clips remain the clean test.
+
+A. METHOD CHANGES (fixed now, no parameter searched)
+A1. Tiers. After m_cuts' cuts (P >= 0.7, unchanged) a (sub-)piece is SOLID when it has at least
+    5 boxes, otherwise SHORT. 5 is the lab's existing constant (score.py MIN_MATCHED, the
+    "fragment" class of the diagnosis); it is not tuned. Sensitivity rows for 3 and 10 boxes
+    will be reported but not selected.
+A2. Stage 1 (core): fuse's agglomeration (linker.py, unchanged rule: appearance floor 0.3,
+    "nobody" rival 0.5, mutual best, margin against co-visible rivals) on SOLID pieces only.
+    Position evidence for stage 1 is m_space's model run on the solid pieces only (short pieces
+    are taken out of the tracks table handed to m_space, so a 1-4 box fragment cannot absorb the
+    position evidence between two long pieces). Plugin bonus as in fuse, on the solid pieces.
+    Pair model: logistic regression on (cos_w, sink_lo, plug) fitted per fold on the solid-pair
+    table with weak labels (>= 1 matched row), as in fuse.
+A3. Stage 2 (leaves): a SHORT piece may be attached to at most one stage-1 group (or single
+    solid piece), never to another short piece, and it never connects two groups. Evidence:
+    appearance cosine of the short piece against the group's pooled prototype (the group's
+    prototype is not changed by leaves) + position bonus at its junctions with the group's SOLID
+    members (m_space on all pieces, same pair-model weight ratio as the core); NO plugin bonus for
+    leaves (m_keep / fuse diagnosis: plugin joins of 1-4 box pieces are more often wrong than right).
+    Same rule and the same margin as the core (floor 0.3, "nobody" 0.5, mutual best, rivals).
+    Leaves on / off is a candidate setting chosen by the rule in B, per operating point, per fold.
+A4. Everything else as in fuse (m_cuts P >= 0.7, m_space weights of the fold, t_abs 0.5).
+
+B. OPERATING POINTS: RULE (fixed now)
+Candidates: leaves in {off, on} x margin in (0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50,
+0.55, 0.60, 0.70, 0.80, 0.90, 1.00, 1.20) (fuse's grid).
+Per fold, on the 12 fit clips, with the fold's own weights, for a point with cap K and penalty lam
+(strict K = 4, lam = 10; balanced K = 7, lam = 3; recall K = 14, lam = 1; the lam values are
+round 0's, the caps are the task's):
+ (i)  hard constraint: wrong returns on the fit clips <= floor(K * scored_fit / 137) at the
+      candidate's margin AND at every stricter margin with the same leaves setting;
+ (ii) among the candidates that meet (i), the largest
+        J = sum over the fit clips except d* of [ right - lam * w ],
+      w (per clip) = wrong returns + links judged wrong by score.py + leaf links whose two pieces
+      have different majority annotated persons (weak labels, >= 1 matched row on both sides),
+      d* = the fit clip with the largest w for that candidate (first in DEV_CLIPS order on ties);
+ (iii) ties: the larger margin, then leaves off.
+ If no candidate meets (i): fewest wrong returns on the fit clips, then (ii), then (iii).
+The chosen candidate is applied unchanged to the held-out clip; the 13 held-out clips are pooled.
+The frozen method = the same rule on all 13 clips with the all-13 weights.
+Why this rule: the cap is the task's definition of a point; the exchange rate lam keeps a fold whose
+fit clips happen to be clean from taking the loosest margin; leaving out the worst fit clip in J
+keeps one clip from dictating the threshold of all others (the cap in (i) still counts every clip).
+
+C. WHAT WILL BE REPORTED WHATEVER COMES OUT
+- Headline: the pooled held-out counts of the three points under rule B (score.py CLI on the METHOD
+  files), per clip, margins / leaves chosen per fold, and whether the limits 4 / 7 / 14 hold.
+- Next to each point: the held-out row of the FROZEN candidate (the all-13 choice applied to every
+  clip with that clip's fold weights), so that "what the rule did" and "what the frozen threshold
+  does" can be told apart.
+- The same pooled result under alternative rules, all computed from the same runs:
+  R0 = round-0 rule (J, lam 10 / 3 / 1, no trimming, no cap); Rcap = cap only (most right under (i));
+  Rnotrim = rule B without leaving a clip out. And rule B on round 0's linker (no tiers).
+- The full fixed-candidate trade-off table (held-out and in-sample), not used to pick anything.
+- Linking is compared with CUTS ONLY (0 right / 0 wrong / 137 lost, 1.00% impure rows), not only
+  with gbf now: impure rows added by links, per clip.
+- Clip bootstrap, results without SNGS-162, each threshold moved by +-10%.
+- A stress test with degraded embeddings and a label-free self-check, as the answer to the risk
+  that PRTReid was trained on these clips (they cannot remove that risk).

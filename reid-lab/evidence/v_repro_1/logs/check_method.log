@@ -1,0 +1,11 @@
+METHOD_strict.json checked
+METHOD_frozen_strict.json checked
+METHOD_fixed_strict.json checked
+METHOD_balanced.json checked
+METHOD_frozen_balanced.json checked
+METHOD_fixed_balanced.json checked
+METHOD_recall.json checked
+METHOD_frozen_recall.json checked
+METHOD_fixed_recall.json checked
+method.py REPRODUCES the scored links; all groups consistent
+exit 0

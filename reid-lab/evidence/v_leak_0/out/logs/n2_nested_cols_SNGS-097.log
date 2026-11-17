@@ -1,0 +1,1 @@
+SNGS-097 inner-LOCO choice: cos_w+unreach+sink_lo+lgap | fuse's set ranks 2 of 13 gap 0.00079 | top 3: [('cos_w+unreach+sink_lo+lgap', 0.04026), ('cos_w+sink_lo+plug', 0.04105), ('cos_w+sink_lo', 0.04106)] | margins: {'strict': 1.0, 'balanced': 0.25, 'recall': 0.1} | blocked: [] | 133.9 s

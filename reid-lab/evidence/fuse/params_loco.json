@@ -1,0 +1,408 @@
+{
+ "SNGS-107": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.237172745664365,
+    0.6782698972826354,
+    0.9558069503464623
+   ],
+   "b": -7.1499034323087,
+   "n": 17724,
+   "pos": 733,
+   "nll": 0.04395639601111348
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.5,
+   "recall": 0.25
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-107]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_107.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-163": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.106280542756994,
+    0.7070104696389309,
+    0.9345405078754996
+   ],
+   "b": -7.251522414656069,
+   "n": 17662,
+   "pos": 739,
+   "nll": 0.04305356544763907
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.5,
+   "recall": 0.25
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-163]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_163.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-106": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.048525014569739,
+    0.6879510860931843,
+    0.9320069737345432
+   ],
+   "b": -7.114948281562861,
+   "n": 17435,
+   "pos": 728,
+   "nll": 0.04468378968988831
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-106]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_106.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-097": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.271138478277536,
+    0.6823738435426698,
+    1.1077992378156007
+   ],
+   "b": -7.180648592458065,
+   "n": 18168,
+   "pos": 745,
+   "nll": 0.043731098121820196
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-097]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_097.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-067": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    6.872203759155428,
+    0.677031792856303,
+    1.0705258523054202
+   ],
+   "b": -7.016731876786553,
+   "n": 16710,
+   "pos": 714,
+   "nll": 0.04690687956838603
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.5,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-067]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_067.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-100": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    6.987858485609434,
+    0.7086849141230791,
+    0.9403724411270695
+   ],
+   "b": -7.193506356535282,
+   "n": 17701,
+   "pos": 734,
+   "nll": 0.04379408919446651
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-100]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_100.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-066": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.332056675932305,
+    0.6636857350388788,
+    1.0852680200232103
+   ],
+   "b": -7.174877076818916,
+   "n": 16778,
+   "pos": 719,
+   "nll": 0.043330663989631174
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-066]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_066.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-161": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.226683246212341,
+    0.6769281772724556,
+    0.8708988385875143
+   ],
+   "b": -7.160595754256725,
+   "n": 18048,
+   "pos": 742,
+   "nll": 0.04411601752250954
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.5,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-161]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_161.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-169": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.205717469014838,
+    0.6730836191879201,
+    0.6227074151225017
+   ],
+   "b": -7.151172690142333,
+   "n": 16652,
+   "pos": 711,
+   "nll": 0.0448003781518853
+  },
+  "margin": {
+   "strict": 1.0,
+   "balanced": 0.5,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-169]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_169.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-162": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    8.255525685644987,
+    0.6599054629043292,
+    1.178453919465036
+   ],
+   "b": -7.296511432195466,
+   "n": 15430,
+   "pos": 681,
+   "nll": 0.03992804035247416
+  },
+  "margin": {
+   "strict": 0.6,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-162]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_162.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-151": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.238201065625071,
+    0.6882399216543457,
+    0.6210481123207774
+   ],
+   "b": -7.227309193962288,
+   "n": 17980,
+   "pos": 749,
+   "nll": 0.04300127282785725
+  },
+  "margin": {
+   "strict": 1.0,
+   "balanced": 0.5,
+   "recall": 0.25
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-151]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_151.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-102": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.296635131639363,
+    0.6864993506193255,
+    0.9454085688401652
+   ],
+   "b": -7.189636394663191,
+   "n": 18304,
+   "pos": 749,
+   "nll": 0.04345357311048939
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-102]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_102.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-112": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.3082106154918405,
+    0.6770791646867977,
+    1.2639126361569661
+   ],
+   "b": -7.177479491857971,
+   "n": 17893,
+   "pos": 740,
+   "nll": 0.0447165791397978
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.5,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts loco_params.json[SNGS-112]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_112.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "all13": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.261141796945931,
+    0.6816587144535254,
+    0.9718706095041927
+   ],
+   "b": -7.17646461355619,
+   "n": 18850,
+   "pos": 790,
+   "nll": 0.04376864023929178
+  },
+  "margin": {
+   "strict": 0.9,
+   "balanced": 0.25,
+   "recall": 0.2
+  },
+  "cuts": "m_cuts frozen weights",
+  "p_cut": 0.7,
+  "position": "m_space/params_all13.json",
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ }
+}

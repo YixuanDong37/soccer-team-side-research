@@ -1,0 +1,10 @@
+WCCN lambda=0.03                                                   right  68 wrong  7 lost  62 | links 414 r/w/u 230/ 2/182 prec 0.991 impure 0.0277
+WCCN lambda=0.1                                                    right  70 wrong  7 lost  60 | links 429 r/w/u 235/ 2/192 prec 0.992 impure 0.0280
+WCCN lambda=0.3                                                    right  75 wrong  6 lost  56 | links 438 r/w/u 238/ 2/198 prec 0.992 impure 0.0280
+WCCN lambda=1.0                                                    right  76 wrong  6 lost  55 | links 437 r/w/u 235/ 3/199 prec 0.987 impure 0.0286
+WCCN lambda=3.0                                                    right  78 wrong  6 lost  53 | links 447 r/w/u 242/ 2/203 prec 0.992 impure 0.0282
+min clean rows=1                                                   right  74 wrong  7 lost  56 | links 425 r/w/u 231/ 2/192 prec 0.991 impure 0.0280
+min clean rows=3                                                   right  75 wrong  6 lost  56 | links 433 r/w/u 236/ 2/195 prec 0.992 impure 0.0280
+min clean rows=5                                                   right  75 wrong  6 lost  56 | links 438 r/w/u 238/ 2/198 prec 0.992 impure 0.0280
+min clean rows=10                                                  right  75 wrong  6 lost  56 | links 441 r/w/u 240/ 2/199 prec 0.992 impure 0.0280
+min clean rows=20                                                  right  76 wrong  6 lost  55 | links 436 r/w/u 240/ 3/193 prec 0.988 impure 0.0286

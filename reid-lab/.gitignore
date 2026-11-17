@@ -1,0 +1,9 @@
+# reid-lab: things that appear when the lab is used and must not be committed
+relocate-log.json
+/_leadcfg/
+__pycache__/
+*.pyc
+*.pkl
+cache/
+cache_stress/
+cache_audit/

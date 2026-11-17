@@ -1,0 +1,16 @@
+family agglo+agglo_covis5: LOCO held-out (headline) and in-sample (secondary), by lam
+lam= 1 HELD-OUT right  87 wrong 16 lost  34 | links r/w/u 281/16/248 | impure 0.0375
+        in-sample right  89 wrong  7 lost  41 | links r/w/u 273/10/244 | impure 0.0341  params {'family': 'agglo', 'kind': 'w', 'margin': 0.15, 't_abs': 0.4}
+        chosen per fold: {'{"family": "agglo", "kind": "w", "margin": 0.15, "t_abs": 0.4}': 10, '{"family": "agglo", "kind": "tc", "margin": 0.1, "t_abs": 0.55}': 2, '{"family": "agglo_covis5", "kind": "tc", "margin": 0.05, "t_abs": 0.55}': 1}
+lam= 2 HELD-OUT right  75 wrong 14 lost  48 | links r/w/u 240/10/204 | impure 0.0327
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'family': 'agglo', 'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.5}': 1, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.5}': 9, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.45}': 1, '{"family": "agglo_covis5", "kind": "w", "margin": 0.3, "t_abs": 0.4}': 1, '{"family": "agglo", "kind": "w", "margin": 0.15, "t_abs": 0.4}': 1}
+lam= 3 HELD-OUT right  70 wrong 13 lost  54 | links r/w/u 232/ 8/202 | impure 0.0320
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'family': 'agglo', 'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.5}': 2, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.5}': 8, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.45}': 1, '{"family": "agglo_covis5", "kind": "w", "margin": 0.3, "t_abs": 0.5}': 1, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.6}': 1}
+lam= 5 HELD-OUT right  70 wrong 13 lost  54 | links r/w/u 221/ 7/193 | impure 0.0313
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'family': 'agglo', 'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.5}': 9, '{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.45}': 1, '{"family": "agglo_covis5", "kind": "w", "margin": 0.3, "t_abs": 0.55}': 1, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.6}': 1, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.5}': 1}
+lam=10 HELD-OUT right  63 wrong 13 lost  61 | links r/w/u 208/ 7/178 | impure 0.0309
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'family': 'agglo', 'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.5}': 7, '{"family": "agglo", "kind": "tc", "margin": 0.4, "t_abs": 0.65}': 3, '{"family": "agglo", "kind": "w", "margin": 0.3, "t_abs": 0.45}': 1, '{"family": "agglo_covis5", "kind": "w", "margin": 0.3, "t_abs": 0.55}': 1, '{"family": "agglo", "kind": "w", "margin": 0.25, "t_abs": 0.6}': 1}

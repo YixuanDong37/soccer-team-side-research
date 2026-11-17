@@ -1,0 +1,23 @@
+right / wrong / lost of 137 | links right / wrong / unknown | impure rows | without SNGS-162 | SNGS-162
+-- appearance only on the cut, solid pieces (lead = the one threshold)
+   lead 0.10    90 /  6 /  41 | links 403 / 18 /  33 | impure 2.24% |  86 / 2 /  31 | 4 / 4 / 10
+   lead 0.15    88 /  6 /  43 | links 392 / 18 /  31 | impure 2.24% |  84 / 2 /  33 | 4 / 4 / 10
+   lead 0.20    86 /  5 /  46 | links 382 / 15 /  28 | impure 2.05% |  82 / 1 /  36 | 4 / 4 / 10
+   lead 0.25    84 /  5 /  48 | links 373 / 11 /  28 | impure 1.75% |  81 / 1 /  37 | 3 / 4 / 11
+   lead 0.30    78 /  3 /  56 | links 355 /  9 /  27 | impure 1.57% |  75 / 0 /  44 | 3 / 3 / 12
+   lead 0.35    73 /  3 /  61 | links 336 /  9 /  24 | impure 1.57% |  70 / 0 /  49 | 3 / 3 / 12
+   lead 0.40    66 /  3 /  68 | links 314 /  6 /  18 | impure 1.39% |  63 / 0 /  56 | 3 / 3 / 12
+   lead 0.45    56 /  3 /  78 | links 278 /  6 /  18 | impure 1.39% |  53 / 0 /  66 | 3 / 3 / 12
+   lead 0.50    46 /  3 /  88 | links 239 /  6 /  14 | impure 1.39% |  43 / 0 /  76 | 3 / 3 / 12
+   lead 0.60    29 /  1 / 107 | links 174 /  4 /  13 | impure 1.23% |  26 / 0 /  93 | 3 / 1 / 14
+   lead 0.70    10 /  0 / 127 | links  99 /  1 /   7 | impure 1.04% |   8 / 0 / 111 | 2 / 0 / 16
+-- fuse_r1 (appearance + position bonus), fixed margin, leaves off, held-out weights
+   margin 0.10  96 /  7 /  34 | links 432 / 20 /  38 | impure 2.25% |  92 / 2 /  25 | 4 / 5 / 9
+   margin 0.20  95 /  5 /  37 | links 415 / 17 /  36 | impure 2.14% |  91 / 1 /  27 | 4 / 4 / 10
+   margin 0.30  91 /  5 /  41 | links 395 / 16 /  34 | impure 2.14% |  87 / 1 /  31 | 4 / 4 / 10
+   margin 0.40  85 /  4 /  48 | links 361 / 12 /  30 | impure 1.81% |  81 / 1 /  37 | 4 / 3 / 11
+   margin 0.50  81 /  4 /  52 | links 345 /  9 /  29 | impure 1.78% |  78 / 1 /  40 | 3 / 3 / 12
+   margin 0.55  76 /  3 /  58 | links 333 /  7 /  26 | impure 1.61% |  73 / 1 /  45 | 3 / 2 / 13
+   margin 0.60  70 /  2 /  65 | links 319 /  6 /  22 | impure 1.44% |  67 / 0 /  52 | 3 / 2 / 13
+   margin 0.70  58 /  2 /  77 | links 270 /  5 /  21 | impure 1.30% |  55 / 0 /  64 | 3 / 2 / 13
+   margin 0.80  40 /  1 /  96 | links 230 /  4 /  17 | impure 1.23% |  37 / 0 /  82 | 3 / 1 / 14

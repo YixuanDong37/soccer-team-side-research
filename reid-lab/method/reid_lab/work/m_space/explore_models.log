@@ -1,0 +1,144 @@
+== base: {'resid': 'r', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one',)}  held-out NLL per group 1.4695 (1135 groups); border groups only 1.5035 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.355 -1.002 -0.31  -0.972] g_in [-2.942] g_out [-3.073]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R  8 W 4 L125 | links  33 r 13 w 0 u 20 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 12 W 4 L121 | links  51 r 20 w 0 u 31 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 27 W 4 L106 | links  76 r 37 w 2 u 37 | impure 0.0264
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 48 W10 L 79 | links 116 r 56 w 8 u 52 | impure 0.0342
+== base_cv: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one',)}  held-out NLL per group 1.4344 (1135 groups); border groups only 1.4758 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.279 -1.026 -0.253 -0.921] g_in [-2.874] g_out [-3.011]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R  9 W 4 L124 | links  35 r 15 w 0 u 20 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 18 W 4 L115 | links  59 r 27 w 0 u 32 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 30 W 5 L102 | links  83 r 38 w 4 u 41 | impure 0.0274
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 50 W11 L 76 | links 119 r 58 w 8 u 53 | impure 0.0312
+== raw_d: {'resid': 'd', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one',)}  held-out NLL per group 1.6157 (1135 groups); border groups only 1.7706 (341)
+   example fold params: s [0.21  3.226 0.787] w [-1.219 -0.869 -0.409 -0.889] g_in [-2.773] g_out [-2.919]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R  1 W 4 L132 | links  17 r  7 w 0 u 10 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R  8 W 4 L125 | links  37 r 16 w 0 u 21 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 14 W 4 L119 | links  61 r 22 w 1 u 38 | impure 0.0263
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 24 W 7 L106 | links  86 r 35 w 4 u 47 | impure 0.0267
+== no_iv: {'resid': 'r', 'pair': ('lu', 'ls', 'tu'), 'ctx': ('one',)}  held-out NLL per group 1.4788 (1135 groups); border groups only 1.5334 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.389 -1.114 -0.904] g_in [-2.908] g_out [-3.097]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R  8 W 4 L125 | links  33 r 13 w 0 u 20 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 12 W 4 L121 | links  52 r 20 w 0 u 32 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 24 W 4 L109 | links  72 r 32 w 2 u 38 | impure 0.0264
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 45 W 9 L 83 | links 112 r 55 w 8 u 49 | impure 0.0337
+== ctx_edge: {'resid': 'r', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one', 'edge')}  held-out NLL per group 1.4674 (1135 groups); border groups only 1.4980 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.357 -1.055 -0.244 -0.999] g_in [-2.741 -1.   ] g_out [-3.112 -0.049]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 10 W 4 L123 | links  41 r 17 w 0 u 24 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 15 W 4 L118 | links  59 r 24 w 0 u 35 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 33 W 4 L100 | links  89 r 43 w 3 u 43 | impure 0.0281
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 50 W13 L 74 | links 125 r 58 w10 u 57 | impure 0.0348
+== ctx_full: {'resid': 'r', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.4582 (1135 groups); border groups only 1.4804 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.346 -1.114 -0.244 -0.978] g_in [-1.834 -0.999 -0.376] g_out [-1.166 -0.045 -0.803]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 11 W 4 L122 | links  41 r 17 w 0 u 24 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 15 W 4 L118 | links  52 r 23 w 0 u 29 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 30 W 4 L103 | links  82 r 40 w 2 u 40 | impure 0.0280
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 53 W 9 L 75 | links 121 r 61 w 7 u 53 | impure 0.0315
+== ctx_full_ee: {'resid': 'r', 'pair': ('lu', 'ls', 'iv', 'tu', 'ee', 'ex'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.4456 (1135 groups); border groups only 1.4456 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.307 -1.058 -0.225 -0.997  0.663 -0.355] g_in [-1.7   -0.508 -0.4  ] g_out [-1.042  0.403 -0.831]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 10 W 4 L123 | links  40 r 17 w 0 u 23 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 18 W 4 L115 | links  55 r 26 w 0 u 29 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 39 W 5 L 93 | links  92 r 48 w 3 u 41 | impure 0.0293
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 57 W11 L 69 | links 127 r 63 w 9 u 55 | impure 0.0320
+== cv_ctx_full: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'iv', 'tu'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.4228 (1135 groups); border groups only 1.4509 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.268 -1.145 -0.176 -0.926] g_in [-1.728 -1.089 -0.372] g_out [-0.982 -0.104 -0.836]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 11 W 4 L122 | links  44 r 19 w 0 u 25 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 22 W 4 L111 | links  61 r 31 w 0 u 30 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 33 W 6 L 98 | links  90 r 43 w 3 u 44 | impure 0.0277
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 54 W 9 L 74 | links 124 r 60 w 7 u 57 | impure 0.0319
+== cv_ctx_full_ee: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'iv', 'tu', 'ee', 'ex'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.4108 (1135 groups); border groups only 1.4150 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.237 -1.106 -0.143 -0.973  0.761 -0.264] g_in [-1.586 -0.541 -0.402] g_out [-0.869  0.397 -0.861]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 14 W 4 L119 | links  47 r 22 w 0 u 25 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 22 W 4 L111 | links  61 r 31 w 0 u 30 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 39 W 6 L 92 | links  98 r 48 w 5 u 45 | impure 0.0303
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 58 W13 L 66 | links 135 r 64 w12 u 59 | impure 0.0355
+== cv_fb: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'iv', 'tu', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3789 (1135 groups); border groups only 1.3571 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.295 -0.631  0.276 -0.908 -0.468 -0.373] g_in [-2.259 -0.73  -0.3  ] g_out [-1.327  0.439 -0.84 ]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 14 W 4 L119 | links  46 r 25 w 0 u 21 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 28 W 4 L105 | links  72 r 39 w 1 u 32 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 41 W 6 L 90 | links  99 r 51 w 4 u 44 | impure 0.0270
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 58 W13 L 66 | links 133 r 64 w10 u 59 | impure 0.0332
+== cv_fb_ee: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'iv', 'tu', 'ee', 'ex', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3710 (1135 groups); border groups only 1.3478 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.257 -0.547  0.232 -0.882  0.214 -0.517 -0.463 -0.361] g_in [-2.197 -0.52  -0.31 ] g_out [-1.273  0.606 -0.847]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 18 W 4 L115 | links  52 r 29 w 1 u 22 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 30 W 4 L103 | links  74 r 41 w 2 u 31 | impure 0.0263
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 50 W 8 L 79 | links 112 r 59 w 7 u 46 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 59 W15 L 63 | links 134 r 66 w11 u 57 | impure 0.0352
+== cv_fb_ee_noiv: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3708 (1135 groups); border groups only 1.3484 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.236 -0.535 -0.885  0.125 -0.591 -0.409 -0.299] g_in [-2.189 -0.465 -0.315] g_out [-1.281  0.63  -0.841]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 15 W 4 L118 | links  46 r 26 w 1 u 19 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 28 W 4 L105 | links  69 r 39 w 1 u 29 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 49 W 7 L 81 | links 110 r 58 w 6 u 46 | impure 0.0292
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 59 W13 L 65 | links 131 r 65 w11 u 55 | impure 0.0334
+== adv: {'resid': 'r_adv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3891 (1135 groups); border groups only 1.3496 (341)
+   example fold params: s [0.257 1.854 0.754] w [-1.279 -0.436 -0.883  0.042 -0.624 -0.441 -0.353] g_in [-2.132 -0.458 -0.344] g_out [-1.33   0.634 -0.827]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 14 W 4 L119 | links  42 r 23 w 0 u 19 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 26 W 4 L107 | links  68 r 37 w 0 u 31 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 48 W 7 L 82 | links 108 r 57 w 6 u 45 | impure 0.0300
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 59 W20 L 58 | links 142 r 65 w16 u 61 | impure 0.0378
+== adv_cv: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3642 (1135 groups); border groups only 1.3314 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.227 -0.524 -0.859  0.126 -0.563 -0.401 -0.313] g_in [-2.253 -0.484 -0.286] g_out [-1.235  0.618 -0.85 ]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 16 W 4 L117 | links  50 r 26 w 1 u 23 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 30 W 4 L103 | links  72 r 41 w 1 u 30 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 49 W 8 L 80 | links 110 r 58 w 7 u 45 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 61 W15 L 61 | links 142 r 65 w13 u 64 | impure 0.0359
+== adv_cv_fa: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3610 (1135 groups); border groups only 1.3186 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.227 -0.508 -0.876  0.124 -0.56  -0.391 -0.343] g_in [-2.237 -0.44  -0.299] g_out [-1.271  0.638 -0.84 ]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 17 W 4 L116 | links  51 r 28 w 1 u 22 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 34 W 4 L 99 | links  74 r 45 w 1 u 28 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 50 W 8 L 79 | links 109 r 57 w 7 u 45 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 60 W12 L 65 | links 139 r 66 w12 u 61 | impure 0.0350
+== cv_fa: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3675 (1135 groups); border groups only 1.3346 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.237 -0.518 -0.902  0.118 -0.59  -0.399 -0.332] g_in [-2.174 -0.423 -0.329] g_out [-1.318  0.646 -0.831]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 16 W 4 L117 | links  47 r 27 w 1 u 19 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 32 W 4 L101 | links  72 r 43 w 1 u 28 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 49 W 7 L 81 | links 107 r 57 w 6 u 44 | impure 0.0291
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 57 W11 L 69 | links 133 r 63 w11 u 59 | impure 0.0340
+== cv_fb_ee2: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fv', 'bv', 'lu2', 'ls2'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3678 (1135 groups); border groups only 1.3418 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.206 -0.431 -0.906  0.912 -0.714 -0.432 -0.319 -0.158 -0.414] g_in [-2.118 -0.49  -0.315] g_out [-1.192  0.63  -0.846]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 23 W 4 L110 | links  63 r 33 w 1 u 29 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 35 W 5 L 97 | links  82 r 46 w 3 u 33 | impure 0.0268
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 50 W 9 L 78 | links 113 r 59 w 6 u 48 | impure 0.0287
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 59 W16 L 62 | links 142 r 66 w12 u 64 | impure 0.0356
+== cv_fa_cen: {'resid': 'r_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time', 'census')}  held-out NLL per group 1.3682 (1135 groups); border groups only 1.3335 (341)
+   example fold params: s [0.375 1.406 0.869] w [-1.243 -0.516 -0.898  0.122 -0.582 -0.394 -0.332] g_in [-3.147 -0.431 -0.18   1.127] g_out [-0.693  0.704 -0.956 -0.74 ]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 19 W 4 L114 | links  51 r 29 w 1 u 21 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 32 W 4 L101 | links  71 r 43 w 1 u 27 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 48 W 7 L 82 | links 105 r 57 w 6 u 42 | impure 0.0291
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 57 W12 L 68 | links 130 r 63 w10 u 57 | impure 0.0333
+== adv_cen: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time', 'census')}  held-out NLL per group 1.3616 (1135 groups); border groups only 1.3176 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.233 -0.506 -0.873  0.13  -0.55  -0.386 -0.343] g_in [-3.183 -0.447 -0.157  1.109] g_out [-0.633  0.699 -0.967 -0.759]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 20 W 4 L113 | links  54 r 29 w 1 u 24 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 32 W 4 L101 | links  71 r 43 w 1 u 27 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 49 W 8 L 80 | links 103 r 57 w 7 u 39 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 60 W13 L 64 | links 138 r 66 w10 u 62 | impure 0.0336
+== adv_cen_notime: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'census')}  held-out NLL per group 1.3706 (1135 groups); border groups only 1.3319 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.244 -0.446 -0.9    0.097 -0.564 -0.394 -0.346] g_in [-3.595 -0.446  1.186] g_out [-3.366  0.602  0.052]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 21 W 4 L112 | links  55 r 31 w 1 u 23 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 35 W 4 L 98 | links  80 r 46 w 2 u 32 | impure 0.0263
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 51 W 7 L 79 | links 111 r 58 w 6 u 47 | impure 0.0299
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 58 W14 L 65 | links 137 r 66 w11 u 60 | impure 0.0349
+== adv_ew3: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time'), 'edge_weight': 3.0}  held-out NLL per group 1.3706 (1135 groups); border groups only 1.2929 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.384 -0.697 -1.224  0.259 -0.359 -0.469 -0.32 ] g_in [-3.251 -0.486 -0.105] g_out [-1.076  0.697 -1.138]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 24 W 4 L109 | links  61 r 33 w 1 u 27 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 36 W 4 L 97 | links  78 r 47 w 1 u 30 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 51 W 8 L 78 | links 116 r 58 w 7 u 51 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 63 W19 L 55 | links 157 r 69 w16 u 72 | impure 0.0386
+== adv_ew10: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba'), 'ctx': ('one', 'edge', 'time'), 'edge_weight': 10.0}  held-out NLL per group 1.3926 (1135 groups); border groups only 1.2849 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.496 -0.882 -1.43   0.332 -0.215 -0.513 -0.319] g_in [-4.098 -0.565  0.053] g_out [-1.019  0.707 -1.344]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 27 W 4 L106 | links  67 r 38 w 1 u 28 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 42 W 5 L 90 | links  92 r 51 w 4 u 37 | impure 0.0270
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 52 W 8 L 77 | links 120 r 59 w 7 u 54 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 64 W19 L 54 | links 162 r 70 w16 u 76 | impure 0.0386
+== adv_ew3_2: {'resid': 'r_adv_cv', 'pair': ('lu', 'ls', 'tu', 'ee', 'ex', 'fa', 'ba', 'lu2', 'ls2'), 'ctx': ('one', 'edge', 'time'), 'edge_weight': 3.0}  held-out NLL per group 1.3640 (1135 groups); border groups only 1.2936 (341)
+   example fold params: s [0.374 1.359 0.866] w [-1.368 -0.471 -1.281  0.915 -0.589 -0.496 -0.348 -0.04  -0.438] g_in [-3.137 -0.468 -0.087] g_out [-0.902  0.74  -1.144]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 28 W 4 L105 | links  68 r 39 w 1 u 28 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 36 W 5 L 96 | links  85 r 47 w 3 u 35 | impure 0.0268
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 52 W 9 L 76 | links 120 r 60 w 7 u 53 | impure 0.0304
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 63 W19 L 55 | links 159 r 70 w15 u 74 | impure 0.0384
+== r_fb_ee: {'resid': 'r', 'pair': ('lu', 'ls', 'iv', 'tu', 'ee', 'ex', 'fv', 'bv'), 'ctx': ('one', 'edge', 'time')}  held-out NLL per group 1.3981 (1135 groups); border groups only 1.3677 (341)
+   example fold params: s [0.174 2.199 0.715] w [-1.342 -0.423  0.188 -0.904  0.078 -0.616 -0.505 -0.4  ] g_in [-2.155 -0.488 -0.328] g_out [-1.312  0.623 -0.832]
+   sinkhorn peel=True  emit=2 theta=0.60  held-out: R 14 W 4 L119 | links  42 r 23 w 0 u 19 | impure 0.0261
+   sinkhorn peel=True  emit=2 theta=0.50  held-out: R 26 W 4 L107 | links  68 r 37 w 1 u 30 | impure 0.0262
+   sinkhorn peel=True  emit=2 theta=0.40  held-out: R 47 W 9 L 81 | links 107 r 56 w 8 u 43 | impure 0.0331
+   sinkhorn peel=True  emit=2 theta=0.30  held-out: R 53 W19 L 65 | links 136 r 60 w15 u 61 | impure 0.0392

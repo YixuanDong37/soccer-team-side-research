@@ -1,0 +1,33 @@
+pairs 26908 known 8012 same 921 imm 476
+all                          n=  8012 imm= 476 diff=  7091 | cos_w imm q10/50 0.42/0.75 diff q50/q99 -0.05/0.52
+plug                         n=    37 imm=  28 diff=     9 | cos_w imm q10/50 0.58/0.80 diff q50/q99 0.10/0.66
+pos_adm                      n=  6195 imm= 470 diff=  5282 | cos_w imm q10/50 0.43/0.75 diff q50/q99 -0.06/0.53
+pos_unreach                  n=  1246 imm=   4 diff=  1241 | cos_w imm q10/50 0.28/0.64 diff q50/q99 -0.06/0.42
+pos_known==0                 n=    17 imm=   1 diff=    15 | cos_w imm q10/50 0.29/0.29 diff q50/q99 -0.01/0.23
+low                          n=  1540 imm=  85 diff=  1364 | cos_w imm q10/50 0.23/0.64 diff q50/q99 -0.03/0.52
+pos_sink [0.00,0.05)  n=  5251  imm=  99 same_not_imm= 387 diff=  4765  share imm 0.019
+pos_sink [0.05,0.20)  n=   568  imm=  92 same_not_imm=  49 diff=   427  share imm 0.162
+pos_sink [0.20,0.40)  n=   135  imm=  65 same_not_imm=   5 diff=    65  share imm 0.481
+pos_sink [0.40,0.60)  n=    99  imm=  79 same_not_imm=   1 diff=    19  share imm 0.798
+pos_sink [0.60,0.80)  n=    84  imm=  77 same_not_imm=   1 diff=     6  share imm 0.917
+pos_sink [0.80,1.01)  n=    58  imm=  58 same_not_imm=   0 diff=     0  share imm 1.000
+kind 0 pos_sink [0.20,0.40)  n=   76 imm=  36 same_not_imm=  5 diff=   35
+kind 0 pos_sink [0.40,0.60)  n=   66 imm=  53 same_not_imm=  1 diff=   12
+kind 0 pos_sink [0.60,1.01)  n=  114 imm= 108 same_not_imm=  1 diff=    5
+kind 1 pos_sink [0.20,0.40)  n=   18 imm=   7 same_not_imm=  0 diff=   11
+kind 1 pos_sink [0.40,0.60)  n=    4 imm=   4 same_not_imm=  0 diff=    0
+kind 1 pos_sink [0.60,1.01)  n=    4 imm=   4 same_not_imm=  0 diff=    0
+kind 2 pos_sink [0.20,0.40)  n=   41 imm=  22 same_not_imm=  0 diff=   19
+kind 2 pos_sink [0.40,0.60)  n=   29 imm=  22 same_not_imm=  0 diff=    7
+kind 2 pos_sink [0.60,1.01)  n=   24 imm=  23 same_not_imm=  0 diff=    1
+plug joins: known 37 same 28 | all 82
+  plug cos_w [-1.0,0.0) same 0 diff 3
+  plug cos_w [0.0,0.2) same 0 diff 2
+  plug cos_w [0.2,0.4) same 0 diff 1
+  plug cos_w [0.4,0.6) same 4 diff 2
+  plug cos_w [0.6,1.0) same 24 diff 1
+  plug cos_raw [-1.00,0.80) same 0 diff 4
+  plug cos_raw [0.80,0.85) same 0 diff 1
+  plug cos_raw [0.85,0.90) same 0 diff 1
+  plug cos_raw [0.90,0.95) same 7 diff 3
+  plug cos_raw [0.95,1.01) same 21 diff 0

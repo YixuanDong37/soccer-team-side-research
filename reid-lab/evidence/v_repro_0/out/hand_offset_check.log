@@ -1,0 +1,10 @@
+SNGS-162 annotation 1920 x 1080 frames 0 - 749 | tracks frames 0 - 749 max x2 1279.0 max y2 719.0
+  annotation shifted by -1: matched pairs 8602, median IoU 0.805, mean IoU 0.785
+  annotation shifted by +0: matched pairs 9270, median IoU 0.833, mean IoU 0.813
+  annotation shifted by +1: matched pairs 7349, median IoU 0.743, mean IoU 0.734
+  scale 1.0 instead of 1.5: matched pairs 155
+SNGS-107 annotation 1920 x 1080 frames 0 - 749 | tracks frames 0 - 749 max x2 1279.0 max y2 719.0
+  annotation shifted by -1: matched pairs 8123, median IoU 0.794, mean IoU 0.778
+  annotation shifted by +0: matched pairs 8207, median IoU 0.799, mean IoU 0.783
+  annotation shifted by +1: matched pairs 6642, median IoU 0.730, mean IoU 0.726
+  scale 1.0 instead of 1.5: matched pairs 56

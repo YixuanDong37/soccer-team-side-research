@@ -1,0 +1,4 @@
+pair type (annotation),pairs,both labelled,share labelled,labels equal,equal share
+same_person,737,714,0.9687924016282226,709,0.9929971988795518
+diff_person_same_team,5532,5361,0.9690889370932755,5286,0.9860100727476218
+diff_person_diff_team,6348,6159,0.970226843100189,72,0.011690209449585971

@@ -1,0 +1,261 @@
+{
+ "pairs": 24890,
+ "decisions": {
+  "abstain": 24890,
+  "ambiguous": 0,
+  "conflicts_with_plugin": 0,
+  "implied_by_chain": 0,
+  "stitch": 0,
+  "stitch_path_disabled": 0
+ },
+ "vetoes": {
+  "team_conflict": 6980,
+  "role": 6610,
+  "piece_jump": 2342
+ },
+ "geometry": {
+  "gap_too_long": 3189,
+  "no_anchor": 2263,
+  "rivals": 2044,
+  "no_clean_row": 1392,
+  "no_decision_frames": 26,
+  "contradiction": 22,
+  "camera_discontinuity": 22
+ },
+ "jersey": {
+  "reads_weak": 8958
+ },
+ "diagnostics": {
+  "camera_breaks": 820,
+  "frames_pitch_usable": 9427,
+  "frames_with_camera": 9573,
+  "pieces": 1190,
+  "verified_team_pieces": 466
+ },
+ "per_clip": {
+  "SNGS-107": {
+   "pairs": 1522,
+   "geometry": {
+    "contradiction": 2,
+    "gap_too_long": 185,
+    "no_anchor": 121,
+    "no_clean_row": 72,
+    "no_decision_frames": 3,
+    "rivals": 243
+   },
+   "vetoes": {
+    "piece_jump": 29,
+    "role": 342,
+    "team_conflict": 525
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-163": {
+   "pairs": 1782,
+   "geometry": {
+    "camera_discontinuity": 8,
+    "gap_too_long": 139,
+    "no_anchor": 78,
+    "no_clean_row": 80,
+    "rivals": 163
+   },
+   "vetoes": {
+    "piece_jump": 336,
+    "role": 560,
+    "team_conflict": 418
+   },
+   "breaks": 181,
+   "usable": 682
+  },
+  "SNGS-106": {
+   "pairs": 1272,
+   "geometry": {
+    "gap_too_long": 207,
+    "no_anchor": 227,
+    "no_clean_row": 94,
+    "no_decision_frames": 3,
+    "rivals": 125
+   },
+   "vetoes": {
+    "role": 267,
+    "team_conflict": 349
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-097": {
+   "pairs": 1116,
+   "geometry": {
+    "contradiction": 2,
+    "gap_too_long": 181,
+    "no_anchor": 88,
+    "no_clean_row": 121,
+    "no_decision_frames": 4,
+    "rivals": 46
+   },
+   "vetoes": {
+    "role": 359,
+    "team_conflict": 315
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-067": {
+   "pairs": 2240,
+   "geometry": {
+    "contradiction": 1,
+    "gap_too_long": 427,
+    "no_anchor": 80,
+    "no_clean_row": 88,
+    "no_decision_frames": 2,
+    "rivals": 249
+   },
+   "vetoes": {
+    "piece_jump": 85,
+    "role": 527,
+    "team_conflict": 781
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-100": {
+   "pairs": 1380,
+   "geometry": {
+    "gap_too_long": 144,
+    "no_anchor": 98,
+    "no_clean_row": 65,
+    "rivals": 75
+   },
+   "vetoes": {
+    "piece_jump": 264,
+    "role": 359,
+    "team_conflict": 375
+   },
+   "breaks": 144,
+   "usable": 700
+  },
+  "SNGS-066": {
+   "pairs": 1915,
+   "geometry": {
+    "camera_discontinuity": 10,
+    "contradiction": 3,
+    "gap_too_long": 360,
+    "no_anchor": 204,
+    "no_clean_row": 141,
+    "rivals": 176
+   },
+   "vetoes": {
+    "piece_jump": 42,
+    "role": 285,
+    "team_conflict": 694
+   },
+   "breaks": 69,
+   "usable": 737
+  },
+  "SNGS-161": {
+   "pairs": 997,
+   "geometry": {
+    "camera_discontinuity": 3,
+    "gap_too_long": 71,
+    "no_anchor": 57,
+    "no_clean_row": 44,
+    "rivals": 50
+   },
+   "vetoes": {
+    "piece_jump": 280,
+    "role": 321,
+    "team_conflict": 171
+   },
+   "breaks": 167,
+   "usable": 673
+  },
+  "SNGS-169": {
+   "pairs": 3677,
+   "geometry": {
+    "gap_too_long": 357,
+    "no_anchor": 327,
+    "no_clean_row": 185,
+    "no_decision_frames": 2,
+    "rivals": 181
+   },
+   "vetoes": {
+    "piece_jump": 507,
+    "role": 1233,
+    "team_conflict": 885
+   },
+   "breaks": 139,
+   "usable": 704
+  },
+  "SNGS-162": {
+   "pairs": 3813,
+   "geometry": {
+    "contradiction": 3,
+    "gap_too_long": 640,
+    "no_anchor": 197,
+    "no_clean_row": 145,
+    "no_decision_frames": 2,
+    "rivals": 277
+   },
+   "vetoes": {
+    "piece_jump": 502,
+    "role": 994,
+    "team_conflict": 1053
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-151": {
+   "pairs": 2755,
+   "geometry": {
+    "camera_discontinuity": 1,
+    "gap_too_long": 103,
+    "no_anchor": 514,
+    "no_clean_row": 216,
+    "rivals": 277
+   },
+   "vetoes": {
+    "piece_jump": 267,
+    "role": 832,
+    "team_conflict": 545
+   },
+   "breaks": 120,
+   "usable": 681
+  },
+  "SNGS-102": {
+   "pairs": 770,
+   "geometry": {
+    "contradiction": 3,
+    "gap_too_long": 141,
+    "no_anchor": 75,
+    "no_clean_row": 25,
+    "no_decision_frames": 8,
+    "rivals": 46
+   },
+   "vetoes": {
+    "piece_jump": 30,
+    "role": 147,
+    "team_conflict": 295
+   },
+   "breaks": 0,
+   "usable": 750
+  },
+  "SNGS-112": {
+   "pairs": 1651,
+   "geometry": {
+    "contradiction": 8,
+    "gap_too_long": 234,
+    "no_anchor": 197,
+    "no_clean_row": 116,
+    "no_decision_frames": 2,
+    "rivals": 136
+   },
+   "vetoes": {
+    "role": 384,
+    "team_conflict": 574
+   },
+   "breaks": 0,
+   "usable": 750
+  }
+ }
+}

@@ -1,0 +1,114 @@
+SNGS-107 478.3 s {'app': None, 'pos': {'cols': ['cos_w', 'sink_lo'], 'w': [7.240782670487181, 0.6831175072568616], 'b': -7.15575297346886, 'n': 17724, 'pos': 733, 'nll': 0.044047447358800944}, 'posplug': {'cols': ['cos_w', 'sink_lo', 'plug'], 'w': [7.237172745664365, 0.6782698972826354, 0.9558069503464623], 'b': -7.1499034323087, 'n': 17724, 'pos': 733, 'nll': 0.04395639601111348}}
+app
+  t_abs 0.4 margin 0.10:  94/10/ 17  links 300/17/407  impure 0.0247
+  t_abs 0.4 margin 0.15:  91/ 9/ 21  links 295/16/381  impure 0.0236
+  t_abs 0.4 margin 0.20:  86/ 8/ 27  links 287/12/355  impure 0.0206
+  t_abs 0.4 margin 0.25:  82/ 7/ 32  links 277/8/329  impure 0.0160
+  t_abs 0.4 margin 0.30:  77/ 5/ 39  links 270/6/303  impure 0.0153
+  t_abs 0.4 margin 0.35:  66/ 5/ 50  links 246/6/270  impure 0.0153
+  t_abs 0.4 margin 0.40:  56/ 5/ 60  links 226/3/249  impure 0.0134
+  t_abs 0.5 margin 0.10:  88/10/ 23  links 298/17/366  impure 0.0246
+  t_abs 0.5 margin 0.15:  85/ 9/ 27  links 292/16/348  impure 0.0235
+  t_abs 0.5 margin 0.20:  83/ 8/ 30  links 284/12/332  impure 0.0205
+  t_abs 0.5 margin 0.25:  78/ 7/ 36  links 274/8/316  impure 0.0160
+  t_abs 0.5 margin 0.30:  74/ 5/ 42  links 268/6/296  impure 0.0153
+  t_abs 0.5 margin 0.35:  65/ 5/ 51  links 247/6/265  impure 0.0153
+  t_abs 0.5 margin 0.40:  56/ 5/ 60  links 227/3/246  impure 0.0134
+  t_abs 0.6 margin 0.10:  75/ 9/ 37  links 293/11/301  impure 0.0200
+  t_abs 0.6 margin 0.15:  74/ 8/ 39  links 285/10/294  impure 0.0189
+  t_abs 0.6 margin 0.20:  73/ 7/ 41  links 279/8/283  impure 0.0167
+  t_abs 0.6 margin 0.25:  70/ 6/ 45  links 268/5/274  impure 0.0137
+  t_abs 0.6 margin 0.30:  67/ 5/ 49  links 263/4/263  impure 0.0135
+  t_abs 0.6 margin 0.35:  63/ 5/ 53  links 244/4/245  impure 0.0135
+  t_abs 0.6 margin 0.40:  55/ 5/ 61  links 223/3/233  impure 0.0133
+  t_abs 0.7 margin 0.10:  59/ 8/ 54  links 251/10/219  impure 0.0182
+  t_abs 0.7 margin 0.15:  58/ 7/ 56  links 244/9/218  impure 0.0171
+  t_abs 0.7 margin 0.20:  58/ 6/ 57  links 238/7/214  impure 0.0149
+  t_abs 0.7 margin 0.25:  56/ 6/ 59  links 231/5/207  impure 0.0137
+  t_abs 0.7 margin 0.30:  53/ 5/ 63  links 226/4/198  impure 0.0135
+  t_abs 0.7 margin 0.35:  51/ 5/ 65  links 217/4/188  impure 0.0135
+  t_abs 0.7 margin 0.40:  47/ 5/ 69  links 201/3/183  impure 0.0133
+  t_abs 0.8 margin 0.10:  29/ 5/ 87  links 172/6/115  impure 0.0153
+  t_abs 0.8 margin 0.15:  28/ 5/ 88  links 167/6/114  impure 0.0153
+  t_abs 0.8 margin 0.20:  28/ 5/ 88  links 162/6/112  impure 0.0147
+  t_abs 0.8 margin 0.25:  28/ 5/ 88  links 160/4/110  impure 0.0135
+  t_abs 0.8 margin 0.30:  28/ 4/ 89  links 160/3/105  impure 0.0133
+  t_abs 0.8 margin 0.35:  27/ 4/ 90  links 152/3/103  impure 0.0133
+  t_abs 0.8 margin 0.40:  25/ 4/ 92  links 143/3/103  impure 0.0133
+pos
+  t_abs 0.4 margin 0.10: 100/13/  8  links 295/21/492  impure 0.0277
+  t_abs 0.4 margin 0.15:  96/ 9/ 16  links 297/18/452  impure 0.0260
+  t_abs 0.4 margin 0.20:  95/ 7/ 19  links 286/15/433  impure 0.0233
+  t_abs 0.4 margin 0.25:  93/ 6/ 22  links 285/14/410  impure 0.0208
+  t_abs 0.4 margin 0.30:  90/ 6/ 25  links 283/13/389  impure 0.0208
+  t_abs 0.4 margin 0.35:  89/ 6/ 26  links 275/13/368  impure 0.0203
+  t_abs 0.4 margin 0.40:  86/ 6/ 29  links 268/11/352  impure 0.0200
+  t_abs 0.5 margin 0.10: 100/13/  8  links 295/21/491  impure 0.0276
+  t_abs 0.5 margin 0.15:  96/ 9/ 16  links 297/18/452  impure 0.0260
+  t_abs 0.5 margin 0.20:  95/ 7/ 19  links 286/15/433  impure 0.0233
+  t_abs 0.5 margin 0.25:  93/ 6/ 22  links 285/14/410  impure 0.0208
+  t_abs 0.5 margin 0.30:  90/ 6/ 25  links 283/13/389  impure 0.0208
+  t_abs 0.5 margin 0.35:  89/ 6/ 26  links 275/13/368  impure 0.0203
+  t_abs 0.5 margin 0.40:  86/ 6/ 29  links 268/11/352  impure 0.0200
+  t_abs 0.6 margin 0.10: 100/13/  8  links 295/21/488  impure 0.0276
+  t_abs 0.6 margin 0.15:  96/ 9/ 16  links 297/18/451  impure 0.0260
+  t_abs 0.6 margin 0.20:  95/ 7/ 19  links 286/15/432  impure 0.0233
+  t_abs 0.6 margin 0.25:  93/ 6/ 22  links 285/14/409  impure 0.0208
+  t_abs 0.6 margin 0.30:  90/ 6/ 25  links 283/13/389  impure 0.0208
+  t_abs 0.6 margin 0.35:  89/ 6/ 26  links 275/13/368  impure 0.0203
+  t_abs 0.6 margin 0.40:  86/ 6/ 29  links 268/11/352  impure 0.0200
+  t_abs 0.7 margin 0.10: 100/12/  9  links 296/20/473  impure 0.0257
+  t_abs 0.7 margin 0.15:  96/ 8/ 17  links 297/18/441  impure 0.0241
+  t_abs 0.7 margin 0.20:  95/ 7/ 19  links 286/15/426  impure 0.0233
+  t_abs 0.7 margin 0.25:  93/ 6/ 22  links 285/14/404  impure 0.0208
+  t_abs 0.7 margin 0.30:  90/ 6/ 25  links 283/13/385  impure 0.0208
+  t_abs 0.7 margin 0.35:  89/ 6/ 26  links 275/13/365  impure 0.0203
+  t_abs 0.7 margin 0.40:  86/ 6/ 29  links 268/11/350  impure 0.0200
+  t_abs 0.8 margin 0.10: 100/11/ 10  links 293/19/453  impure 0.0256
+  t_abs 0.8 margin 0.15:  96/ 8/ 17  links 292/17/430  impure 0.0241
+  t_abs 0.8 margin 0.20:  95/ 7/ 19  links 283/14/419  impure 0.0232
+  t_abs 0.8 margin 0.25:  93/ 6/ 22  links 284/13/398  impure 0.0208
+  t_abs 0.8 margin 0.30:  90/ 6/ 25  links 283/13/379  impure 0.0208
+  t_abs 0.8 margin 0.35:  89/ 6/ 26  links 275/13/362  impure 0.0203
+  t_abs 0.8 margin 0.40:  86/ 6/ 29  links 268/11/346  impure 0.0200
+posplug
+  t_abs 0.4 margin 0.10: 100/12/  9  links 296/21/491  impure 0.0277
+  t_abs 0.4 margin 0.15:  97/ 9/ 15  links 297/18/456  impure 0.0260
+  t_abs 0.4 margin 0.20:  96/ 7/ 18  links 286/15/434  impure 0.0233
+  t_abs 0.4 margin 0.25:  94/ 6/ 21  links 285/14/411  impure 0.0208
+  t_abs 0.4 margin 0.30:  90/ 6/ 25  links 283/13/387  impure 0.0208
+  t_abs 0.4 margin 0.35:  89/ 6/ 26  links 275/13/370  impure 0.0203
+  t_abs 0.4 margin 0.40:  86/ 6/ 29  links 268/12/351  impure 0.0199
+  t_abs 0.5 margin 0.10: 100/12/  9  links 296/21/490  impure 0.0276
+  t_abs 0.5 margin 0.15:  97/ 9/ 15  links 297/18/455  impure 0.0260
+  t_abs 0.5 margin 0.20:  96/ 7/ 18  links 286/15/434  impure 0.0233
+  t_abs 0.5 margin 0.25:  94/ 6/ 21  links 285/14/411  impure 0.0208
+  t_abs 0.5 margin 0.30:  90/ 6/ 25  links 283/13/387  impure 0.0208
+  t_abs 0.5 margin 0.35:  89/ 6/ 26  links 275/13/370  impure 0.0203
+  t_abs 0.5 margin 0.40:  86/ 6/ 29  links 268/12/351  impure 0.0199
+  t_abs 0.6 margin 0.10: 100/12/  9  links 297/20/487  impure 0.0275
+  t_abs 0.6 margin 0.15:  97/ 9/ 15  links 297/18/454  impure 0.0260
+  t_abs 0.6 margin 0.20:  96/ 7/ 18  links 286/15/433  impure 0.0233
+  t_abs 0.6 margin 0.25:  94/ 6/ 21  links 285/14/410  impure 0.0208
+  t_abs 0.6 margin 0.30:  90/ 6/ 25  links 283/13/387  impure 0.0208
+  t_abs 0.6 margin 0.35:  89/ 6/ 26  links 275/13/370  impure 0.0203
+  t_abs 0.6 margin 0.40:  86/ 6/ 29  links 268/12/351  impure 0.0199
+  t_abs 0.7 margin 0.10: 100/11/ 10  links 297/20/472  impure 0.0257
+  t_abs 0.7 margin 0.15:  97/ 8/ 16  links 297/18/443  impure 0.0241
+  t_abs 0.7 margin 0.20:  96/ 7/ 18  links 286/15/427  impure 0.0233
+  t_abs 0.7 margin 0.25:  94/ 6/ 21  links 285/14/405  impure 0.0208
+  t_abs 0.7 margin 0.30:  90/ 6/ 25  links 283/13/383  impure 0.0208
+  t_abs 0.7 margin 0.35:  89/ 6/ 26  links 275/13/367  impure 0.0203
+  t_abs 0.7 margin 0.40:  86/ 6/ 29  links 268/12/349  impure 0.0199
+  t_abs 0.8 margin 0.10: 100/11/ 10  links 294/19/453  impure 0.0256
+  t_abs 0.8 margin 0.15:  97/ 8/ 16  links 292/17/432  impure 0.0241
+  t_abs 0.8 margin 0.20:  96/ 7/ 18  links 283/14/420  impure 0.0232
+  t_abs 0.8 margin 0.25:  94/ 6/ 21  links 284/13/399  impure 0.0208
+  t_abs 0.8 margin 0.30:  90/ 6/ 25  links 283/13/377  impure 0.0208
+  t_abs 0.8 margin 0.35:  89/ 6/ 26  links 275/13/364  impure 0.0203
+  t_abs 0.8 margin 0.40:  86/ 6/ 29  links 268/12/345  impure 0.0199
+
+real	7m59.967s
+user	0m0.000s
+sys	0m0.015s
+exit=0

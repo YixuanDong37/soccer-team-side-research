@@ -1,0 +1,50 @@
+599 {'same person': 346, 'different people': 194, 'unknown (no matched row on one side)': 59}
+label                   different people  same person  unknown (no matched row on one side)
+hole_frames      count        194.000000   346.000000                             59.000000
+                 mean          78.082474    28.236994                             67.050847
+                 std           78.876262    39.851848                             71.945243
+                 min           10.000000    10.000000                             10.000000
+                 25%           16.000000    11.000000                             16.000000
+                 50%           40.000000    15.000000                             34.000000
+                 75%          124.000000    24.000000                             92.500000
+                 max          299.000000   274.000000                            273.000000
+cos_before_after count         64.000000   172.000000                              0.000000
+                 mean           0.783645     0.951406                                   NaN
+                 std            0.105938     0.049417                                   NaN
+                 min            0.582200     0.641300                                   NaN
+                 25%            0.687150     0.941075                                   NaN
+                 50%            0.791300     0.964000                                   NaN
+                 75%            0.864300     0.978825                                   NaN
+                 max            0.965600     0.994000                                   NaN
+centre_jump_px   count        194.000000   346.000000                             59.000000
+                 mean          34.461856    25.442486                             42.442373
+                 std           22.311341    20.001473                             26.113712
+                 min            1.900000     0.300000                              1.800000
+                 25%           17.125000    10.250000                             18.750000
+                 50%           30.900000    21.300000                             44.300000
+                 75%           46.300000    35.525000                             57.950000
+                 max          100.400000   105.700000                            121.400000
+speed_mps        count        187.000000   334.000000                             53.000000
+                 mean           6.858342     2.336407                              9.641321
+                 std            8.004134     2.041642                             10.911118
+                 min            0.150000     0.000000                              0.130000
+                 25%            2.080000     0.742500                              2.110000
+                 50%            4.590000     1.730000                              5.050000
+                 75%            8.050000     3.410000                             14.840000
+                 max           65.160000    11.900000                             48.190000
+rows_after       count        194.000000   346.000000                             59.000000
+                 mean          45.005155    66.430636                             20.220339
+                 std           96.135725   100.974194                             72.216167
+                 min            1.000000     1.000000                              1.000000
+                 25%            1.000000     6.000000                              1.000000
+                 50%            5.000000    33.000000                              1.000000
+                 75%           32.750000    81.750000                              4.000000
+                 max          667.000000   711.000000                            397.000000
+cos < 0.8 {'different people': 33, 'same person': 4} | cos >= 0.8 {'same person': 168, 'different people': 31} | no cos {'same person': 174, 'different people': 130}
+cos < 0.85 {'different people': 41, 'same person': 8} | cos >= 0.85 {'same person': 164, 'different people': 23} | no cos {'same person': 174, 'different people': 130}
+cos < 0.9 {'different people': 54, 'same person': 11} | cos >= 0.9 {'same person': 161, 'different people': 10} | no cos {'same person': 174, 'different people': 130}
+cos < 0.93 {'different people': 58, 'same person': 25} | cos >= 0.93 {'same person': 147, 'different people': 6} | no cos {'same person': 174, 'different people': 130}
+hole >= 10 {'same person': 346, 'different people': 194}
+hole >= 25 {'different people': 119, 'same person': 84}
+hole >= 50 {'different people': 90, 'same person': 40}
+hole >= 100 {'different people': 57, 'same person': 17}

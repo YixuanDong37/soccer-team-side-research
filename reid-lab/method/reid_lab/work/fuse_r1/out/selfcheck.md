@@ -1,0 +1,20 @@
+# fuse_r1: label-free self-check of the appearance evidence (13 dev clips, frozen cuts)
+
+cos_w = cosine of whitened team-centred prototypes. Same-person pairs: first third against last third of one long piece. Different-people pairs: same-team solid pieces seen together in >= 5 frames.
+
+| clip | same-person pairs | different-people pairs | AUC | same 10% | same 50% | different 95% | different 99% | different >= 0.5 |
+|---|---|---|---|---|---|---|---|---|
+| SNGS-107 | 35 | 303 | 1.0 | 0.71 | 0.856 | 0.245 | 0.489 | 0.0099 |
+| SNGS-163 | 39 | 231 | 0.993 | 0.593 | 0.792 | 0.358 | 0.608 | 0.0216 |
+| SNGS-106 | 31 | 197 | 1.0 | 0.732 | 0.833 | 0.242 | 0.431 | 0.0102 |
+| SNGS-097 | 34 | 282 | 0.9936 | 0.701 | 0.882 | 0.331 | 0.513 | 0.0177 |
+| SNGS-067 | 37 | 453 | 0.9995 | 0.636 | 0.825 | 0.276 | 0.409 | 0.0066 |
+| SNGS-100 | 29 | 330 | 1.0 | 0.768 | 0.838 | 0.254 | 0.452 | 0.003 |
+| SNGS-066 | 48 | 480 | 0.9825 | 0.471 | 0.761 | 0.317 | 0.472 | 0.0083 |
+| SNGS-161 | 28 | 248 | 1.0 | 0.682 | 0.829 | 0.186 | 0.361 | 0.004 |
+| SNGS-169 | 36 | 364 | 0.9973 | 0.63 | 0.795 | 0.317 | 0.494 | 0.0082 |
+| SNGS-162 | 47 | 519 | 0.9984 | 0.641 | 0.836 | 0.267 | 0.554 | 0.0135 |
+| SNGS-151 | 36 | 228 | 0.9967 | 0.7 | 0.827 | 0.541 | 0.705 | 0.057 |
+| SNGS-102 | 31 | 269 | 1.0 | 0.806 | 0.885 | 0.329 | 0.489 | 0.0112 |
+| SNGS-112 | 35 | 286 | 0.9995 | 0.766 | 0.897 | 0.345 | 0.473 | 0.0105 |
+| all clips pooled | 466 | 4190 | 0.9967 | 0.653 | 0.833 | 0.31 | 0.517 | 0.0126 |

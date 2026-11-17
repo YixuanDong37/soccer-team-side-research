@@ -1,0 +1,47 @@
+strict   fold SNGS-107 budget 3 feasible 10 -> margin 0.60 leaves off (J 39, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-163 budget 3 feasible 10 -> margin 0.70 leaves off (J 45, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-106 budget 3 feasible 11 -> margin 0.60 leaves off (J 45, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-097 budget 3 feasible 11 -> margin 0.70 leaves off (J 41, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-067 budget 3 feasible 10 -> margin 0.60 leaves off (J 43, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-100 budget 3 feasible 10 -> margin 0.60 leaves off (J 57, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-066 budget 3 feasible 15 -> margin 0.50 leaves off (J 52, left out of J: SNGS-162, wrong on fit clips 3) = params_loco.json
+strict   fold SNGS-161 budget 3 feasible 10 -> margin 0.70 leaves off (J 37, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-169 budget 3 feasible 10 -> margin 0.60 leaves off (J 46, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-162 budget 3 feasible 32 -> margin 0.60 leaves off (J 60, left out of J: SNGS-112, wrong on fit clips 0) = params_loco.json
+strict   fold SNGS-151 budget 3 feasible 10 -> margin 0.60 leaves off (J 53, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-102 budget 3 feasible 10 -> margin 0.60 leaves off (J 46, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold SNGS-112 budget 3 feasible 10 -> margin 0.60 leaves off (J 64, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+strict   fold all13    budget 4 feasible 16 -> margin 0.60 leaves off (J 46, left out of J: SNGS-162, wrong on fit clips 2) = params_loco.json
+balanced fold SNGS-107 budget 6 feasible 25 -> margin 0.50 leaves off (J 57, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold SNGS-163 budget 6 feasible 24 -> margin 0.50 leaves off (J 62, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold SNGS-106 budget 6 feasible 25 -> margin 0.20 leaves off (J 64, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+balanced fold SNGS-097 budget 6 feasible 25 -> margin 0.25 leaves off (J 68, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+balanced fold SNGS-067 budget 6 feasible 26 -> margin 0.20 leaves off (J 60, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+balanced fold SNGS-100 budget 6 feasible 25 -> margin 0.20 leaves off (J 71, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+balanced fold SNGS-066 budget 6 feasible 31 -> margin 0.40 leaves off (J 67, left out of J: SNGS-162, wrong on fit clips 3) = params_loco.json
+balanced fold SNGS-161 budget 6 feasible 25 -> margin 0.20 leaves off (J 55, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+balanced fold SNGS-169 budget 6 feasible 25 -> margin 0.40 leaves off (J 57, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold SNGS-162 budget 6 feasible 32 -> margin 0.15 leaves off (J 71, left out of J: SNGS-066, wrong on fit clips 2) = params_loco.json
+balanced fold SNGS-151 budget 6 feasible 24 -> margin 0.50 leaves off (J 61, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold SNGS-102 budget 6 feasible 25 -> margin 0.40 leaves off (J 57, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold SNGS-112 budget 6 feasible 25 -> margin 0.40 leaves off (J 66, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+balanced fold all13    budget 7 feasible 30 -> margin 0.40 leaves off (J 67, left out of J: SNGS-162, wrong on fit clips 4) = params_loco.json
+recall   fold SNGS-107 budget 12 feasible 32 -> margin 0.25 leaves off (J 71, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+recall   fold SNGS-163 budget 12 feasible 32 -> margin 0.20 leaves on (J 78, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-106 budget 13 feasible 32 -> margin 0.20 leaves off (J 80, left out of J: SNGS-162, wrong on fit clips 5) = params_loco.json
+recall   fold SNGS-097 budget 13 feasible 32 -> margin 0.20 leaves on (J 81, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-067 budget 12 feasible 32 -> margin 0.20 leaves on (J 78, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-100 budget 13 feasible 32 -> margin 0.20 leaves on (J 87, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-066 budget 12 feasible 32 -> margin 0.20 leaves on (J 81, left out of J: SNGS-162, wrong on fit clips 6) = params_loco.json
+recall   fold SNGS-161 budget 12 feasible 32 -> margin 0.20 leaves on (J 72, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-169 budget 12 feasible 32 -> margin 0.20 leaves on (J 74, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-162 budget 12 feasible 32 -> margin 0.25 leaves on (J 84, left out of J: SNGS-100, wrong on fit clips 1) = params_loco.json
+recall   fold SNGS-151 budget 13 feasible 32 -> margin 0.20 leaves on (J 78, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-102 budget 12 feasible 32 -> margin 0.20 leaves on (J 76, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold SNGS-112 budget 13 feasible 32 -> margin 0.20 leaves on (J 83, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+recall   fold all13    budget 14 feasible 32 -> margin 0.20 leaves on (J 85, left out of J: SNGS-162, wrong on fit clips 7) = params_loco.json
+
+strict: held-out pooled 67 / 3 / 67 | links 312 / 7 / 25 | impure 0.01611 | clip left out of J over the 13 folds: {'SNGS-162': 12, 'SNGS-112': 1}
+balanced: held-out pooled 85 / 5 / 47 | links 378 / 16 / 30 | impure 0.02123 | clip left out of J over the 13 folds: {'SNGS-162': 12, 'SNGS-066': 1}
+recall: held-out pooled 106 / 7 / 24 | links 414 / 17 / 260 | impure 0.02175 | clip left out of J over the 13 folds: {'SNGS-162': 12, 'SNGS-100': 1}
+rule B re-implemented from PREREG.txt gives the settings of params_loco.json

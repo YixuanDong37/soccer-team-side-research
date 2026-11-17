@@ -1,0 +1,19 @@
+clip | gbf pieces | sub-pieces after cuts | solid (>= 5 boxes) | cuts | clean share of boxes | players in view mean | max | strict links | strict groups | strict right/wrong/lost
+SNGS-107 | 91 | 101 | 65 | 10 | 0.75 | 11.1 | 16 | 27 | 18 | 8/0/8
+SNGS-163 | 90 | 110 | 66 | 20 | 0.78 | 9.8 | 14 | 14 | 11 | 2/0/9
+SNGS-106 | 81 | 101 | 68 | 20 | 0.78 | 6.9 | 16 | 27 | 18 | 3/0/4
+SNGS-097 | 74 | 80 | 56 | 6 | 0.73 | 12.3 | 17 | 22 | 10 | 4/0/2
+SNGS-067 | 103 | 133 | 93 | 30 | 0.77 | 11.4 | 22 | 39 | 22 | 5/0/5
+SNGS-100 | 80 | 105 | 75 | 25 | 0.76 | 10.2 | 15 | 32 | 21 | 2/0/2
+SNGS-066 | 93 | 115 | 86 | 22 | 0.70 | 14.4 | 20 | 28 | 17 | 5/1/5
+SNGS-161 | 75 | 81 | 60 | 6 | 0.73 | 10.4 | 15 | 25 | 17 | 8/0/6
+SNGS-169 | 123 | 150 | 75 | 27 | 0.73 | 11.3 | 16 | 28 | 17 | 11/0/4
+SNGS-162 | 125 | 157 | 98 | 32 | 0.73 | 12.3 | 20 | 43 | 20 | 3/2/13
+SNGS-151 | 98 | 110 | 61 | 12 | 0.76 | 10.7 | 19 | 10 | 8 | 3/0/6
+SNGS-102 | 66 | 71 | 57 | 5 | 0.85 | 11.3 | 17 | 25 | 15 | 10/0/2
+SNGS-112 | 91 | 97 | 63 | 6 | 0.79 | 11.1 | 17 | 24 | 10 | 3/0/1
+SNGS-162 rank in 'gbf pieces': 1 of 13 from the top (value 125.00; others 66.00 - 123.00)
+SNGS-162 rank in 'solid pieces': 1 of 13 from the top (value 98.00; others 56.00 - 93.00)
+SNGS-162 rank in 'cuts': 1 of 13 from the top (value 32.00; others 5.00 - 30.00)
+SNGS-162 rank in 'clean share': 10 of 13 from the top (value 0.73; others 0.70 - 0.85)
+SNGS-162 rank in 'players in view': 3 of 13 from the top (value 12.32; others 6.85 - 14.42)

@@ -1,0 +1,23 @@
+                    n  hit  minor_rows
+kind                                  
+other team         27   13         662
+player/goalkeeper   1    1          22
+player/referee      1    0          12
+referee/player      2    1          13
+same team          47   30        1517
+              n  hit  minor_rows
+gapbin                          
+[0, 1)       11    2         312
+[1, 2)        3    1          25
+[2, 5)       10    3         204
+[5, 10)       7    3         124
+[10, 25)     17    9         450
+[25, 100)    15   13         488
+[100, 1000)  15   14         623
+             n  hit  minor_rows
+size                           
+[0, 10)     21    8         135
+[10, 20)    24   12         305
+[20, 50)    20   14         606
+[50, 1000)  13   11        1180
+rows on the smaller side: all 2226 hit 1592

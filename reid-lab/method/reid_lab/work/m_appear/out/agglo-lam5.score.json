@@ -1,0 +1,251 @@
+{
+ "name": "agglo-lam5",
+ "held_out": {
+  "pooled": {
+   "scored": 137,
+   "right": 67,
+   "wrong": 6,
+   "lost": 64,
+   "undetected": 30,
+   "untracked": 0,
+   "right_share": 0.4891,
+   "wrong_share": 0.0438,
+   "links": 397,
+   "links_right": 214,
+   "links_wrong": 3,
+   "links_unknown": 180,
+   "link_precision": 0.9862,
+   "impure_row_share": 0.02863
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "returns": {
+     "right": 8,
+     "wrong": 2,
+     "lost": 6,
+     "undetected": 2,
+     "untracked": 0
+    },
+    "links": {
+     "n": 38,
+     "right": 16,
+     "wrong": 0,
+     "unknown": 22
+    },
+    "impure_rows": 94
+   },
+   "SNGS-163": {
+    "returns": {
+     "right": 4,
+     "wrong": 0,
+     "lost": 7,
+     "undetected": 5,
+     "untracked": 0
+    },
+    "links": {
+     "n": 18,
+     "right": 12,
+     "wrong": 0,
+     "unknown": 6
+    },
+    "impure_rows": 453
+   },
+   "SNGS-106": {
+    "returns": {
+     "right": 4,
+     "wrong": 0,
+     "lost": 3,
+     "undetected": 1,
+     "untracked": 0
+    },
+    "links": {
+     "n": 33,
+     "right": 14,
+     "wrong": 0,
+     "unknown": 19
+    },
+    "impure_rows": 248
+   },
+   "SNGS-097": {
+    "returns": {
+     "right": 6,
+     "wrong": 0,
+     "lost": 0,
+     "undetected": 4,
+     "untracked": 0
+    },
+    "links": {
+     "n": 27,
+     "right": 16,
+     "wrong": 0,
+     "unknown": 11
+    },
+    "impure_rows": 318
+   },
+   "SNGS-067": {
+    "returns": {
+     "right": 6,
+     "wrong": 0,
+     "lost": 4,
+     "undetected": 3,
+     "untracked": 0
+    },
+    "links": {
+     "n": 37,
+     "right": 27,
+     "wrong": 0,
+     "unknown": 10
+    },
+    "impure_rows": 332
+   },
+   "SNGS-100": {
+    "returns": {
+     "right": 3,
+     "wrong": 0,
+     "lost": 1,
+     "undetected": 1,
+     "untracked": 0
+    },
+    "links": {
+     "n": 23,
+     "right": 19,
+     "wrong": 1,
+     "unknown": 3
+    },
+    "impure_rows": 274
+   },
+   "SNGS-066": {
+    "returns": {
+     "right": 3,
+     "wrong": 1,
+     "lost": 7,
+     "undetected": 2,
+     "untracked": 0
+    },
+    "links": {
+     "n": 19,
+     "right": 10,
+     "wrong": 0,
+     "unknown": 9
+    },
+    "impure_rows": 611
+   },
+   "SNGS-161": {
+    "returns": {
+     "right": 9,
+     "wrong": 0,
+     "lost": 5,
+     "undetected": 2,
+     "untracked": 0
+    },
+    "links": {
+     "n": 29,
+     "right": 21,
+     "wrong": 0,
+     "unknown": 8
+    },
+    "impure_rows": 91
+   },
+   "SNGS-169": {
+    "returns": {
+     "right": 9,
+     "wrong": 0,
+     "lost": 6,
+     "undetected": 1,
+     "untracked": 0
+    },
+    "links": {
+     "n": 40,
+     "right": 19,
+     "wrong": 0,
+     "unknown": 21
+    },
+    "impure_rows": 72
+   },
+   "SNGS-162": {
+    "returns": {
+     "right": 1,
+     "wrong": 3,
+     "lost": 14,
+     "undetected": 2,
+     "untracked": 0
+    },
+    "links": {
+     "n": 38,
+     "right": 24,
+     "wrong": 1,
+     "unknown": 13
+    },
+    "impure_rows": 507
+   },
+   "SNGS-151": {
+    "returns": {
+     "right": 1,
+     "wrong": 0,
+     "lost": 8,
+     "undetected": 5,
+     "untracked": 0
+    },
+    "links": {
+     "n": 33,
+     "right": 8,
+     "wrong": 0,
+     "unknown": 25
+    },
+    "impure_rows": 36
+   },
+   "SNGS-102": {
+    "returns": {
+     "right": 9,
+     "wrong": 0,
+     "lost": 3,
+     "undetected": 2,
+     "untracked": 0
+    },
+    "links": {
+     "n": 28,
+     "right": 15,
+     "wrong": 0,
+     "unknown": 13
+    },
+    "impure_rows": 25
+   },
+   "SNGS-112": {
+    "returns": {
+     "right": 4,
+     "wrong": 0,
+     "lost": 0,
+     "undetected": 0,
+     "untracked": 0
+    },
+    "links": {
+     "n": 34,
+     "right": 13,
+     "wrong": 1,
+     "unknown": 20
+    },
+    "impure_rows": 87
+   }
+  },
+  "clips_without_entry": []
+ },
+ "in_sample_fit_on_all_13": {
+  "params": {
+   "kind": "w",
+   "margin": 0.3,
+   "t_abs": 0.5
+  },
+  "pooled": {
+   "right": 71,
+   "wrong": 6,
+   "lost": 60,
+   "links": 395,
+   "links_right": 220,
+   "links_wrong": 1,
+   "links_unknown": 174,
+   "impure": 3033,
+   "rows": 109938,
+   "impure_row_share": 0.02759
+  }
+ }
+}

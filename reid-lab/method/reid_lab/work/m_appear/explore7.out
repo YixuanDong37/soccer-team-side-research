@@ -1,0 +1,26 @@
+raw, clean rows mean (appearance_match.py)           AUC 0.9668 R1 0.939 AP 0.9272 TP@FP<=0/2/5/10   0  37 115 161 | w/o 162: AUC 0.9801 R1 0.968 AP 0.9693 TP@FP<=0/2/5/10  32 183 216 256
+team-centred, clean rows mean  [features.cos_tc]     AUC 0.9804 R1 0.939 AP 0.9676 TP@FP<=0/2/5/10  30 103 210 290 | w/o 162: AUC 0.9873 R1 0.968 AP 0.9884 TP@FP<=0/2/5/10 192 255 275 298
+team-centred + WCCN 0.3        [features.cos_w]      AUC 0.9751 R1 0.934 AP 0.9709 TP@FP<=0/2/5/10  84 151 215 270 | w/o 162: AUC 0.9855 R1 0.962 AP 0.9852 TP@FP<=0/2/5/10 186 237 253 287
+tc, all rows                                         AUC 0.9826 R1 0.934 AP 0.9685 TP@FP<=0/2/5/10  31 121 176 296 | w/o 162: AUC 0.9905 R1 0.962 AP 0.9871 TP@FP<=0/2/5/10 147 212 275 308
+tc, clean & >30 px from the edge                     AUC 0.9792 R1 0.937 AP 0.9663 TP@FP<=0/2/5/10  32 110 208 285 | w/o 162: AUC 0.9866 R1 0.965 AP 0.9870 TP@FP<=0/2/5/10 189 205 282 299
+tc, cover<=0.3 instead of no overlap                 AUC 0.9810 R1 0.939 AP 0.9698 TP@FP<=0/2/5/10  30 117 193 296 | w/o 162: AUC 0.9876 R1 0.968 AP 0.9896 TP@FP<=0/2/5/10 164 252 274 313
+tc, clean & >= 60 px tall                            AUC 0.9767 R1 0.934 AP 0.9692 TP@FP<=0/2/5/10  50 103 200 294 | w/o 162: AUC 0.9851 R1 0.962 AP 0.9859 TP@FP<=0/2/5/10 138 257 274 296
+tc, clean rows >= 5 frames from the piece's ends     AUC 0.9794 R1 0.934 AP 0.9668 TP@FP<=0/2/5/10  32 105 200 272 | w/o 162: AUC 0.9887 R1 0.962 AP 0.9868 TP@FP<=0/2/5/10 188 196 272 292
+tc, clean rows >= 12 frames from the piece's ends    AUC 0.9788 R1 0.937 AP 0.9677 TP@FP<=0/2/5/10  38 141 196 281 | w/o 162: AUC 0.9876 R1 0.965 AP 0.9857 TP@FP<=0/2/5/10 185 205 269 297
+tc, clean rows >= 25 frames from the piece's ends    AUC 0.9785 R1 0.937 AP 0.9707 TP@FP<=0/2/5/10  60 172 201 278 | w/o 162: AUC 0.9873 R1 0.965 AP 0.9863 TP@FP<=0/2/5/10 171 195 276 303
+tc, coordinate median                                AUC 0.9789 R1 0.939 AP 0.9685 TP@FP<=0/2/5/10  39 103 192 290 | w/o 162: AUC 0.9858 R1 0.968 AP 0.9891 TP@FP<=0/2/5/10 195 256 273 298
+tc, trimmed mean (drop 20 % twice)                   AUC 0.9766 R1 0.934 AP 0.9659 TP@FP<=0/2/5/10  34  93 169 285 | w/o 162: AUC 0.9840 R1 0.962 AP 0.9885 TP@FP<=0/2/5/10 186 225 261 300
+tc, 2 prototypes per piece, max                      AUC 0.9811 R1 0.932 AP 0.9585 TP@FP<=0/2/5/10  52  89 155 220 | w/o 162: AUC 0.9877 R1 0.960 AP 0.9777 TP@FP<=0/2/5/10 129 180 213 254
+tc, 2 prototypes per piece, mean                     AUC 0.9801 R1 0.934 AP 0.9678 TP@FP<=0/2/5/10  56 108 211 282 | w/o 162: AUC 0.9870 R1 0.962 AP 0.9853 TP@FP<=0/2/5/10 175 230 260 281
+tc, 3 prototypes per piece, max                      AUC 0.9802 R1 0.932 AP 0.9602 TP@FP<=0/2/5/10  75 111 133 234 | w/o 162: AUC 0.9870 R1 0.960 AP 0.9776 TP@FP<=0/2/5/10 111 147 224 242
+tc, 3 prototypes per piece, mean                     AUC 0.9798 R1 0.934 AP 0.9670 TP@FP<=0/2/5/10  66 110 184 286 | w/o 162: AUC 0.9866 R1 0.962 AP 0.9834 TP@FP<=0/2/5/10 155 167 256 277
+tc, k-reciprocal k1=3 lam=0.3                        AUC 0.9781 R1 0.934 AP 0.9474 TP@FP<=0/2/5/10  16  61 151 167 | w/o 162: AUC 0.9856 R1 0.962 AP 0.9747 TP@FP<=0/2/5/10 103 144 212 263
+tc, k-reciprocal k1=3 lam=0.7                        AUC 0.9798 R1 0.937 AP 0.9582 TP@FP<=0/2/5/10  16  61 185 261 | w/o 162: AUC 0.9871 R1 0.965 AP 0.9844 TP@FP<=0/2/5/10 115 205 261 286
+tc, k-reciprocal k1=5 lam=0.3                        AUC 0.9774 R1 0.919 AP 0.9451 TP@FP<=0/2/5/10  52 121 145 162 | w/o 162: AUC 0.9841 R1 0.942 AP 0.9593 TP@FP<=0/2/5/10 104 127 127 188
+tc, k-reciprocal k1=5 lam=0.7                        AUC 0.9805 R1 0.929 AP 0.9655 TP@FP<=0/2/5/10  52 131 179 257 | w/o 162: AUC 0.9873 R1 0.957 AP 0.9818 TP@FP<=0/2/5/10 133 216 227 284
+tc, CSLS k=3                                         AUC 0.9771 R1 0.934 AP 0.9510 TP@FP<=0/2/5/10  21  69  86 224 | w/o 162: AUC 0.9892 R1 0.962 AP 0.9732 TP@FP<=0/2/5/10  65  77 212 276
+tc, CSLS k=10                                        AUC 0.9727 R1 0.934 AP 0.9587 TP@FP<=0/2/5/10  16 146 163 199 | w/o 162: AUC 0.9870 R1 0.962 AP 0.9800 TP@FP<=0/2/5/10 138 155 189 280
+WCCN lambda=0.03                                     AUC 0.9714 R1 0.927 AP 0.9682 TP@FP<=0/2/5/10  89 145 203 268 | w/o 162: AUC 0.9834 R1 0.954 AP 0.9833 TP@FP<=0/2/5/10 179 229 256 282
+WCCN lambda=0.1                                      AUC 0.9731 R1 0.929 AP 0.9693 TP@FP<=0/2/5/10  88 150 210 271 | w/o 162: AUC 0.9844 R1 0.957 AP 0.9840 TP@FP<=0/2/5/10 182 238 255 287
+WCCN lambda=1.0                                      AUC 0.9776 R1 0.937 AP 0.9720 TP@FP<=0/2/5/10  70 150 218 271 | w/o 162: AUC 0.9868 R1 0.965 AP 0.9868 TP@FP<=0/2/5/10 188 238 258 291
+WCCN lambda=3.0                                      AUC 0.9795 R1 0.937 AP 0.9723 TP@FP<=0/2/5/10  58 146 222 270 | w/o 162: AUC 0.9877 R1 0.965 AP 0.9876 TP@FP<=0/2/5/10 190 234 266 294

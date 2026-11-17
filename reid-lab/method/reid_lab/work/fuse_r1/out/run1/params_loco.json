@@ -1,0 +1,562 @@
+{
+ "SNGS-107": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.092140036745489,
+    0.6587514303049592,
+    -0.17744127979108223
+   ],
+   "b": -7.163813890735852,
+   "n": 7739,
+   "pos": 459,
+   "nll": 0.048891992724851514
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.5
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-107]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_107.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-163": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.039069771333272,
+    0.6509793389641897,
+    -0.08638435720908028
+   ],
+   "b": -7.183260841598893,
+   "n": 7654,
+   "pos": 460,
+   "nll": 0.04821257659359253
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.7
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.5
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-163]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_163.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-106": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    6.954711659601851,
+    0.6552393657043988,
+    -0.13980784157270587
+   ],
+   "b": -7.13324225048267,
+   "n": 7600,
+   "pos": 456,
+   "nll": 0.04879475006718433
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.2
+   },
+   "recall": {
+    "leaves": false,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-106]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_106.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-097": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.208339894046944,
+    0.6503947186792647,
+    -0.11709082121613007
+   ],
+   "b": -7.201753156870316,
+   "n": 7841,
+   "pos": 463,
+   "nll": 0.04779699094655636
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.7
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.25
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-097]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_097.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-067": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    6.845255666821836,
+    0.6412173133341896,
+    -0.15508186735327878
+   ],
+   "b": -7.049508138015591,
+   "n": 7036,
+   "pos": 438,
+   "nll": 0.0519585045270205
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.2
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-067]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_067.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-100": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    6.9978847633618315,
+    0.6502739492949193,
+    -0.12318894396610044
+   ],
+   "b": -7.126492637840142,
+   "n": 7403,
+   "pos": 448,
+   "nll": 0.049840982245725474
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.2
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-100]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_100.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-066": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.2765352704094655,
+    0.6200952883326192,
+    0.019248232828068906
+   ],
+   "b": -7.179280235839681,
+   "n": 7224,
+   "pos": 446,
+   "nll": 0.0471944669195684
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.5
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.4
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-066]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_066.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-161": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.048785535881646,
+    0.6583828689623928,
+    -0.37316497159438367
+   ],
+   "b": -7.180096413532492,
+   "n": 7749,
+   "pos": 460,
+   "nll": 0.049480453863585516
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.7
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.2
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-161]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_161.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-169": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.175005775317229,
+    0.6382248353297382,
+    -0.16263543695344734
+   ],
+   "b": -7.158847502316284,
+   "n": 7581,
+   "pos": 455,
+   "nll": 0.048887732433217784
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.4
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-169]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_169.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-162": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    8.425874197899741,
+    0.6629371988023713,
+    -0.14941141562048238
+   ],
+   "b": -7.617344289022592,
+   "n": 6992,
+   "pos": 433,
+   "nll": 0.03843976649646846
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.15
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.25
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-162]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_162.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-151": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.155829119630957,
+    0.6490253507896024,
+    -0.14397072164853186
+   ],
+   "b": -7.227648930750623,
+   "n": 7963,
+   "pos": 475,
+   "nll": 0.047148747261698515
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.5
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-151]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_151.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-102": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.141129507442809,
+    0.6489990185996264,
+    -0.1369939628114869
+   ],
+   "b": -7.155486117417706,
+   "n": 7903,
+   "pos": 465,
+   "nll": 0.048096376377519706
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.4
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-102]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_102.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "SNGS-112": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.180181873831519,
+    0.6475657267728016,
+    0.32893057242577645
+   ],
+   "b": -7.172850143071533,
+   "n": 7863,
+   "pos": 465,
+   "nll": 0.04897893946713483
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.4
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts loco_params.json[SNGS-112]",
+  "p_cut": 0.7,
+  "position": "m_space/params_cache/excl_112.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ },
+ "all13": {
+  "pair_model": {
+   "cols": [
+    "cos_w",
+    "sink_lo",
+    "plug"
+   ],
+   "w": [
+    7.1758068639395765,
+    0.64737768782866,
+    -0.10943515159871339
+   ],
+   "b": -7.183447845832935,
+   "n": 8231,
+   "pos": 494,
+   "nll": 0.04812761227211415
+  },
+  "choice": {
+   "strict": {
+    "leaves": false,
+    "margin": 0.6
+   },
+   "balanced": {
+    "leaves": false,
+    "margin": 0.4
+   },
+   "recall": {
+    "leaves": true,
+    "margin": 0.2
+   }
+  },
+  "rule": "rule B of PREREG.txt (rules.py)",
+  "cuts": "m_cuts frozen weights",
+  "p_cut": 0.7,
+  "position": "m_space/params_all13.json",
+  "n_solid": 5,
+  "floor": 0.3,
+  "t0": 0.5,
+  "t_abs": 0.5
+ }
+}

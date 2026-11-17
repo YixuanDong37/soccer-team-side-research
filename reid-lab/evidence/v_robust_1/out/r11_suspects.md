@@ -1,0 +1,24 @@
+# r11: the links judged wrong at the recall point against the annotation's own continuation (diagnosis)
+
+| clip | wrong link (persons) | chosen: cos_w, sink, fused | true next of a (person p): best cos_w, sink, fused, piece, gap | true prev of b (person q): best cos_w, sink, fused, piece | mirror pair (earlier piece of q > later piece of p): cos_w | mirrored link in the clip | reading |
+|---|---|---|---|---|---|---|---|
+| SNGS-097 | 6 > 26 (7 > 2) | 0.43, 0.58, 1.08 | 0.84, 0.01, 1.04, piece 56, gap 404 | no earlier piece of q | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-097 | 56 > 100056 (7 > 22) | 0.49, 0.04, 0.80 | no later piece of p | no earlier piece of q | - | no | the annotation offers no alternative on either side: p never comes back and q was not there before |
+| SNGS-100 | 27 > 63 (17 > 25) **[strict]** | 0.58, 0.38, 1.18 | no later piece of p | no earlier piece of q | - | no | the annotation offers no alternative on either side: p never comes back and q was not there before |
+| SNGS-100 | 14 > 26 (22 > 23) | 0.81, 0.13, 1.28 | 0.28, 0.09, 0.70, piece 34, gap 97 | no earlier piece of q | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-066 | 14 > 10000028 (22 > 21) **[strict]** | 0.53, 0.28, 1.04 | -0.01, 0.03, 0.27, piece 49, gap 115 | -0.07, 0.11, 0.34, piece 6 | 0.32 (6 > 79) | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-066 | 18 > 37 (6 > 15) | 0.33, 0.27, 0.83 | 0.27, 0.02, 0.54, piece 44, gap 112 | no earlier piece of q | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 4 > 96 (14 > 12) **[strict]** | 0.85, 0.41, 1.37 | 0.02, 0.09, 0.38, piece 104, gap 130 | 0.05, 0.07, 0.40, piece 18 | 0.71 (18 > 10000106) | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 90 > 113 (15 > 19) | 0.48, 0.36, 0.97 | no later piece of p | 0.01, 0.04, 0.29, piece 61 | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 10000023 > 116 (5 > 8) **[strict]** | 0.84, 0.46, 1.37 | no later piece of p | 0.09, 0.03, 0.37, piece 95 | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 10000021 > 43 (19 > 21) **[strict]** | 0.89, 0.79, 1.54 | 0.11, 0.01, 0.31, piece 10000013, gap 28 | 0.17, 0.10, 0.53, piece 37 | 0.80 (37 > 10000013) | 37>10000013 (wrong) | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 55 > 111 (21 > 13) | 0.68, 0.04, 0.97 | 0.03, 0.17, 0.45, piece 97, gap 169 | 0.19, 0.00, 0.28, piece 6 | -0.10 (6 > 97) | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 100031 > 200031 (17 > 2) | 0.60, 0.59, 1.15 | no later piece of p | 0.02, 0.08, 0.38, piece 81 | - | no | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 27 > 114 (9 > 18) | 0.80, 0.08, 1.16 | 0.35, 0.05, 0.65, piece 93, gap 149 | 0.31, 0.25, 0.76, piece 26 | 0.85 (10000030 > 93) | 10000030>93 (wrong) | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 37 > 10000013 (21 > 19) | 0.80, 0.12, 1.19 | 0.61, 0.02, 0.85, piece 97, gap 320 | 0.11, 0.01, 0.31, piece 10000021 | 0.89 (10000021 > 43) | 10000021>43 (wrong); 10000078>97 (wrong) | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 10000078 > 97 (19 > 21) | 0.82, 0.23, 1.27 | -0.02, 0.03, 0.26, piece 113, gap 193 | 0.63, 0.02, 0.88, piece 25 | 0.13 (43 > 113) | 37>10000013 (wrong) | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-162 | 10000030 > 93 (18 > 9) **[strict]** | 0.85, 0.57, 1.41 | 0.27, 0.02, 0.51, piece 114, gap 190 | 0.35, 0.05, 0.65, piece 27 | 0.80 (27 > 114) | 27>114 (wrong) | the annotated continuation scored lower than the chosen pair on both sides: evidence and annotation disagree |
+| SNGS-112 | 49 > 100049 (6 > 25) **[strict]** | 0.67, 0.72, 1.42 | no later piece of p | no earlier piece of q | - | no | the annotation offers no alternative on either side: p never comes back and q was not there before |
+
+17 wrong links: 3 without any annotated alternative, 0 where the annotated continuation scored higher on one side.
+

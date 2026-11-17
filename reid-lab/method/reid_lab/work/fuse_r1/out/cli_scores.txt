@@ -1,0 +1,210 @@
+### METHOD_strict.json
+{
+ "name": "fuse_r1 point strict (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 67,
+  "wrong": 3,
+  "lost": 67,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.4891,
+  "wrong_share": 0.0219,
+  "links": 344,
+  "links_right": 312,
+  "links_wrong": 7,
+  "links_unknown": 25,
+  "link_precision": 0.9781,
+  "impure_row_share": 0.01611
+ },
+ "clips_without_entry": []
+}
+### METHOD_balanced.json
+{
+ "name": "fuse_r1 point balanced (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 85,
+  "wrong": 5,
+  "lost": 47,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6204,
+  "wrong_share": 0.0365,
+  "links": 424,
+  "links_right": 378,
+  "links_wrong": 16,
+  "links_unknown": 30,
+  "link_precision": 0.9594,
+  "impure_row_share": 0.02123
+ },
+ "clips_without_entry": []
+}
+### METHOD_recall.json
+{
+ "name": "fuse_r1 point recall (LOCO held-out: every clip with the numbers and the choice fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 106,
+  "wrong": 7,
+  "lost": 24,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.7737,
+  "wrong_share": 0.0511,
+  "links": 691,
+  "links_right": 414,
+  "links_wrong": 17,
+  "links_unknown": 260,
+  "link_precision": 0.9606,
+  "impure_row_share": 0.02175
+ },
+ "clips_without_entry": []
+}
+### METHOD_fixed_strict.json
+{
+ "name": "fuse_r1 point strict (the all-13 choice of the setting, applied to every clip with the weights fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 70,
+  "wrong": 2,
+  "lost": 65,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.5109,
+  "wrong_share": 0.0146,
+  "links": 347,
+  "links_right": 319,
+  "links_wrong": 6,
+  "links_unknown": 22,
+  "link_precision": 0.9815,
+  "impure_row_share": 0.01445
+ },
+ "clips_without_entry": []
+}
+### METHOD_fixed_balanced.json
+{
+ "name": "fuse_r1 point balanced (the all-13 choice of the setting, applied to every clip with the weights fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 85,
+  "wrong": 4,
+  "lost": 48,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6204,
+  "wrong_share": 0.0292,
+  "links": 403,
+  "links_right": 361,
+  "links_wrong": 12,
+  "links_unknown": 30,
+  "link_precision": 0.9678,
+  "impure_row_share": 0.01813
+ },
+ "clips_without_entry": []
+}
+### METHOD_fixed_recall.json
+{
+ "name": "fuse_r1 point recall (the all-13 choice of the setting, applied to every clip with the weights fitted without it)",
+ "pooled": {
+  "scored": 137,
+  "right": 112,
+  "wrong": 7,
+  "lost": 18,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.8175,
+  "wrong_share": 0.0511,
+  "links": 743,
+  "links_right": 415,
+  "links_wrong": 17,
+  "links_unknown": 311,
+  "link_precision": 0.9606,
+  "impure_row_share": 0.02177
+ },
+ "clips_without_entry": []
+}
+### METHOD_frozen_strict.json
+{
+ "name": "fuse_r1 point strict (frozen all-13 numbers and choice: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 69,
+  "wrong": 2,
+  "lost": 66,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.5036,
+  "wrong_share": 0.0146,
+  "links": 345,
+  "links_right": 315,
+  "links_wrong": 7,
+  "links_unknown": 23,
+  "link_precision": 0.9783,
+  "impure_row_share": 0.0152
+ },
+ "clips_without_entry": []
+}
+### METHOD_frozen_balanced.json
+{
+ "name": "fuse_r1 point balanced (frozen all-13 numbers and choice: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 86,
+  "wrong": 4,
+  "lost": 47,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.6277,
+  "wrong_share": 0.0292,
+  "links": 403,
+  "links_right": 362,
+  "links_wrong": 12,
+  "links_unknown": 29,
+  "link_precision": 0.9679,
+  "impure_row_share": 0.01814
+ },
+ "clips_without_entry": []
+}
+### METHOD_frozen_recall.json
+{
+ "name": "fuse_r1 point recall (frozen all-13 numbers and choice: IN-SAMPLE on the dev clips)",
+ "pooled": {
+  "scored": 137,
+  "right": 112,
+  "wrong": 7,
+  "lost": 18,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.8175,
+  "wrong_share": 0.0511,
+  "links": 743,
+  "links_right": 415,
+  "links_wrong": 17,
+  "links_unknown": 311,
+  "link_precision": 0.9606,
+  "impure_row_share": 0.02178
+ },
+ "clips_without_entry": []
+}
+### METHOD_cuts_only.json
+{
+ "name": "fuse_r1 cuts only (m_cuts P >= 0.7 with the weights fitted without the clip; no links)",
+ "pooled": {
+  "scored": 137,
+  "right": 0,
+  "wrong": 0,
+  "lost": 137,
+  "undetected": 30,
+  "untracked": 0,
+  "right_share": 0.0,
+  "wrong_share": 0.0,
+  "links": 0,
+  "links_right": 0,
+  "links_wrong": 0,
+  "links_unknown": 0,
+  "link_precision": null,
+  "impure_row_share": 0.00999
+ },
+ "clips_without_entry": []
+}

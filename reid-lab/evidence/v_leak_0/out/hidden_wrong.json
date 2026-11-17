@@ -1,0 +1,524 @@
+{
+ "baseline split": {
+  "pooled": {
+   "lost: new identity": 123,
+   "wrong": 4,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 4,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 6
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "lost: new identity": 13,
+    "wrong": 1,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-163": {
+    "lost: new identity": 10,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "lost: new identity": 6,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-097": {
+    "lost: new identity": 6
+   },
+   "SNGS-067": {
+    "lost: new identity": 10
+   },
+   "SNGS-100": {
+    "lost: new identity": 4
+   },
+   "SNGS-066": {
+    "lost: new identity": 9,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "wrong": 1
+   },
+   "SNGS-161": {
+    "lost: new identity": 13,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-169": {
+    "lost: new identity": 14,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-162": {
+    "wrong": 2,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+    "lost: new identity": 14
+   },
+   "SNGS-151": {
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "lost: new identity": 8
+   },
+   "SNGS-102": {
+    "lost: new identity": 12
+   },
+   "SNGS-112": {
+    "lost: new identity": 4
+   }
+  }
+ },
+ "baseline plugin": {
+  "pooled": {
+   "lost: new identity": 82,
+   "wrong": 14,
+   "lost: hidden wrong, joined by a LINK to 1-4 rows of another person": 3,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 6,
+   "right: clean": 27,
+   "right: swallowed (group majority is another person)": 1,
+   "right: via an earlier stretch of the same person": 1,
+   "right: mixed (group also holds >= 5 rows of another person)": 1
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "lost: new identity": 10,
+    "wrong": 2,
+    "lost: hidden wrong, joined by a LINK to 1-4 rows of another person": 1,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: clean": 1
+   },
+   "SNGS-163": {
+    "right: clean": 1,
+    "lost: new identity": 9,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "right: clean": 3,
+    "right: swallowed (group majority is another person)": 1,
+    "wrong": 2,
+    "lost: new identity": 1
+   },
+   "SNGS-097": {
+    "lost: new identity": 3,
+    "right: clean": 3
+   },
+   "SNGS-067": {
+    "lost: new identity": 7,
+    "right: clean": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "wrong": 1
+   },
+   "SNGS-100": {
+    "lost: new identity": 3,
+    "right: clean": 1
+   },
+   "SNGS-066": {
+    "lost: new identity": 6,
+    "wrong": 3,
+    "right: clean": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-161": {
+    "right: clean": 5,
+    "lost: new identity": 7,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-169": {
+    "lost: new identity": 9,
+    "right: clean": 4,
+    "wrong": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+   },
+   "SNGS-162": {
+    "wrong": 5,
+    "lost: new identity": 10,
+    "right: clean": 1,
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "lost: hidden wrong, joined by a LINK to 1-4 rows of another person": 1
+   },
+   "SNGS-151": {
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "lost: hidden wrong, joined by a LINK to 1-4 rows of another person": 1,
+    "right: clean": 2,
+    "lost: new identity": 5
+   },
+   "SNGS-102": {
+    "lost: new identity": 10,
+    "right: clean": 2
+   },
+   "SNGS-112": {
+    "right: clean": 2,
+    "lost: new identity": 2
+   }
+  }
+ },
+ "baseline mutual": {
+  "pooled": {
+   "lost: new identity": 96,
+   "right: via an earlier stretch of the same person": 5,
+   "wrong": 6,
+   "right: clean": 19,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 4,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 5,
+   "right: mixed (group also holds >= 5 rows of another person)": 2
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "lost: new identity": 10,
+    "right: via an earlier stretch of the same person": 1,
+    "wrong": 1,
+    "right: clean": 1,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: mixed (group also holds >= 5 rows of another person)": 1
+   },
+   "SNGS-163": {
+    "right: clean": 1,
+    "lost: new identity": 9,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "lost: new identity": 4,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: via an earlier stretch of the same person": 1,
+    "right: clean": 1
+   },
+   "SNGS-097": {
+    "lost: new identity": 5,
+    "right: clean": 1
+   },
+   "SNGS-067": {
+    "lost: new identity": 10
+   },
+   "SNGS-100": {
+    "right: clean": 2,
+    "right: via an earlier stretch of the same person": 1,
+    "lost: new identity": 1
+   },
+   "SNGS-066": {
+    "lost: new identity": 9,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "wrong": 1
+   },
+   "SNGS-161": {
+    "lost: new identity": 9,
+    "right: clean": 3,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-169": {
+    "right: clean": 3,
+    "lost: new identity": 10,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-162": {
+    "wrong": 4,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+    "lost: new identity": 11,
+    "right: clean": 1
+   },
+   "SNGS-151": {
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "lost: new identity": 8
+   },
+   "SNGS-102": {
+    "lost: new identity": 8,
+    "right: clean": 4
+   },
+   "SNGS-112": {
+    "lost: new identity": 2,
+    "right: clean": 2
+   }
+  }
+ },
+ "fuse strict (held-out)": {
+  "pooled": {
+   "right: clean": 31,
+   "lost: new identity": 96,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 2,
+   "right: via an earlier stretch of the same person": 2,
+   "wrong": 4
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "right: clean": 4,
+    "lost: new identity": 12
+   },
+   "SNGS-163": {
+    "right: clean": 1,
+    "lost: new identity": 9,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "right: clean": 3,
+    "lost: new identity": 4
+   },
+   "SNGS-097": {
+    "right: clean": 3,
+    "lost: new identity": 3
+   },
+   "SNGS-067": {
+    "lost: new identity": 8,
+    "right: clean": 2
+   },
+   "SNGS-100": {
+    "right: clean": 2,
+    "lost: new identity": 2
+   },
+   "SNGS-066": {
+    "lost: new identity": 9,
+    "right: clean": 2
+   },
+   "SNGS-161": {
+    "right: clean": 3,
+    "lost: new identity": 9,
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-169": {
+    "lost: new identity": 13,
+    "right: clean": 2
+   },
+   "SNGS-162": {
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "right: clean": 5,
+    "wrong": 4,
+    "right: via an earlier stretch of the same person": 1,
+    "lost: new identity": 7
+   },
+   "SNGS-151": {
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "lost: new identity": 8
+   },
+   "SNGS-102": {
+    "lost: new identity": 10,
+    "right: clean": 2
+   },
+   "SNGS-112": {
+    "right: clean": 2,
+    "lost: new identity": 2
+   }
+  }
+ },
+ "fuse balanced (held-out)": {
+  "pooled": {
+   "right: clean": 82,
+   "lost: new identity": 34,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+   "right: via an earlier stretch of the same person": 8,
+   "right: mixed (group also holds >= 5 rows of another person)": 3,
+   "wrong": 7,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "right: clean": 10,
+    "lost: new identity": 6
+   },
+   "SNGS-163": {
+    "right: clean": 5,
+    "lost: new identity": 5,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "right: clean": 6,
+    "lost: new identity": 1
+   },
+   "SNGS-097": {
+    "right: clean": 6
+   },
+   "SNGS-067": {
+    "right: clean": 5,
+    "right: via an earlier stretch of the same person": 3,
+    "lost: new identity": 2
+   },
+   "SNGS-100": {
+    "right: clean": 3,
+    "lost: new identity": 1
+   },
+   "SNGS-066": {
+    "right: clean": 5,
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "lost: new identity": 4,
+    "wrong": 1
+   },
+   "SNGS-161": {
+    "right: clean": 11,
+    "right: via an earlier stretch of the same person": 2,
+    "lost: new identity": 1
+   },
+   "SNGS-169": {
+    "right: clean": 11,
+    "lost: new identity": 3,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-162": {
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "right: clean": 4,
+    "wrong": 6,
+    "right: mixed (group also holds >= 5 rows of another person)": 2,
+    "right: via an earlier stretch of the same person": 1,
+    "lost: new identity": 4
+   },
+   "SNGS-151": {
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "lost: new identity": 4,
+    "right: clean": 4
+   },
+   "SNGS-102": {
+    "lost: new identity": 2,
+    "right: clean": 9,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-112": {
+    "right: clean": 3,
+    "lost: new identity": 1
+   }
+  }
+ },
+ "fuse recall (held-out)": {
+  "pooled": {
+   "right: clean": 93,
+   "lost: new identity": 19,
+   "right: mixed (group also holds >= 5 rows of another person)": 6,
+   "right: via an earlier stretch of the same person": 11,
+   "wrong": 7,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "right: clean": 15,
+    "lost: new identity": 1
+   },
+   "SNGS-163": {
+    "right: clean": 6,
+    "lost: new identity": 3,
+    "right: mixed (group also holds >= 5 rows of another person)": 2
+   },
+   "SNGS-106": {
+    "right: clean": 6,
+    "lost: new identity": 1
+   },
+   "SNGS-097": {
+    "right: clean": 6
+   },
+   "SNGS-067": {
+    "right: clean": 6,
+    "right: via an earlier stretch of the same person": 3,
+    "lost: new identity": 1
+   },
+   "SNGS-100": {
+    "right: clean": 3,
+    "lost: new identity": 1
+   },
+   "SNGS-066": {
+    "right: clean": 5,
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "lost: new identity": 4,
+    "wrong": 1
+   },
+   "SNGS-161": {
+    "right: clean": 12,
+    "right: via an earlier stretch of the same person": 2
+   },
+   "SNGS-169": {
+    "right: clean": 12,
+    "right: via an earlier stretch of the same person": 3
+   },
+   "SNGS-162": {
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "right: clean": 4,
+    "wrong": 6,
+    "right: mixed (group also holds >= 5 rows of another person)": 2,
+    "right: via an earlier stretch of the same person": 1,
+    "lost: new identity": 4
+   },
+   "SNGS-151": {
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "right: via an earlier stretch of the same person": 1,
+    "right: clean": 5,
+    "lost: new identity": 2
+   },
+   "SNGS-102": {
+    "lost: new identity": 2,
+    "right: clean": 9,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-112": {
+    "right: clean": 4
+   }
+  }
+ },
+ "fuse margin_0.50 (held-out)": {
+  "pooled": {
+   "right: clean": 81,
+   "lost: new identity": 39,
+   "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 2,
+   "right: via an earlier stretch of the same person": 8,
+   "right: mixed (group also holds >= 5 rows of another person)": 2,
+   "wrong": 4,
+   "lost: new identity, but its group holds >= 5 rows of another person later on": 1
+  },
+  "per_clip": {
+   "SNGS-107": {
+    "right: clean": 10,
+    "lost: new identity": 6
+   },
+   "SNGS-163": {
+    "right: clean": 5,
+    "lost: new identity": 5,
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1
+   },
+   "SNGS-106": {
+    "right: clean": 5,
+    "lost: new identity": 2
+   },
+   "SNGS-097": {
+    "right: clean": 6
+   },
+   "SNGS-067": {
+    "right: clean": 5,
+    "right: via an earlier stretch of the same person": 3,
+    "lost: new identity": 2
+   },
+   "SNGS-100": {
+    "right: clean": 3,
+    "lost: new identity": 1
+   },
+   "SNGS-066": {
+    "right: clean": 4,
+    "right: mixed (group also holds >= 5 rows of another person)": 1,
+    "lost: new identity": 6
+   },
+   "SNGS-161": {
+    "right: clean": 11,
+    "right: via an earlier stretch of the same person": 2,
+    "lost: new identity": 1
+   },
+   "SNGS-169": {
+    "right: clean": 11,
+    "lost: new identity": 3,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-162": {
+    "lost: hidden wrong, 1-4 rows of another person in B's own piece (no link involved)": 1,
+    "right: clean": 5,
+    "wrong": 4,
+    "right: via an earlier stretch of the same person": 1,
+    "lost: new identity": 6,
+    "right: mixed (group also holds >= 5 rows of another person)": 1
+   },
+   "SNGS-151": {
+    "lost: new identity, but its group holds >= 5 rows of another person later on": 1,
+    "lost: new identity": 4,
+    "right: clean": 4
+   },
+   "SNGS-102": {
+    "lost: new identity": 2,
+    "right: clean": 9,
+    "right: via an earlier stretch of the same person": 1
+   },
+   "SNGS-112": {
+    "right: clean": 3,
+    "lost: new identity": 1
+   }
+  }
+ }
+}

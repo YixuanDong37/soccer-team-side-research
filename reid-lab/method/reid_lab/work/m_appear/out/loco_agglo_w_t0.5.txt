@@ -1,0 +1,16 @@
+family agglo-kind_w-t_abs_0.5: LOCO held-out (headline) and in-sample (secondary), by lam
+lam= 1 HELD-OUT right  78 wrong 14 lost  45 | links r/w/u 260/14/220 | impure 0.0357
+        in-sample right  84 wrong  7 lost  46 | links r/w/u 268/ 9/222 | impure 0.0335  params {'kind': 'w', 'margin': 0.15, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.15, "t_abs": 0.5}': 7, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 4, '{"kind": "w", "margin": 0.2, "t_abs": 0.5}': 1, '{"kind": "w", "margin": 0.0, "t_abs": 0.5}': 1}
+lam= 2 HELD-OUT right  73 wrong  6 lost  58 | links r/w/u 236/ 2/192 | impure 0.0280
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 1, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 12}
+lam= 3 HELD-OUT right  71 wrong  6 lost  60 | links r/w/u 232/ 2/189 | impure 0.0280
+        in-sample right  75 wrong  6 lost  56 | links r/w/u 238/ 2/198 | impure 0.0280  params {'kind': 'w', 'margin': 0.25, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 3, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 10}
+lam= 5 HELD-OUT right  71 wrong  6 lost  60 | links r/w/u 220/ 2/176 | impure 0.0280
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 12, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 1}
+lam=10 HELD-OUT right  71 wrong  6 lost  60 | links r/w/u 220/ 2/176 | impure 0.0280
+        in-sample right  71 wrong  6 lost  60 | links r/w/u 220/ 1/174 | impure 0.0276  params {'kind': 'w', 'margin': 0.3, 't_abs': 0.5}
+        chosen per fold: {'{"kind": "w", "margin": 0.3, "t_abs": 0.5}': 12, '{"kind": "w", "margin": 0.25, "t_abs": 0.5}': 1}
